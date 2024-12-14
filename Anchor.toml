@@ -1,11 +1,12 @@
 [toolchain]
+anchor_version = "v0.28.0"
 
 [features]
 resolution = true
 skip-lint = false
 
 [programs.localnet]
-fancoin = "6GJQt9Rbz1BJBmKDPq9KgR2ThEtFtp47dJ9EnZ7Qdnhq"
+fancoin = "HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut"
 
 [registry]
 url = "https://api.apr.dev"
@@ -20,3 +21,5 @@ wallet = "~/.config/solana/id.json"
 [build]
 target = "bpfel-unknown-none"
 toolchain = "nightly"
+
+
