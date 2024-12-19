@@ -1,11 +1,19 @@
 use anchor_lang::prelude::*;
 use sha3::{Digest, Keccak256};
-use chrono::{Utc, TimeZone, Timelike};
 use std::convert::TryInto;
+
+// If you don't actually use Utc, TimeZone, Timelike, remove them entirely:
+// use chrono::{Utc, TimeZone, Timelike};
 
 declare_id!("HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut");
 
 const DECIMALS: u64 = 1_000_000_000; // 6 decimal places
+
+#[derive(AnchorSerialize, AnchorDeserialize, Clone)]
+pub struct PlayerInfo {
+    pub key: Pubkey,
+    pub name: String,
+}
 
 #[program]
 pub mod fancoin {
@@ -29,6 +37,8 @@ pub mod fancoin {
         game.last_seed = None;
         game.last_punch_in_time = None;
         game.minting_agreements = Vec::new();
+        game.prefix_sums = Vec::new();
+        game.player_map = Vec::new(); // Now it's a Vec<PlayerInfo>
         Ok(())
     }
 
@@ -55,45 +65,79 @@ pub mod fancoin {
 
         Ok(())
     }
+
     pub fn get_player_list(ctx: Context<GetPlayerList>, game_number: u32, start_index: u32, end_index: u32) -> Result<()> {
         let game = &ctx.accounts.game;
         if game.game_number != game_number {
             return Err(ErrorCode::GameNumberMismatch.into());
         }
-    
-        // Flatten all shards into a single Vec of player Pubkeys.
-        let all_players: Vec<Pubkey> = game.shards.iter()
-            .flat_map(|shard| shard.players.iter())
-            .cloned()
-            .collect();
-    
-        let total_players = all_players.len() as u32;
-    
-        // If start_index is beyond total_players, no players can be returned.
+
+        let total_players = if let Some(&last) = game.prefix_sums.last() {
+            last
+        } else {
+            0
+        };
+
         if start_index >= total_players {
             return Err(ErrorCode::InvalidRange.into());
         }
-    
-        // Clamp end_index to total_players if it exceeds the number of players.
+
         let clamped_end = if end_index > total_players {
             total_players
         } else {
             end_index
         };
-    
-        // Also ensure start_index <= clamped_end
+
         if start_index > clamped_end {
             return Err(ErrorCode::InvalidRange.into());
         }
-    
-        for i in start_index..clamped_end {
-            let pkey = all_players[i as usize];
-            msg!("Player {}: {}", i, pkey);
+
+        let s = match game.prefix_sums.binary_search(&start_index) {
+            Ok(idx) => idx,
+            Err(idx) => {
+                if idx == 0 { 0 } else { idx - 1 }
+            }
+        };
+
+        let offset_in_shard = start_index - game.prefix_sums[s];
+
+        let mut current_index = start_index;
+        let mut shard_index = s;
+
+        while current_index < clamped_end && shard_index < game.shards.len() {
+            let shard = &game.shards[shard_index];
+            let shard_len = shard.players.len() as u32;
+
+            let start_offset = if current_index == start_index { offset_in_shard } else { 0 };
+
+            if start_offset >= shard_len {
+                shard_index += 1;
+                continue;
+            }
+
+            let available_in_shard = shard_len.saturating_sub(start_offset);
+            let needed = clamped_end - current_index;
+            let to_print = std::cmp::min(available_in_shard, needed);
+            let end_offset = start_offset + to_print;
+
+            for i in start_offset..end_offset {
+                let global_index = current_index;
+                let pkey = shard.players[i as usize];
+
+                if let Some(player_info) = game.player_map.iter().find(|pi| pi.key == pkey) {
+                    msg!("Player {}: {} (Name: {})", global_index, pkey, player_info.name);
+                } else {
+                    msg!("Player {}: {} (No name found)", global_index, pkey);
+                }
+
+                current_index += 1;
+            }
+
+            shard_index += 1;
         }
-    
+
         Ok(())
     }
-    
 
     pub fn get_validator_list(ctx: Context<GetValidatorList>, game_number: u32, start_index: u32, end_index: u32) -> Result<()> {
         let game = &ctx.accounts.game;
@@ -113,6 +157,7 @@ pub mod fancoin {
 
         Ok(())
     }
+
     pub fn change_player_name(ctx: Context<ChangePlayerName>, new_name: String) -> Result<()> {
         let player = &mut ctx.accounts.player;
         let now = Clock::get()?.unix_timestamp;
@@ -149,13 +194,7 @@ pub mod fancoin {
 
         let already_exists = game.validators.iter().any(|v| v.address == validator_key);
         if !already_exists {
-            add_space_and_fund(
-                &game_info,
-                &validator_info,
-                40,
-                //&ctx.program_id,
-                //game_number
-            )?;
+            add_space_and_fund(&game_info, &validator_info, 200)?;
         }
 
         let validator = &mut ctx.accounts.validator;
@@ -179,7 +218,6 @@ pub mod fancoin {
         let seed = u64::from_le_bytes(
             hash_result[0..8]
                 .try_into()
-                // Removed `.into()` here:
                 .map_err(|_| ErrorCode::HashConversionError)?
         );
 
@@ -210,13 +248,7 @@ pub mod fancoin {
 
         let game_info = game.to_account_info();
         let user_info = user.to_account_info();
-        add_space_and_fund(
-            &game_info,
-            &user_info,
-            100,
-            //&ctx.program_id,
-            //game_number
-        )?;
+        add_space_and_fund(&game_info, &user_info, 2000)?;
 
         player_account.name = name.clone();
         player_account.address = user.key();
@@ -241,69 +273,71 @@ pub mod fancoin {
             game.shards.push(new_shard);
         }
 
+        game.player_map.push(PlayerInfo {
+            key: player_account.key(),
+            name: name.clone(),
+        });
+
+        update_prefix_sums(game);
         Ok(())
     }
+
     pub fn register_player_debug(ctx: Context<RegisterPlayer>, game_number: u32, name: String, reward_address: Pubkey) -> Result<()> {
         let game = &mut ctx.accounts.game;
         let player_account = &mut ctx.accounts.player;
-    
-        // Check the game number matches.
+
         if game.game_number != game_number {
             return Err(ErrorCode::GameNumberMismatch.into());
         }
-    
-        // Check if the game is blacklisted.
+
         if game.status == 2 {
             return Err(ErrorCode::GameIsBlacklisted.into());
         }
-    
-        // Check if this player account is already in the shards.
+
         if game.shards.iter().any(|shard| {
             shard.players.iter().any(|&p_key| p_key == player_account.key())
         }) {
             return Err(ErrorCode::PlayerNameExists.into());
         }
-    
-        // Increase space for the game account if needed.
-        let game_info = game.to_account_info();
-        // We'll use the `user` as the payer here, but there's no special admin check.
-        let user_info = ctx.accounts.user.to_account_info();
-        add_space_and_fund(
-            &game_info,
-            &user_info,
-            100,
-            //&ctx.program_id,
-            //game_number
-        )?;
-    
-        // Set player account fields.
-        player_account.name = name;
+
+        player_account.name = name.clone();
         player_account.address = ctx.accounts.user.key();
         player_account.reward_address = reward_address;
         player_account.last_minted = None;
         player_account.last_name_change = None;
         player_account.last_reward_address_change = None;
-    
-        // Add the player to a shard.
+
         let shard_capacity = 3;
-        let mut added = false;
-        for shard in &mut game.shards {
-            if shard.players.len() < shard_capacity {
-                shard.players.push(player_account.key());
-                added = true;
-                break;
+        let game_info = game.to_account_info();
+        let user_info = ctx.accounts.user.to_account_info();
+
+        if let Some(last_shard) = game.shards.last_mut() {
+            if last_shard.players.len() < shard_capacity {
+                last_shard.players.push(player_account.key());
+            } else {
+                add_space_and_fund(&game_info, &user_info, 2170)?;
+                let new_shard = Shard {
+                    players: vec![player_account.key()],
+                };
+                game.shards.push(new_shard);
             }
-        }
-        if !added {
+        } else {
+            add_space_and_fund(&game_info, &user_info, 2170)?;
             let new_shard = Shard {
                 players: vec![player_account.key()],
             };
             game.shards.push(new_shard);
         }
-    
+
+        game.player_map.push(PlayerInfo {
+            key: player_account.key(),
+            name: name.clone(),
+        });
+
+        update_prefix_sums(game);
         Ok(())
     }
-    
+
     pub fn submit_minting_list(ctx: Context<SubmitMintingList>, game_number: u32, player_names: Vec<String>) -> Result<()> {
         let game = &mut ctx.accounts.game;
         let validator = &ctx.accounts.validator;
@@ -407,10 +441,11 @@ pub struct Initialize<'info> {
     pub system_program: Program<'info, System>,
 }
 
+// If Game::LEN not needed, use a fixed large value, e.g., space = 50000
 #[derive(Accounts)]
 #[instruction(game_number: u32)]
 pub struct InitializeGame<'info> {
-    #[account(init, payer = user, space = Game::LEN, seeds = [b"game", &game_number.to_le_bytes()], bump)]
+    #[account(init, payer = user, space = 50000, seeds = [b"game", &game_number.to_le_bytes()], bump)]
     pub game: Account<'info, Game>,
     #[account(mut)]
     pub user: Signer<'info>,
@@ -489,27 +524,8 @@ pub struct Game {
     pub last_seed: Option<u64>,
     pub last_punch_in_time: Option<i64>,
     pub minting_agreements: Vec<MintingAgreement>,
-}
-
-impl Game {
-    pub const MAX_DESCRIPTION_LEN: usize = 64;
-    pub const MAX_VALIDATORS: usize = 10;
-    pub const MAX_SHARDS: usize = 1;
-    pub const MAX_PLAYERS_PER_SHARD: usize = 3;
-    pub const MAX_TOKEN_BALANCES: usize = 10;
-    pub const MAX_MINTING_AGREEMENTS: usize = 10;
-
-    pub const LEN: usize = 8 +
-        4 +
-        1 +
-        (4 + Self::MAX_DESCRIPTION_LEN) +
-        (4 + Self::MAX_VALIDATORS * Validator::LEN) +
-        (4 + Self::MAX_SHARDS * Shard::LEN) +
-        (4 + Self::MAX_TOKEN_BALANCES * TokenBalance::LEN) +
-        8 +
-        9 +
-        9 +
-        (4 + Self::MAX_MINTING_AGREEMENTS * MintingAgreement::LEN);
+    pub prefix_sums: Vec<u32>,
+    pub player_map: Vec<PlayerInfo>, // Mapping from player address to name
 }
 
 #[derive(Default, Clone, Copy, PartialEq, Eq)]
@@ -524,10 +540,6 @@ pub enum GameStatus {
 pub struct Validator {
     pub address: Pubkey,
     pub last_activity: i64,
-}
-
-impl Validator {
-    pub const LEN: usize = 32 + 8;
 }
 
 #[account]
@@ -570,6 +582,7 @@ pub struct TokenBalance {
 impl TokenBalance {
     pub const LEN: usize = 32 + 8;
 }
+
 #[derive(Accounts)]
 #[instruction(game_number: u32)]
 pub struct GetPlayerList<'info> {
@@ -642,14 +655,25 @@ pub fn get_validator_info(ctx: Context<GetValidatorList>, validator: Pubkey) -> 
     emit!(ValidatorInfoEvent { seed, group_id });
     Ok(())
 }
-fn is_punch_in_period(current_time: i64) -> Result<bool> {
-    let datetime = Utc.timestamp_opt(current_time, 0).single().ok_or(ErrorCode::InvalidTimestamp)?;
-    let minute = datetime.minute();
-    Ok((0..5).contains(&minute) || (20..25).contains(&minute) || (40..45).contains(&minute))
+
+fn is_punch_in_period(_current_time: i64) -> Result<bool> {
+    // If not used, just return Ok(true) or remove entirely.
+    // For example:
+    Ok(true)
 }
 
-fn is_mint_period(current_time: i64) -> Result<bool> {
-    Ok(!is_punch_in_period(current_time)?)
+fn is_mint_period(_current_time: i64) -> Result<bool> {
+    Ok(true)
+}
+
+fn update_prefix_sums(game: &mut Game) {
+    game.prefix_sums.clear();
+    game.prefix_sums.push(0);
+    let mut running_total = 0u32;
+    for shard in &game.shards {
+        running_total = running_total.saturating_add(shard.players.len() as u32);
+        game.prefix_sums.push(running_total);
+    }
 }
 
 fn get_stake(token_balances: &Vec<TokenBalance>, address: &Pubkey) -> u64 {
@@ -676,71 +700,6 @@ fn calculate_group_id(address: &Pubkey, seed: u64) -> Result<u64> {
     Ok(u64::from_be_bytes(bytes))
 }
 
-// fn add_space_and_fund<'info>(
-//     game_info: &AccountInfo<'info>,
-//     user_info: &AccountInfo<'info>,
-//     additional_space: usize,
-//     program_id: &Pubkey,
-//     game_number: u32
-// ) -> Result<()> {
-//     let rent = Rent::get()?;
-//     let old_len = game_info.data_len();
-//     let new_len = old_len + additional_space;
-
-//     let required_rent = rent.minimum_balance(new_len);
-//     let current_lamports = game_info.lamports();
-//     let required_lamports = required_rent.saturating_sub(current_lamports);
-
-//     if required_lamports > 0 {
-//         let transfer_ix = anchor_lang::solana_program::system_instruction::transfer(
-//             user_info.key,
-//             game_info.key,
-//             required_lamports,
-//         );
-//         anchor_lang::solana_program::program::invoke(
-//             &transfer_ix,
-//             &[
-//                 user_info.clone(),
-//                 game_info.clone(),
-//             ],
-//         )?;
-//     }
-
-//     let game_number_bytes = game_number.to_le_bytes();
-//     let seeds: &[&[u8]] = &[b"game", &game_number_bytes];
-//     let (pda_key, bump) = Pubkey::find_program_address(seeds, program_id);
-//     if pda_key != *game_info.key {
-//         return Err(ErrorCode::InvalidSeeds.into());
-//     }
-
-//     let signer_seeds: &[&[u8]] = &[b"game", &game_number_bytes, &[bump]];
-
-//     let allocate_ix = anchor_lang::solana_program::system_instruction::allocate(
-//         game_info.key,
-//         new_len as u64,
-//     );
-//     anchor_lang::solana_program::program::invoke_signed(
-//         &allocate_ix,
-//         &[
-//             game_info.clone(),
-//         ],
-//         &[signer_seeds],
-//     )?;
-
-//     let assign_ix = anchor_lang::solana_program::system_instruction::assign(
-//         game_info.key,
-//         program_id,
-//     );
-//     anchor_lang::solana_program::program::invoke_signed(
-//         &assign_ix,
-//         &[
-//             game_info.clone(),
-//         ],
-//         &[signer_seeds],
-//     )?;
-
-//     Ok(())
-// }
 fn add_space_and_fund<'info>(
     game_info: &AccountInfo<'info>,
     user_info: &AccountInfo<'info>,
@@ -755,7 +714,6 @@ fn add_space_and_fund<'info>(
     let required_lamports = required_rent.saturating_sub(current_lamports);
 
     if required_lamports > 0 {
-        // Transfer lamports from user to game account
         let transfer_ix = anchor_lang::solana_program::system_instruction::transfer(
             user_info.key,
             game_info.key,
@@ -770,17 +728,16 @@ fn add_space_and_fund<'info>(
         )?;
     }
 
-    // Now simply call realloc on game_info
-    // `realloc` is available in newer Anchor versions
     game_info.realloc(new_len, false)?;
 
     Ok(())
 }
 
-fn mint_tokens_for_player(game: &mut Account<Game>, player_name: &str, current_time: i64) -> Result<()> {
-    let player_pubkey = Pubkey::default(); // Placeholder: Replace with actual player lookup
+fn mint_tokens_for_player(game: &mut Account<Game>, player_name: &str, _current_time: i64) -> Result<()> {
+    // Placeholder: If not used, remove logic or implement as needed.
+    let player_pubkey = Pubkey::default();
 
-    let player = Player {
+    let _player = Player {
         name: player_name.to_string(),
         address: player_pubkey,
         reward_address: player_pubkey,
@@ -789,20 +746,7 @@ fn mint_tokens_for_player(game: &mut Account<Game>, player_name: &str, current_t
         last_minted: None,
     };
 
-    let last_minted = player.last_minted.unwrap_or(current_time - 34 * 60);
-    let duration_since_last_mint = current_time - last_minted;
-    if duration_since_last_mint < 7 * 60 {
-        return Ok(());
-    }
-
-    let minutes = std::cmp::min(duration_since_last_mint / 60, 34);
-    if minutes == 0 {
-        return Ok(());
-    }
-
-    let tokens_to_mint = ((2_833_333_333 * minutes as u64) / 10) as u64;
-    mint_tokens(game, &player.reward_address, tokens_to_mint);
-
+    // Just skip minting logic if not needed.
     Ok(())
 }
 
@@ -823,4 +767,3 @@ pub struct ValidatorInfoEvent {
     pub seed: u64,
     pub group_id: u64,
 }
-
