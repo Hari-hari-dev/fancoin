@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def query_master_server(region, app_id):
     # Changed master server address and port
-    master_server = ("hl1master.steampowered.com", 27011)
+    master_server = ("72.165.61.190", 27010)
     
     # Using the known working request that returns TFC servers
     # Byte sequence: [49, -1, 48, 46, 48, 46, 48, 46, 48, 58, 48, 0, 92, 103, 97, 109, 101, 100, 105, 114, 92, 116, 102, 99, 0]

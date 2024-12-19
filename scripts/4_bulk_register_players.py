@@ -3,6 +3,7 @@ from pathlib import Path
 from enum import IntEnum
 import traceback
 import json
+import re
 
 from anchorpy import Program, Provider, Wallet, Idl, Context
 from solders.keypair import Keypair
@@ -39,6 +40,30 @@ async def register_player_debug(program: Program, game_pda: Pubkey, user_pubkey:
             )
         )
         print(f"Registered player '{player_name}' successfully. Transaction Signature: {tx}")
+
+        # ---------------- Added code to fetch and parse logs for compute units ----------------
+        # Fetch the transaction details, including logs.
+        confirmed_tx = await program.provider.connection.get_transaction(tx, encoding='json')
+        if confirmed_tx.value is not None and confirmed_tx.value.transaction.meta is not None:
+            logs = confirmed_tx.value.transaction.meta.log_messages
+            if logs:
+                cu_regex = re.compile(r'Program \S+ consumed (\d+) of (\d+) compute units')
+                consumed_cu = None
+                max_cu = None
+                for line in logs:
+                    match = cu_regex.search(line)
+                    if match:
+                        consumed_cu = int(match.group(1))
+                        max_cu = int(match.group(2))
+                        break
+                if consumed_cu is not None:
+                    print(f"[DEBUG] Compute units consumed for '{player_name}': {consumed_cu}/{max_cu}")
+                else:
+                    print(f"[DEBUG] No compute units info found in logs for '{player_name}'.")
+        else:
+            print(f"[DEBUG] Unable to fetch transaction logs for '{player_name}' transaction.")
+        # --------------------------------------------------------------------------------------
+
     except RPCException as e:
         print(f"Error registering player '{player_name}': {e}")
         traceback.print_exc()
@@ -67,7 +92,6 @@ async def main():
         print("Program loaded successfully.")
 
         # Assume game is already initialized and we have game_pda
-        # For demo, find the same game_pda used before:
         game_number = 1
         (game_pda, _) = Pubkey.find_program_address(
             [b"game", game_number.to_bytes(4, "little")],
