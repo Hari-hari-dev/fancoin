@@ -114,15 +114,15 @@ async def main():
     # Create and send transaction to create staging account
     tx = Transaction(recent_blockhash=blockhash, fee_payer=user)
     tx.add(create_ix)
-    tx.sign(provider.wallet.payer, staging_keypair.secret_key)
-    try:
-        resp = await provider.connection.send_raw_transaction(tx.serialize())
-        print("Staging account created successfully with signature:", resp)
-    except RPCException as e:
-        print("Error creating staging account:", e)
-        traceback.print_exc()
-        await client.close()
-        return
+    tx.sign(provider.wallet.payer, staging_keypair)
+    # try:
+    #     resp = await provider.connection.send_raw_transaction(tx.serialize())
+    #     print("Staging account created successfully with signature:", resp)
+    # except RPCException as e:
+    #     print("Error creating staging account:", e)
+    #     traceback.print_exc()
+    #     await client.close()
+    #     return
 
     # Now call initialize_game, passing game_bump and the staging account as 'game'
     # Your initialize_game must:
@@ -131,7 +131,7 @@ async def main():
     #  3) Possibly reallocate or finalize the account as needed
     description = "My Large Game"
     try:
-        tx_sig = await program.rpc["initialize_game"](
+        tx_sig = await program.rpc["init_game_one"](
             game_number,
             description,
             # game_bump,  # Pass the bump if your Rust code requires it as an argument
