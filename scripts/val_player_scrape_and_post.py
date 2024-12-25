@@ -49,7 +49,7 @@ async def get_player_list_page(game_number: int, start_index: int, end_index: in
     global program, provider, game_pda
     print(f"[DEBUG] Calling get_player_list with game_number={game_number}, start_index={start_index}, end_index={end_index}")
     try:
-        tx_sig = await program.rpc["get_player_names_pda_page"](
+        tx_sig = await program.rpc["get_player_list_pda_page"](
             game_number,
             start_index,
             end_index,
