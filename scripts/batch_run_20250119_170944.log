@@ -1,0 +1,485 @@
+2025-01-19 17:09:44 - Batch execution of Solana Python scripts started.
+2025-01-19 17:09:44 - Executing 6_val_player_scrape_and_post_dbg.py...
+Setting up provider and loading program IDL...
+Program loaded successfully.
+[DEBUG] using game_pda=3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe
+[DEBUG] using dapp_pda=pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD
+[DEBUG] DApp Account Data:
+         owner                = 6GJQt9Rbz1BJBmKDPq9KgR2ThEtFtp47dJ9EnZ7Qdnhq
+         global_player_count  = 81
+         mint_pubkey         = DVkPNrxdgGxF5fqvnKgXj7DWcRSdimLChXKwAKYk7fiJ
+[INFO] Querying TFC master server for a list of servers.
+Request timed out
+[DEBUG] Found 86 unique TFC servers.
+[DEBUG] Checking server 172.83.159.2:27015
+[DEBUG] Checking server 5.78.115.59:27015
+[DEBUG] Checking server 54.188.146.29:27015
+[DEBUG] Checking server 97.94.129.234:34531
+[DEBUG] Checking server 54.153.40.112:27015
+[DEBUG] Checking server 98.210.109.153:27015
+[DEBUG] Checking server 192.169.85.163:27015
+[DEBUG] Checking server 192.169.85.101:27015
+[DEBUG] Checking server 66.33.9.184:27015
+[DEBUG] Checking server 204.57.27.76:27015
+[DEBUG] Checking server 76.195.132.49:25590
+Failed to query server at 76.195.132.49:25590: timed out
+[DEBUG] Checking server 162.251.97.85:27020
+[DEBUG] Checking server 108.61.119.170:27015
+[DEBUG] Checking server 74.91.114.206:27015
+[DEBUG] Checking server 66.25.218.38:27015
+[DEBUG] Checking server 18.88.29.250:27020
+[DEBUG] Checking server 68.232.160.177:27015
+[DEBUG] Checking server 45.32.203.198:27035
+[DEBUG] Checking server 45.32.207.158:27015
+[DEBUG] Checking server 192.169.81.179:27015
+[DEBUG] Checking server 63.143.56.124:27019
+[DEBUG] Checking server 74.63.236.204:27025
+[DEBUG] Checking server 108.181.63.74:27019
+[DEBUG] Checking server 74.91.122.11:27015
+[DEBUG] Checking server 192.223.26.238:27001
+[DEBUG] Checking server 74.91.113.200:27015
+[DEBUG] Checking server 74.91.119.101:27015
+[DEBUG] Checking server 74.91.119.150:27015
+[DEBUG] Checking server 74.91.115.161:27015
+[DEBUG] Checking server 74.91.113.234:27015
+[DEBUG] Checking server 72.133.96.85:27018
+[DEBUG] Checking server 24.166.16.145:27022
+[DEBUG] Checking server 205.196.43.194:27050
+[DEBUG] Checking server 142.44.148.157:53000
+[DEBUG] Checking server 92.119.129.204:27016
+[DEBUG] Checking server 129.158.218.251:27015
+[DEBUG] Checking server 34.206.24.63:27020
+[DEBUG] Checking server 172.233.224.83:27016
+[DEBUG] Checking server 44.202.103.140:27015
+[DEBUG] Checking server 208.104.92.237:27015
+Failed to query server at 208.104.92.237:27015: timed out
+[DEBUG] Checking server 69.251.134.183:27017
+[DEBUG] Checking server 50.116.59.192:27020
+[DEBUG] Checking server 23.148.232.35:27285
+[DEBUG] Checking server 104.207.129.123:27020
+[DEBUG] Checking server 172.93.101.194:27015
+[DEBUG] Checking server 69.10.36.10:28015
+[DEBUG] Checking server 64.31.28.203:27015
+[DEBUG] Checking server 64.31.28.179:27015
+[DEBUG] Checking server 64.31.28.157:27025
+[DEBUG] Checking server 74.91.123.162:27005
+[DEBUG] Checking server 192.223.24.233:27015
+[DEBUG] Checking server 74.91.123.34:27015
+[DEBUG] Checking server 74.91.116.214:27015
+[DEBUG] Checking server 167.88.44.161:27015
+[DEBUG] Checking server 38.40.74.41:27020
+[DEBUG] Checking server 45.77.162.42:27015
+[DEBUG] Checking server 178.32.3.3:27002
+[DEBUG] Checking server 51.195.252.162:27015
+[DEBUG] Checking server 82.165.193.67:27015
+[DEBUG] Checking server 192.248.163.247:27015
+[DEBUG] Checking server 145.239.6.111:27050
+[DEBUG] Checking server 88.97.252.184:27015
+[DEBUG] Checking server 145.239.6.180:27000
+[DEBUG] Checking server 188.165.244.220:27030
+[DEBUG] Checking server 90.110.222.80:27016
+[DEBUG] Checking server 5.196.63.134:27015
+[DEBUG] Checking server 194.163.156.183:27015
+[DEBUG] Checking server 217.160.162.135:27019
+[DEBUG] Checking server 79.207.101.159:27017
+Failed to query server at 79.207.101.159:27017: timed out
+[DEBUG] Checking server 89.36.216.8:27017
+[DEBUG] Checking server 4.185.106.208:27115
+[DEBUG] Checking server 136.243.174.101:27216
+[DEBUG] Checking server 116.202.113.54:27015
+[DEBUG] Checking server 94.130.132.169:27079
+[DEBUG] Checking server 116.202.113.50:27115
+[DEBUG] Checking server 213.133.103.125:27285
+[DEBUG] Checking server 89.179.240.119:27065
+[DEBUG] Checking server 70.34.244.247:27915
+[DEBUG] Checking server 176.37.54.236:27015
+[DEBUG] Checking server 220.130.108.125:27012
+[DEBUG] Checking server 181.192.79.104:27024
+[DEBUG] Checking server 121.99.240.213:27018
+[DEBUG] Checking server 190.103.221.86:27015
+Failed to query server at 190.103.221.86:27015: timed out
+[DEBUG] Checking server 51.161.212.218:27020
+[DEBUG] Checking server 13.236.204.222:27015
+[DEBUG] Checking server 202.169.104.136:43216
+[INFO] Found 380 distinct players from TFC servers.
+[INFO] Fetching on-chain name->(index, pda, reward_address).
+[DEBUG] Found 81 PlayerPda records on-chain.
+[INFO] matched_names => ['CofCTV', 'LoafeR', 'Gordon', 'Peter', 'BenDover', 'exige', 'Player100', 'Carb', 'LiLPimP', 'Glenn', 'MrNuggs', 'TFPugsEASTNYCHLTV', '-iLluSiON--Delusion-', 'eecjr0914', 'astrocreep2000', 'TheirateGamer', 'Nitr0s0x', 'TVS', 'SheDevil', 'HOPbird', 'chinodechina', 'Tex', 'Clay', 'Grizz', 'Mindwrp105', 'Mankind', 'drjeckyl', 'redux', 'Kyle', 'JuliuS_CaesaR', 'Iban3zchic222', 'Pam', 'Grandreaper', 'ElCabong', 'LMFyangjj', 'TFPugsWESTHLTV', 'MrOpossum', 'frankensinatra', 'Ernie', 'What', 'Jimbo', 'Richard', '___ThaChef-', '1999-TV', '-GY-MatsuTakako', 'OST-CyKoDad', 'MrPhalanx', 'CheatsRGay', 'UPSET', '-SGL-Echo-01', '-GY-2099AC', 'Cheryl', 'dub', 'HughGRection', 'TFPugsSOUTHEASTHLTV', 'HLTV-discordgggTxXDuGGTg', 'HeadShot', 'Undertaker', 'MrFloorPie', 'Caleb', 'BoBtheServercom27020', 'Viper', 'Martin', 'Commando', 'Haunt', 'Alfonzo', 'Pikachu', 'SWAT-Kats', 'BlinkyBill', 'SrSpyPie']
+[DEBUG] validator_pda AeyppVe3FdjDpiF9HtBTiDdWXCfZ6qjyfGDNcTSL3zFF already initialized.
+[DEBUG] Submitting chunk => [8, 47, 9]
+[INFO] submit_minting_list TX => 2w3mHHjxsAvLzcGqjot9o2pBmNoGbeux8vfnhkXWUG7gErWQfpGHLfuio2zkgF1BEbmKPvgnqjdFBV7KwpAJnKzb
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[8, 47, 9]
+    Program log: Approved => player=CofCTV by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player CofCTV => only 1 partial => skip finalize
+    Program log: Approved => player=LoafeR by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player LoafeR => only 1 partial => skip finalize
+    Program log: Approved => player=Gordon by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Gordon => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 72016 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [54, 35, 61]
+[INFO] submit_minting_list TX => 4sLYpqc3JMBBhTGatmuCZc2HqYKtg5kwazpBGiMopyKrhd8cCNrQS3Ayebkyu3z2NaKe6gFSPBarbGmCTNJQtYL
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[54, 35, 61]
+    Program log: Approved => player=Peter by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Peter => only 1 partial => skip finalize
+    Program log: Approved => player=BenDover by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player BenDover => only 1 partial => skip finalize
+    Program log: Approved => player=exige by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player exige => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71795 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [42, 59, 32]
+[INFO] submit_minting_list TX => 5pmeJZqjwY5hCEBCdWDGiNYtqhhdp98UYi3R17Gc74N4Ds9TsUZkZ88HMxvZxjcwQp779EKFVzWdBeoXqDVvUMms
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[42, 59, 32]
+    Program log: Approved => player=Player100 by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Player100 => only 1 partial => skip finalize
+    Program log: Approved => player=Carb by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Carb => only 1 partial => skip finalize
+    Program log: Approved => player=LiLPimP by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player LiLPimP => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71935 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [57, 65, 27]
+[INFO] submit_minting_list TX => a4hx8aaKznCZUHjKaipkzt3sSsiNNLKXUgGXBvUHENsGVqqgFxQPnDmjSP8WuuzT65BfNzn7w5SnHkxbnQZcPpp
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[57, 65, 27]
+    Program log: Approved => player=Glenn by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Glenn => only 1 partial => skip finalize
+    Program log: Approved => player=MrNuggs by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player MrNuggs => only 1 partial => skip finalize
+    Program log: Approved => player=TFPugsEASTNYCHLTV by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player TFPugsEASTNYCHLTV => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 72305 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [5, 30, 10]
+[INFO] submit_minting_list TX => aVji5q3miws7ovdkxgvbsBjubMEFpQqTYZFu6tdXQbv6HxSJM6AkWrCEiuWUWsCsC8yzVCQRyuLSMuZhptccoKr
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[5, 30, 10]
+    Program log: Approved => player=-iLluSiON--Delusion- by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player -iLluSiON--Delusion- => only 1 partial => skip finalize
+    Program log: Approved => player=eecjr0914 by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player eecjr0914 => only 1 partial => skip finalize
+    Program log: Approved => player=astrocreep2000 by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player astrocreep2000 => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 72311 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [77, 55, 74]
+[INFO] submit_minting_list TX => 4NXzkWppoptfM1pXyWG3GptxfupGM6NqsZp9YGM1k8LnCPuaJKJ37netsBsLDpy2RWeUC1WQzdjX5yLPSgPQDMkj
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[77, 55, 74]
+    Program log: Approved => player=TheirateGamer by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player TheirateGamer => only 1 partial => skip finalize
+    Program log: Approved => player=Nitr0s0x by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Nitr0s0x => only 1 partial => skip finalize
+    Program log: Approved => player=TVS by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player TVS => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71807 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [73, 69, 46]
+[INFO] submit_minting_list TX => 2ZbZA3asWoJMDJzyAhG8a9qH8YfaHqByocnqXMzuf49oNWKCq1MGvBBM6vtumctKq83T9ZyRxMBDAYsAMJzGF9gQ
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[73, 69, 46]
+    Program log: Approved => player=SheDevil by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player SheDevil => only 1 partial => skip finalize
+    Program log: Approved => player=HOPbird by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player HOPbird => only 1 partial => skip finalize
+    Program log: Approved => player=chinodechina by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player chinodechina => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 72025 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [67, 4, 71]
+[INFO] submit_minting_list TX => 1igEDGjb3GhYePhGZqkLLp7u3QrB8H8NRMzrkFZFQc5uCVBwGyiveSFLEKVx5Mf6SZ6enW53UJbtzEiousvociK
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[67, 4, 71]
+    Program log: Approved => player=Tex by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Tex => only 1 partial => skip finalize
+    Program log: Approved => player=Clay by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Clay => only 1 partial => skip finalize
+    Program log: Approved => player=Grizz by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Grizz => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71736 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [51, 20, 78]
+[INFO] submit_minting_list TX => rHgG5YUC6rQT48bQB6UqQ74ELmA8DT9XNFioE7L3qtkAZwRMRar82i9kyGBSBWJi2BDTyvAxaTgVivsHEDATkME
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[51, 20, 78]
+    Program log: Approved => player=Mindwrp105 by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Mindwrp105 => only 1 partial => skip finalize
+    Program log: Approved => player=Mankind by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Mankind => only 1 partial => skip finalize
+    Program log: Approved => player=drjeckyl by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player drjeckyl => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71873 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [2, 50, 40]
+[INFO] submit_minting_list TX => CC7N68aULdvP7vrCNxpevRA3MoEY44hQqrBaSjpk3XPfeD4TjMSZVyf4aWPufStnRhKSz9eFbLSChBd3xRf6UV3
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[2, 50, 40]
+    Program log: Approved => player=redux by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player redux => only 1 partial => skip finalize
+    Program log: Approved => player=Kyle by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Kyle => only 1 partial => skip finalize
+    Program log: Approved => player=JuliuS_CaesaR by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player JuliuS_CaesaR => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71968 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [34, 26, 25]
+[INFO] submit_minting_list TX => 3kRhefo4H6GhGdKQ1RrFn8McnT9oVWpaBTaTHeLiznXFbh3Z3Z3LJ3ZY27vwvReM9hHGYU7oK6vtF8B7iXsj63KC
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[34, 26, 25]
+    Program log: Approved => player=Iban3zchic222 by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Iban3zchic222 => only 1 partial => skip finalize
+    Program log: Approved => player=Pam by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Pam => only 1 partial => skip finalize
+    Program log: Approved => player=Grandreaper by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Grandreaper => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71973 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [37, 58, 31]
+[INFO] submit_minting_list TX => 3XgtaBX5rvSasX15gEoLxbcfriz4fUcM2FWnbZq3PbQoBxxNtYsCYTj6pcW1pjChE1kNEDnNKtt3K5YkRAzRZmsg
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[37, 58, 31]
+    Program log: Approved => player=ElCabong by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player ElCabong => only 1 partial => skip finalize
+    Program log: Approved => player=LMFyangjj by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player LMFyangjj => only 1 partial => skip finalize
+    Program log: Approved => player=TFPugsWESTHLTV by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player TFPugsWESTHLTV => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71865 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [18, 17, 70]
+[INFO] submit_minting_list TX => 2s3U7ZY26ufuEoed3HewKHJi5uzSbek48erueTSfNaVr7qBLHMDFWTzk9fpH7eg25kTi5Y9npWk5kJ5AZzFU28Q4
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[18, 17, 70]
+    Program log: Approved => player=MrOpossum by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player MrOpossum => only 1 partial => skip finalize
+    Program log: Approved => player=frankensinatra by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player frankensinatra => only 1 partial => skip finalize
+    Program log: Approved => player=Ernie by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Ernie => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 72079 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [48, 38, 52]
+[INFO] submit_minting_list TX => 4iQo6R6fLzHLAX4tEmDCNMQ5KHfnikzCb2cBHK8CeQs3E5PvB5b6pWWjc934M2yutsZkDUYZsdXy4TwkVuX5zR4D
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[48, 38, 52]
+    Program log: Approved => player=What by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player What => only 1 partial => skip finalize
+    Program log: Approved => player=Jimbo by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Jimbo => only 1 partial => skip finalize
+    Program log: Approved => player=Richard by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Richard => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71878 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [62, 21, 75]
+[INFO] submit_minting_list TX => 67rWTMttMLzx3hWfb867qY3zfq6RXByDk7qboVrMa7PVKd3qSSSYVTjM5EJTYcoVnxMAfxNS59svK6uvoRysheid
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[62, 21, 75]
+    Program log: Approved => player=___ThaChef- by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player ___ThaChef- => only 1 partial => skip finalize
+    Program log: Approved => player=1999-TV by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player 1999-TV => only 1 partial => skip finalize
+    Program log: Approved => player=-GY-MatsuTakako by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player -GY-MatsuTakako => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 72184 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [14, 44, 43]
+[INFO] submit_minting_list TX => 5ecXwV4RkGjy3yAjZCHMrA7RpRsUShFHFqPGk7zNrJ9vsVfQ42MWDxEFKfGQKWpYkKyjZxs475h6XjTYqkdEgrcB
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[14, 44, 43]
+    Program log: Approved => player=OST-CyKoDad by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player OST-CyKoDad => only 1 partial => skip finalize
+    Program log: Approved => player=MrPhalanx by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player MrPhalanx => only 1 partial => skip finalize
+    Program log: Approved => player=CheatsRGay by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player CheatsRGay => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71870 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [12, 63, 16]
+[INFO] submit_minting_list TX => 4w7ZAcUBdUbx7wsfpEjzUi5SvoZi5JCV8v4NWRsVDwye4gPHo8UPgJqbkYjcNazHSEs3W5TkgYPdC419Cyo1HysN
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[12, 63, 16]
+    Program log: Approved => player=UPSET by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player UPSET => only 1 partial => skip finalize
+    Program log: Approved => player=-SGL-Echo-01 by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player -SGL-Echo-01 => only 1 partial => skip finalize
+    Program log: Approved => player=-GY-2099AC by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player -GY-2099AC => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71936 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [60, 66, 28]
+[INFO] submit_minting_list TX => 5RmM3eAVw7RDkin8xAEHosLPjNpUxoJSHrPD57ukG4u9S1rNp7amDMr7Sk8JNtHk2ceroxMF9KizmGCUApUZNc4C
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[60, 66, 28]
+    Program log: Approved => player=Cheryl by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Cheryl => only 1 partial => skip finalize
+    Program log: Approved => player=dub by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player dub => only 1 partial => skip finalize
+    Program log: Approved => player=HughGRection by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player HughGRection => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71934 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [13, 23, 56]
+[INFO] submit_minting_list TX => 2aJCNBetxyUdujVaCoRq3g3YrkJjNMr83PUGwB2nHMjQ8VLbrEioJNor6RJQm8SRceDckQmTqdscxAUgNE3mxYs1
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[13, 23, 56]
+    Program log: Approved => player=TFPugsSOUTHEASTHLTV by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player TFPugsSOUTHEASTHLTV => only 1 partial => skip finalize
+    Program log: Approved => player=HLTV-discordgggTxXDuGGTg by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player HLTV-discordgggTxXDuGGTg => only 1 partial => skip finalize
+    Program log: Approved => player=HeadShot by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player HeadShot => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 72270 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [6, 79, 24]
+[INFO] submit_minting_list TX => BDxWsUpWb5fS9vuUWqWXHxxoXhXasKJjFZ5NFxxNz5Jsi6U6ALiWUYDMXUutokK5fyMnH1qmwvPTfsaN9fZjLeb
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[6, 79, 24]
+    Program log: Approved => player=Undertaker by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Undertaker => only 1 partial => skip finalize
+    Program log: Approved => player=MrFloorPie by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player MrFloorPie => only 1 partial => skip finalize
+    Program log: Approved => player=Caleb by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Caleb => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71892 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [36, 68, 49]
+[INFO] submit_minting_list TX => 3sieu1Rf95P1ozJLe5ms1RvYEWhZiLondcueU7H3R1QSWTgXyRBecT1pqetmVAJQfL5ebPnBrUSm6yHbiHXWtxB1
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[36, 68, 49]
+    Program log: Approved => player=BoBtheServercom27020 by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player BoBtheServercom27020 => only 1 partial => skip finalize
+    Program log: Approved => player=Viper by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Viper => only 1 partial => skip finalize
+    Program log: Approved => player=Martin by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Martin => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 72179 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [7, 72, 29]
+[INFO] submit_minting_list TX => 2QxS7osnWR7qs4KvjKg8M2cNaiSe8UyPZFbZbhju4sd7eoXXLbDr4z4LL9nbwSqLD1UKmwFjtGiffecSC7mSwPR1
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[7, 72, 29]
+    Program log: Approved => player=Commando by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Commando => only 1 partial => skip finalize
+    Program log: Approved => player=Haunt by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Haunt => only 1 partial => skip finalize
+    Program log: Approved => player=Alfonzo by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Alfonzo => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71925 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [64, 3, 45]
+[INFO] submit_minting_list TX => 4X4dgMCcSx6pfqz7Ef5auvp72Gcy42ugQCWYKS43EtLg3PoRAoKcrcu9PBFTiahzHk1PmbinV6JBVVKHTF93W6Pt
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[64, 3, 45]
+    Program log: Approved => player=Pikachu by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player Pikachu => only 1 partial => skip finalize
+    Program log: Approved => player=SWAT-Kats by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player SWAT-Kats => only 1 partial => skip finalize
+    Program log: Approved => player=BlinkyBill by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player BlinkyBill => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 71958 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[DEBUG] Submitting chunk => [41]
+[INFO] submit_minting_list TX => 37Ee6aQTcyyrjxQwr7BtxUsQzDmx9h5Gav9AWQUHENiFGcRujC8y8U8jr4mf43yBGC76stduQpLciVCWLXzBhqN8
+[DEBUG] Logs from this chunk's TX:
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut invoke [1]
+    Program log: Instruction: SubmitMintingList
+    Program log: submit_minting_list => player_ids=[41]
+    Program log: Approved => player=SrSpyPie by validator=42PegsfauV83hTeGKyn3N25tdntt6kQnm4Ab5FRZeHiF => partial_validators.len=1
+    Program log: Player SrSpyPie => only 1 partial => skip finalize
+    Program log: submit_minting_list => minted for 0 players
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut consumed 40755 of 200000 compute units
+    Program HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut success
+[INFO] Solana RPC client closed.
+2025-01-19 17:10:56 - 6_val_player_scrape_and_post_dbg.py executed successfully.
+2025-01-19 17:10:56 - Executing 7_val_player_scrape_and_post_dbg2.py...
+Setting up provider and loading program IDL...
+Program loaded successfully.
+[DEBUG] using game_pda=3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe
+[DEBUG] using dapp_pda=pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD
+[DEBUG] DApp Account Data:
+         owner                = 6GJQt9Rbz1BJBmKDPq9KgR2ThEtFtp47dJ9EnZ7Qdnhq
+         global_player_count  = 81
+         mint_pubkey         = DVkPNrxdgGxF5fqvnKgXj7DWcRSdimLChXKwAKYk7fiJ
+[INFO] Querying TFC master server for a list of servers.
+Request timed out
+[DEBUG] Found 0 unique TFC servers.
+[INFO] Found 0 distinct players from TFC servers.
+[INFO] Fetching on-chain name->(index, pda, reward_address).
+[DEBUG] Found 81 PlayerPda records on-chain.
+[INFO] matched_names => []
+[WARN] No matched players found. Exiting.
+[INFO] Solana RPC client closed.
+2025-01-19 17:11:02 - 7_val_player_scrape_and_post_dbg2.py executed successfully.

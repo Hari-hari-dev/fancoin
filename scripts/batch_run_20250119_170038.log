@@ -1,0 +1,21 @@
+2025-01-19 17:00:38 - Batch execution of Solana Python scripts started.
+2025-01-19 17:00:38 - Executing 1_val_pay_vals_from_localwallet.py...
+Sent 1 SOL to ./val1-keypair.json. Transaction Signature: SendTransactionResp(Signature(VbVRBLdqeu2Qp8iuUSkkLdUj7zX5UWu4GpHNJnwvAa2pNAqSDhnZsFFmEJyxLk2sWqZsc4iN5J6x5GsSiSz13fz))
+Sent 1 SOL to ./val2-keypair.json. Transaction Signature: SendTransactionResp(Signature(5ZvGd1PXDmExEKXKmkJgy6TbzRkKmrXJr2eq3rzCiQ1bZiAiUPV8NgyDhTVUtPRtDxgFWFtYePSSJAgDCKGsAi2f))
+Sent 1 SOL to ./val3-keypair.json. Transaction Signature: SendTransactionResp(Signature(5mxEpek7Dcr87meFh3yTRhPxPNiXH46wF8nJdnveZ3dLQ2WbTpvRPM8za7QmgtxphvZMHsghLr6oBPNBFm79oKJw))
+Sent 1 SOL to ./val4-keypair.json. Transaction Signature: SendTransactionResp(Signature(3c8fUTwZWkL6y9Xci8xkimgAsVRixJzgqAHAWvMEZwR9XJnek51Lw263i8CAVUyk7d94p5dmZxzsegg7tb8QUpVC))
+Sent 1 SOL to ./val5-keypair.json. Transaction Signature: SendTransactionResp(Signature(3ZdK29KPkAGPa9h5YChLRzWsqGmWKevoeZqj9LkYRSbbGNVar4pGdTv89HfHua46Ag2WdPHum3pkaXQ8Sdk73a6x))
+Sent 1 SOL to ./val6-keypair.json. Transaction Signature: SendTransactionResp(Signature(44QoezcYmqFgvUe9rMvsonocmXmXu25PGXbvetwtwh8ernSEr2WU4Vd9HcWPStjJaHeWJ3vxnQjCw5vuvpfFVT1b))
+2025-01-19 17:00:40 - 1_val_pay_vals_from_localwallet.py executed successfully.
+2025-01-19 17:00:40 - Executing 2_scraper2.py...
+Querying master server for TFC servers...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/2_scraper2.py", line 173, in <module>
+    main()
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/2_scraper2.py", line 134, in main
+    tfc_servers = list(query_master_server(region, app_id))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/2_scraper2.py", line 21, in query_master_server
+    response_data, _ = sock.recvfrom(4096)
+                       ^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

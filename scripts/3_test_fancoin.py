@@ -3,10 +3,12 @@ from pathlib import Path
 from enum import IntEnum
 import traceback
 import json
-
-# For specifying extra read-only/writable accounts
-from anchorpy.program.namespace.instruction import AccountMeta
+import os
+# anchorpy
 from anchorpy import Program, Provider, Wallet, Idl, Context
+from anchorpy.program.namespace.instruction import AccountMeta
+
+# solana / solders
 from solders.keypair import Keypair
 from solders.pubkey import Pubkey
 from solders.system_program import ID as SYS_PROGRAM_ID
@@ -14,12 +16,26 @@ from solana.rpc.async_api import AsyncClient
 from solana.rpc.commitment import Confirmed
 from solana.rpc.core import RPCException
 
+# Constants
+SPL_TOKEN_PROGRAM_ID = Pubkey.from_string("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA")
+ASSOCIATED_TOKEN_PROGRAM_ID = Pubkey.from_string("ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL")
 
 class GameStatus(IntEnum):
     Probationary = 0
     Whitelisted = 1
     Blacklisted = 2
 
+def find_associated_token_address(owner: Pubkey, mint: Pubkey) -> Pubkey:
+    """
+    Derive the Associated Token Account (ATA) for a given owner and mint.
+    """
+    seeds = [
+        bytes(owner),                     # Convert Pubkey to bytes
+        bytes(SPL_TOKEN_PROGRAM_ID),      # Convert SPL Token Program ID to bytes
+        bytes(mint),                      # Convert Mint Pubkey to bytes
+    ]
+    ata, _ = Pubkey.find_program_address(seeds, ASSOCIATED_TOKEN_PROGRAM_ID)
+    return ata
 
 async def initialize_dapp(program: Program, client: AsyncClient) -> Pubkey:
     """Initialize the DApp, returning the DApp PDA."""
@@ -51,6 +67,48 @@ async def initialize_dapp(program: Program, client: AsyncClient) -> Pubkey:
 
     return dapp_pda
 
+async def initialize_mint(program: Program, client: AsyncClient, dapp_pda: Pubkey) -> (Pubkey, Pubkey):
+    """
+    Initialize the Mint for the DApp, returning (mint_authority_pda, mint_for_dapp_pda).
+    Sets dapp.mint_pubkey on-chain.
+    """
+    print("\nInitializing Mint for DApp...")
+
+    # seeds for each PDA
+    mint_authority_pda, _ = Pubkey.find_program_address([b"mint_authority"], program.program_id)
+    mint_for_dapp_pda, _  = Pubkey.find_program_address([b"my_spl_mint"], program.program_id)
+
+    # Check if they might already exist
+    mint_auth_acct = await client.get_account_info(mint_authority_pda, commitment=Confirmed)
+    mint_acct      = await client.get_account_info(mint_for_dapp_pda, commitment=Confirmed)
+    if mint_auth_acct.value is not None and mint_acct.value is not None:
+        print("Mint + MintAuthority accounts already exist; skipping.")
+        return (mint_authority_pda, mint_for_dapp_pda)
+
+    try:
+        token_pid = SPL_TOKEN_PROGRAM_ID
+
+        tx = await program.rpc["initialize_mint"](
+            ctx=Context(
+                accounts={
+                    "dapp":            dapp_pda,
+                    "mint_authority":  mint_authority_pda,
+                    "mint_for_dapp":   mint_for_dapp_pda,
+                    "payer":           program.provider.wallet.public_key,
+                    "token_program":   token_pid,
+                    "system_program":  SYS_PROGRAM_ID,
+                    "rent": Pubkey.from_string("SysvarRent111111111111111111111111111111111"),
+                },
+                signers=[program.provider.wallet.payer],
+            )
+        )
+        print(f"InitializeMint => Transaction Signature: {tx}")
+    except RPCException as e:
+        print(f"Error initializing the mint: {e}")
+        traceback.print_exc()
+        raise
+
+    return (mint_authority_pda, mint_for_dapp_pda)
 
 async def initialize_game(
     program: Program, client: AsyncClient, game_number: int, description: str, dapp_pda: Pubkey
@@ -88,7 +146,6 @@ async def initialize_game(
 
     return game_pda
 
-
 async def register_validator_pda(
     program: Program,
     client: AsyncClient,
@@ -96,36 +153,22 @@ async def register_validator_pda(
     game_number: int,
     validator_kp: Keypair
 ) -> Pubkey:
-    """
-    Registers a new validator for the given Game by creating validator_pda from:
-    seeds = [b"validator", game_number, game.validator_count].
-    Then calls the on-chain instruction `register_validator_pda`.
-    Returns the derived validator_pda so we can use it later.
-    """
-
-    print("\nRegistering a new Validator PDA...")
-
-    # 1) Fetch the Game account to get the 'validator_count'
-    game_data = await program.account["Game"].fetch(game_pda)
-    validator_count = game_data.validator_count
-    print(f"[DEBUG] game.validator_count = {validator_count}")
-
-    # 2) Derive the new validator_pda from [b"validator", game_number_bytes, validator_count_bytes]
+    """Create a new validator PDA for the given user-based seeds."""
+    print("\nRegistering a new Validator PDA (user-based seeds)...")
     game_number_bytes = game_number.to_bytes(4, "little")
-    val_count_bytes   = validator_count.to_bytes(4, "little")
-    seeds = [b"validator", game_number_bytes, val_count_bytes]
-    (validator_pda, validator_pda_bump) = Pubkey.find_program_address(seeds, program.program_id)
+    validator_key_bytes = bytes(validator_kp.pubkey())
+    seeds = [b"validator", game_number_bytes, validator_key_bytes]
+    validator_pda, validator_pda_bump = Pubkey.find_program_address(seeds, program.program_id)
     print(f"[DEBUG] Derived validator_pda = {validator_pda}, Bump = {validator_pda_bump}")
 
-    # 3) Invoke `register_validator_pda`
     try:
         tx_sig = await program.rpc["register_validator_pda"](
             game_number,
             ctx=Context(
                 accounts={
-                    "game":          game_pda,
+                    "game": game_pda,
                     "validator_pda": validator_pda,
-                    "user":          validator_kp.pubkey(),   # The 'user' is the validator
+                    "user": validator_kp.pubkey(),
                     "system_program": SYS_PROGRAM_ID,
                 },
                 signers=[validator_kp],
@@ -137,8 +180,7 @@ async def register_validator_pda(
         traceback.print_exc()
         raise
 
-    return validator_pda  # <-- Return the derived validator PDA
-
+    return validator_pda
 
 async def punch_in(program: Program, game_pda: Pubkey, game_number: int, validator_kp: Keypair):
     """Punch in as validator for the given game."""
@@ -161,103 +203,121 @@ async def punch_in(program: Program, game_pda: Pubkey, game_number: int, validat
         traceback.print_exc()
         raise
 
-
 async def register_player_pda(
     program: Program,
     client: AsyncClient,
     dapp_pda: Pubkey,
     name: str,
-    authority_kp: Keypair,
-    reward_address: Pubkey,
+    fancy_mint: Pubkey,  # Add this parameter
 ):
-    """
-    Register a brand-new PlayerPda using seeds = [b"player_pda", dapp.global_player_count].
-    """
+    """Register a PlayerPda using the dapp.global_player_count approach."""
     print("\nRegistering a new Player PDA...")
 
     # 1) Fetch the DApp to get global_player_count
     dapp_data = await program.account["DApp"].fetch(dapp_pda)
-    current_count = dapp_data.global_player_count  # an integer
+    current_count = dapp_data.global_player_count
     print(f"[DEBUG] dapp.global_player_count = {current_count}")
 
-    # 2) Derive the player_pda using seeds = [b"player_pda", current_count.to_le_bytes()]
-    count_bytes = current_count.to_bytes(4, "little")
-    seeds = [b"player_pda", count_bytes]
-    (player_pda, player_pda_bump) = Pubkey.find_program_address(seeds, program.program_id)
-    print(f"[DEBUG] Derived player_pda = {player_pda}, Bump = {player_pda_bump}")
+    # 2) Derive the new player_pda
+    player_pda, p_bump = Pubkey.find_program_address(
+        [b"player_pda", current_count.to_bytes(4, "little")],
+        program.program_id
+    )
+    print(f"[DEBUG] Derived player_pda = {player_pda}, Bump = {p_bump}")
 
-    # 3) Call register_player_pda
+    # 3) Derive the user's ATA using the custom function
+    user_pubkey = program.provider.wallet.public_key
+    user_ata = find_associated_token_address(user_pubkey, fancy_mint)
+    print(f"[DEBUG] Derived user_ata = {user_ata}")
+
     try:
         tx_sig = await program.rpc["register_player_pda"](
             name,
-            authority_kp.pubkey(),
-            reward_address,
             ctx=Context(
                 accounts={
                     "dapp": dapp_pda,
+                    "fancy_mint": fancy_mint,               # Pass fancy_mint
                     "player_pda": player_pda,
-                    "user": program.provider.wallet.public_key,
+                    "user": user_pubkey,
+                    "user_ata": user_ata,                   # Pass user_ata
+                    "token_program": SPL_TOKEN_PROGRAM_ID,
+                    "associated_token_program": ASSOCIATED_TOKEN_PROGRAM_ID,
                     "system_program": SYS_PROGRAM_ID,
+                    "rent": Pubkey.from_string("SysvarRent111111111111111111111111111111111"),
                 },
                 signers=[program.provider.wallet.payer],
             )
         )
-        print(f"PlayerPda '{name}' created. Tx Sig: {tx_sig}")
-
+        print(f"PlayerPda '{name}' created => {player_pda}. Tx Sig: {tx_sig}")
     except RPCException as e:
         print(f"Error registering PlayerPda '{name}': {e}")
         traceback.print_exc()
         raise
 
-
 async def submit_minting_list(
     program: Program,
+    dapp_pda: Pubkey,
     game_pda: Pubkey,
     game_number: int,
-    player_names: list[str],
     validator_kp: Keypair,
     validator_pda: Pubkey,
+    fancy_mint: Pubkey,
+    mint_auth_pda: Pubkey,
+    leftover_player_pda: Pubkey,
+    leftover_player_ata: Pubkey,
 ):
-    """Submit a minting list, calling your 'submit_minting_list' instruction."""
-    print("\nSubmitting Minting List...")
+    """
+    Example usage: single leftover (PlayerPda, ATA) => one "player_id".
+    The on-chain code expects leftover=2 per player => [PlayerPda, ATA].
+    
+    NOTE: Mark the PlayerPda leftover as `is_writable=True` so we can update it on-chain.
+    """
+    print("\nSubmitting Minting List => leftover [PlayerPda, ATA]...")
 
-    # We already know the correct validator_pda, so we can pass it in `remaining_accounts`.
-    # The smart contract will see if val_pda.address == validator_signer.key().
+    # leftover => 2 per player
+    leftover_accounts = [
+        # IMPORTANT: Mark the PlayerPda as is_writable=True
+        AccountMeta(pubkey=leftover_player_pda, is_signer=False, is_writable=True),
+        # The ATA also needs to be writable if we do a `mint_to` on it
+        AccountMeta(pubkey=leftover_player_ata, is_signer=False, is_writable=True),
+    ]
+
+    # We'll pass a single "player_id"
+    player_ids = [999]  # example
+
     try:
-        tx_sig = await program.rpc["submit_minting_list_new_approach"](
+        token_pid = SPL_TOKEN_PROGRAM_ID
+
+        tx_sig = await program.rpc["submit_minting_list"](
             game_number,
-            player_names,
+            player_ids,
             ctx=Context(
                 accounts={
-                    "game": game_pda,
-                    "validator": validator_kp.pubkey(),
+                    "game":           game_pda,
+                    "validator_pda":  validator_pda,
+                    "validator":      validator_kp.pubkey(),
+                    "fancy_mint":     fancy_mint,
+                    "dapp":           dapp_pda,
+                    "mint_authority": mint_auth_pda,
+                    "token_program":  token_pid,
                 },
                 signers=[validator_kp],
-                remaining_accounts=[
-                    # We pass this as read-only since the program expects to load it
-                    AccountMeta(
-                        pubkey=validator_pda,
-                        is_signer=False,
-                        is_writable=False,
-                    ),
-                ],
+                remaining_accounts=leftover_accounts,
             ),
         )
-        print(f"Minting list submitted successfully. Transaction Signature: {tx_sig}")
+        print(f"Minting list submitted. Tx: {tx_sig}")
     except RPCException as e:
-        print(f"Error submitting Minting List: {e}")
+        print(f"Error in submit_minting_list: {e}")
         traceback.print_exc()
-        raise
-
 
 async def main():
     try:
-        # 1) Setup the provider + load IDL
         print("Setting up provider and loading program...")
         client = AsyncClient("http://localhost:8899", commitment=Confirmed)
         wallet = Wallet.local()
         provider = Provider(client, wallet)
 
+        # Load IDL
         idl_path = Path("../target/idl/fancoin.json")
         if not idl_path.exists():
             print(f"IDL file not found at {idl_path.resolve()}")
@@ -271,52 +331,73 @@ async def main():
         program = Program(idl, program_id, provider)
         print("Program loaded successfully.")
 
-        # 2) Initialize the DApp
+        # 1) Initialize the Dapp
         dapp_pda = await initialize_dapp(program, client)
+        file_name = "output.txt"
+        # 2) Initialize the Mint
+        (mint_auth_pda, mint_for_dapp_pda) = await initialize_mint(program, client, dapp_pda)
+        with open(file_name, "w") as file:
+            file.write(str(mint_for_dapp_pda))  # Convert the variable to a string if necessary
 
+        print(f"The variable has been written to {file_name}")
         # 3) Initialize a Game
         game_number = 1
         description = "Minimal Game Example"
         game_pda = await initialize_game(program, client, game_number, description, dapp_pda)
 
-        # Load a local keypair to be the 'validator'.
+        # 4) Register a validator
         def load_keypair(path: str) -> Keypair:
             with Path(path).open() as f:
                 secret = json.load(f)
             return Keypair.from_bytes(bytes(secret[0:64]))
 
-        # 4) Register the validator => get the `validator_pda`
         validator_kp = load_keypair("./val1-keypair.json")
         validator_pda = await register_validator_pda(program, client, game_pda, game_number, validator_kp)
 
         # 5) Punch in as validator
         await punch_in(program, game_pda, game_number, validator_kp)
 
-        # 6) Register a new Player (by creating a PlayerPda).
-        player_kp = load_keypair("./player-keypair.json")  # This is the player's "authority"
-        reward_address = player_kp.pubkey()
+        # 6) Register a new Player
+        player_kp = load_keypair("./player-keypair.json")
+        # No need to specify reward_address; it will be set to user_ata
         await register_player_pda(
-            program,
-            client,
-            dapp_pda,
+            program, client, dapp_pda,
             name="Alice",
-            authority_kp=player_kp,
-            reward_address=reward_address
+            fancy_mint=mint_for_dapp_pda  # Pass the mint pubkey here
         )
 
-        # 7) Optionally, submit a Minting List. We'll pass the validator's keypair + validator_pda
-        player_names = ["Alice"]
-        await submit_minting_list(program, game_pda, game_number, player_names, validator_kp, validator_pda)
+        # 7) Suppose we create a dummy ATA for the "Alice" player:
+        dummy_player_ata = Pubkey.find_program_address([b"dummyATA"], program_id)[0]
+
+        # For simplicity, let's guess the new PlayerPda is index 0
+        alice_pda, _ = Pubkey.find_program_address(
+            [b"player_pda", (0).to_bytes(4, "little")],
+            program_id
+        )
+
+        # 8) Now submit a single player's leftover => [alice_pda, dummy_player_ata]
+        #   We must pass dapp_pda as well
+        await submit_minting_list(
+            program,
+            dapp_pda=dapp_pda,          # Pass in the known DApp
+            game_pda=game_pda,
+            game_number=game_number,
+            validator_kp=validator_kp,
+            validator_pda=validator_pda,
+            fancy_mint=mint_for_dapp_pda,
+            mint_auth_pda=mint_auth_pda,
+            leftover_player_pda=alice_pda,
+            leftover_player_ata=dummy_player_ata,
+        )
 
         print("\nAll tests completed successfully.")
 
     except Exception as e:
-        print(f"An unexpected error occurred during testing.\n{e}")
+        print(f"An unexpected error occurred.\n{e}")
         traceback.print_exc()
     finally:
         await client.close()
         print("Closed Solana RPC client.")
-
 
 if __name__ == "__main__":
     asyncio.run(main())
