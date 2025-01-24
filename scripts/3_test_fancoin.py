@@ -97,7 +97,7 @@ async def initialize_mint(program: Program, client: AsyncClient, dapp_pda: Pubke
                     "payer":           program.provider.wallet.public_key,
                     "token_program":   token_pid,
                     "system_program":  SYS_PROGRAM_ID,
-                    "rent": Pubkey.from_string("SysvarRent111111111111111111111111111111111"),
+                    "rent": Pubkey.from_string("SysvarRent111111111111111111111111111111111")
                 },
                 signers=[program.provider.wallet.payer],
             )
@@ -151,30 +151,46 @@ async def register_validator_pda(
     client: AsyncClient,
     game_pda: Pubkey,
     game_number: int,
-    validator_kp: Keypair
+    validator_kp: Keypair,
+    fancy_mint: Pubkey,           # Pass the mint pubkey
+    dapp_pda: Pubkey,             # Pass the DApp PDA
 ) -> Pubkey:
-    """Create a new validator PDA for the given user-based seeds."""
+    """Create a new validator + ATA for that validator on chain."""
     print("\nRegistering a new Validator PDA (user-based seeds)...")
-    game_number_bytes = game_number.to_bytes(4, "little")
-    validator_key_bytes = bytes(validator_kp.pubkey())
-    seeds = [b"validator", game_number_bytes, validator_key_bytes]
-    validator_pda, validator_pda_bump = Pubkey.find_program_address(seeds, program.program_id)
-    print(f"[DEBUG] Derived validator_pda = {validator_pda}, Bump = {validator_pda_bump}")
+    
+    # Derive the validator_pda
+    seeds_val = [b"validator", game_number.to_bytes(4, "little"), bytes(validator_kp.pubkey())]
+    validator_pda, _ = Pubkey.find_program_address(seeds_val, program.program_id)
+    print(f"[DEBUG] Derived validator_pda = {validator_pda}")
 
+    # Derive the validator's ATA
+    validator_ata_pubkey = find_associated_token_address(validator_kp.pubkey(), fancy_mint)
+    print(f"[DEBUG] Derived validator ATA: {validator_ata_pubkey}")
+
+    # Build AnchorPy Context with the derived ATA
+    ctx = Context(
+        accounts={
+            "game": game_pda,
+            "fancy_mint": fancy_mint,
+            "validator_pda": validator_pda,
+            "user": validator_kp.pubkey(),
+            "validator_ata": validator_ata_pubkey,  # Pass the ATA pubkey
+            "dapp": dapp_pda,
+            "token_program": SPL_TOKEN_PROGRAM_ID,
+            "associated_token_program": ASSOCIATED_TOKEN_PROGRAM_ID,
+            "system_program": SYS_PROGRAM_ID,
+            "rent": Pubkey.from_string("SysvarRent111111111111111111111111111111111")
+        },
+        signers=[validator_kp],
+    )
+
+    # Call the instruction
     try:
         tx_sig = await program.rpc["register_validator_pda"](
             game_number,
-            ctx=Context(
-                accounts={
-                    "game": game_pda,
-                    "validator_pda": validator_pda,
-                    "user": validator_kp.pubkey(),
-                    "system_program": SYS_PROGRAM_ID,
-                },
-                signers=[validator_kp],
-            )
+            ctx=ctx
         )
-        print(f"ValidatorPda registered. Tx Sig: {tx_sig}")
+        print(f"ValidatorPda registered => {validator_pda}. Tx Sig: {tx_sig}")
     except RPCException as e:
         print(f"Error registering Validator PDA: {e}")
         traceback.print_exc()
@@ -182,7 +198,7 @@ async def register_validator_pda(
 
     return validator_pda
 
-async def punch_in(program: Program, game_pda: Pubkey, game_number: int, validator_kp: Keypair):
+async def punch_in(program: Program, game_pda: Pubkey, game_number: int, validator_kp: Keypair, validator_pda: Pubkey):
     """Punch in as validator for the given game."""
     print("\nPunching In as Validator...")
     try:
@@ -191,6 +207,7 @@ async def punch_in(program: Program, game_pda: Pubkey, game_number: int, validat
             ctx=Context(
                 accounts={
                     "game": game_pda,
+                    "validator_pda": validator_pda,  # Added validator_pda
                     "validator": validator_kp.pubkey(),
                     "system_program": SYS_PROGRAM_ID,
                 },
@@ -283,7 +300,7 @@ async def submit_minting_list(
     ]
 
     # We'll pass a single "player_id"
-    player_ids = [999]  # example
+    player_ids = [1]  # example
 
     try:
         token_pid = SPL_TOKEN_PROGRAM_ID
@@ -309,6 +326,7 @@ async def submit_minting_list(
     except RPCException as e:
         print(f"Error in submit_minting_list: {e}")
         traceback.print_exc()
+
 
 async def main():
     try:
@@ -352,10 +370,18 @@ async def main():
             return Keypair.from_bytes(bytes(secret[0:64]))
 
         validator_kp = load_keypair("./val1-keypair.json")
-        validator_pda = await register_validator_pda(program, client, game_pda, game_number, validator_kp)
+        validator_pda = await register_validator_pda(
+            program=program,
+            client=client,
+            game_pda=game_pda,
+            game_number=game_number,
+            validator_kp=validator_kp,
+            fancy_mint=mint_for_dapp_pda,
+            dapp_pda=dapp_pda
+        )
 
         # 5) Punch in as validator
-        await punch_in(program, game_pda, game_number, validator_kp)
+        await punch_in(program, game_pda, game_number, validator_kp, validator_pda)  # Pass validator_pda
 
         # 6) Register a new Player
         player_kp = load_keypair("./player-keypair.json")
@@ -367,7 +393,7 @@ async def main():
         )
 
         # 7) Suppose we create a dummy ATA for the "Alice" player:
-        dummy_player_ata = Pubkey.find_program_address([b"dummyATA"], program_id)[0]
+        dummy_player_ata = find_associated_token_address(Pubkey.from_string("DummyPlayerPubkeyHere"), mint_for_dapp_pda)  # Replace with actual Pubkey
 
         # For simplicity, let's guess the new PlayerPda is index 0
         alice_pda, _ = Pubkey.find_program_address(

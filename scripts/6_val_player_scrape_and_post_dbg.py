@@ -105,67 +105,63 @@ async def fetch_player_pdas_map() -> dict:
             pass
 
     return name_map
-
+def derive_ata(owner: Pubkey, mint: Pubkey) -> Pubkey:
+    """Derive the associated token account (ATA) address for (owner,mint)."""
+    seeds = [
+        bytes(owner),
+        bytes(SPL_TOKEN_PROGRAM_ID),
+        bytes(mint),
+    ]
+    (ata, _) = Pubkey.find_program_address(seeds, ASSOCIATED_TOKEN_PROGRAM_ID)
+    return ata
 ###############################################################################
 # 4) submit_minting_list: advanced leftover approach
 ###############################################################################
-async def submit_minting_list_with_leftover(
-    game_number: int,
-    matched_names: list[str],
-    name_map: dict,
-):
-    """
-    This breaks the matched names into chunks of CHUNK_SIZE (16).
-    For each chunk, we:
-     1) Build numeric player_ids (u32),
-     2) Pass actual PlayerPda and reward_address (ATA),
-     3) Call `submit_minting_list`.
-    """
+async def submit_minting_list_with_leftover(game_number: int, matched_names: list[str], name_map: dict):
     validator_kp = load_validator_keypair()
     validator_pubkey = validator_kp.pubkey()
 
-    # Derive the validator_pda
+    # 1) validator_pda
     seeds_val = [b"validator", game_number.to_bytes(4, "little"), bytes(validator_pubkey)]
     (validator_pda, bump_val) = Pubkey.find_program_address(seeds_val, program.program_id)
 
-    # Fetch DApp's mint_pubkey
+    # 2) fetch the dapp to get fancy_mint
     dapp_data = await program.account["DApp"].fetch(dapp_pda)
     fancy_mint_pk = dapp_data.mint_pubkey
 
-    # Derive mint_authority
-    (mint_auth_pda, bump_mint_auth) = Pubkey.find_program_address([b"mint_authority"], program_id)
+    # 3) find the validator_ata
+    validator_ata = derive_ata(validator_pubkey, fancy_mint_pk)
 
-    # SysvarRent
-    rent_sysvar_pubkey = Pubkey.from_string("SysvarRent111111111111111111111111111111111")
-
-    # Initialize validator_pda if not already initialized
+    # 4) fetch or create the validator_pda by calling register_validator_pda if needed
     try:
         await program.account["ValidatorPda"].fetch(validator_pda)
         print(f"[DEBUG] validator_pda {validator_pda} already initialized.")
     except:
-        print(f"[INFO] validator_pda {validator_pda} not found. Initializing...")
+        print(f"[INFO] validator_pda {validator_pda} not found. Initializing (and creating ATA={validator_ata})...")
         ctx_init_val = Context(
             accounts={
-                "game": game_pda,
-                "validator_pda": validator_pda,
-                "validator": validator_pubkey,
-                "user": validator_kp,  # Ensure the validator keypair is a signer
-                "system_program": SYS_PROGRAM_ID,
+                "game":            game_pda,
+                "fancy_mint":      fancy_mint_pk,
+                "validator_pda":   validator_pda,
+                "user":            validator_pubkey,
+                "validator_ata":   validator_ata,
+                "dapp":            dapp_pda,
+                "token_program":   SPL_TOKEN_PROGRAM_ID,
+                "associated_token_program": ASSOCIATED_TOKEN_PROGRAM_ID,
+                "system_program":  SYS_PROGRAM_ID,
+                "rent":            Pubkey.from_string("SysvarRent111111111111111111111111111111111"),
             },
             signers=[validator_kp],
         )
-        # Invoke the register_validator_pda instruction
         try:
             tx_sig_init_val = await program.rpc["register_validator_pda"](
                 game_number,
                 ctx_init_val
             )
-            print(f"[INFO] Registered validator_pda. Tx Sig: {tx_sig_init_val}")
+            print(f"[INFO] Registered validator_pda + ATA. Tx Sig: {tx_sig_init_val}")
         except RPCException as e:
             print(f"[ERROR] Failed to register validator_pda: {e}")
-            traceback.print_exc()
-            return  # Exit the function as further steps depend on this
-
+            return
     # Iterate over matched names in chunks
     for start_idx in range(0, len(matched_names), CHUNK_SIZE):
         chunk = matched_names[start_idx : start_idx + CHUNK_SIZE]

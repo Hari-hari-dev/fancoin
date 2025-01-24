@@ -1,0 +1,10 @@
+2025-01-23 15:11:26 - Batch execution of Solana Python scripts started.
+2025-01-23 15:11:26 - Executing 1_val_pay_vals_from_localwallet.py...
+Sent 1 SOL to ./val1-keypair.json. Transaction Signature: SendTransactionResp(Signature(5eXCiZJbrMYwaski9V1AFUSR4SEWA4Nk6J6GKpHUKG1es4GGFQRmui8Fvs1oYWhKD3U6oa5HX4g1u7k1GTpkyVnN))
+Sent 1 SOL to ./val2-keypair.json. Transaction Signature: SendTransactionResp(Signature(3upiLJZysZjAajV6k8tLzpTXcjYJL9bNdP347oAt8wdTUfE5CNvFTYFSFAbvttFYatmshJuASnSUkrVsvQBD2XVL))
+Sent 1 SOL to ./val3-keypair.json. Transaction Signature: SendTransactionResp(Signature(36xbwQUqKzEV5khXDRHsZrTTTReRSeDFyjkMcmCq511qoEt9rSNF9vnrqaTGzBevkYmDwWye28kjEJwKRcAhaxQF))
+Sent 1 SOL to ./val4-keypair.json. Transaction Signature: SendTransactionResp(Signature(4coQzNvXSDAp2Qn2fcUBvLJ2xTV5ca5YrK8iAffdELr6HurU8s2qa7rjAZ5R3NFHkkknEWZ83rcvmvAFd4BkGVJt))
+Sent 1 SOL to ./val5-keypair.json. Transaction Signature: SendTransactionResp(Signature(3szy5kscE9jMhiWzS1azpERrj6MpQmiFUqbLsiDD3eMVdaf75PiuUtH82W7UgXt4EaWp5H7ZbdVJ4SEiXtkWapSj))
+Sent 1 SOL to ./val6-keypair.json. Transaction Signature: SendTransactionResp(Signature(XvZCgVZhQTqzg4VMzXuEQs9qYnrpywWHTXwNmQs8z5j31ZL4xZzUDhCH5MrNk2B4bpHKpUKTAQHiwNu56FNWsmm))
+2025-01-23 15:11:27 - 1_val_pay_vals_from_localwallet.py executed successfully.
+2025-01-23 15:11:27 - Executing 2_scraper2.py...
