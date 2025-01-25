@@ -1,0 +1,576 @@
+2025-01-25 00:02:46 - Batch execution of Solana Python scripts started.
+2025-01-25 00:02:46 - Executing 1_val_pay_vals_from_localwallet.py...
+Sent 1 SOL to ./val1-keypair.json. Transaction Signature: SendTransactionResp(Signature(3aMpVzTdpjU5Px4K65DhX3CKQpEaiJb7q9YSL2z4s4mDLgiR5iHuq4n46TUSZR2i61b8YAgDPn5fjCsmuim6Wxjs))
+Sent 1 SOL to ./val2-keypair.json. Transaction Signature: SendTransactionResp(Signature(XwAN7PA76kNG7NSSZfEuq2KdN8ombQUeSEY6Mm2W8sig5xe6o1yCCtLP2a6dei8HkCkuJCqkTYBiLTN9HFAsHCj))
+Sent 1 SOL to ./val3-keypair.json. Transaction Signature: SendTransactionResp(Signature(FBRQia5mUEjAZ2B9jyzqPBpx6oHZ7pJNjbxujAZHnTJii2pWByxvzPLX6Et18MYJVmjVZReACPBz5jgeGqVSx2q))
+Sent 1 SOL to ./val4-keypair.json. Transaction Signature: SendTransactionResp(Signature(5htwEigbbb2LT52JhBx7Hh5nEfLbDSVNamcABGq98iUC8DL8MQZgfhtVrygxAKBgj1ezXHN7wQJxZ3JHTVDu52a7))
+Sent 1 SOL to ./val5-keypair.json. Transaction Signature: SendTransactionResp(Signature(54HZZHCT4DJVxqF1iuMZbzDkNWz4X7MfJjEYXiftHPz3g8Tv62oDTaoNyfcxuzaB2udojN7EJHgeGfvH6qb6V1oh))
+Sent 1 SOL to ./val6-keypair.json. Transaction Signature: SendTransactionResp(Signature(4hSZ661taU7QtrE5SQrASirru2xohkGtem3vM2rpsTKZcnceuzNhEDn5mvXkfmFS3rwbGfoRxKvM7CjUAqY5RTx7))
+2025-01-25 00:02:47 - 1_val_pay_vals_from_localwallet.py executed successfully.
+2025-01-25 00:02:47 - Executing 2_scraper2.py...
+Querying master server for TFC servers...
+Request timed out
+Number of unique TFC servers found: 87
+Querying server: 172.83.159.2:27015
+Querying server: 5.78.115.59:27015
+Querying server: 54.188.146.29:27015
+Querying server: 97.94.129.234:34531
+Querying server: 54.153.40.112:27015
+Querying server: 98.210.109.153:27015
+Querying server: 192.169.85.163:27015
+Querying server: 192.169.85.101:27015
+Querying server: 66.33.9.184:27015
+Querying server: 204.57.27.76:27015
+Querying server: 76.195.132.49:25590
+Saved BoBtheServercom27021.json in player_keys/
+Saved Highlander.json in player_keys/
+Saved DrEvil.json in player_keys/
+Saved Mallory.json in player_keys/
+Saved Cherrybomb.json in player_keys/
+Saved Woodhouse.json in player_keys/
+Saved Grizz.json in player_keys/
+Saved Sterling.json in player_keys/
+Saved Ray.json in player_keys/
+Saved MolotovCocktease.json in player_keys/
+Saved Pikachu.json in player_keys/
+Saved Viper.json in player_keys/
+Saved BrockSampson.json in player_keys/
+Saved Duchess.json in player_keys/
+Saved DrVenture.json in player_keys/
+Querying server: 162.251.97.85:27040
+Querying server: 108.61.119.170:27015
+Saved Rere.json in player_keys/
+Saved BotTronics.json in player_keys/
+Saved Jeep.json in player_keys/
+Saved Dead_Cold.json in player_keys/
+Saved TheUndying.json in player_keys/
+Saved Devi0us.json in player_keys/
+Saved satman2499.json in player_keys/
+Saved oneredflag.json in player_keys/
+Saved smokeyhermit.json in player_keys/
+Saved mudbogger2.json in player_keys/
+Saved Tis.json in player_keys/
+Saved WornOutTire.json in player_keys/
+Saved eecjr0914.json in player_keys/
+Saved yashua.json in player_keys/
+Saved HoNduH.json in player_keys/
+Saved Beetlebomb.json in player_keys/
+Saved Steve.json in player_keys/
+Saved aaronsbarons.json in player_keys/
+Saved astrocreep2000.json in player_keys/
+Saved KenMll.json in player_keys/
+Saved nathanll382.json in player_keys/
+Saved Nitr0s0x.json in player_keys/
+Saved Mars19.json in player_keys/
+Saved Makaveli.json in player_keys/
+Saved Limpan.json in player_keys/
+Saved Bradley1968.json in player_keys/
+Querying server: 74.91.114.206:28888
+Saved Raidden.json in player_keys/
+Saved drjeckyl.json in player_keys/
+Saved exige.json in player_keys/
+Saved Timmy.json in player_keys/
+Saved Sonic.json in player_keys/
+Saved TFPugsWESTHLTV.json in player_keys/
+Querying server: 66.25.218.38:27015
+Querying server: 68.232.160.177:27015
+Saved MrWalnutsTinyNut.json in player_keys/
+Saved Goldyspotofgold.json in player_keys/
+Saved RedRebelsLargeCannon.json in player_keys/
+Saved PastyGangstasShive.json in player_keys/
+Saved HarleysFlagPirate.json in player_keys/
+Saved BooBooCowsSexyVoice.json in player_keys/
+Querying server: 18.88.29.250:27015
+Saved CofCTV.json in player_keys/
+Querying server: 45.32.207.158:27021
+Saved BurgerSlapper.json in player_keys/
+Saved EverySinglePowerRanger.json in player_keys/
+Saved Gemmy.json in player_keys/
+Saved Player.json in player_keys/
+Saved Chode_Chiggler.json in player_keys/
+Saved Merv.json in player_keys/
+Saved NapoleonDynamo.json in player_keys/
+Saved GandalfTheGray.json in player_keys/
+Querying server: 45.32.203.198:27035
+Querying server: 208.115.255.4:27015
+Saved BoBtheServercom27020.json in player_keys/
+Saved OtherBarry.json in player_keys/
+Saved Barry.json in player_keys/
+Saved Dean.json in player_keys/
+Saved Kreiger.json in player_keys/
+Saved Pugsley.json in player_keys/
+Saved Hank.json in player_keys/
+Saved Trinity.json in player_keys/
+Saved Cheryl.json in player_keys/
+Saved Pam.json in player_keys/
+Saved PlayaHata.json in player_keys/
+Saved Ted.json in player_keys/
+Saved AOL.json in player_keys/
+Saved MoFugger.json in player_keys/
+Saved Ian.json in player_keys/
+Saved Curtis.json in player_keys/
+Saved Spanka.json in player_keys/
+Saved Steave.json in player_keys/
+Saved AntiHuman.json in player_keys/
+Saved BillGates.json in player_keys/
+Saved SPACEY.json in player_keys/
+Saved DrDeath.json in player_keys/
+Saved Austin.json in player_keys/
+Saved Kippa.json in player_keys/
+Querying server: 192.169.81.179:27015
+Querying server: 108.181.63.74:27019
+Querying server: 74.63.236.204:27015
+Querying server: 63.143.56.124:27015
+Saved Hey.json in player_keys/
+Saved Jack.json in player_keys/
+Saved Iam.json in player_keys/
+Saved No.json in player_keys/
+Querying server: 74.91.113.234:27015
+Querying server: 74.91.115.161:27015
+Saved TFPugsCentralHLTV.json in player_keys/
+Querying server: 74.91.119.150:27015
+Saved Rafkin.json in player_keys/
+Saved Triolo.json in player_keys/
+Saved Harnna.json in player_keys/
+Saved Blackthorn.json in player_keys/
+Saved Marcy.json in player_keys/
+Saved Spectre.json in player_keys/
+Saved Maxwell.json in player_keys/
+Saved Delphynia.json in player_keys/
+Saved Tyball.json in player_keys/
+Saved TimeLord.json in player_keys/
+Querying server: 74.91.122.11:27015
+Querying server: 192.223.26.238:27001
+Saved Molly.json in player_keys/
+Saved Dex.json in player_keys/
+Saved ironman.json in player_keys/
+Saved Spock.json in player_keys/
+Saved Scotty.json in player_keys/
+Saved CyberCop.json in player_keys/
+Saved Kane.json in player_keys/
+Saved Kangaka.json in player_keys/
+Saved Angi3.json in player_keys/
+Saved RikiTikiTavi.json in player_keys/
+Querying server: 74.91.113.200:27015
+Querying server: 74.91.119.101:27015
+Querying server: 71.10.129.36:27015
+Querying server: 72.133.96.85:27018
+Saved Patreoncom1999TFC.json in player_keys/
+Saved BlockBusterVideo.json in player_keys/
+Saved JohnnyKnoxville.json in player_keys/
+Saved Jarulesux.json in player_keys/
+Saved Nickelodeon.json in player_keys/
+Saved DuckTales.json in player_keys/
+Saved Hi-CEctoCooler.json in player_keys/
+Saved Y2KStoned.json in player_keys/
+Saved lilwhooty.json in player_keys/
+Saved GTA2.json in player_keys/
+Saved ICQ.json in player_keys/
+Saved AIM.json in player_keys/
+Saved Payphone.json in player_keys/
+Saved LinkinPark.json in player_keys/
+Saved TrapperKeeper.json in player_keys/
+Saved Zima.json in player_keys/
+Saved hitmypager.json in player_keys/
+Saved hellohltv.json in player_keys/
+Querying server: 24.166.16.145:27022
+Saved Doug.json in player_keys/
+Saved i-have-worse-than-bad-luck.json in player_keys/
+Saved b.json in player_keys/
+Saved durdencouchgaming.json in player_keys/
+Saved hellowheaties.json in player_keys/
+Saved Cheese.json in player_keys/
+Saved le_couch.json in player_keys/
+Saved HampsterwRadioactiveBananas.json in player_keys/
+Saved hellouoau.json in player_keys/
+Saved InhouseHLTV.json in player_keys/
+Querying server: 205.196.43.194:27050
+Saved CO.json in player_keys/
+Saved Chief.json in player_keys/
+Saved Colonel.json in player_keys/
+Saved Tanker.json in player_keys/
+Querying server: 92.119.129.204:27016
+Saved FFL-TV.json in player_keys/
+Querying server: 149.56.29.125:27017
+Querying server: 142.44.148.157:53000
+Querying server: 34.206.24.63:27020
+Saved NXS.json in player_keys/
+Saved YoMama.json in player_keys/
+Saved Brit.json in player_keys/
+Saved Carly.json in player_keys/
+Querying server: 172.233.224.83:27016
+Saved MrFloorPie.json in player_keys/
+Saved MrMani.json in player_keys/
+Saved MrPhalanx.json in player_keys/
+Saved MrBruno.json in player_keys/
+Saved MrGhey.json in player_keys/
+Saved MrOpossum.json in player_keys/
+Saved MrThunder.json in player_keys/
+Saved MrGiga.json in player_keys/
+Saved MrNimda.json in player_keys/
+Saved MrP4r4l4x.json in player_keys/
+Saved MrWhat.json in player_keys/
+Saved MrOrtega.json in player_keys/
+Saved MrSwede.json in player_keys/
+Saved MrTom.json in player_keys/
+Saved MrNuggs.json in player_keys/
+Saved Mr-X-.json in player_keys/
+Querying server: 129.158.218.251:27015
+Querying server: 44.202.103.140:27015
+Saved rainniiiiiieeeee.json in player_keys/
+Saved DICKCRUSHER9000.json in player_keys/
+Saved fuckman.json in player_keys/
+Saved Pebler.json in player_keys/
+Querying server: 69.251.134.183:27017
+Querying server: 50.116.59.192:27015
+Querying server: 23.148.232.35:27285
+Saved Bruno.json in player_keys/
+Saved Phalanx.json in player_keys/
+Saved AR.json in player_keys/
+Saved RiFFRaFF.json in player_keys/
+Saved Jehster.json in player_keys/
+Saved DePo.json in player_keys/
+Saved MighTy.json in player_keys/
+Saved SheDevil.json in player_keys/
+Saved Nimda.json in player_keys/
+Saved -X-.json in player_keys/
+Saved Avenger.json in player_keys/
+Saved PaRallax.json in player_keys/
+Saved eve.json in player_keys/
+Saved What.json in player_keys/
+Saved SF49ers.json in player_keys/
+Saved Merrick.json in player_keys/
+Querying server: 104.207.129.123:27015
+Querying server: 172.93.101.194:27015
+Saved TFPugsEAST2HLTV.json in player_keys/
+Querying server: 69.10.36.10:28015
+Querying server: 64.31.28.179:27015
+Saved Playa.json in player_keys/
+Saved JesseJames.json in player_keys/
+Querying server: 64.31.28.157:27025
+Querying server: 64.31.28.203:27015
+Querying server: 74.91.116.214:27015
+Saved LEVEL1TFCGOD.json in player_keys/
+Saved TFPugsEASTNYCHLTV.json in player_keys/
+Querying server: 74.91.123.162:27005
+Saved D2F-HLTV.json in player_keys/
+Querying server: 192.223.24.233:27015
+Saved Jim.json in player_keys/
+Saved Harold.json in player_keys/
+Saved Terry.json in player_keys/
+Saved Percy.json in player_keys/
+Saved Charles.json in player_keys/
+Saved Dexter.json in player_keys/
+Saved David.json in player_keys/
+Saved Samuel.json in player_keys/
+Saved Kevin.json in player_keys/
+Querying server: 74.91.123.34:27015
+Saved MaTTy.json in player_keys/
+Saved Gibbs.json in player_keys/
+Saved Smett.json in player_keys/
+Saved jhood.json in player_keys/
+Saved PV-XR.json in player_keys/
+Saved Dawn.json in player_keys/
+Saved Dragonair.json in player_keys/
+Saved wolfeet1337.json in player_keys/
+Saved bmonkey.json in player_keys/
+Saved KosGhOsT.json in player_keys/
+Querying server: 73.80.254.100:27015
+Saved Reloaded-HLTV.json in player_keys/
+Saved Reloaded-Staff.json in player_keys/
+Saved AgentMulder.json in player_keys/
+Saved WololoMonk.json in player_keys/
+Saved AdrianShephard.json in player_keys/
+Saved CaptainPicard.json in player_keys/
+Saved RyoHazuki.json in player_keys/
+Saved TommyVercetti.json in player_keys/
+Saved InternetExplorer.json in player_keys/
+Saved LoWang.json in player_keys/
+Saved PeterGriffin.json in player_keys/
+Saved TheDude.json in player_keys/
+Saved CarlJohnson.json in player_keys/
+Saved DickTremayne.json in player_keys/
+Querying server: 167.88.44.161:27015
+Saved Cartman.json in player_keys/
+Saved Rosco.json in player_keys/
+Saved MrMan.json in player_keys/
+Saved SmellULater.json in player_keys/
+Saved Muon.json in player_keys/
+Saved ElLobstero.json in player_keys/
+Saved RainMan.json in player_keys/
+Saved Alfonzo.json in player_keys/
+Querying server: 38.40.74.41:27020
+Querying server: 45.77.162.42:27020
+Querying server: 178.32.3.3:27013
+Saved PedrolvaresCabral.json in player_keys/
+Saved JoscelinI.json in player_keys/
+Saved GodfreyofBouillon.json in player_keys/
+Saved HeloisedArgenteuil.json in player_keys/
+Saved HenryII.json in player_keys/
+Saved CharlesleVictorieuxVII.json in player_keys/
+Saved JeandeMetz.json in player_keys/
+Saved AlexiosIKomnenos.json in player_keys/
+Saved BaldwinofBoulogne.json in player_keys/
+Saved WilliamtheConqueror.json in player_keys/
+Saved Tancred.json in player_keys/
+Saved RobertGuiscarddeHauteville.json in player_keys/
+Saved HenryIreton.json in player_keys/
+Saved HenryIV.json in player_keys/
+Querying server: 192.248.163.247:27015
+Querying server: 82.165.193.67:27015
+Querying server: 51.195.252.162:27015
+Saved Kenny.json in player_keys/
+Saved Kyle.json in player_keys/
+Saved Stan.json in player_keys/
+Saved Jimbo.json in player_keys/
+Saved Ned.json in player_keys/
+Saved Butters.json in player_keys/
+Saved Tweak.json in player_keys/
+Querying server: 145.239.6.180:27000
+Querying server: 145.239.6.111:27050
+Saved LiLPimP.json in player_keys/
+Saved TFCRBotnet.json in player_keys/
+Saved 133t_Ha0r.json in player_keys/
+Saved Gordon.json in player_keys/
+Saved FootJob.json in player_keys/
+Saved FuzzyBunny.json in player_keys/
+Querying server: 88.97.252.184:27015
+Saved EUHLTV.json in player_keys/
+Querying server: 188.165.244.220:27030
+Querying server: 5.196.63.134:27015
+Saved RoystonVaseyTV.json in player_keys/
+Querying server: 194.163.156.183:27015
+Saved -firey.json in player_keys/
+Saved -ieDuNe.json in player_keys/
+Saved Defrag.json in player_keys/
+Saved BCChief.json in player_keys/
+Saved Angron.json in player_keys/
+Saved KaoSKID.json in player_keys/
+Saved BCMata.json in player_keys/
+Saved -f-Epsylon.json in player_keys/
+Saved AcidReniX.json in player_keys/
+Saved Un_Zipper.json in player_keys/
+Saved -f-Mick.json in player_keys/
+Saved Blx.json in player_keys/
+Saved det.json in player_keys/
+Saved Blackout.json in player_keys/
+Saved Cenobite.json in player_keys/
+Saved SpaceCowboy.json in player_keys/
+Saved ZtDion.json in player_keys/
+Saved HellkeepeR.json in player_keys/
+Saved mclcaeium.json in player_keys/
+Saved ZtDarkness.json in player_keys/
+Saved ExterioR.json in player_keys/
+Saved -f-Raek.json in player_keys/
+Saved Skins.json in player_keys/
+Saved g.json in player_keys/
+Saved Awardse.json in player_keys/
+Saved Overkill.json in player_keys/
+Saved NoLimit.json in player_keys/
+Saved ZtReptile.json in player_keys/
+Saved -f-kz.json in player_keys/
+Saved r3d3mpTioN.json in player_keys/
+Saved BCNar.json in player_keys/
+Querying server: 217.160.162.135:27019
+Saved WORLDSbestskillServertv.json in player_keys/
+Saved JuliuS_CaesaR.json in player_keys/
+Saved chinodechina.json in player_keys/
+Querying server: 79.207.101.159:27017
+Saved CheatsRGay.json in player_keys/
+Saved Dotcom.json in player_keys/
+Saved Grubber.json in player_keys/
+Saved DeadSurfer.json in player_keys/
+Querying server: 4.185.106.208:27015
+Saved TVS.json in player_keys/
+Saved M0rph1n3.json in player_keys/
+Saved John_McClane.json in player_keys/
+Saved SAS_Commando.json in player_keys/
+Saved Seven_of_Nine.json in player_keys/
+Saved Titan.json in player_keys/
+Saved Barry_Gibb.json in player_keys/
+Saved Mario.json in player_keys/
+Saved Victor_Meldrew.json in player_keys/
+Saved Frank_Drebin.json in player_keys/
+Saved LycosBot.json in player_keys/
+Querying server: 89.36.216.8:27017
+Saved Earp.json in player_keys/
+Saved Bizitch.json in player_keys/
+Saved MoJo.json in player_keys/
+Saved Spanner.json in player_keys/
+Saved TheDevil.json in player_keys/
+Saved Glenn.json in player_keys/
+Saved Caleb.json in player_keys/
+Querying server: 116.202.113.50:27117
+Querying server: 94.130.132.169:27079
+Saved ElonMusk.json in player_keys/
+Saved Doge1.json in player_keys/
+Saved Doge5.json in player_keys/
+Saved Doge2.json in player_keys/
+Saved Doge6.json in player_keys/
+Saved Doge3.json in player_keys/
+Saved Doge7.json in player_keys/
+Saved Doge4.json in player_keys/
+Saved Doge8.json in player_keys/
+Querying server: 116.202.113.54:27015
+Saved Playersjerome.json in player_keys/
+Saved HotBoy.json in player_keys/
+Saved Exclusive_player.json in player_keys/
+Saved SmArT.json in player_keys/
+Saved lambe.json in player_keys/
+Saved Sakramento.json in player_keys/
+Saved Gamer_VampiR.json in player_keys/
+Saved Domino.json in player_keys/
+Saved satroN.json in player_keys/
+Saved ONEtmZIB.json in player_keys/
+Saved PaTrIoT.json in player_keys/
+Saved OdoakR.json in player_keys/
+Querying server: 136.243.174.101:27216
+Saved JJW_RepofKorea.json in player_keys/
+Saved BOT_Brit.json in player_keys/
+Saved BOT_Herb.json in player_keys/
+Saved BOT_BillGates.json in player_keys/
+Saved BOT_TheDevil.json in player_keys/
+Saved BOT_FragFury.json in player_keys/
+Saved BOT_TheDefender.json in player_keys/
+Saved BOT_AntiHuman.json in player_keys/
+Saved SpeedyScout.json in player_keys/
+Saved BOT_SniperStrike.json in player_keys/
+Saved ClutchMedic.json in player_keys/
+Saved BOT_Ted.json in player_keys/
+Saved BOT_HeavyHitter.json in player_keys/
+Saved BOT_SilentSaboteur.json in player_keys/
+Saved BOT_SmellULater.json in player_keys/
+Saved BOT_FootJob.json in player_keys/
+Saved BOT_MoJo.json in player_keys/
+Saved BOT_Curtis.json in player_keys/
+Saved NoScopeKing.json in player_keys/
+Querying server: 213.133.103.125:27285
+Querying server: 89.179.240.119:27065
+Failed to query server at 76.195.132.49:25590: timed out
+Querying server: 70.34.244.247:27915
+Querying server: 220.130.108.125:27012
+Querying server: 181.192.79.104:27024
+Failed to query server at 45.32.207.158:27021: timed out
+Querying server: 121.99.240.213:27018
+Querying server: 13.236.204.222:27016
+Querying server: 202.169.104.136:43216
+Querying server: 51.161.212.218:27020
+Failed to query server at 71.10.129.36:27015: timed out
+Querying server: 169.254.138.177:28072
+Saved LMFCrow.json in player_keys/
+Saved LMFSpeedFire.json in player_keys/
+Saved -GY-Godman.json in player_keys/
+Saved LMFEve.json in player_keys/
+Saved -GY-Mooneyes.json in player_keys/
+Saved LMFRaptor.json in player_keys/
+Saved LMFDYNASTY.json in player_keys/
+Saved VOMDannyKL.json in player_keys/
+Saved Herb.json in player_keys/
+Saved Hammer.json in player_keys/
+Saved RebelKid.json in player_keys/
+Saved Chickenlegs.json in player_keys/
+Saved HamandEggs.json in player_keys/
+Saved Lepton.json in player_keys/
+Saved Siren.json in player_keys/
+Failed to query server at 149.56.29.125:27017: timed out
+Saved tibu.json in player_keys/
+Failed to query server at 73.80.254.100:27015: timed out
+Failed to query server at 79.207.101.159:27017: timed out
+Failed to query server at 169.254.138.177:28072: timed out
+
+All player data has been saved individually in the player_keys/ folder.
+2025-01-25 00:03:16 - 2_scraper2.py executed successfully.
+2025-01-25 00:03:16 - Executing 3_test_fancoin.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 363, in main
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 234, in register_player_pda
+    tx_sig = await program.rpc["register_player_pda"](
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 58, in rpc_fn
+    tx = tx_fn(
+         ^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/transaction.py", line 56, in tx_fn
+    ixns.append(ix_fn(*args, ctx=ctx))
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/instruction.py", line 64, in __call__
+    validate_accounts(self.idl_ix.accounts, ctx.accounts)
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/common.py", line 76, in validate_accounts
+    raise ValueError(f"Invalid arguments: {acc_name} not provided")
+ValueError: Invalid arguments: player_name_pda not provided
+Setting up provider and loading program...
+Program loaded successfully.
+Initializing DApp account...
+DApp PDA: pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD, Bump: 254
+DApp initialized successfully. Transaction Signature: Ekrx9DPfLJsJcC48Yjzks1rN879xYwVCmkApLxEPktFwUCd99wrE5MP6783tywzuk2zcmBRk6eaoZE65t7wvuaN
+
+Initializing Mint for DApp...
+InitializeMint => Transaction Signature: 5AmLMrZVkXcP5SEpAw6K5HB2k7Gguk982mUrnXFQi3yQbqmQna3wui2efDVCiahPEbrhTQ5AzrAWcmSQYhASmr3T
+The variable has been written to output.txt
+
+Initializing Game account...
+Game PDA: 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe, Bump: 255
+Game initialized successfully. Transaction Signature: 5DpnstbwuNgUADZLRfWsdiEZkL72QJ5TpPsKf9MpL9iV1c7DGnsYQsM4482k43sP3TsM3RNMCVCRsvurr2b9beY
+
+Registering a new Validator PDA (user-based seeds)...
+[DEBUG] Derived validator_pda = AeyppVe3FdjDpiF9HtBTiDdWXCfZ6qjyfGDNcTSL3zFF, Bump = 251
+ValidatorPda registered. Tx Sig: 3zxqhcQfVFdsCboeJMbvjwDGRS6BHKTGyNGEqdAEy5iRALZYtsKHqm3CuNqvuDySwZBC66ihX737g3ewSosMJZ7A
+
+Punching In as Validator...
+Punched in successfully. Transaction Signature: PgLeNP9AUq5ofvyay4zMn7XYJJMDbKXqGRrvWqe4vvTWJCS1YsYwcP8KXEE9ULEHznkYcwh6Nx4gYqnteRVTaDX
+
+Registering a new Player PDA...
+[DEBUG] dapp.global_player_count = 0
+[DEBUG] Derived player_pda = HxEUP5whv4KdhM7xR7Zpd4iJ2tG4wxvPymii39ZUD9pT, Bump = 255
+[DEBUG] Derived user_ata = 2jpnzvAdF9bGcy6H4aQsbJG1LQDdWXT2YnWPYDTTmogq
+An unexpected error occurred.
+Invalid arguments: player_name_pda not provided
+Closed Solana RPC client.
+2025-01-25 00:03:20 - 3_test_fancoin.py executed successfully.
+2025-01-25 00:03:20 - Executing 4_test_fancoin_2.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 363, in main
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 234, in register_player_pda
+    tx_sig = await program.rpc["register_player_pda"](
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 58, in rpc_fn
+    tx = tx_fn(
+         ^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/transaction.py", line 56, in tx_fn
+    ixns.append(ix_fn(*args, ctx=ctx))
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/instruction.py", line 64, in __call__
+    validate_accounts(self.idl_ix.accounts, ctx.accounts)
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/common.py", line 76, in validate_accounts
+    raise ValueError(f"Invalid arguments: {acc_name} not provided")
+ValueError: Invalid arguments: player_name_pda not provided
+Setting up provider and loading program...
+Program loaded successfully.
+Initializing DApp account...
+DApp PDA: pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD, Bump: 254
+DApp account already exists. Skipping initialization.
+
+Initializing Mint for DApp...
+Mint + MintAuthority accounts already exist; skipping.
+The variable has been written to output.txt
+
+Initializing Game account...
+Game PDA: 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe, Bump: 255
+Game account already exists. Skipping initialization.
+
+Registering a new Validator PDA (user-based seeds)...
+[DEBUG] Derived validator_pda = 4HqsDmzs9re4abxJ2DrCsRvAFSsNZufe5bzQ95ayaSWn, Bump = 251
+ValidatorPda registered. Tx Sig: 61z8c8ZLmrTxGDRvN4mDDC6p6ucK7dcgPLi6nmzdtB7n8X9x5YGAoh9JhamJuBUeZhDFZYeRrMFfMLt6KPdhQ71P
+
+Punching In as Validator...
+Punched in successfully. Transaction Signature: 2KCUXaZ8eZpffvuDdbckXdWso2aSYuKondaN4rnaAu7Qg7Kh5pmumyjSjWVvvmmtEoyFi8Rb6FwCaScazUsFUqWa
+
+Registering a new Player PDA...
+[DEBUG] dapp.global_player_count = 0
+[DEBUG] Derived player_pda = HxEUP5whv4KdhM7xR7Zpd4iJ2tG4wxvPymii39ZUD9pT, Bump = 255
+[DEBUG] Derived user_ata = 2jpnzvAdF9bGcy6H4aQsbJG1LQDdWXT2YnWPYDTTmogq
+An unexpected error occurred.
+Invalid arguments: player_name_pda not provided
+Closed Solana RPC client.
+2025-01-25 00:03:22 - 4_test_fancoin_2.py executed successfully.

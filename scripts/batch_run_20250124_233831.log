@@ -1,0 +1,813 @@
+2025-01-24 23:38:31 - Batch execution of Solana Python scripts started.
+2025-01-24 23:38:31 - Executing 1_val_pay_vals_from_localwallet.py...
+Sent 1 SOL to ./val1-keypair.json. Transaction Signature: SendTransactionResp(Signature(5hgLHWuYaD4AN62VB3DoTS4Uvt5cHdDh2s2fgv5e2mgtgpmm1Fdvj5o54pkyZfUsQUmmHiDCoAcAUG1R33yPe5kB))
+Sent 1 SOL to ./val2-keypair.json. Transaction Signature: SendTransactionResp(Signature(5UjFoisCi6do34W5dNwdL4ZhCkVh4iRLCjVqaPbwLczk7etGgdJB7Dutci5fHoKv4QABwEMshyMqJTYG9mi3ZLGw))
+Sent 1 SOL to ./val3-keypair.json. Transaction Signature: SendTransactionResp(Signature(56XDkafEvfdq3Xdub17BHB3Y81Mes6JwHntvNrqYoDBdkWLmCFmxCfXBxMgxFsNYEBQq3B3ornXkFXZsuTMmF4fF))
+Sent 1 SOL to ./val4-keypair.json. Transaction Signature: SendTransactionResp(Signature(4goE9jNYGJGmCPzNCYaZWHm6ZPaiR1oLSEgo8S3E2ZWi5kE3wX9QfE7ZymnM1NSWiUFEUDjSoaGDpLpofLbTNgao))
+Sent 1 SOL to ./val5-keypair.json. Transaction Signature: SendTransactionResp(Signature(5mTffwcDUgQq1oCiAFbuCfAb7jrxe3WLGa4ZAAf9qyfwPxnbKRkyggsweyn4xnXMkQrqgytizYDjZUkDupNrre6K))
+Sent 1 SOL to ./val6-keypair.json. Transaction Signature: SendTransactionResp(Signature(q6FV4NzqhfrERy8mDQbofpMfhjptbNJrrMutLCRLRcDYRxjyFcbfY9wptnB2cDVP6QzrnHorGdY1vqJNWFS6zYj))
+2025-01-24 23:38:31 - 1_val_pay_vals_from_localwallet.py executed successfully.
+2025-01-24 23:38:31 - Executing 2_scraper2.py...
+Querying master server for TFC servers...
+Request timed out
+Number of unique TFC servers found: 86
+Querying server: 172.83.159.2:27015
+Querying server: 5.78.115.59:27015
+Querying server: 54.188.146.29:27015
+Querying server: 97.94.129.234:34531
+Querying server: 54.153.40.112:27015
+Querying server: 98.210.109.153:27015
+Querying server: 192.169.85.163:27015
+Querying server: 192.169.85.101:27015
+Querying server: 66.33.9.184:27015
+Querying server: 204.57.27.76:27015
+Querying server: 76.195.132.49:25590
+Querying server: 162.251.97.85:27040
+Querying server: 108.61.119.170:27015
+Saved DIAPER.json in player_keys/
+Saved padazisstamatelos.json in player_keys/
+Saved BoBtheServercom27021.json in player_keys/
+Saved Highlander.json in player_keys/
+Saved DrEvil.json in player_keys/
+Saved Mallory.json in player_keys/
+Saved Cherrybomb.json in player_keys/
+Saved Woodhouse.json in player_keys/
+Saved Grizz.json in player_keys/
+Saved Sterling.json in player_keys/
+Saved Ray.json in player_keys/
+Saved MolotovCocktease.json in player_keys/
+Saved Pikachu.json in player_keys/
+Saved Viper.json in player_keys/
+Saved BrockSampson.json in player_keys/
+Saved Rere.json in player_keys/
+Saved BotTronics.json in player_keys/
+Saved Jeep.json in player_keys/
+Saved Dead_Cold.json in player_keys/
+Saved TheUndying.json in player_keys/
+Saved Devi0us.json in player_keys/
+Saved satman2499.json in player_keys/
+Saved oneredflag.json in player_keys/
+Saved smokeyhermit.json in player_keys/
+Saved mudbogger2.json in player_keys/
+Saved Tis.json in player_keys/
+Saved WornOutTire.json in player_keys/
+Saved eecjr0914.json in player_keys/
+Saved yashua.json in player_keys/
+Saved HoNduH.json in player_keys/
+Saved Beetlebomb.json in player_keys/
+Saved Steve.json in player_keys/
+Saved aaronsbarons.json in player_keys/
+Saved astrocreep2000.json in player_keys/
+Saved KenMll.json in player_keys/
+Saved nathanll382.json in player_keys/
+Saved Nitr0s0x.json in player_keys/
+Saved Mars19.json in player_keys/
+Saved Makaveli.json in player_keys/
+Saved Limpan.json in player_keys/
+Saved Bradley1968.json in player_keys/
+Saved Raidden.json in player_keys/
+Saved drjeckyl.json in player_keys/
+Saved exige.json in player_keys/
+Saved Timmy.json in player_keys/
+Saved Sonic.json in player_keys/
+Querying server: 74.91.114.206:28888
+Saved TFPugsWESTHLTV.json in player_keys/
+Querying server: 66.25.218.38:27015
+Querying server: 68.232.160.177:27015
+Querying server: 18.88.29.250:27015
+Saved MrWalnutsTinyNut.json in player_keys/
+Saved Goldyspotofgold.json in player_keys/
+Saved RedRebelsLargeCannon.json in player_keys/
+Saved PastyGangstasShive.json in player_keys/
+Saved HarleysFlagPirate.json in player_keys/
+Saved BooBooCowsSexyVoice.json in player_keys/
+Saved CofCTV.json in player_keys/
+Querying server: 45.32.203.198:27035
+Saved BurgerSlapper.json in player_keys/
+Saved EverySinglePowerRanger.json in player_keys/
+Saved Gemmy.json in player_keys/
+Saved Player.json in player_keys/
+Saved Chode_Chiggler.json in player_keys/
+Querying server: 45.32.207.158:27015
+Querying server: 208.115.255.4:27015
+Saved Merv.json in player_keys/
+Saved NapoleonDynamo.json in player_keys/
+Saved GandalfTheGray.json in player_keys/
+Saved BoBtheServercom27020.json in player_keys/
+Saved DrVenture.json in player_keys/
+Saved OtherBarry.json in player_keys/
+Saved Barry.json in player_keys/
+Saved Dean.json in player_keys/
+Saved Kreiger.json in player_keys/
+Saved Pugsley.json in player_keys/
+Saved Hank.json in player_keys/
+Saved Trinity.json in player_keys/
+Saved Cheryl.json in player_keys/
+Saved Pam.json in player_keys/
+Saved PlayaHata.json in player_keys/
+Saved Ted.json in player_keys/
+Saved AOL.json in player_keys/
+Saved MoFugger.json in player_keys/
+Saved Ian.json in player_keys/
+Saved Curtis.json in player_keys/
+Saved Spanka.json in player_keys/
+Saved Steave.json in player_keys/
+Saved AntiHuman.json in player_keys/
+Saved BillGates.json in player_keys/
+Saved SPACEY.json in player_keys/
+Saved DrDeath.json in player_keys/
+Saved Austin.json in player_keys/
+Saved Kippa.json in player_keys/
+Querying server: 192.169.81.179:27015
+Querying server: 108.181.63.74:27019
+Saved Hey.json in player_keys/
+Saved Jack.json in player_keys/
+Saved Iam.json in player_keys/
+Saved No.json in player_keys/
+Querying server: 74.63.236.204:27015
+Querying server: 63.143.56.124:27015
+Querying server: 74.91.122.11:27015
+Querying server: 192.223.26.238:27001
+Saved TFPugsCentralHLTV.json in player_keys/
+Querying server: 74.91.113.200:27015
+Querying server: 74.91.119.101:27015
+Saved Rafkin.json in player_keys/
+Saved Triolo.json in player_keys/
+Saved Harnna.json in player_keys/
+Saved Blackthorn.json in player_keys/
+Saved Marcy.json in player_keys/
+Saved Spectre.json in player_keys/
+Saved Maxwell.json in player_keys/
+Saved Delphynia.json in player_keys/
+Saved Tyball.json in player_keys/
+Saved TimeLord.json in player_keys/
+Querying server: 74.91.115.161:27015
+Saved Skuttlebot.json in player_keys/
+Querying server: 74.91.119.150:27015
+Saved Molly.json in player_keys/
+Saved Dex.json in player_keys/
+Saved ironman.json in player_keys/
+Saved Spock.json in player_keys/
+Saved Scotty.json in player_keys/
+Saved CyberCop.json in player_keys/
+Saved Kane.json in player_keys/
+Saved Kangaka.json in player_keys/
+Saved Angi3.json in player_keys/
+Saved RikiTikiTavi.json in player_keys/
+Querying server: 74.91.113.234:27015
+Querying server: 72.133.96.85:27018
+Querying server: 24.166.16.145:27022
+Querying server: 205.196.43.194:27050
+Saved BlockBusterVideo.json in player_keys/
+Saved JohnnyKnoxville.json in player_keys/
+Saved Jarulesux.json in player_keys/
+Saved Nickelodeon.json in player_keys/
+Saved DuckTales.json in player_keys/
+Saved Hi-CEctoCooler.json in player_keys/
+Saved Y2KStoned.json in player_keys/
+Saved lilwhooty.json in player_keys/
+Saved GTA2.json in player_keys/
+Saved ICQ.json in player_keys/
+Saved AIM.json in player_keys/
+Saved Payphone.json in player_keys/
+Saved LinkinPark.json in player_keys/
+Saved TrapperKeeper.json in player_keys/
+Saved Zima.json in player_keys/
+Saved hitmypager.json in player_keys/
+Saved CaptainPlanet.json in player_keys/
+Saved Patreoncom1999TFC.json in player_keys/
+Saved CO.json in player_keys/
+Saved Chief.json in player_keys/
+Saved Colonel.json in player_keys/
+Saved Tanker.json in player_keys/
+Querying server: 92.119.129.204:27016
+Querying server: 149.56.29.125:27017
+Saved NXS.json in player_keys/
+Saved YoMama.json in player_keys/
+Saved Brit.json in player_keys/
+Saved Carly.json in player_keys/
+Querying server: 142.44.148.157:53000
+Querying server: 34.206.24.63:27020
+Saved Doug.json in player_keys/
+Saved i-have-worse-than-bad-luck.json in player_keys/
+Saved b.json in player_keys/
+Saved durdencouchgaming.json in player_keys/
+Saved hellowheaties.json in player_keys/
+Saved Cheese.json in player_keys/
+Saved le_couch.json in player_keys/
+Saved HampsterwRadioactiveBananas.json in player_keys/
+Saved InhouseHLTV.json in player_keys/
+Querying server: 172.233.224.83:27016
+Saved hellohltv.json in player_keys/
+Querying server: 129.158.218.251:27015
+Saved FFL-TV.json in player_keys/
+Querying server: 44.202.103.140:27015
+Querying server: 69.251.134.183:27017
+Saved rainniiiiiieeeee.json in player_keys/
+Saved DICKCRUSHER9000.json in player_keys/
+Saved fuckman.json in player_keys/
+Saved Pebler.json in player_keys/
+Querying server: 50.116.59.192:27015
+Saved Playa.json in player_keys/
+Querying server: 23.148.232.35:27285
+Querying server: 104.207.129.123:27020
+Saved JesseJames.json in player_keys/
+Saved MrFloorPie.json in player_keys/
+Saved MrMani.json in player_keys/
+Saved MrPhalanx.json in player_keys/
+Saved MrBruno.json in player_keys/
+Saved MrGhey.json in player_keys/
+Saved MrOpossum.json in player_keys/
+Querying server: 172.93.101.194:27015
+Saved MrThunder.json in player_keys/
+Saved MrGiga.json in player_keys/
+Saved MrNimda.json in player_keys/
+Saved MrP4r4l4x.json in player_keys/
+Saved MrWhat.json in player_keys/
+Saved MrOrtega.json in player_keys/
+Saved MrSwede.json in player_keys/
+Saved MrTom.json in player_keys/
+Saved MrNuggs.json in player_keys/
+Saved Mr-X-.json in player_keys/
+Saved Bruno.json in player_keys/
+Saved Phalanx.json in player_keys/
+Saved AR.json in player_keys/
+Saved RiFFRaFF.json in player_keys/
+Saved Jehster.json in player_keys/
+Saved DePo.json in player_keys/
+Saved MighTy.json in player_keys/
+Saved SheDevil.json in player_keys/
+Saved Nimda.json in player_keys/
+Saved -X-.json in player_keys/
+Saved Avenger.json in player_keys/
+Saved PaRallax.json in player_keys/
+Saved eve.json in player_keys/
+Saved What.json in player_keys/
+Saved SF49ers.json in player_keys/
+Saved Merrick.json in player_keys/
+Querying server: 69.10.36.10:28015
+Querying server: 64.31.28.179:27015
+Querying server: 64.31.28.157:27025
+Saved TFPugsEAST2HLTV.json in player_keys/
+Querying server: 64.31.28.203:27015
+Querying server: 74.91.123.162:27005
+Querying server: 192.223.24.233:27015
+Querying server: 74.91.123.34:27015
+Saved D2F-HLTV.json in player_keys/
+Querying server: 74.91.116.214:27015
+Querying server: 167.88.44.161:27015
+Saved Jim.json in player_keys/
+Saved Harold.json in player_keys/
+Saved Terry.json in player_keys/
+Saved Percy.json in player_keys/
+Saved Charles.json in player_keys/
+Saved Dexter.json in player_keys/
+Saved David.json in player_keys/
+Saved Samuel.json in player_keys/
+Saved Kevin.json in player_keys/
+Saved Chris.json in player_keys/
+Saved Mike.json in player_keys/
+Saved Reloaded-HLTV.json in player_keys/
+Saved Reloaded-Staff.json in player_keys/
+Saved AgentMulder.json in player_keys/
+Saved WololoMonk.json in player_keys/
+Saved AdrianShephard.json in player_keys/
+Saved CaptainPicard.json in player_keys/
+Saved RyoHazuki.json in player_keys/
+Saved TommyVercetti.json in player_keys/
+Saved InternetExplorer.json in player_keys/
+Saved LoWang.json in player_keys/
+Saved PeterGriffin.json in player_keys/
+Saved TheDude.json in player_keys/
+Saved CarlJohnson.json in player_keys/
+Saved DickTremayne.json in player_keys/
+Querying server: 38.40.74.41:27020
+Querying server: 45.77.162.42:27020
+Saved MaTTy.json in player_keys/
+Saved Gibbs.json in player_keys/
+Saved Smett.json in player_keys/
+Saved jhood.json in player_keys/
+Saved PV-XR.json in player_keys/
+Saved Dawn.json in player_keys/
+Saved Dragonair.json in player_keys/
+Saved wolfeet1337.json in player_keys/
+Saved bmonkey.json in player_keys/
+Saved KosGhOsT.json in player_keys/
+Querying server: 178.32.3.3:27013
+Querying server: 192.248.163.247:27015
+Saved Cartman.json in player_keys/
+Saved Rosco.json in player_keys/
+Saved MrMan.json in player_keys/
+Saved SmellULater.json in player_keys/
+Saved Muon.json in player_keys/
+Saved ElLobstero.json in player_keys/
+Saved RainMan.json in player_keys/
+Saved Alfonzo.json in player_keys/
+Querying server: 82.165.193.67:27015
+Querying server: 51.195.252.162:27015
+Querying server: 145.239.6.180:27000
+Querying server: 145.239.6.111:27050
+Saved PedrolvaresCabral.json in player_keys/
+Saved JoscelinI.json in player_keys/
+Saved HeloisedArgenteuil.json in player_keys/
+Saved HenryII.json in player_keys/
+Saved ManuelBoutoumites.json in player_keys/
+Saved JeandeMetz.json in player_keys/
+Saved AlexiosIKomnenos.json in player_keys/
+Saved BaldwinofBoulogne.json in player_keys/
+Saved WilliamtheConqueror.json in player_keys/
+Saved Tancred.json in player_keys/
+Saved RobertGuiscarddeHauteville.json in player_keys/
+Saved HenryIreton.json in player_keys/
+Saved HenryIV.json in player_keys/
+Querying server: 88.97.252.184:27015
+Saved Kenny.json in player_keys/
+Saved Kyle.json in player_keys/
+Saved Stan.json in player_keys/
+Saved Jimbo.json in player_keys/
+Saved Ned.json in player_keys/
+Saved Butters.json in player_keys/
+Saved Tweak.json in player_keys/
+Querying server: 188.165.244.220:27030
+Querying server: 5.196.63.134:27015
+Saved LiLPimP.json in player_keys/
+Saved TFCRBotnet.json in player_keys/
+Saved 133t_Ha0r.json in player_keys/
+Saved Gordon.json in player_keys/
+Saved FootJob.json in player_keys/
+Saved FuzzyBunny.json in player_keys/
+Querying server: 194.163.156.183:27015
+Saved WORLDSbestskillServertv.json in player_keys/
+Saved JuliuS_CaesaR.json in player_keys/
+Saved chinodechina.json in player_keys/
+Querying server: 217.160.162.135:27019
+Saved EUHLTV.json in player_keys/
+Querying server: 79.207.101.159:27017
+Querying server: 4.185.106.208:27015
+Saved RoystonVaseyTV.json in player_keys/
+Querying server: 89.36.216.8:27017
+Saved -firey.json in player_keys/
+Saved -ieDuNe.json in player_keys/
+Saved Defrag.json in player_keys/
+Saved BCChief.json in player_keys/
+Saved Angron.json in player_keys/
+Saved KaoSKID.json in player_keys/
+Saved BCMata.json in player_keys/
+Saved -f-Epsylon.json in player_keys/
+Saved AcidReniX.json in player_keys/
+Saved Un_Zipper.json in player_keys/
+Saved -f-Mick.json in player_keys/
+Saved Blx.json in player_keys/
+Saved det.json in player_keys/
+Saved Blackout.json in player_keys/
+Saved Cenobite.json in player_keys/
+Saved SpaceCowboy.json in player_keys/
+Saved ZtDion.json in player_keys/
+Saved HellkeepeR.json in player_keys/
+Saved mclcaeium.json in player_keys/
+Saved ZtDarkness.json in player_keys/
+Saved ExterioR.json in player_keys/
+Saved -f-Raek.json in player_keys/
+Saved Skins.json in player_keys/
+Saved g.json in player_keys/
+Saved Awardse.json in player_keys/
+Saved Overkill.json in player_keys/
+Saved NoLimit.json in player_keys/
+Saved ZtReptile.json in player_keys/
+Saved -f-kz.json in player_keys/
+Saved r3d3mpTioN.json in player_keys/
+Saved BCNar.json in player_keys/
+Querying server: 116.202.113.50:27117
+Saved CheatsRGay.json in player_keys/
+Saved Dotcom.json in player_keys/
+Querying server: 94.130.132.169:27079
+Saved Grubber.json in player_keys/
+Saved DeadSurfer.json in player_keys/
+Saved TVS.json in player_keys/
+Saved M0rph1n3.json in player_keys/
+Saved John_McClane.json in player_keys/
+Saved SAS_Commando.json in player_keys/
+Saved Seven_of_Nine.json in player_keys/
+Saved Titan.json in player_keys/
+Saved Barry_Gibb.json in player_keys/
+Saved Mario.json in player_keys/
+Saved Victor_Meldrew.json in player_keys/
+Saved Frank_Drebin.json in player_keys/
+Saved LycosBot.json in player_keys/
+Querying server: 116.202.113.54:27015
+Saved Earp.json in player_keys/
+Saved Bizitch.json in player_keys/
+Saved MoJo.json in player_keys/
+Saved Spanner.json in player_keys/
+Saved TheDevil.json in player_keys/
+Saved Glenn.json in player_keys/
+Saved Caleb.json in player_keys/
+Querying server: 136.243.174.101:27216
+Querying server: 213.133.103.125:27285
+Saved ElonMusk.json in player_keys/
+Saved Doge1.json in player_keys/
+Saved Doge5.json in player_keys/
+Saved Doge2.json in player_keys/
+Saved Doge6.json in player_keys/
+Saved Doge3.json in player_keys/
+Saved Doge7.json in player_keys/
+Saved Doge4.json in player_keys/
+Saved Doge8.json in player_keys/
+Querying server: 89.179.240.119:27065
+Saved Playersjerome.json in player_keys/
+Saved HotBoy.json in player_keys/
+Saved Exclusive_player.json in player_keys/
+Saved SmArT.json in player_keys/
+Saved lambe.json in player_keys/
+Saved Sakramento.json in player_keys/
+Saved Gamer_VampiR.json in player_keys/
+Saved Domino.json in player_keys/
+Saved satroN.json in player_keys/
+Saved ONEtmZIB.json in player_keys/
+Saved PaTrIoT.json in player_keys/
+Saved OdoakR.json in player_keys/
+Querying server: 70.34.244.247:27915
+Saved Henri.json in player_keys/
+Saved BOT_Brit.json in player_keys/
+Saved BOT_Herb.json in player_keys/
+Saved BOT_BillGates.json in player_keys/
+Saved BOT_TheDevil.json in player_keys/
+Saved BOT_FragFury.json in player_keys/
+Saved BOT_TheDefender.json in player_keys/
+Saved BOT_AntiHuman.json in player_keys/
+Saved SpeedyScout.json in player_keys/
+Saved BOT_SniperStrike.json in player_keys/
+Saved ClutchMedic.json in player_keys/
+Saved BOT_Ted.json in player_keys/
+Saved BOT_HeavyHitter.json in player_keys/
+Saved BOT_SilentSaboteur.json in player_keys/
+Saved BOT_SmellULater.json in player_keys/
+Saved BOT_FootJob.json in player_keys/
+Saved BOT_MoJo.json in player_keys/
+Saved BOT_Curtis.json in player_keys/
+Saved NoScopeKing.json in player_keys/
+Saved RocketWhisperer.json in player_keys/
+Saved BOT_BlazingPyro.json in player_keys/
+Saved PlasmaPhantom.json in player_keys/
+Saved BOT_Stimpy.json in player_keys/
+Saved SpannerSpree.json in player_keys/
+Saved BOT_SniperElite.json in player_keys/
+Saved EngineerElite.json in player_keys/
+Saved BOT_StickyKing.json in player_keys/
+Saved BOT_USuck.json in player_keys/
+Saved BOT_DeathBySentry.json in player_keys/
+Saved FlameFury.json in player_keys/
+Saved BOT_Albert.json in player_keys/
+Querying server: 220.130.108.125:27012
+Querying server: 181.192.79.104:27024
+Querying server: 121.99.240.213:27018
+Querying server: 51.161.212.218:27020
+Querying server: 13.236.204.222:27016
+Querying server: 202.169.104.136:43216
+Querying server: 45.118.66.4:27015
+Querying server: 169.254.175.94:53280
+Saved tibu.json in player_keys/
+Saved LMFCrow.json in player_keys/
+Saved LMFSpeedFire.json in player_keys/
+Saved -GY-Godman.json in player_keys/
+Saved LMFEve.json in player_keys/
+Saved -GY-Mooneyes.json in player_keys/
+Saved LMFRaptor.json in player_keys/
+Saved -GY-CHAO.json in player_keys/
+Saved -GY-Timo.json in player_keys/
+Saved -SGL-NAVY.json in player_keys/
+Saved -GY--2001-.json in player_keys/
+Saved -GY-flower.json in player_keys/
+Saved -GY-DontkillmelaQ_Q.json in player_keys/
+Saved LMFLung.json in player_keys/
+Saved LMFDYNASTY.json in player_keys/
+Saved LMFT.json in player_keys/
+Saved LMF87speed.json in player_keys/
+Saved LMFDenny.json in player_keys/
+Saved LMFISEEBI.json in player_keys/
+Saved LMFHunterKiller.json in player_keys/
+Saved VOMDannyKL.json in player_keys/
+Saved Herb.json in player_keys/
+Saved Hammer.json in player_keys/
+Saved RebelKid.json in player_keys/
+Saved Chickenlegs.json in player_keys/
+Saved HamandEggs.json in player_keys/
+Saved Lepton.json in player_keys/
+Saved Wolf.json in player_keys/
+Failed to query server at 76.195.132.49:25590: timed out
+Failed to query server at 149.56.29.125:27017: timed out
+Failed to query server at 79.207.101.159:27017: timed out
+Failed to query server at 45.118.66.4:27015: timed out
+Failed to query server at 169.254.175.94:53280: timed out
+
+All player data has been saved individually in the player_keys/ folder.
+2025-01-24 23:38:50 - 2_scraper2.py executed successfully.
+2025-01-24 23:38:50 - Executing 3_test_fancoin.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 50, in initialize_dapp
+    tx = await program.rpc["initialize_dapp"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 353, in main
+    dapp_pda = await initialize_dapp(program, client)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 50, in initialize_dapp
+    tx = await program.rpc["initialize_dapp"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Setting up provider and loading program...
+Program loaded successfully.
+Initializing DApp account...
+DApp PDA: pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD, Bump: 254
+Error initializing DApp: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+An unexpected error occurred.
+SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Closed Solana RPC client.
+2025-01-24 23:38:51 - 3_test_fancoin.py executed successfully.
+2025-01-24 23:38:51 - Executing 4_test_fancoin_2.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 50, in initialize_dapp
+    tx = await program.rpc["initialize_dapp"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 353, in main
+    dapp_pda = await initialize_dapp(program, client)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 50, in initialize_dapp
+    tx = await program.rpc["initialize_dapp"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Setting up provider and loading program...
+Program loaded successfully.
+Initializing DApp account...
+DApp PDA: pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD, Bump: 254
+Error initializing DApp: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+An unexpected error occurred.
+SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Closed Solana RPC client.
+2025-01-24 23:38:51 - 4_test_fancoin_2.py executed successfully.
+2025-01-24 23:38:51 - Executing punch_in.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/punch_in.py", line 35, in punch_in
+    tx = await program.rpc["punch_in"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Program loaded successfully.
+Game PDA => 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe
+Validator PDA => AeyppVe3FdjDpiF9HtBTiDdWXCfZ6qjyfGDNcTSL3zFF
+
+Punching In as Validator...
+[ERROR] Punching in: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Closed Solana RPC client.
+2025-01-24 23:38:52 - punch_in.py executed successfully.
+2025-01-24 23:38:52 - Executing punch_in2.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/punch_in2.py", line 35, in punch_in
+    tx = await program.rpc["punch_in"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Program loaded successfully.
+Game PDA => 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe
+Validator PDA => 4HqsDmzs9re4abxJ2DrCsRvAFSsNZufe5bzQ95ayaSWn
+
+Punching In as Validator...
+[ERROR] Punching in: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Closed Solana RPC client.
+2025-01-24 23:38:53 - punch_in2.py executed successfully.
+2025-01-24 23:38:53 - Executing bulk_register_players.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Payer wallet balance: 499999985658770000 lamports
+Program loaded successfully.
+[DEBUG] Using dapp_pda=pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD
+
+[INFO] Registering player => Blx with pubkey BV7S7HjmwMtKT1mbvRtEgcJGr9dSHYTpydGiwh8WmNz3
+[DEBUG] Derived reward_pubkey (ATA) => 4KQtT26VUazwNmKr7zUtCfPx2PkXrJ7FfSwFngq4nMAG for player Blx
+[INFO] Airdropping 10000000 lamports to BV7S7HjmwMtKT1mbvRtEgcJGr9dSHYTpydGiwh8WmNz3
+Sent 10000000 lamports to BV7S7HjmwMtKT1mbvRtEgcJGr9dSHYTpydGiwh8WmNz3. Transaction Signature: SendTransactionResp(Signature(ABHJnLQ38P43saVncAL75XJuDqCwxJMvRHXRbUCPkxofAYKsLYdipafZTueUp8duJJeFisXUEQ8TrXFpUyrrmJC))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(ABHJnLQ38P43saVncAL75XJuDqCwxJMvRHXRbUCPkxofAYKsLYdipafZTueUp8duJJeFisXUEQ8TrXFpUyrrmJC))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction ABHJnLQ38P43saVncAL75XJuDqCwxJMvRHXRbUCPkxofAYKsLYdipafZTueUp8duJJeFisXUEQ8TrXFpUyrrmJC for BV7S7HjmwMtKT1mbvRtEgcJGr9dSHYTpydGiwh8WmNz3
+[SUCCESS] Airdropped 10000000 lamports to BV7S7HjmwMtKT1mbvRtEgcJGr9dSHYTpydGiwh8WmNz3. Tx Sig: ABHJnLQ38P43saVncAL75XJuDqCwxJMvRHXRbUCPkxofAYKsLYdipafZTueUp8duJJeFisXUEQ8TrXFpUyrrmJC
+[DEBUG] Player BV7S7HjmwMtKT1mbvRtEgcJGr9dSHYTpydGiwh8WmNz3 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Blx.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Y2KStoned with pubkey FWeBfKzZEMR5sp3ya4wFRi8Mrt6YqSXin5TjJGcGgzy7
+[DEBUG] Derived reward_pubkey (ATA) => 3RupSzwYmvLpFgZFVkTSVFMSf8H6fqPe4NJrirFiaQYo for player Y2KStoned
+[INFO] Airdropping 10000000 lamports to FWeBfKzZEMR5sp3ya4wFRi8Mrt6YqSXin5TjJGcGgzy7
+Sent 10000000 lamports to FWeBfKzZEMR5sp3ya4wFRi8Mrt6YqSXin5TjJGcGgzy7. Transaction Signature: SendTransactionResp(Signature(3fCP1eDCo7zKoXc1Nv3TFBsg4eJN4B7hiNixKcXGYbccvYX4y5LjHUYLMsShgUEe8i6epnXH7yYNmyxPqFaztUjF))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3fCP1eDCo7zKoXc1Nv3TFBsg4eJN4B7hiNixKcXGYbccvYX4y5LjHUYLMsShgUEe8i6epnXH7yYNmyxPqFaztUjF))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3fCP1eDCo7zKoXc1Nv3TFBsg4eJN4B7hiNixKcXGYbccvYX4y5LjHUYLMsShgUEe8i6epnXH7yYNmyxPqFaztUjF for FWeBfKzZEMR5sp3ya4wFRi8Mrt6YqSXin5TjJGcGgzy7
+[SUCCESS] Airdropped 10000000 lamports to FWeBfKzZEMR5sp3ya4wFRi8Mrt6YqSXin5TjJGcGgzy7. Tx Sig: 3fCP1eDCo7zKoXc1Nv3TFBsg4eJN4B7hiNixKcXGYbccvYX4y5LjHUYLMsShgUEe8i6epnXH7yYNmyxPqFaztUjF
+[DEBUG] Player FWeBfKzZEMR5sp3ya4wFRi8Mrt6YqSXin5TjJGcGgzy7 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Y2KStoned.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => -f-kz with pubkey 6gmXi2tuNkGryJuK2eEFyLRdYTVhZQ75rd7UC17aLoGo
+[DEBUG] Derived reward_pubkey (ATA) => 1xCB9pbEvSX17qeeJW2tUYuT49YmmsJumeqNuevV5dx for player -f-kz
+[INFO] Airdropping 10000000 lamports to 6gmXi2tuNkGryJuK2eEFyLRdYTVhZQ75rd7UC17aLoGo
+Sent 10000000 lamports to 6gmXi2tuNkGryJuK2eEFyLRdYTVhZQ75rd7UC17aLoGo. Transaction Signature: SendTransactionResp(Signature(3nu8vv8EaorUZtemcBHc4AT12kMzVC1c5PMhNn1wrhgt53bRiKjvYRNke7S5wT4PYbVPFSaJCwmSJpa72oo5eDt7))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3nu8vv8EaorUZtemcBHc4AT12kMzVC1c5PMhNn1wrhgt53bRiKjvYRNke7S5wT4PYbVPFSaJCwmSJpa72oo5eDt7))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3nu8vv8EaorUZtemcBHc4AT12kMzVC1c5PMhNn1wrhgt53bRiKjvYRNke7S5wT4PYbVPFSaJCwmSJpa72oo5eDt7 for 6gmXi2tuNkGryJuK2eEFyLRdYTVhZQ75rd7UC17aLoGo
+[SUCCESS] Airdropped 10000000 lamports to 6gmXi2tuNkGryJuK2eEFyLRdYTVhZQ75rd7UC17aLoGo. Tx Sig: 3nu8vv8EaorUZtemcBHc4AT12kMzVC1c5PMhNn1wrhgt53bRiKjvYRNke7S5wT4PYbVPFSaJCwmSJpa72oo5eDt7
+[DEBUG] Player 6gmXi2tuNkGryJuK2eEFyLRdYTVhZQ75rd7UC17aLoGo balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/-f-kz.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Ted with pubkey gAV51SFHFrTQJSHcgAZ38NLKg4Dt3Vw4sksdcodVQ6D
+[DEBUG] Derived reward_pubkey (ATA) => BQpZiofkEfRcSxS7AsYZSrTSrUaDG2bedxAFcRA2t91G for player Ted
+[INFO] Airdropping 10000000 lamports to gAV51SFHFrTQJSHcgAZ38NLKg4Dt3Vw4sksdcodVQ6D
+Sent 10000000 lamports to gAV51SFHFrTQJSHcgAZ38NLKg4Dt3Vw4sksdcodVQ6D. Transaction Signature: SendTransactionResp(Signature(3d7Cszt9XM9fcmoyftBLeAQGYCioxgkGqGLQar3XCmitdcXk8uqw1dCKZgiQyVFRtfszrJFoexjuXAya1qwguiqS))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3d7Cszt9XM9fcmoyftBLeAQGYCioxgkGqGLQar3XCmitdcXk8uqw1dCKZgiQyVFRtfszrJFoexjuXAya1qwguiqS))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3d7Cszt9XM9fcmoyftBLeAQGYCioxgkGqGLQar3XCmitdcXk8uqw1dCKZgiQyVFRtfszrJFoexjuXAya1qwguiqS for gAV51SFHFrTQJSHcgAZ38NLKg4Dt3Vw4sksdcodVQ6D
+[SUCCESS] Airdropped 10000000 lamports to gAV51SFHFrTQJSHcgAZ38NLKg4Dt3Vw4sksdcodVQ6D. Tx Sig: 3d7Cszt9XM9fcmoyftBLeAQGYCioxgkGqGLQar3XCmitdcXk8uqw1dCKZgiQyVFRtfszrJFoexjuXAya1qwguiqS
+[DEBUG] Player gAV51SFHFrTQJSHcgAZ38NLKg4Dt3Vw4sksdcodVQ6D balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Ted.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => CofCTV with pubkey 9hzntsn9Cp32arU6VJQvfTSaLtrpiwR2EgpBa57yPpUM
+[DEBUG] Derived reward_pubkey (ATA) => B4NYQj7LzVXTyvn8rpJVa2fY2LYMULTGLSftSJK8HsLE for player CofCTV
+[INFO] Airdropping 10000000 lamports to 9hzntsn9Cp32arU6VJQvfTSaLtrpiwR2EgpBa57yPpUM
+Sent 10000000 lamports to 9hzntsn9Cp32arU6VJQvfTSaLtrpiwR2EgpBa57yPpUM. Transaction Signature: SendTransactionResp(Signature(3pC1ivr6rNYUeBECrY7JmdQBVLRxDdaEJbyH7ekx1s4fV2XuF7a7jvDRKjNxYGuGzf57uoUVxucGqy5w2YifMTgb))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3pC1ivr6rNYUeBECrY7JmdQBVLRxDdaEJbyH7ekx1s4fV2XuF7a7jvDRKjNxYGuGzf57uoUVxucGqy5w2YifMTgb))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3pC1ivr6rNYUeBECrY7JmdQBVLRxDdaEJbyH7ekx1s4fV2XuF7a7jvDRKjNxYGuGzf57uoUVxucGqy5w2YifMTgb for 9hzntsn9Cp32arU6VJQvfTSaLtrpiwR2EgpBa57yPpUM
+[SUCCESS] Airdropped 10000000 lamports to 9hzntsn9Cp32arU6VJQvfTSaLtrpiwR2EgpBa57yPpUM. Tx Sig: 3pC1ivr6rNYUeBECrY7JmdQBVLRxDdaEJbyH7ekx1s4fV2XuF7a7jvDRKjNxYGuGzf57uoUVxucGqy5w2YifMTgb
+[DEBUG] Player 9hzntsn9Cp32arU6VJQvfTSaLtrpiwR2EgpBa57yPpUM balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/CofCTV.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => BOT_Curtis with pubkey H8R4daXUHWKxZmL8BLPEZSeqV8yiQY8pvrbyf7h9vTx4
+[DEBUG] Derived reward_pubkey (ATA) => 8oLhFrNZpqQdQaJQ19FDYuFGZ9QUNLnr24LhKig8jCfs for player BOT_Curtis
+[INFO] Airdropping 10000000 lamports to H8R4daXUHWKxZmL8BLPEZSeqV8yiQY8pvrbyf7h9vTx4
+Sent 10000000 lamports to H8R4daXUHWKxZmL8BLPEZSeqV8yiQY8pvrbyf7h9vTx4. Transaction Signature: SendTransactionResp(Signature(5xFbhKNRDtkSKdNShYwsGb5RBD6B7Mef7FzPe5VS6hNQj7oWXq4m9fgrzwSSC5MP29JgK9t8gzLMZjBUs6VvBvE8))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(5xFbhKNRDtkSKdNShYwsGb5RBD6B7Mef7FzPe5VS6hNQj7oWXq4m9fgrzwSSC5MP29JgK9t8gzLMZjBUs6VvBvE8))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 5xFbhKNRDtkSKdNShYwsGb5RBD6B7Mef7FzPe5VS6hNQj7oWXq4m9fgrzwSSC5MP29JgK9t8gzLMZjBUs6VvBvE8 for H8R4daXUHWKxZmL8BLPEZSeqV8yiQY8pvrbyf7h9vTx4
+[SUCCESS] Airdropped 10000000 lamports to H8R4daXUHWKxZmL8BLPEZSeqV8yiQY8pvrbyf7h9vTx4. Tx Sig: 5xFbhKNRDtkSKdNShYwsGb5RBD6B7Mef7FzPe5VS6hNQj7oWXq4m9fgrzwSSC5MP29JgK9t8gzLMZjBUs6VvBvE8
+[DEBUG] Player H8R4daXUHWKxZmL8BLPEZSeqV8yiQY8pvrbyf7h9vTx4 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/BOT_Curtis.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Gordon with pubkey HoAcVnjeiXgrssQaQDRfwEWrv1pmqKTbgUxECzJxTHFV
+[DEBUG] Derived reward_pubkey (ATA) => 2fCyoU5MLLHBqG2jhyKNxdXwokVrYSGNhs5C3fxGFcNk for player Gordon

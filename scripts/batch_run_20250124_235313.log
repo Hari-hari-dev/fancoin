@@ -1,0 +1,1635 @@
+2025-01-24 23:53:13 - Batch execution of Solana Python scripts started.
+2025-01-24 23:53:13 - Executing 1_val_pay_vals_from_localwallet.py...
+Sent 1 SOL to ./val1-keypair.json. Transaction Signature: SendTransactionResp(Signature(4vRXUgr4ZcYTpVfw1MeJY1nWMSmFvmNVjX5EzjRxQYTn191YfeiGzFL1arAnrLtB3EtxPPGS9dvJNP1j2f2xepW2))
+Sent 1 SOL to ./val2-keypair.json. Transaction Signature: SendTransactionResp(Signature(3KNnqkg7fx97okNRrLhCTQk18wUtWjQoegnZ4dACjJC6qWgsXbtRBzfGdewGrRfNyxSnqLCHLE7bVMVfHsfznBDC))
+Sent 1 SOL to ./val3-keypair.json. Transaction Signature: SendTransactionResp(Signature(3TjMdj6XqZYHNWqRY2MTGMbiYUE2CShVi2vN4z1smEMBGtboTdoxCRfrQNE6Bfm3Xy7EdYi4i1u3vJjcWkV4bYVG))
+Sent 1 SOL to ./val4-keypair.json. Transaction Signature: SendTransactionResp(Signature(333S2vte6sqtg3cFq9dsjoYnZCJnTrgLWpCdQhipcCynYGxnNsohiFjZhGtCWt8iBs5YPxoLQnTt6hXyayBjmjHz))
+Sent 1 SOL to ./val5-keypair.json. Transaction Signature: SendTransactionResp(Signature(4rwTovBdpGP8psS6nzZe5oyiKFG3PzaD33CWDEtsGY44HCZhPDmtuYi5ja85rzgGSHkRdR7U5neVJSbrVVU9Q9cA))
+Sent 1 SOL to ./val6-keypair.json. Transaction Signature: SendTransactionResp(Signature(3TxDxoy7NkrgorrpbJKbpbSAfRDQptz2KYRFctUZCkf6iYcNzzDTF7eDkaBzebFc2uPiYwtsHHUCA7j3Bndr8GXu))
+2025-01-24 23:53:14 - 1_val_pay_vals_from_localwallet.py executed successfully.
+2025-01-24 23:53:14 - Executing 2_scraper2.py...
+Querying master server for TFC servers...
+Request timed out
+Number of unique TFC servers found: 88
+Querying server: 172.83.159.2:27015
+Querying server: 5.78.115.59:27015
+Querying server: 54.188.146.29:27015
+Querying server: 97.94.129.234:34531
+Querying server: 54.153.40.112:27015
+Querying server: 98.210.109.153:27015
+Querying server: 192.169.85.163:27015
+Querying server: 192.169.85.101:27015
+Querying server: 66.33.9.184:27015
+Querying server: 204.57.27.76:27015
+Querying server: 76.195.132.49:25590
+Querying server: 162.251.97.85:27040
+Querying server: 108.61.119.170:27015
+Saved Rere.json in player_keys/
+Saved BotTronics.json in player_keys/
+Saved Jeep.json in player_keys/
+Saved Dead_Cold.json in player_keys/
+Saved TheUndying.json in player_keys/
+Saved Devi0us.json in player_keys/
+Saved satman2499.json in player_keys/
+Saved oneredflag.json in player_keys/
+Saved smokeyhermit.json in player_keys/
+Saved mudbogger2.json in player_keys/
+Saved Tis.json in player_keys/
+Saved WornOutTire.json in player_keys/
+Saved eecjr0914.json in player_keys/
+Saved yashua.json in player_keys/
+Saved HoNduH.json in player_keys/
+Saved Beetlebomb.json in player_keys/
+Saved Steve.json in player_keys/
+Saved aaronsbarons.json in player_keys/
+Saved astrocreep2000.json in player_keys/
+Saved KenMll.json in player_keys/
+Saved nathanll382.json in player_keys/
+Saved Nitr0s0x.json in player_keys/
+Saved Mars19.json in player_keys/
+Saved Makaveli.json in player_keys/
+Saved Limpan.json in player_keys/
+Saved Bradley1968.json in player_keys/
+Saved Raidden.json in player_keys/
+Saved drjeckyl.json in player_keys/
+Saved exige.json in player_keys/
+Saved Timmy.json in player_keys/
+Saved Sonic.json in player_keys/
+Saved BoBtheServercom27021.json in player_keys/
+Saved Highlander.json in player_keys/
+Saved DrEvil.json in player_keys/
+Saved Mallory.json in player_keys/
+Saved Cherrybomb.json in player_keys/
+Saved Woodhouse.json in player_keys/
+Saved Grizz.json in player_keys/
+Saved Sterling.json in player_keys/
+Saved Ray.json in player_keys/
+Saved MolotovCocktease.json in player_keys/
+Saved Pikachu.json in player_keys/
+Saved Viper.json in player_keys/
+Saved BrockSampson.json in player_keys/
+Saved Duchess.json in player_keys/
+Saved DrVenture.json in player_keys/
+Querying server: 74.91.114.206:28888
+Saved TFPugsWESTHLTV.json in player_keys/
+Querying server: 66.25.218.38:27015
+Saved MrWalnutsTinyNut.json in player_keys/
+Saved Goldyspotofgold.json in player_keys/
+Saved RedRebelsLargeCannon.json in player_keys/
+Querying server: 68.232.160.177:27015
+Saved PastyGangstasShive.json in player_keys/
+Saved HarleysFlagPirate.json in player_keys/
+Saved BooBooCowsSexyVoice.json in player_keys/
+Querying server: 18.88.29.250:27015
+Saved BoBtheServercom27020.json in player_keys/
+Saved OtherBarry.json in player_keys/
+Saved Barry.json in player_keys/
+Saved Dean.json in player_keys/
+Saved Kreiger.json in player_keys/
+Saved Pugsley.json in player_keys/
+Saved Hank.json in player_keys/
+Saved Trinity.json in player_keys/
+Saved Cheryl.json in player_keys/
+Saved Pam.json in player_keys/
+Querying server: 45.32.203.198:27035
+Querying server: 45.32.207.158:27015
+Saved BurgerSlapper.json in player_keys/
+Saved EverySinglePowerRanger.json in player_keys/
+Saved Gemmy.json in player_keys/
+Saved Player.json in player_keys/
+Saved Chode_Chiggler.json in player_keys/
+Saved Merv.json in player_keys/
+Saved NapoleonDynamo.json in player_keys/
+Saved GandalfTheGray.json in player_keys/
+Saved CofCTV.json in player_keys/
+Querying server: 208.115.255.4:27015
+Saved PlayaHata.json in player_keys/
+Saved Ted.json in player_keys/
+Saved AOL.json in player_keys/
+Saved MoFugger.json in player_keys/
+Saved Ian.json in player_keys/
+Saved Curtis.json in player_keys/
+Saved Spanka.json in player_keys/
+Saved Steave.json in player_keys/
+Saved AntiHuman.json in player_keys/
+Saved BillGates.json in player_keys/
+Saved SPACEY.json in player_keys/
+Saved DrDeath.json in player_keys/
+Saved Austin.json in player_keys/
+Saved Kippa.json in player_keys/
+Querying server: 192.169.81.179:27015
+Querying server: 108.181.63.74:27019
+Saved Pybro.json in player_keys/
+Saved Hey.json in player_keys/
+Saved Jack.json in player_keys/
+Saved Iam.json in player_keys/
+Saved No.json in player_keys/
+Querying server: 74.63.236.204:27015
+Querying server: 63.143.56.124:27015
+Querying server: 74.91.122.11:27015
+Querying server: 192.223.26.238:27001
+Saved TFPugsCentralHLTV.json in player_keys/
+Querying server: 74.91.113.200:27015
+Querying server: 74.91.119.101:27015
+Saved Rafkin.json in player_keys/
+Saved Triolo.json in player_keys/
+Saved Harnna.json in player_keys/
+Saved Blackthorn.json in player_keys/
+Saved Marcy.json in player_keys/
+Saved Spectre.json in player_keys/
+Saved Maxwell.json in player_keys/
+Saved Delphynia.json in player_keys/
+Saved Tyball.json in player_keys/
+Saved TimeLord.json in player_keys/
+Querying server: 74.91.115.161:27015
+Saved Skuttlebot.json in player_keys/
+Querying server: 74.91.119.150:27015
+Saved Molly.json in player_keys/
+Saved Dex.json in player_keys/
+Saved ironman.json in player_keys/
+Saved Spock.json in player_keys/
+Saved Scotty.json in player_keys/
+Saved CyberCop.json in player_keys/
+Saved Kane.json in player_keys/
+Saved Kangaka.json in player_keys/
+Saved Angi3.json in player_keys/
+Saved RikiTikiTavi.json in player_keys/
+Querying server: 74.91.113.234:27015
+Querying server: 72.133.96.85:27018
+Querying server: 24.166.16.145:27022
+Saved Patreoncom1999TFC.json in player_keys/
+Saved BlockBusterVideo.json in player_keys/
+Saved JohnnyKnoxville.json in player_keys/
+Saved Jarulesux.json in player_keys/
+Saved Nickelodeon.json in player_keys/
+Saved DuckTales.json in player_keys/
+Saved Hi-CEctoCooler.json in player_keys/
+Saved Y2KStoned.json in player_keys/
+Saved lilwhooty.json in player_keys/
+Saved GTA2.json in player_keys/
+Saved ICQ.json in player_keys/
+Saved AIM.json in player_keys/
+Saved Payphone.json in player_keys/
+Saved LinkinPark.json in player_keys/
+Saved TrapperKeeper.json in player_keys/
+Saved Zima.json in player_keys/
+Saved hitmypager.json in player_keys/
+Querying server: 205.196.43.194:27050
+Saved CO.json in player_keys/
+Saved Chief.json in player_keys/
+Saved Colonel.json in player_keys/
+Saved Tanker.json in player_keys/
+Querying server: 92.119.129.204:27016
+Saved NXS.json in player_keys/
+Saved YoMama.json in player_keys/
+Saved Brit.json in player_keys/
+Saved Carly.json in player_keys/
+Querying server: 149.56.29.125:27017
+Querying server: 142.44.148.157:53000
+Querying server: 75.97.192.109:27015
+Saved Doug.json in player_keys/
+Saved i-have-worse-than-bad-luck.json in player_keys/
+Saved b.json in player_keys/
+Saved durdencouchgaming.json in player_keys/
+Saved hellowheaties.json in player_keys/
+Saved Cheese.json in player_keys/
+Saved le_couch.json in player_keys/
+Saved HampsterwRadioactiveBananas.json in player_keys/
+Saved hellouoau.json in player_keys/
+Saved InhouseHLTV.json in player_keys/
+Querying server: 34.206.24.63:27020
+Saved FFL-TV.json in player_keys/
+Querying server: 172.233.224.83:27016
+Saved hellohltv.json in player_keys/
+Querying server: 129.158.218.251:27015
+Saved MrFloorPie.json in player_keys/
+Saved MrMani.json in player_keys/
+Saved MrPhalanx.json in player_keys/
+Saved MrBruno.json in player_keys/
+Saved MrGhey.json in player_keys/
+Saved MrOpossum.json in player_keys/
+Saved MrThunder.json in player_keys/
+Saved MrGiga.json in player_keys/
+Saved MrNimda.json in player_keys/
+Saved MrP4r4l4x.json in player_keys/
+Saved MrWhat.json in player_keys/
+Saved MrOrtega.json in player_keys/
+Saved MrSwede.json in player_keys/
+Saved MrTom.json in player_keys/
+Saved MrNuggs.json in player_keys/
+Saved Mr-X-.json in player_keys/
+Querying server: 44.202.103.140:27015
+Querying server: 69.251.134.183:27017
+Querying server: 50.116.59.192:27015
+Querying server: 23.148.232.35:27285
+Saved Bruno.json in player_keys/
+Saved Phalanx.json in player_keys/
+Saved AR.json in player_keys/
+Saved RiFFRaFF.json in player_keys/
+Saved Jehster.json in player_keys/
+Saved DePo.json in player_keys/
+Saved MighTy.json in player_keys/
+Saved SheDevil.json in player_keys/
+Saved Nimda.json in player_keys/
+Saved -X-.json in player_keys/
+Saved Avenger.json in player_keys/
+Saved PaRallax.json in player_keys/
+Saved eve.json in player_keys/
+Saved What.json in player_keys/
+Saved SF49ers.json in player_keys/
+Saved Merrick.json in player_keys/
+Querying server: 104.207.129.123:27015
+Querying server: 172.93.101.194:27015
+Saved Playa.json in player_keys/
+Saved JesseJames.json in player_keys/
+Querying server: 69.10.36.10:28015
+Querying server: 64.31.28.157:27025
+Querying server: 64.31.28.179:27015
+Querying server: 64.31.28.203:27015
+Saved LEVEL1TFCGOD.json in player_keys/
+Saved TFPugsEASTNYCHLTV.json in player_keys/
+Querying server: 74.91.123.162:27005
+Saved TFPugsEAST2HLTV.json in player_keys/
+Querying server: 192.223.24.233:27015
+Querying server: 74.91.123.34:27015
+Saved D2F-HLTV.json in player_keys/
+Querying server: 74.91.116.214:27015
+Saved Jim.json in player_keys/
+Saved Harold.json in player_keys/
+Saved Terry.json in player_keys/
+Saved Percy.json in player_keys/
+Saved Charles.json in player_keys/
+Saved Dexter.json in player_keys/
+Saved David.json in player_keys/
+Saved Samuel.json in player_keys/
+Saved Kevin.json in player_keys/
+Querying server: 167.88.44.161:27015
+Querying server: 38.40.74.41:27020
+Saved MaTTy.json in player_keys/
+Saved Gibbs.json in player_keys/
+Saved Smett.json in player_keys/
+Saved jhood.json in player_keys/
+Saved PV-XR.json in player_keys/
+Saved Dawn.json in player_keys/
+Saved Dragonair.json in player_keys/
+Saved wolfeet1337.json in player_keys/
+Saved bmonkey.json in player_keys/
+Saved KosGhOsT.json in player_keys/
+Querying server: 45.77.162.42:27020
+Saved Cartman.json in player_keys/
+Saved Rosco.json in player_keys/
+Saved MrMan.json in player_keys/
+Saved SmellULater.json in player_keys/
+Saved Muon.json in player_keys/
+Saved ElLobstero.json in player_keys/
+Saved RainMan.json in player_keys/
+Saved Alfonzo.json in player_keys/
+Querying server: 178.32.3.3:27013
+Saved Reloaded-HLTV.json in player_keys/
+Saved Reloaded-Staff.json in player_keys/
+Saved AgentMulder.json in player_keys/
+Saved WololoMonk.json in player_keys/
+Saved AdrianShephard.json in player_keys/
+Saved CaptainPicard.json in player_keys/
+Saved RyoHazuki.json in player_keys/
+Saved TommyVercetti.json in player_keys/
+Saved InternetExplorer.json in player_keys/
+Saved LoWang.json in player_keys/
+Saved PeterGriffin.json in player_keys/
+Saved TheDude.json in player_keys/
+Saved CarlJohnson.json in player_keys/
+Saved DickTremayne.json in player_keys/
+Querying server: 192.248.163.247:27015
+Saved PedrolvaresCabral.json in player_keys/
+Saved JoscelinI.json in player_keys/
+Saved GodfreyofBouillon.json in player_keys/
+Saved HeloisedArgenteuil.json in player_keys/
+Saved HenryII.json in player_keys/
+Saved CharlesleVictorieuxVII.json in player_keys/
+Saved JeandeMetz.json in player_keys/
+Saved AlexiosIKomnenos.json in player_keys/
+Saved BaldwinofBoulogne.json in player_keys/
+Saved WilliamtheConqueror.json in player_keys/
+Saved Tancred.json in player_keys/
+Saved RobertGuiscarddeHauteville.json in player_keys/
+Saved HenryIreton.json in player_keys/
+Saved HenryIV.json in player_keys/
+Querying server: 82.165.193.67:27015
+Querying server: 51.195.252.162:27015
+Querying server: 145.239.6.180:27000
+Querying server: 145.239.6.111:27050
+Saved Kenny.json in player_keys/
+Saved Kyle.json in player_keys/
+Saved Stan.json in player_keys/
+Saved Jimbo.json in player_keys/
+Saved Ned.json in player_keys/
+Saved Butters.json in player_keys/
+Saved Tweak.json in player_keys/
+Querying server: 88.97.252.184:27015
+Querying server: 188.165.244.220:27030
+Saved EUHLTV.json in player_keys/
+Querying server: 5.196.63.134:27015
+Querying server: 194.163.156.183:27015
+Saved LiLPimP.json in player_keys/
+Saved TFCRBotnet.json in player_keys/
+Saved 133t_Ha0r.json in player_keys/
+Saved Gordon.json in player_keys/
+Saved FootJob.json in player_keys/
+Saved FuzzyBunny.json in player_keys/
+Querying server: 217.160.162.135:27019
+Saved WORLDSbestskillServertv.json in player_keys/
+Saved JuliuS_CaesaR.json in player_keys/
+Saved chinodechina.json in player_keys/
+Querying server: 79.207.101.159:27017
+Querying server: 4.185.106.208:27015
+Saved -firey.json in player_keys/
+Saved -ieDuNe.json in player_keys/
+Saved Defrag.json in player_keys/
+Saved BCChief.json in player_keys/
+Saved Angron.json in player_keys/
+Saved KaoSKID.json in player_keys/
+Saved BCMata.json in player_keys/
+Saved -f-Epsylon.json in player_keys/
+Saved AcidReniX.json in player_keys/
+Saved Un_Zipper.json in player_keys/
+Saved -f-Mick.json in player_keys/
+Saved Blx.json in player_keys/
+Saved det.json in player_keys/
+Saved Blackout.json in player_keys/
+Saved Cenobite.json in player_keys/
+Saved SpaceCowboy.json in player_keys/
+Saved ZtDion.json in player_keys/
+Saved HellkeepeR.json in player_keys/
+Saved mclcaeium.json in player_keys/
+Saved ZtDarkness.json in player_keys/
+Saved ExterioR.json in player_keys/
+Saved -f-Raek.json in player_keys/
+Saved Skins.json in player_keys/
+Saved g.json in player_keys/
+Saved Awardse.json in player_keys/
+Saved Overkill.json in player_keys/
+Saved NoLimit.json in player_keys/
+Saved ZtReptile.json in player_keys/
+Saved -f-kz.json in player_keys/
+Saved r3d3mpTioN.json in player_keys/
+Saved BCNar.json in player_keys/
+Saved RoystonVaseyTV.json in player_keys/
+Querying server: 89.36.216.8:27017
+Saved CheatsRGay.json in player_keys/
+Saved Dotcom.json in player_keys/
+Saved Grubber.json in player_keys/
+Saved DeadSurfer.json in player_keys/
+Querying server: 116.202.113.50:27117
+Saved Earp.json in player_keys/
+Querying server: 94.130.132.169:27079
+Saved Bizitch.json in player_keys/
+Querying server: 116.202.113.54:27015
+Saved MoJo.json in player_keys/
+Saved Spanner.json in player_keys/
+Saved TheDevil.json in player_keys/
+Saved Glenn.json in player_keys/
+Saved Caleb.json in player_keys/
+Saved TVS.json in player_keys/
+Saved M0rph1n3.json in player_keys/
+Saved John_McClane.json in player_keys/
+Saved SAS_Commando.json in player_keys/
+Saved Seven_of_Nine.json in player_keys/
+Saved Titan.json in player_keys/
+Saved Barry_Gibb.json in player_keys/
+Saved Mario.json in player_keys/
+Saved Victor_Meldrew.json in player_keys/
+Saved Frank_Drebin.json in player_keys/
+Saved LycosBot.json in player_keys/
+Querying server: 136.243.174.101:27216
+Saved ElonMusk.json in player_keys/
+Saved Doge1.json in player_keys/
+Saved Doge5.json in player_keys/
+Saved Doge2.json in player_keys/
+Saved Doge6.json in player_keys/
+Saved Doge3.json in player_keys/
+Saved Doge7.json in player_keys/
+Saved Doge4.json in player_keys/
+Saved Doge8.json in player_keys/
+Querying server: 213.133.103.125:27285
+Saved Playersjerome.json in player_keys/
+Saved HotBoy.json in player_keys/
+Saved Exclusive_player.json in player_keys/
+Saved SmArT.json in player_keys/
+Saved lambe.json in player_keys/
+Saved Sakramento.json in player_keys/
+Saved Gamer_VampiR.json in player_keys/
+Saved Domino.json in player_keys/
+Saved satroN.json in player_keys/
+Saved ONEtmZIB.json in player_keys/
+Saved PaTrIoT.json in player_keys/
+Saved Fuckingdoit.json in player_keys/
+Querying server: 89.179.240.119:27065
+Saved Henri.json in player_keys/
+Saved BOT_Brit.json in player_keys/
+Saved BOT_Herb.json in player_keys/
+Saved BOT_BillGates.json in player_keys/
+Saved BOT_TheDevil.json in player_keys/
+Saved BOT_FragFury.json in player_keys/
+Saved BOT_TheDefender.json in player_keys/
+Saved BOT_AntiHuman.json in player_keys/
+Saved SpeedyScout.json in player_keys/
+Saved BOT_SniperStrike.json in player_keys/
+Saved ClutchMedic.json in player_keys/
+Saved BOT_Ted.json in player_keys/
+Saved BOT_HeavyHitter.json in player_keys/
+Saved BOT_SilentSaboteur.json in player_keys/
+Saved BOT_SmellULater.json in player_keys/
+Saved BOT_FootJob.json in player_keys/
+Saved BOT_MoJo.json in player_keys/
+Saved BOT_Curtis.json in player_keys/
+Saved NoScopeKing.json in player_keys/
+Saved RocketWhisperer.json in player_keys/
+Saved BOT_BlazingPyro.json in player_keys/
+Saved PlasmaPhantom.json in player_keys/
+Saved BOT_Stimpy.json in player_keys/
+Saved SpannerSpree.json in player_keys/
+Saved BOT_SniperElite.json in player_keys/
+Saved EngineerElite.json in player_keys/
+Saved BOT_StickyKing.json in player_keys/
+Saved BOT_USuck.json in player_keys/
+Saved BOT_DeathBySentry.json in player_keys/
+Saved BOT_RocketRogue.json in player_keys/
+Querying server: 70.34.244.247:27915
+Querying server: 220.130.108.125:27012
+Querying server: 181.192.79.104:27024
+Querying server: 121.99.240.213:27018
+Querying server: 51.161.212.218:27020
+Querying server: 13.236.204.222:27016
+Querying server: 202.169.104.136:43216
+Saved tibu.json in player_keys/
+Failed to query server at 76.195.132.49:25590: timed out
+Querying server: 45.118.66.4:27015
+Querying server: 169.254.92.89:21344
+Querying server: 71.10.129.36:27015
+Saved Herb.json in player_keys/
+Saved Hammer.json in player_keys/
+Saved RebelKid.json in player_keys/
+Saved Chickenlegs.json in player_keys/
+Saved HamandEggs.json in player_keys/
+Saved Lepton.json in player_keys/
+Saved LMFCrow.json in player_keys/
+Saved LMFSpeedFire.json in player_keys/
+Saved -GY-Godman.json in player_keys/
+Saved LMFEve.json in player_keys/
+Saved -GY-Mooneyes.json in player_keys/
+Saved LMFRaptor.json in player_keys/
+Saved -GY-CHAO.json in player_keys/
+Saved -GY-Timo.json in player_keys/
+Saved -SGL-NAVY.json in player_keys/
+Saved -GY--2001-.json in player_keys/
+Saved -GY-flower.json in player_keys/
+Saved -GY-DontkillmelaQ_Q.json in player_keys/
+Saved LMFLung.json in player_keys/
+Saved LMFDYNASTY.json in player_keys/
+Saved LMFT.json in player_keys/
+Saved LMF87speed.json in player_keys/
+Saved LMFDenny.json in player_keys/
+Saved LMFISEEBI.json in player_keys/
+Saved LMFHunterKiller.json in player_keys/
+Saved VOMDannyKL.json in player_keys/
+Failed to query server at 149.56.29.125:27017: timed out
+Failed to query server at 75.97.192.109:27015: timed out
+Failed to query server at 79.207.101.159:27017: timed out
+Failed to query server at 45.118.66.4:27015: timed out
+Failed to query server at 169.254.92.89:21344: timed out
+Failed to query server at 71.10.129.36:27015: timed out
+
+All player data has been saved individually in the player_keys/ folder.
+2025-01-24 23:53:43 - 2_scraper2.py executed successfully.
+2025-01-24 23:53:43 - Executing 3_test_fancoin.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 50, in initialize_dapp
+    tx = await program.rpc["initialize_dapp"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 353, in main
+    dapp_pda = await initialize_dapp(program, client)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 50, in initialize_dapp
+    tx = await program.rpc["initialize_dapp"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Setting up provider and loading program...
+Program loaded successfully.
+Initializing DApp account...
+DApp PDA: pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD, Bump: 254
+Error initializing DApp: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+An unexpected error occurred.
+SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Closed Solana RPC client.
+2025-01-24 23:53:44 - 3_test_fancoin.py executed successfully.
+2025-01-24 23:53:44 - Executing 4_test_fancoin_2.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 50, in initialize_dapp
+    tx = await program.rpc["initialize_dapp"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 353, in main
+    dapp_pda = await initialize_dapp(program, client)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 50, in initialize_dapp
+    tx = await program.rpc["initialize_dapp"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Setting up provider and loading program...
+Program loaded successfully.
+Initializing DApp account...
+DApp PDA: pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD, Bump: 254
+Error initializing DApp: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+An unexpected error occurred.
+SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Closed Solana RPC client.
+2025-01-24 23:53:44 - 4_test_fancoin_2.py executed successfully.
+2025-01-24 23:53:44 - Executing punch_in.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/punch_in.py", line 35, in punch_in
+    tx = await program.rpc["punch_in"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Program loaded successfully.
+Game PDA => 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe
+Validator PDA => AeyppVe3FdjDpiF9HtBTiDdWXCfZ6qjyfGDNcTSL3zFF
+
+Punching In as Validator...
+[ERROR] Punching in: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Closed Solana RPC client.
+2025-01-24 23:53:45 - punch_in.py executed successfully.
+2025-01-24 23:53:45 - Executing punch_in2.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/punch_in2.py", line 35, in punch_in
+    tx = await program.rpc["punch_in"](
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 63, in rpc_fn
+    return await provider.send(tx, ctx.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/provider.py", line 122, in send
+    resp = await self.connection.send_raw_transaction(raw, opts=opts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/async_api.py", line 1012, in send_raw_transaction
+    resp = await self._provider.make_request(body, SendTransactionResp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/exceptions.py", line 60, in argument_decorator
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/async_http.py", line 60, in make_request
+    return _parse_raw(raw, parser=parser)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/solana/rpc/providers/core.py", line 98, in _parse_raw
+    raise RPCException(parsed)
+solana.rpc.core.RPCException: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Program loaded successfully.
+Game PDA => 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe
+Validator PDA => 4HqsDmzs9re4abxJ2DrCsRvAFSsNZufe5bzQ95ayaSWn
+
+Punching In as Validator...
+[ERROR] Punching in: SendTransactionPreflightFailureMessage { message: "Transaction simulation failed: Attempt to load a program that does not exist", data: RpcSimulateTransactionResult(RpcSimulateTransactionResult { err: Some(ProgramAccountNotFound), logs: Some([]), accounts: None, units_consumed: Some(0), return_data: None, inner_instructions: None }) }
+Closed Solana RPC client.
+2025-01-24 23:53:46 - punch_in2.py executed successfully.
+2025-01-24 23:53:46 - Executing bulk_register_players.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Payer wallet balance: 499999979588705000 lamports
+Program loaded successfully.
+[DEBUG] Using dapp_pda=pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD
+
+[INFO] Registering player => Blx with pubkey CSF98Fu9z9XFKPTekczEnvoBmz1os9qLD1QGXtGj7EL9
+[DEBUG] Derived reward_pubkey (ATA) => EtadKscAUmAnU2qAKPsR3an7hRJEfYcHWvuD1ZXUHN2K for player Blx
+[INFO] Airdropping 10000000 lamports to CSF98Fu9z9XFKPTekczEnvoBmz1os9qLD1QGXtGj7EL9
+Sent 10000000 lamports to CSF98Fu9z9XFKPTekczEnvoBmz1os9qLD1QGXtGj7EL9. Transaction Signature: SendTransactionResp(Signature(3jaTiUcoXpnuhrUwSmXQt2LrNETB3AUqHorNaFxsRvczdETE2QhK9EKrxko3skPUT7yCdiPRTkZBd2dKo6fk6nhq))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3jaTiUcoXpnuhrUwSmXQt2LrNETB3AUqHorNaFxsRvczdETE2QhK9EKrxko3skPUT7yCdiPRTkZBd2dKo6fk6nhq))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3jaTiUcoXpnuhrUwSmXQt2LrNETB3AUqHorNaFxsRvczdETE2QhK9EKrxko3skPUT7yCdiPRTkZBd2dKo6fk6nhq for CSF98Fu9z9XFKPTekczEnvoBmz1os9qLD1QGXtGj7EL9
+[SUCCESS] Airdropped 10000000 lamports to CSF98Fu9z9XFKPTekczEnvoBmz1os9qLD1QGXtGj7EL9. Tx Sig: 3jaTiUcoXpnuhrUwSmXQt2LrNETB3AUqHorNaFxsRvczdETE2QhK9EKrxko3skPUT7yCdiPRTkZBd2dKo6fk6nhq
+[DEBUG] Player CSF98Fu9z9XFKPTekczEnvoBmz1os9qLD1QGXtGj7EL9 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Blx.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => hellouoau with pubkey HFnTYHZgZQ6qQ61tNeyPW5R5P4NhYeDDkTVAt2Wr5dA
+[DEBUG] Derived reward_pubkey (ATA) => vqEQcwg8E8T1r6La7vo7uUHj5GrQcxCRGA6iwRdiPKR for player hellouoau
+[INFO] Airdropping 10000000 lamports to HFnTYHZgZQ6qQ61tNeyPW5R5P4NhYeDDkTVAt2Wr5dA
+Sent 10000000 lamports to HFnTYHZgZQ6qQ61tNeyPW5R5P4NhYeDDkTVAt2Wr5dA. Transaction Signature: SendTransactionResp(Signature(mGzuumYPu7jizLovqdzHxDdtUAmVfJAvBEovq2uZuwBchxUVFTZZEWUJDmieh8CHeqcyPpPQ5uBxCkxpa6BikmT))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(mGzuumYPu7jizLovqdzHxDdtUAmVfJAvBEovq2uZuwBchxUVFTZZEWUJDmieh8CHeqcyPpPQ5uBxCkxpa6BikmT))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction mGzuumYPu7jizLovqdzHxDdtUAmVfJAvBEovq2uZuwBchxUVFTZZEWUJDmieh8CHeqcyPpPQ5uBxCkxpa6BikmT for HFnTYHZgZQ6qQ61tNeyPW5R5P4NhYeDDkTVAt2Wr5dA
+[SUCCESS] Airdropped 10000000 lamports to HFnTYHZgZQ6qQ61tNeyPW5R5P4NhYeDDkTVAt2Wr5dA. Tx Sig: mGzuumYPu7jizLovqdzHxDdtUAmVfJAvBEovq2uZuwBchxUVFTZZEWUJDmieh8CHeqcyPpPQ5uBxCkxpa6BikmT
+[DEBUG] Player HFnTYHZgZQ6qQ61tNeyPW5R5P4NhYeDDkTVAt2Wr5dA balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/hellouoau.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Y2KStoned with pubkey Eu54Z7G5teWkZzfPZqCkfEZ9UrZt8e9oy2171CUoDmfL
+[DEBUG] Derived reward_pubkey (ATA) => 7HTyyQyw5DZwGLYaQVypdqaypce1K4kpbjgacRdSbGCn for player Y2KStoned
+[INFO] Airdropping 10000000 lamports to Eu54Z7G5teWkZzfPZqCkfEZ9UrZt8e9oy2171CUoDmfL
+Sent 10000000 lamports to Eu54Z7G5teWkZzfPZqCkfEZ9UrZt8e9oy2171CUoDmfL. Transaction Signature: SendTransactionResp(Signature(5mCtnR1fugAmbCCCodf6GzRwUtWrfhLCpJk5Htd1XsysXqXUAQdWpnEqnyGjL9in1Fhyu9jwDnQLy663LZZjdUR6))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(5mCtnR1fugAmbCCCodf6GzRwUtWrfhLCpJk5Htd1XsysXqXUAQdWpnEqnyGjL9in1Fhyu9jwDnQLy663LZZjdUR6))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 5mCtnR1fugAmbCCCodf6GzRwUtWrfhLCpJk5Htd1XsysXqXUAQdWpnEqnyGjL9in1Fhyu9jwDnQLy663LZZjdUR6 for Eu54Z7G5teWkZzfPZqCkfEZ9UrZt8e9oy2171CUoDmfL
+[SUCCESS] Airdropped 10000000 lamports to Eu54Z7G5teWkZzfPZqCkfEZ9UrZt8e9oy2171CUoDmfL. Tx Sig: 5mCtnR1fugAmbCCCodf6GzRwUtWrfhLCpJk5Htd1XsysXqXUAQdWpnEqnyGjL9in1Fhyu9jwDnQLy663LZZjdUR6
+[DEBUG] Player Eu54Z7G5teWkZzfPZqCkfEZ9UrZt8e9oy2171CUoDmfL balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Y2KStoned.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => -f-kz with pubkey G39xBT856SMsepu7YJvBKTi826eXrAJCvxw8611ncFcu
+[DEBUG] Derived reward_pubkey (ATA) => 3BtcEcUJgiA2U9uoz526cvyHqophcsVhqRHgci9NjYWK for player -f-kz
+[INFO] Airdropping 10000000 lamports to G39xBT856SMsepu7YJvBKTi826eXrAJCvxw8611ncFcu
+Sent 10000000 lamports to G39xBT856SMsepu7YJvBKTi826eXrAJCvxw8611ncFcu. Transaction Signature: SendTransactionResp(Signature(suSqitxMQWdX9W3nNmAwApqYBUrWQGK25ouJuRw9eQjeHmx27ktAZUfFz4U9WNzou1UrdJBtQaoi6qCm8NFjfs6))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(suSqitxMQWdX9W3nNmAwApqYBUrWQGK25ouJuRw9eQjeHmx27ktAZUfFz4U9WNzou1UrdJBtQaoi6qCm8NFjfs6))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction suSqitxMQWdX9W3nNmAwApqYBUrWQGK25ouJuRw9eQjeHmx27ktAZUfFz4U9WNzou1UrdJBtQaoi6qCm8NFjfs6 for G39xBT856SMsepu7YJvBKTi826eXrAJCvxw8611ncFcu
+[SUCCESS] Airdropped 10000000 lamports to G39xBT856SMsepu7YJvBKTi826eXrAJCvxw8611ncFcu. Tx Sig: suSqitxMQWdX9W3nNmAwApqYBUrWQGK25ouJuRw9eQjeHmx27ktAZUfFz4U9WNzou1UrdJBtQaoi6qCm8NFjfs6
+[DEBUG] Player G39xBT856SMsepu7YJvBKTi826eXrAJCvxw8611ncFcu balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/-f-kz.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Ted with pubkey HUk227FChjV5bYWsTd6Jzoo84nKaHnrxJzZ3qysnUzjh
+[DEBUG] Derived reward_pubkey (ATA) => WvRVajGi4sZ3Dj4KcNvbJy2PMUtQXcKJAQStnE1Cn59 for player Ted
+[INFO] Airdropping 10000000 lamports to HUk227FChjV5bYWsTd6Jzoo84nKaHnrxJzZ3qysnUzjh
+Sent 10000000 lamports to HUk227FChjV5bYWsTd6Jzoo84nKaHnrxJzZ3qysnUzjh. Transaction Signature: SendTransactionResp(Signature(bLBeTGVASoEmfYq32m9DGVyftGhTTxVq6WGnvGb8dTNTboVrszauXuQQ2T9T45Lf6ou2YSRtFCWnHiezUxb5XsS))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(bLBeTGVASoEmfYq32m9DGVyftGhTTxVq6WGnvGb8dTNTboVrszauXuQQ2T9T45Lf6ou2YSRtFCWnHiezUxb5XsS))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction bLBeTGVASoEmfYq32m9DGVyftGhTTxVq6WGnvGb8dTNTboVrszauXuQQ2T9T45Lf6ou2YSRtFCWnHiezUxb5XsS for HUk227FChjV5bYWsTd6Jzoo84nKaHnrxJzZ3qysnUzjh
+[SUCCESS] Airdropped 10000000 lamports to HUk227FChjV5bYWsTd6Jzoo84nKaHnrxJzZ3qysnUzjh. Tx Sig: bLBeTGVASoEmfYq32m9DGVyftGhTTxVq6WGnvGb8dTNTboVrszauXuQQ2T9T45Lf6ou2YSRtFCWnHiezUxb5XsS
+[DEBUG] Player HUk227FChjV5bYWsTd6Jzoo84nKaHnrxJzZ3qysnUzjh balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Ted.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => CofCTV with pubkey 9GUxqfEqogL5v1kDkhv6X764dkPXPDjNJNr5VjnSiYN4
+[DEBUG] Derived reward_pubkey (ATA) => AvAGaKwcXTDW3bn1KxMJkHWLTEJtby5Ueh3tmS6aenGD for player CofCTV
+[INFO] Airdropping 10000000 lamports to 9GUxqfEqogL5v1kDkhv6X764dkPXPDjNJNr5VjnSiYN4
+Sent 10000000 lamports to 9GUxqfEqogL5v1kDkhv6X764dkPXPDjNJNr5VjnSiYN4. Transaction Signature: SendTransactionResp(Signature(42bZ95fm2WPAysh9BHqXgeXuBiFEix758ZRbRWNLcV8WyEzFa39d4UDqMRoCss4mEREA1gc6JYbucwayU1HL77xR))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(42bZ95fm2WPAysh9BHqXgeXuBiFEix758ZRbRWNLcV8WyEzFa39d4UDqMRoCss4mEREA1gc6JYbucwayU1HL77xR))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 42bZ95fm2WPAysh9BHqXgeXuBiFEix758ZRbRWNLcV8WyEzFa39d4UDqMRoCss4mEREA1gc6JYbucwayU1HL77xR for 9GUxqfEqogL5v1kDkhv6X764dkPXPDjNJNr5VjnSiYN4
+[SUCCESS] Airdropped 10000000 lamports to 9GUxqfEqogL5v1kDkhv6X764dkPXPDjNJNr5VjnSiYN4. Tx Sig: 42bZ95fm2WPAysh9BHqXgeXuBiFEix758ZRbRWNLcV8WyEzFa39d4UDqMRoCss4mEREA1gc6JYbucwayU1HL77xR
+[DEBUG] Player 9GUxqfEqogL5v1kDkhv6X764dkPXPDjNJNr5VjnSiYN4 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/CofCTV.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => BOT_Curtis with pubkey 79EKXEnJJyfHWibs2Kc7LRHWqJJKXFEHytF47GC4uvtP
+[DEBUG] Derived reward_pubkey (ATA) => E3jiNfKLrwR7XRzTwdvsy4L6bfqMEEfrjj85AzMRaion for player BOT_Curtis
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+[INFO] Airdropping 10000000 lamports to 79EKXEnJJyfHWibs2Kc7LRHWqJJKXFEHytF47GC4uvtP
+Sent 10000000 lamports to 79EKXEnJJyfHWibs2Kc7LRHWqJJKXFEHytF47GC4uvtP. Transaction Signature: SendTransactionResp(Signature(3fazuE84B7m7hWZzmm3McaWR2WhWgxQZWLwaHUqcYNwbCnfAaZH1mTxMJ9QHWYpK3CJZGKd5puZjGS9Hy5RY8HSM))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3fazuE84B7m7hWZzmm3McaWR2WhWgxQZWLwaHUqcYNwbCnfAaZH1mTxMJ9QHWYpK3CJZGKd5puZjGS9Hy5RY8HSM))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3fazuE84B7m7hWZzmm3McaWR2WhWgxQZWLwaHUqcYNwbCnfAaZH1mTxMJ9QHWYpK3CJZGKd5puZjGS9Hy5RY8HSM for 79EKXEnJJyfHWibs2Kc7LRHWqJJKXFEHytF47GC4uvtP
+[SUCCESS] Airdropped 10000000 lamports to 79EKXEnJJyfHWibs2Kc7LRHWqJJKXFEHytF47GC4uvtP. Tx Sig: 3fazuE84B7m7hWZzmm3McaWR2WhWgxQZWLwaHUqcYNwbCnfAaZH1mTxMJ9QHWYpK3CJZGKd5puZjGS9Hy5RY8HSM
+[DEBUG] Player 79EKXEnJJyfHWibs2Kc7LRHWqJJKXFEHytF47GC4uvtP balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/BOT_Curtis.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Gordon with pubkey 9S5qLAkashWNCfiozghPnzpyu1qRgoZc7qNwsAA8upwV
+[DEBUG] Derived reward_pubkey (ATA) => F7KdKkNQo6eGLJ3GpVki94csqJbCQNYqHRzV44igpryh for player Gordon
+[INFO] Airdropping 10000000 lamports to 9S5qLAkashWNCfiozghPnzpyu1qRgoZc7qNwsAA8upwV
+Sent 10000000 lamports to 9S5qLAkashWNCfiozghPnzpyu1qRgoZc7qNwsAA8upwV. Transaction Signature: SendTransactionResp(Signature(4xvubnuyF43ULGtDufj5LBzyMMThnFZ1XFDDJKaoBdTP8jeah2jiPkEAFU3yYYhfGswVDz2iJTQd3Pjbg611zHrE))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4xvubnuyF43ULGtDufj5LBzyMMThnFZ1XFDDJKaoBdTP8jeah2jiPkEAFU3yYYhfGswVDz2iJTQd3Pjbg611zHrE))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4xvubnuyF43ULGtDufj5LBzyMMThnFZ1XFDDJKaoBdTP8jeah2jiPkEAFU3yYYhfGswVDz2iJTQd3Pjbg611zHrE for 9S5qLAkashWNCfiozghPnzpyu1qRgoZc7qNwsAA8upwV
+[SUCCESS] Airdropped 10000000 lamports to 9S5qLAkashWNCfiozghPnzpyu1qRgoZc7qNwsAA8upwV. Tx Sig: 4xvubnuyF43ULGtDufj5LBzyMMThnFZ1XFDDJKaoBdTP8jeah2jiPkEAFU3yYYhfGswVDz2iJTQd3Pjbg611zHrE
+[DEBUG] Player 9S5qLAkashWNCfiozghPnzpyu1qRgoZc7qNwsAA8upwV balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Gordon.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => astrocreep2000 with pubkey BkeqBmxithiLYboXySqmhres2siUFMGpFoKpZbguLNSy
+[DEBUG] Derived reward_pubkey (ATA) => EJZt75Yh9dhR2gibcYtjvspWqNAQMp6Thf9S8z6YqXHh for player astrocreep2000
+[INFO] Airdropping 10000000 lamports to BkeqBmxithiLYboXySqmhres2siUFMGpFoKpZbguLNSy
+Sent 10000000 lamports to BkeqBmxithiLYboXySqmhres2siUFMGpFoKpZbguLNSy. Transaction Signature: SendTransactionResp(Signature(4S2rz5PU35gnML2qdyKHXQKSB5rVJxKCTjRoHxiwPXCeufyJZRwA6hccbnQ2SfXTai6gWQZMYnWyvKALHmPDKvFU))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4S2rz5PU35gnML2qdyKHXQKSB5rVJxKCTjRoHxiwPXCeufyJZRwA6hccbnQ2SfXTai6gWQZMYnWyvKALHmPDKvFU))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4S2rz5PU35gnML2qdyKHXQKSB5rVJxKCTjRoHxiwPXCeufyJZRwA6hccbnQ2SfXTai6gWQZMYnWyvKALHmPDKvFU for BkeqBmxithiLYboXySqmhres2siUFMGpFoKpZbguLNSy
+[SUCCESS] Airdropped 10000000 lamports to BkeqBmxithiLYboXySqmhres2siUFMGpFoKpZbguLNSy. Tx Sig: 4S2rz5PU35gnML2qdyKHXQKSB5rVJxKCTjRoHxiwPXCeufyJZRwA6hccbnQ2SfXTai6gWQZMYnWyvKALHmPDKvFU
+[DEBUG] Player BkeqBmxithiLYboXySqmhres2siUFMGpFoKpZbguLNSy balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/astrocreep2000.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Dex with pubkey Hkv6azzDCqT9AtJEt1jfjKATgyZTEHfM5qnZfWzUacBy
+[DEBUG] Derived reward_pubkey (ATA) => HkvLpXo3x2oUpxRYhC9D6kfjLA9CxFgxbcccEVKEAmJ8 for player Dex
+[INFO] Airdropping 10000000 lamports to Hkv6azzDCqT9AtJEt1jfjKATgyZTEHfM5qnZfWzUacBy
+Sent 10000000 lamports to Hkv6azzDCqT9AtJEt1jfjKATgyZTEHfM5qnZfWzUacBy. Transaction Signature: SendTransactionResp(Signature(qbQn3asiQhUYq5xCYGEFDFDttKWxgwa4Y7zVNTUgdZaifiZV4VsuX9pXHQUBvD5zbKzcWhYZ9gYhA4gMwFSCHKq))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(qbQn3asiQhUYq5xCYGEFDFDttKWxgwa4Y7zVNTUgdZaifiZV4VsuX9pXHQUBvD5zbKzcWhYZ9gYhA4gMwFSCHKq))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction qbQn3asiQhUYq5xCYGEFDFDttKWxgwa4Y7zVNTUgdZaifiZV4VsuX9pXHQUBvD5zbKzcWhYZ9gYhA4gMwFSCHKq for Hkv6azzDCqT9AtJEt1jfjKATgyZTEHfM5qnZfWzUacBy
+[SUCCESS] Airdropped 10000000 lamports to Hkv6azzDCqT9AtJEt1jfjKATgyZTEHfM5qnZfWzUacBy. Tx Sig: qbQn3asiQhUYq5xCYGEFDFDttKWxgwa4Y7zVNTUgdZaifiZV4VsuX9pXHQUBvD5zbKzcWhYZ9gYhA4gMwFSCHKq
+[DEBUG] Player Hkv6azzDCqT9AtJEt1jfjKATgyZTEHfM5qnZfWzUacBy balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Dex.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Curtis with pubkey 8U3Ex4VTBzQNpoWEiQzwX6jFaTGusMzJ6VuG7yaemeQv
+[DEBUG] Derived reward_pubkey (ATA) => 6CmjEiYnka5WNpU7M4xTnGtNfimWb3j8bnS4fpMsfBcC for player Curtis
+[INFO] Airdropping 10000000 lamports to 8U3Ex4VTBzQNpoWEiQzwX6jFaTGusMzJ6VuG7yaemeQv
+Sent 10000000 lamports to 8U3Ex4VTBzQNpoWEiQzwX6jFaTGusMzJ6VuG7yaemeQv. Transaction Signature: SendTransactionResp(Signature(surwLd9gxGMnQjJAKASJshFGtwM5YjzejK1cNJUSJfeDqMg75PoNnrgckVGj43K5hD4JJsYYxP6yUdLT5y8spd4))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(surwLd9gxGMnQjJAKASJshFGtwM5YjzejK1cNJUSJfeDqMg75PoNnrgckVGj43K5hD4JJsYYxP6yUdLT5y8spd4))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction surwLd9gxGMnQjJAKASJshFGtwM5YjzejK1cNJUSJfeDqMg75PoNnrgckVGj43K5hD4JJsYYxP6yUdLT5y8spd4 for 8U3Ex4VTBzQNpoWEiQzwX6jFaTGusMzJ6VuG7yaemeQv
+[SUCCESS] Airdropped 10000000 lamports to 8U3Ex4VTBzQNpoWEiQzwX6jFaTGusMzJ6VuG7yaemeQv. Tx Sig: surwLd9gxGMnQjJAKASJshFGtwM5YjzejK1cNJUSJfeDqMg75PoNnrgckVGj43K5hD4JJsYYxP6yUdLT5y8spd4
+[DEBUG] Player 8U3Ex4VTBzQNpoWEiQzwX6jFaTGusMzJ6VuG7yaemeQv balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Curtis.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Victor_Meldrew with pubkey 9c7r1rcUMT3LuCsVRabQiuuufNmSCWqrEkjMF4drEZ61
+[DEBUG] Derived reward_pubkey (ATA) => 4cnMVpp8cQphh5iRwmXHADo2x2TReYjVr37KoFDbDfzi for player Victor_Meldrew
+[INFO] Airdropping 10000000 lamports to 9c7r1rcUMT3LuCsVRabQiuuufNmSCWqrEkjMF4drEZ61
+Sent 10000000 lamports to 9c7r1rcUMT3LuCsVRabQiuuufNmSCWqrEkjMF4drEZ61. Transaction Signature: SendTransactionResp(Signature(3FaFSa411Ct31yx6MJhN9SVbpoGV9irWjffAjxU51j5FiRV32uzzrL9SHhnPLvftPke5uGyiSxF2qGD68xpKvbFB))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3FaFSa411Ct31yx6MJhN9SVbpoGV9irWjffAjxU51j5FiRV32uzzrL9SHhnPLvftPke5uGyiSxF2qGD68xpKvbFB))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3FaFSa411Ct31yx6MJhN9SVbpoGV9irWjffAjxU51j5FiRV32uzzrL9SHhnPLvftPke5uGyiSxF2qGD68xpKvbFB for 9c7r1rcUMT3LuCsVRabQiuuufNmSCWqrEkjMF4drEZ61
+[SUCCESS] Airdropped 10000000 lamports to 9c7r1rcUMT3LuCsVRabQiuuufNmSCWqrEkjMF4drEZ61. Tx Sig: 3FaFSa411Ct31yx6MJhN9SVbpoGV9irWjffAjxU51j5FiRV32uzzrL9SHhnPLvftPke5uGyiSxF2qGD68xpKvbFB
+[DEBUG] Player 9c7r1rcUMT3LuCsVRabQiuuufNmSCWqrEkjMF4drEZ61 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Victor_Meldrew.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => JesseJames with pubkey 5ip5TnwffnirDzKf6Jj1NDVwt3f9U8C4B7s1ABCTxdiZ
+[DEBUG] Derived reward_pubkey (ATA) => Edf6et7VJRK8kQsyeUbrWthsmWDEmEzhSH6eKKFanNNz for player JesseJames
+[INFO] Airdropping 10000000 lamports to 5ip5TnwffnirDzKf6Jj1NDVwt3f9U8C4B7s1ABCTxdiZ
+Sent 10000000 lamports to 5ip5TnwffnirDzKf6Jj1NDVwt3f9U8C4B7s1ABCTxdiZ. Transaction Signature: SendTransactionResp(Signature(vYhWeJdcbEFLdP3JFAJ4w9xRupnguDcSsBu4Y3uSjg9X8pxykc4vZqFYfSFB5KyvNn3fdjtNNi3rUK42cbDBiLa))
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(vYhWeJdcbEFLdP3JFAJ4w9xRupnguDcSsBu4Y3uSjg9X8pxykc4vZqFYfSFB5KyvNn3fdjtNNi3rUK42cbDBiLa))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction vYhWeJdcbEFLdP3JFAJ4w9xRupnguDcSsBu4Y3uSjg9X8pxykc4vZqFYfSFB5KyvNn3fdjtNNi3rUK42cbDBiLa for 5ip5TnwffnirDzKf6Jj1NDVwt3f9U8C4B7s1ABCTxdiZ
+[SUCCESS] Airdropped 10000000 lamports to 5ip5TnwffnirDzKf6Jj1NDVwt3f9U8C4B7s1ABCTxdiZ. Tx Sig: vYhWeJdcbEFLdP3JFAJ4w9xRupnguDcSsBu4Y3uSjg9X8pxykc4vZqFYfSFB5KyvNn3fdjtNNi3rUK42cbDBiLa
+[DEBUG] Player 5ip5TnwffnirDzKf6Jj1NDVwt3f9U8C4B7s1ABCTxdiZ balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/JesseJames.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => MrOpossum with pubkey 77kXFbQ9h9rHBviB6JbPzPCME5WY1TCH3EmFrMvpp7bp
+[DEBUG] Derived reward_pubkey (ATA) => H2LRMkFtZtjmwwopcY6RdZoTKs3V8o9Lf9vMkve5dPrD for player MrOpossum
+[INFO] Airdropping 10000000 lamports to 77kXFbQ9h9rHBviB6JbPzPCME5WY1TCH3EmFrMvpp7bp
+Sent 10000000 lamports to 77kXFbQ9h9rHBviB6JbPzPCME5WY1TCH3EmFrMvpp7bp. Transaction Signature: SendTransactionResp(Signature(48vG4pBZf21opYHoPxyhpeJv6fCw3R76z22KP1q73JecUPmKLsFSnqpRqEgMTGrQk1CgZyGGr4M6dyLREbGtAcmi))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(48vG4pBZf21opYHoPxyhpeJv6fCw3R76z22KP1q73JecUPmKLsFSnqpRqEgMTGrQk1CgZyGGr4M6dyLREbGtAcmi))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 48vG4pBZf21opYHoPxyhpeJv6fCw3R76z22KP1q73JecUPmKLsFSnqpRqEgMTGrQk1CgZyGGr4M6dyLREbGtAcmi for 77kXFbQ9h9rHBviB6JbPzPCME5WY1TCH3EmFrMvpp7bp
+[SUCCESS] Airdropped 10000000 lamports to 77kXFbQ9h9rHBviB6JbPzPCME5WY1TCH3EmFrMvpp7bp. Tx Sig: 48vG4pBZf21opYHoPxyhpeJv6fCw3R76z22KP1q73JecUPmKLsFSnqpRqEgMTGrQk1CgZyGGr4M6dyLREbGtAcmi
+[DEBUG] Player 77kXFbQ9h9rHBviB6JbPzPCME5WY1TCH3EmFrMvpp7bp balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/MrOpossum.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Gibbs with pubkey DHD74gj4gAQTpdDAAh287s3yT8hw2e9yPN1qDZv5SAGh
+[DEBUG] Derived reward_pubkey (ATA) => E2KjhGmZ5CWBVYvP7HPDNLaZzCkrkcxtaeT4yzknxKNm for player Gibbs
+[INFO] Airdropping 10000000 lamports to DHD74gj4gAQTpdDAAh287s3yT8hw2e9yPN1qDZv5SAGh
+Sent 10000000 lamports to DHD74gj4gAQTpdDAAh287s3yT8hw2e9yPN1qDZv5SAGh. Transaction Signature: SendTransactionResp(Signature(8zdarDJsNaF8qsAVJbN6mPNnbLzoZK4uvKByn2xHbXtG5ZAoj6ujG7uUDQCDLUcf1BALkJcKtRSwyLZPYczxYqB))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(8zdarDJsNaF8qsAVJbN6mPNnbLzoZK4uvKByn2xHbXtG5ZAoj6ujG7uUDQCDLUcf1BALkJcKtRSwyLZPYczxYqB))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 8zdarDJsNaF8qsAVJbN6mPNnbLzoZK4uvKByn2xHbXtG5ZAoj6ujG7uUDQCDLUcf1BALkJcKtRSwyLZPYczxYqB for DHD74gj4gAQTpdDAAh287s3yT8hw2e9yPN1qDZv5SAGh
+[SUCCESS] Airdropped 10000000 lamports to DHD74gj4gAQTpdDAAh287s3yT8hw2e9yPN1qDZv5SAGh. Tx Sig: 8zdarDJsNaF8qsAVJbN6mPNnbLzoZK4uvKByn2xHbXtG5ZAoj6ujG7uUDQCDLUcf1BALkJcKtRSwyLZPYczxYqB
+[DEBUG] Player DHD74gj4gAQTpdDAAh287s3yT8hw2e9yPN1qDZv5SAGh balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Gibbs.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => TrapperKeeper with pubkey YReVjAfbXSH2Quj29TrRJdeKtd142gQn38H1tqJsYn1
+[DEBUG] Derived reward_pubkey (ATA) => GNh52KsTrScasi1YDSgZgcj45tpJpYCC2h9gpBnFQUMf for player TrapperKeeper
+[INFO] Airdropping 10000000 lamports to YReVjAfbXSH2Quj29TrRJdeKtd142gQn38H1tqJsYn1
+Sent 10000000 lamports to YReVjAfbXSH2Quj29TrRJdeKtd142gQn38H1tqJsYn1. Transaction Signature: SendTransactionResp(Signature(23dJR1iS9wq48DvZUZZmUy2D5kZSkLTXahrzkFvCuDCtCAAonYTeHDvxLpZp1dpk7f9sWrCHrbmfF7ntUNjBpuD7))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(23dJR1iS9wq48DvZUZZmUy2D5kZSkLTXahrzkFvCuDCtCAAonYTeHDvxLpZp1dpk7f9sWrCHrbmfF7ntUNjBpuD7))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 23dJR1iS9wq48DvZUZZmUy2D5kZSkLTXahrzkFvCuDCtCAAonYTeHDvxLpZp1dpk7f9sWrCHrbmfF7ntUNjBpuD7 for YReVjAfbXSH2Quj29TrRJdeKtd142gQn38H1tqJsYn1
+[SUCCESS] Airdropped 10000000 lamports to YReVjAfbXSH2Quj29TrRJdeKtd142gQn38H1tqJsYn1. Tx Sig: 23dJR1iS9wq48DvZUZZmUy2D5kZSkLTXahrzkFvCuDCtCAAonYTeHDvxLpZp1dpk7f9sWrCHrbmfF7ntUNjBpuD7
+[DEBUG] Player YReVjAfbXSH2Quj29TrRJdeKtd142gQn38H1tqJsYn1 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/TrapperKeeper.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => jhood with pubkey 8m1vUX2gmrCHcTfDw58YQBj54dJGqeNpJSHmSYmoAciU
+[DEBUG] Derived reward_pubkey (ATA) => D8Md3H9kBK7RvJShWjMhzGdzn4ya3mhbu5cHRquDHcuD for player jhood
+[INFO] Airdropping 10000000 lamports to 8m1vUX2gmrCHcTfDw58YQBj54dJGqeNpJSHmSYmoAciU
+Sent 10000000 lamports to 8m1vUX2gmrCHcTfDw58YQBj54dJGqeNpJSHmSYmoAciU. Transaction Signature: SendTransactionResp(Signature(2qfP1TuR3Mcj7xbScYMmhA2gXbsqa6DUY3KNJwpXFeMjmz9yyE6DGWyvWMzRkNfhikoPxoUVdupR8fDTKyvS4Jx9))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(2qfP1TuR3Mcj7xbScYMmhA2gXbsqa6DUY3KNJwpXFeMjmz9yyE6DGWyvWMzRkNfhikoPxoUVdupR8fDTKyvS4Jx9))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 2qfP1TuR3Mcj7xbScYMmhA2gXbsqa6DUY3KNJwpXFeMjmz9yyE6DGWyvWMzRkNfhikoPxoUVdupR8fDTKyvS4Jx9 for 8m1vUX2gmrCHcTfDw58YQBj54dJGqeNpJSHmSYmoAciU
+[SUCCESS] Airdropped 10000000 lamports to 8m1vUX2gmrCHcTfDw58YQBj54dJGqeNpJSHmSYmoAciU. Tx Sig: 2qfP1TuR3Mcj7xbScYMmhA2gXbsqa6DUY3KNJwpXFeMjmz9yyE6DGWyvWMzRkNfhikoPxoUVdupR8fDTKyvS4Jx9
+[DEBUG] Player 8m1vUX2gmrCHcTfDw58YQBj54dJGqeNpJSHmSYmoAciU balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/jhood.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => g with pubkey 6WuMVSWGCSZVJ5WDpj5VJvNof1uZBcT3A2sffjZy2f9W
+[DEBUG] Derived reward_pubkey (ATA) => 87oAwMDM6FUp8yYzpAwcAPsYEYQcE8uq11sapQ3J1QC3 for player g
+[INFO] Airdropping 10000000 lamports to 6WuMVSWGCSZVJ5WDpj5VJvNof1uZBcT3A2sffjZy2f9W
+Sent 10000000 lamports to 6WuMVSWGCSZVJ5WDpj5VJvNof1uZBcT3A2sffjZy2f9W. Transaction Signature: SendTransactionResp(Signature(4RR7rGXGJNWDyXJ9cKYZ21W81D1k8ZjTZsRto2VxFnb2Gvs6411NPxSXqi7R4rt2JV96YmpYdHBguzxNZbCCSEKo))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4RR7rGXGJNWDyXJ9cKYZ21W81D1k8ZjTZsRto2VxFnb2Gvs6411NPxSXqi7R4rt2JV96YmpYdHBguzxNZbCCSEKo))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4RR7rGXGJNWDyXJ9cKYZ21W81D1k8ZjTZsRto2VxFnb2Gvs6411NPxSXqi7R4rt2JV96YmpYdHBguzxNZbCCSEKo for 6WuMVSWGCSZVJ5WDpj5VJvNof1uZBcT3A2sffjZy2f9W
+[SUCCESS] Airdropped 10000000 lamports to 6WuMVSWGCSZVJ5WDpj5VJvNof1uZBcT3A2sffjZy2f9W. Tx Sig: 4RR7rGXGJNWDyXJ9cKYZ21W81D1k8ZjTZsRto2VxFnb2Gvs6411NPxSXqi7R4rt2JV96YmpYdHBguzxNZbCCSEKo
+[DEBUG] Player 6WuMVSWGCSZVJ5WDpj5VJvNof1uZBcT3A2sffjZy2f9W balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/g.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => HenryII with pubkey 39kV1socHVKYMeahWCtgfNqcCfVrNFhqnhXERwHuwkUd
+[DEBUG] Derived reward_pubkey (ATA) => A2B3U3eCAdaofYLkBAizYc8C7YLKjKmMjT3ea9U3M5qP for player HenryII
+[INFO] Airdropping 10000000 lamports to 39kV1socHVKYMeahWCtgfNqcCfVrNFhqnhXERwHuwkUd
+Sent 10000000 lamports to 39kV1socHVKYMeahWCtgfNqcCfVrNFhqnhXERwHuwkUd. Transaction Signature: SendTransactionResp(Signature(2ppXKt2dSgZzQAUDCSUEnM3brNgJhcC1GyUBFXNW9T31cQfxXqWyc2cxBH65Ry9Yxjk6G5444XqdQF4xJymFK82W))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(2ppXKt2dSgZzQAUDCSUEnM3brNgJhcC1GyUBFXNW9T31cQfxXqWyc2cxBH65Ry9Yxjk6G5444XqdQF4xJymFK82W))
+[DEBUG] No compute units info found in logs.
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Confirmed airdrop transaction 2ppXKt2dSgZzQAUDCSUEnM3brNgJhcC1GyUBFXNW9T31cQfxXqWyc2cxBH65Ry9Yxjk6G5444XqdQF4xJymFK82W for 39kV1socHVKYMeahWCtgfNqcCfVrNFhqnhXERwHuwkUd
+[SUCCESS] Airdropped 10000000 lamports to 39kV1socHVKYMeahWCtgfNqcCfVrNFhqnhXERwHuwkUd. Tx Sig: 2ppXKt2dSgZzQAUDCSUEnM3brNgJhcC1GyUBFXNW9T31cQfxXqWyc2cxBH65Ry9Yxjk6G5444XqdQF4xJymFK82W
+[DEBUG] Player 39kV1socHVKYMeahWCtgfNqcCfVrNFhqnhXERwHuwkUd balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/HenryII.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => EngineerElite with pubkey FSZGMMDjQPwx9LRbvJ58oKgnBtXZacSVVGtRHxN7WRJu
+[DEBUG] Derived reward_pubkey (ATA) => 7rewM1n7fwsJNZEgWEKG9gdFnSPuEmyyJyoNHZBf7rKP for player EngineerElite
+[INFO] Airdropping 10000000 lamports to FSZGMMDjQPwx9LRbvJ58oKgnBtXZacSVVGtRHxN7WRJu
+Sent 10000000 lamports to FSZGMMDjQPwx9LRbvJ58oKgnBtXZacSVVGtRHxN7WRJu. Transaction Signature: SendTransactionResp(Signature(4F83s4hRFQ3nSHLCbWtJJYcJwLs5QfgS1SuZfjs3orsujwhsNa8muWPw7VkLaQJWVmqvxG8PXPWsAve9Ddmy4BhJ))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4F83s4hRFQ3nSHLCbWtJJYcJwLs5QfgS1SuZfjs3orsujwhsNa8muWPw7VkLaQJWVmqvxG8PXPWsAve9Ddmy4BhJ))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4F83s4hRFQ3nSHLCbWtJJYcJwLs5QfgS1SuZfjs3orsujwhsNa8muWPw7VkLaQJWVmqvxG8PXPWsAve9Ddmy4BhJ for FSZGMMDjQPwx9LRbvJ58oKgnBtXZacSVVGtRHxN7WRJu
+[SUCCESS] Airdropped 10000000 lamports to FSZGMMDjQPwx9LRbvJ58oKgnBtXZacSVVGtRHxN7WRJu. Tx Sig: 4F83s4hRFQ3nSHLCbWtJJYcJwLs5QfgS1SuZfjs3orsujwhsNa8muWPw7VkLaQJWVmqvxG8PXPWsAve9Ddmy4BhJ
+[DEBUG] Player FSZGMMDjQPwx9LRbvJ58oKgnBtXZacSVVGtRHxN7WRJu balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/EngineerElite.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Pybro with pubkey GEFFodNUVs5pH2CevMQ1FxJ9v5b3n9htyLhfuispuGzM
+[DEBUG] Derived reward_pubkey (ATA) => Fy199TNBN9Aqh3MskqpVw3H6JzGbyMSwK5G3RrKhUksK for player Pybro
+[INFO] Airdropping 10000000 lamports to GEFFodNUVs5pH2CevMQ1FxJ9v5b3n9htyLhfuispuGzM
+Sent 10000000 lamports to GEFFodNUVs5pH2CevMQ1FxJ9v5b3n9htyLhfuispuGzM. Transaction Signature: SendTransactionResp(Signature(4AadDCQgewTZDCaFKZZg3jSXx5CeTRXxcVZsyv3BzKxWbN3sq55XjAMtDLgrEdMzopvqc9cFnfVthJbbts2Uq2zb))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4AadDCQgewTZDCaFKZZg3jSXx5CeTRXxcVZsyv3BzKxWbN3sq55XjAMtDLgrEdMzopvqc9cFnfVthJbbts2Uq2zb))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4AadDCQgewTZDCaFKZZg3jSXx5CeTRXxcVZsyv3BzKxWbN3sq55XjAMtDLgrEdMzopvqc9cFnfVthJbbts2Uq2zb for GEFFodNUVs5pH2CevMQ1FxJ9v5b3n9htyLhfuispuGzM
+[SUCCESS] Airdropped 10000000 lamports to GEFFodNUVs5pH2CevMQ1FxJ9v5b3n9htyLhfuispuGzM. Tx Sig: 4AadDCQgewTZDCaFKZZg3jSXx5CeTRXxcVZsyv3BzKxWbN3sq55XjAMtDLgrEdMzopvqc9cFnfVthJbbts2Uq2zb
+[DEBUG] Player GEFFodNUVs5pH2CevMQ1FxJ9v5b3n9htyLhfuispuGzM balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Pybro.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Percy with pubkey 3L8yA8KTe3d5KTDLZWz9eHiEacsNMt5GkWivZnCf1TEF
+[DEBUG] Derived reward_pubkey (ATA) => GAk8a47oeyhgnc1agM6C6G77RwuKZsKoMp8DwoHu6WLF for player Percy
+[INFO] Airdropping 10000000 lamports to 3L8yA8KTe3d5KTDLZWz9eHiEacsNMt5GkWivZnCf1TEF
+Sent 10000000 lamports to 3L8yA8KTe3d5KTDLZWz9eHiEacsNMt5GkWivZnCf1TEF. Transaction Signature: SendTransactionResp(Signature(542Pz1pKdxNwp8z2sUcX5k1mCAXFD55FfdtFgjmukGKqjgsVShK6foetKYWtuTHrUcNTdQTcVA1J7sHpiZHQQdZw))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(542Pz1pKdxNwp8z2sUcX5k1mCAXFD55FfdtFgjmukGKqjgsVShK6foetKYWtuTHrUcNTdQTcVA1J7sHpiZHQQdZw))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 542Pz1pKdxNwp8z2sUcX5k1mCAXFD55FfdtFgjmukGKqjgsVShK6foetKYWtuTHrUcNTdQTcVA1J7sHpiZHQQdZw for 3L8yA8KTe3d5KTDLZWz9eHiEacsNMt5GkWivZnCf1TEF
+[SUCCESS] Airdropped 10000000 lamports to 3L8yA8KTe3d5KTDLZWz9eHiEacsNMt5GkWivZnCf1TEF. Tx Sig: 542Pz1pKdxNwp8z2sUcX5k1mCAXFD55FfdtFgjmukGKqjgsVShK6foetKYWtuTHrUcNTdQTcVA1J7sHpiZHQQdZw
+[DEBUG] Player 3L8yA8KTe3d5KTDLZWz9eHiEacsNMt5GkWivZnCf1TEF balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Percy.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Caleb with pubkey 79tqq6htPtKtFThTFA8L1aSwMUtVnFowQJZvmzvijoZ5
+[DEBUG] Derived reward_pubkey (ATA) => HdB3GW8fCVNpu2Mz7cDFVPJoCgNJ3TVXQLDcvvbNmtvW for player Caleb
+[INFO] Airdropping 10000000 lamports to 79tqq6htPtKtFThTFA8L1aSwMUtVnFowQJZvmzvijoZ5
+Sent 10000000 lamports to 79tqq6htPtKtFThTFA8L1aSwMUtVnFowQJZvmzvijoZ5. Transaction Signature: SendTransactionResp(Signature(32tnsTXYt4avTZjWZfsVabyfLPaeyRY2HT2swoGQipuYkwpcXrQ6rbYGGe5gQNMUWMyxf7EVZD8wUGQd69kaW7n9))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(32tnsTXYt4avTZjWZfsVabyfLPaeyRY2HT2swoGQipuYkwpcXrQ6rbYGGe5gQNMUWMyxf7EVZD8wUGQd69kaW7n9))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 32tnsTXYt4avTZjWZfsVabyfLPaeyRY2HT2swoGQipuYkwpcXrQ6rbYGGe5gQNMUWMyxf7EVZD8wUGQd69kaW7n9 for 79tqq6htPtKtFThTFA8L1aSwMUtVnFowQJZvmzvijoZ5
+[SUCCESS] Airdropped 10000000 lamports to 79tqq6htPtKtFThTFA8L1aSwMUtVnFowQJZvmzvijoZ5. Tx Sig: 32tnsTXYt4avTZjWZfsVabyfLPaeyRY2HT2swoGQipuYkwpcXrQ6rbYGGe5gQNMUWMyxf7EVZD8wUGQd69kaW7n9
+[DEBUG] Player 79tqq6htPtKtFThTFA8L1aSwMUtVnFowQJZvmzvijoZ5 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Caleb.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Pam with pubkey GBxbxzQ7nWCdbDSjPxzPQ8fUPbYjnx7p7BmUW4iZV2Pz
+[DEBUG] Derived reward_pubkey (ATA) => CM4kPd5M1dVN5cbPCmtE7rjygfm4wSTTc5RfMDsL35uv for player Pam
+[INFO] Airdropping 10000000 lamports to GBxbxzQ7nWCdbDSjPxzPQ8fUPbYjnx7p7BmUW4iZV2Pz
+Sent 10000000 lamports to GBxbxzQ7nWCdbDSjPxzPQ8fUPbYjnx7p7BmUW4iZV2Pz. Transaction Signature: SendTransactionResp(Signature(3oPdehXvLL1fpod6ED8jjDFERjg2aiNTme8WSx8pCPKnoDDNaWkWhQWhScnonNBzfDddjsubinDx9q9jV2HsdBMP))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3oPdehXvLL1fpod6ED8jjDFERjg2aiNTme8WSx8pCPKnoDDNaWkWhQWhScnonNBzfDddjsubinDx9q9jV2HsdBMP))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3oPdehXvLL1fpod6ED8jjDFERjg2aiNTme8WSx8pCPKnoDDNaWkWhQWhScnonNBzfDddjsubinDx9q9jV2HsdBMP for GBxbxzQ7nWCdbDSjPxzPQ8fUPbYjnx7p7BmUW4iZV2Pz
+[SUCCESS] Airdropped 10000000 lamports to GBxbxzQ7nWCdbDSjPxzPQ8fUPbYjnx7p7BmUW4iZV2Pz. Tx Sig: 3oPdehXvLL1fpod6ED8jjDFERjg2aiNTme8WSx8pCPKnoDDNaWkWhQWhScnonNBzfDddjsubinDx9q9jV2HsdBMP
+[DEBUG] Player GBxbxzQ7nWCdbDSjPxzPQ8fUPbYjnx7p7BmUW4iZV2Pz balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Pam.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => TFPugsEASTNYCHLTV with pubkey 9uuLQMi3Y9wHsruqY1KFugWms2SrA9SB1pQJK1Gc5Vtq
+[DEBUG] Derived reward_pubkey (ATA) => 6harrLsjZoqi51Ub6NjhVGZnqF4tk5EsHMXxrVH5S9rH for player TFPugsEASTNYCHLTV
+[INFO] Airdropping 10000000 lamports to 9uuLQMi3Y9wHsruqY1KFugWms2SrA9SB1pQJK1Gc5Vtq
+Sent 10000000 lamports to 9uuLQMi3Y9wHsruqY1KFugWms2SrA9SB1pQJK1Gc5Vtq. Transaction Signature: SendTransactionResp(Signature(FMMAMGEdK8RqQmN49Af5eWCdb4Ex8PADUx4fFgWhXwNQCY2T6dYAdXYy8hzsYjc5zehjFfiBMnmk5fpxpK7NcT9))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(FMMAMGEdK8RqQmN49Af5eWCdb4Ex8PADUx4fFgWhXwNQCY2T6dYAdXYy8hzsYjc5zehjFfiBMnmk5fpxpK7NcT9))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction FMMAMGEdK8RqQmN49Af5eWCdb4Ex8PADUx4fFgWhXwNQCY2T6dYAdXYy8hzsYjc5zehjFfiBMnmk5fpxpK7NcT9 for 9uuLQMi3Y9wHsruqY1KFugWms2SrA9SB1pQJK1Gc5Vtq
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+[SUCCESS] Airdropped 10000000 lamports to 9uuLQMi3Y9wHsruqY1KFugWms2SrA9SB1pQJK1Gc5Vtq. Tx Sig: FMMAMGEdK8RqQmN49Af5eWCdb4Ex8PADUx4fFgWhXwNQCY2T6dYAdXYy8hzsYjc5zehjFfiBMnmk5fpxpK7NcT9
+[DEBUG] Player 9uuLQMi3Y9wHsruqY1KFugWms2SrA9SB1pQJK1Gc5Vtq balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/TFPugsEASTNYCHLTV.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Alfonzo with pubkey C7ZsG9GS4QkHRdTj8QSLWZtVrZvaBHmFaJ9SDYoNZTbS
+[DEBUG] Derived reward_pubkey (ATA) => Fo4548Z6L7wbDpfJEWDve8x1Mdo6FPvZeb5FkKN4Bdt9 for player Alfonzo
+[INFO] Airdropping 10000000 lamports to C7ZsG9GS4QkHRdTj8QSLWZtVrZvaBHmFaJ9SDYoNZTbS
+Sent 10000000 lamports to C7ZsG9GS4QkHRdTj8QSLWZtVrZvaBHmFaJ9SDYoNZTbS. Transaction Signature: SendTransactionResp(Signature(3XojJSAdLhpLXX1mk83vVYrfxCehuxLhb8KFw5qqsRCj5HWSNJ5M46wqtudM69QMPBoQLD8juhAUDZPCG5j8r5an))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3XojJSAdLhpLXX1mk83vVYrfxCehuxLhb8KFw5qqsRCj5HWSNJ5M46wqtudM69QMPBoQLD8juhAUDZPCG5j8r5an))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3XojJSAdLhpLXX1mk83vVYrfxCehuxLhb8KFw5qqsRCj5HWSNJ5M46wqtudM69QMPBoQLD8juhAUDZPCG5j8r5an for C7ZsG9GS4QkHRdTj8QSLWZtVrZvaBHmFaJ9SDYoNZTbS
+[SUCCESS] Airdropped 10000000 lamports to C7ZsG9GS4QkHRdTj8QSLWZtVrZvaBHmFaJ9SDYoNZTbS. Tx Sig: 3XojJSAdLhpLXX1mk83vVYrfxCehuxLhb8KFw5qqsRCj5HWSNJ5M46wqtudM69QMPBoQLD8juhAUDZPCG5j8r5an
+[DEBUG] Player C7ZsG9GS4QkHRdTj8QSLWZtVrZvaBHmFaJ9SDYoNZTbS balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Alfonzo.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => eecjr0914 with pubkey E9swP4XfHw7q6nL9aaEK3gvgkXRTqg3QxJvJ6hAy5VEk
+[DEBUG] Derived reward_pubkey (ATA) => ESKUSXCu4NTY8ibchH7iZGX5kcbioRvD4Bqy93V1bMtS for player eecjr0914
+[INFO] Airdropping 10000000 lamports to E9swP4XfHw7q6nL9aaEK3gvgkXRTqg3QxJvJ6hAy5VEk
+Sent 10000000 lamports to E9swP4XfHw7q6nL9aaEK3gvgkXRTqg3QxJvJ6hAy5VEk. Transaction Signature: SendTransactionResp(Signature(58V8PjSKZs9Qri4tj79R68hGKp774Z1jyZeA7FViak39jK6DBGF2QZso6vubYpALhnziZZccx64BR44jad4hL9YB))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(58V8PjSKZs9Qri4tj79R68hGKp774Z1jyZeA7FViak39jK6DBGF2QZso6vubYpALhnziZZccx64BR44jad4hL9YB))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 58V8PjSKZs9Qri4tj79R68hGKp774Z1jyZeA7FViak39jK6DBGF2QZso6vubYpALhnziZZccx64BR44jad4hL9YB for E9swP4XfHw7q6nL9aaEK3gvgkXRTqg3QxJvJ6hAy5VEk
+[SUCCESS] Airdropped 10000000 lamports to E9swP4XfHw7q6nL9aaEK3gvgkXRTqg3QxJvJ6hAy5VEk. Tx Sig: 58V8PjSKZs9Qri4tj79R68hGKp774Z1jyZeA7FViak39jK6DBGF2QZso6vubYpALhnziZZccx64BR44jad4hL9YB
+[DEBUG] Player E9swP4XfHw7q6nL9aaEK3gvgkXRTqg3QxJvJ6hAy5VEk balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/eecjr0914.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => TFPugsWESTHLTV with pubkey EeB3F2hux4fazvZbrK84EnPnbTdXXqQkS7cxfzk3yRer
+[DEBUG] Derived reward_pubkey (ATA) => 3M85H4tUFXTmsSgvTjsZc322TFLjb5UgrauADBG1qnaQ for player TFPugsWESTHLTV
+[INFO] Airdropping 10000000 lamports to EeB3F2hux4fazvZbrK84EnPnbTdXXqQkS7cxfzk3yRer
+Sent 10000000 lamports to EeB3F2hux4fazvZbrK84EnPnbTdXXqQkS7cxfzk3yRer. Transaction Signature: SendTransactionResp(Signature(3viTHecmvFeCRSGr3sheRoMqE5kusi1gD83KvzRAFGuw4VjAFqE5DoUnn6p3AnFG4SJA99fyJtMXXgSuboeEKztw))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3viTHecmvFeCRSGr3sheRoMqE5kusi1gD83KvzRAFGuw4VjAFqE5DoUnn6p3AnFG4SJA99fyJtMXXgSuboeEKztw))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3viTHecmvFeCRSGr3sheRoMqE5kusi1gD83KvzRAFGuw4VjAFqE5DoUnn6p3AnFG4SJA99fyJtMXXgSuboeEKztw for EeB3F2hux4fazvZbrK84EnPnbTdXXqQkS7cxfzk3yRer
+[SUCCESS] Airdropped 10000000 lamports to EeB3F2hux4fazvZbrK84EnPnbTdXXqQkS7cxfzk3yRer. Tx Sig: 3viTHecmvFeCRSGr3sheRoMqE5kusi1gD83KvzRAFGuw4VjAFqE5DoUnn6p3AnFG4SJA99fyJtMXXgSuboeEKztw
+[DEBUG] Player EeB3F2hux4fazvZbrK84EnPnbTdXXqQkS7cxfzk3yRer balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/TFPugsWESTHLTV.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => LiLPimP with pubkey DFUeYjLLjLt1fA7fH8LyKzuhKcLaLm7dsip4TTVQ53q6
+[DEBUG] Derived reward_pubkey (ATA) => 4Muo1jrmpDwGa2TgDAzdiM8yy3eTs7h5cGzTpE9sstKD for player LiLPimP
+[INFO] Airdropping 10000000 lamports to DFUeYjLLjLt1fA7fH8LyKzuhKcLaLm7dsip4TTVQ53q6
+Sent 10000000 lamports to DFUeYjLLjLt1fA7fH8LyKzuhKcLaLm7dsip4TTVQ53q6. Transaction Signature: SendTransactionResp(Signature(4HzKFULXCZKzVko29QpAJcRZ7628pwQRxU1KbwUBumdjNecxmXBmbgLW9Wgm6uzrc2zKAQRyTgQLYztyG7pU4R1X))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4HzKFULXCZKzVko29QpAJcRZ7628pwQRxU1KbwUBumdjNecxmXBmbgLW9Wgm6uzrc2zKAQRyTgQLYztyG7pU4R1X))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4HzKFULXCZKzVko29QpAJcRZ7628pwQRxU1KbwUBumdjNecxmXBmbgLW9Wgm6uzrc2zKAQRyTgQLYztyG7pU4R1X for DFUeYjLLjLt1fA7fH8LyKzuhKcLaLm7dsip4TTVQ53q6
+[SUCCESS] Airdropped 10000000 lamports to DFUeYjLLjLt1fA7fH8LyKzuhKcLaLm7dsip4TTVQ53q6. Tx Sig: 4HzKFULXCZKzVko29QpAJcRZ7628pwQRxU1KbwUBumdjNecxmXBmbgLW9Wgm6uzrc2zKAQRyTgQLYztyG7pU4R1X
+[DEBUG] Player DFUeYjLLjLt1fA7fH8LyKzuhKcLaLm7dsip4TTVQ53q6 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/LiLPimP.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => AntiHuman with pubkey 52pK5WhDvFtu3REtkWT9zUbBboP9xppahXyLYu1SFwmu
+[DEBUG] Derived reward_pubkey (ATA) => EdA7g84JiJr5LqXV4iy4mnaRSN6is1AyTcGTtVudiqQX for player AntiHuman
+[INFO] Airdropping 10000000 lamports to 52pK5WhDvFtu3REtkWT9zUbBboP9xppahXyLYu1SFwmu
+Sent 10000000 lamports to 52pK5WhDvFtu3REtkWT9zUbBboP9xppahXyLYu1SFwmu. Transaction Signature: SendTransactionResp(Signature(22xHu369Tfoh8XSGiSjwtVCfQmeKxJDoYHnAaJd6GiFaKMzLmVJCgUbRz76UA7kTDoQVoGZDfn7Aagb3EjAwbdxu))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(22xHu369Tfoh8XSGiSjwtVCfQmeKxJDoYHnAaJd6GiFaKMzLmVJCgUbRz76UA7kTDoQVoGZDfn7Aagb3EjAwbdxu))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 22xHu369Tfoh8XSGiSjwtVCfQmeKxJDoYHnAaJd6GiFaKMzLmVJCgUbRz76UA7kTDoQVoGZDfn7Aagb3EjAwbdxu for 52pK5WhDvFtu3REtkWT9zUbBboP9xppahXyLYu1SFwmu
+[SUCCESS] Airdropped 10000000 lamports to 52pK5WhDvFtu3REtkWT9zUbBboP9xppahXyLYu1SFwmu. Tx Sig: 22xHu369Tfoh8XSGiSjwtVCfQmeKxJDoYHnAaJd6GiFaKMzLmVJCgUbRz76UA7kTDoQVoGZDfn7Aagb3EjAwbdxu
+[DEBUG] Player 52pK5WhDvFtu3REtkWT9zUbBboP9xppahXyLYu1SFwmu balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/AntiHuman.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Smett with pubkey 6i9acVCHdZBQSmGTiAfek1uN9p9Zz1T8drouzLYyZPkE
+[DEBUG] Derived reward_pubkey (ATA) => GwibWitqkX4RgqqdGsR45MiUc9Tg2shHLs6VPEBXYimx for player Smett
+[INFO] Airdropping 10000000 lamports to 6i9acVCHdZBQSmGTiAfek1uN9p9Zz1T8drouzLYyZPkE
+Sent 10000000 lamports to 6i9acVCHdZBQSmGTiAfek1uN9p9Zz1T8drouzLYyZPkE. Transaction Signature: SendTransactionResp(Signature(5eCWPcQaZbbfXG43qRmXUmpQXR2M4RmPaxqAd2JU2Dpw8ALtqG1TVr1WxKZZUSqZCcFudjXKoaYXdtmMF2QnqYbB))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(5eCWPcQaZbbfXG43qRmXUmpQXR2M4RmPaxqAd2JU2Dpw8ALtqG1TVr1WxKZZUSqZCcFudjXKoaYXdtmMF2QnqYbB))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 5eCWPcQaZbbfXG43qRmXUmpQXR2M4RmPaxqAd2JU2Dpw8ALtqG1TVr1WxKZZUSqZCcFudjXKoaYXdtmMF2QnqYbB for 6i9acVCHdZBQSmGTiAfek1uN9p9Zz1T8drouzLYyZPkE
+[SUCCESS] Airdropped 10000000 lamports to 6i9acVCHdZBQSmGTiAfek1uN9p9Zz1T8drouzLYyZPkE. Tx Sig: 5eCWPcQaZbbfXG43qRmXUmpQXR2M4RmPaxqAd2JU2Dpw8ALtqG1TVr1WxKZZUSqZCcFudjXKoaYXdtmMF2QnqYbB
+[DEBUG] Player 6i9acVCHdZBQSmGTiAfek1uN9p9Zz1T8drouzLYyZPkE balance: 10000000 lamports
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+[ERROR] Unexpected error for player_keys/Smett.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => BoBtheServercom27020 with pubkey 3RVfHjrFRmWA2YomZpbFMQzXCCRsj3KxyTUU22J5R7Zs
+[DEBUG] Derived reward_pubkey (ATA) => CZke5FxkuonPhrA3KMMqXmP9R1yTBdU4mzbyUkkiz1Zn for player BoBtheServercom27020
+[INFO] Airdropping 10000000 lamports to 3RVfHjrFRmWA2YomZpbFMQzXCCRsj3KxyTUU22J5R7Zs
+Sent 10000000 lamports to 3RVfHjrFRmWA2YomZpbFMQzXCCRsj3KxyTUU22J5R7Zs. Transaction Signature: SendTransactionResp(Signature(S3J7L6L1RhArZaivFLF7BiLTfhJZssdmNZ2T9CCr8nTcdS1XChqWyGfmywc62W9A4sPLH4VTUtGgG4tZraFcaEv))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(S3J7L6L1RhArZaivFLF7BiLTfhJZssdmNZ2T9CCr8nTcdS1XChqWyGfmywc62W9A4sPLH4VTUtGgG4tZraFcaEv))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction S3J7L6L1RhArZaivFLF7BiLTfhJZssdmNZ2T9CCr8nTcdS1XChqWyGfmywc62W9A4sPLH4VTUtGgG4tZraFcaEv for 3RVfHjrFRmWA2YomZpbFMQzXCCRsj3KxyTUU22J5R7Zs
+[SUCCESS] Airdropped 10000000 lamports to 3RVfHjrFRmWA2YomZpbFMQzXCCRsj3KxyTUU22J5R7Zs. Tx Sig: S3J7L6L1RhArZaivFLF7BiLTfhJZssdmNZ2T9CCr8nTcdS1XChqWyGfmywc62W9A4sPLH4VTUtGgG4tZraFcaEv
+[DEBUG] Player 3RVfHjrFRmWA2YomZpbFMQzXCCRsj3KxyTUU22J5R7Zs balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/BoBtheServercom27020.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => -ieDuNe with pubkey FXiSaXRkc2K5Qpjysso8827iMHz238V8qZEQioJQ1CtL
+[DEBUG] Derived reward_pubkey (ATA) => B17QqcKkTnQEL6V6VAFXfUHCmgGqQVDgEv3RbHRbZPEq for player -ieDuNe
+[INFO] Airdropping 10000000 lamports to FXiSaXRkc2K5Qpjysso8827iMHz238V8qZEQioJQ1CtL
+Sent 10000000 lamports to FXiSaXRkc2K5Qpjysso8827iMHz238V8qZEQioJQ1CtL. Transaction Signature: SendTransactionResp(Signature(263STZsHiT9RUGGd8ok8zRodwREQWALVT1jAmz5TB8anToKai1ay7ZmeVCs7CgQVSzzidXCEUdaKHobC7igdPkRu))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(263STZsHiT9RUGGd8ok8zRodwREQWALVT1jAmz5TB8anToKai1ay7ZmeVCs7CgQVSzzidXCEUdaKHobC7igdPkRu))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 263STZsHiT9RUGGd8ok8zRodwREQWALVT1jAmz5TB8anToKai1ay7ZmeVCs7CgQVSzzidXCEUdaKHobC7igdPkRu for FXiSaXRkc2K5Qpjysso8827iMHz238V8qZEQioJQ1CtL
+[SUCCESS] Airdropped 10000000 lamports to FXiSaXRkc2K5Qpjysso8827iMHz238V8qZEQioJQ1CtL. Tx Sig: 263STZsHiT9RUGGd8ok8zRodwREQWALVT1jAmz5TB8anToKai1ay7ZmeVCs7CgQVSzzidXCEUdaKHobC7igdPkRu
+[DEBUG] Player FXiSaXRkc2K5Qpjysso8827iMHz238V8qZEQioJQ1CtL balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/-ieDuNe.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Doge8 with pubkey FFrp7qXSemzUX9z6CdJoHdTMtBGTAA1C8jYiKybTbq8p
+[DEBUG] Derived reward_pubkey (ATA) => 3FcP6bK62kdVLw8aAXNVZoYf9Y7jpzbracUz7UnERsF2 for player Doge8
+[INFO] Airdropping 10000000 lamports to FFrp7qXSemzUX9z6CdJoHdTMtBGTAA1C8jYiKybTbq8p
+Sent 10000000 lamports to FFrp7qXSemzUX9z6CdJoHdTMtBGTAA1C8jYiKybTbq8p. Transaction Signature: SendTransactionResp(Signature(48tdzDHNo8XktCucJ8URqLkSVzuVHXbERVJYhBQx5SG6dqRSGXqmZvdBEVagUYLNWM1mDFXqeFuLU6NUm2P8MxyH))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(48tdzDHNo8XktCucJ8URqLkSVzuVHXbERVJYhBQx5SG6dqRSGXqmZvdBEVagUYLNWM1mDFXqeFuLU6NUm2P8MxyH))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 48tdzDHNo8XktCucJ8URqLkSVzuVHXbERVJYhBQx5SG6dqRSGXqmZvdBEVagUYLNWM1mDFXqeFuLU6NUm2P8MxyH for FFrp7qXSemzUX9z6CdJoHdTMtBGTAA1C8jYiKybTbq8p
+[SUCCESS] Airdropped 10000000 lamports to FFrp7qXSemzUX9z6CdJoHdTMtBGTAA1C8jYiKybTbq8p. Tx Sig: 48tdzDHNo8XktCucJ8URqLkSVzuVHXbERVJYhBQx5SG6dqRSGXqmZvdBEVagUYLNWM1mDFXqeFuLU6NUm2P8MxyH
+[DEBUG] Player FFrp7qXSemzUX9z6CdJoHdTMtBGTAA1C8jYiKybTbq8p balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Doge8.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Jimbo with pubkey EtH61xEKRXHeskweXdCrBYAG3GRV2Z4k7kKfZuJJiFhk
+[DEBUG] Derived reward_pubkey (ATA) => 9UjXttnkZm5B9EmVDy2GVmbRN5Mf2JNs463ZnRSb4Ngh for player Jimbo
+[INFO] Airdropping 10000000 lamports to EtH61xEKRXHeskweXdCrBYAG3GRV2Z4k7kKfZuJJiFhk
+Sent 10000000 lamports to EtH61xEKRXHeskweXdCrBYAG3GRV2Z4k7kKfZuJJiFhk. Transaction Signature: SendTransactionResp(Signature(3b2ioGihJrzxd3LsmdyCfRehpSJ2GxCebbGUecuXitwJ1nHHQQPB12f2NczumfauiL51diaQb4DceDLCXKAb6Kin))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3b2ioGihJrzxd3LsmdyCfRehpSJ2GxCebbGUecuXitwJ1nHHQQPB12f2NczumfauiL51diaQb4DceDLCXKAb6Kin))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3b2ioGihJrzxd3LsmdyCfRehpSJ2GxCebbGUecuXitwJ1nHHQQPB12f2NczumfauiL51diaQb4DceDLCXKAb6Kin for EtH61xEKRXHeskweXdCrBYAG3GRV2Z4k7kKfZuJJiFhk
+[SUCCESS] Airdropped 10000000 lamports to EtH61xEKRXHeskweXdCrBYAG3GRV2Z4k7kKfZuJJiFhk. Tx Sig: 3b2ioGihJrzxd3LsmdyCfRehpSJ2GxCebbGUecuXitwJ1nHHQQPB12f2NczumfauiL51diaQb4DceDLCXKAb6Kin
+[DEBUG] Player EtH61xEKRXHeskweXdCrBYAG3GRV2Z4k7kKfZuJJiFhk balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Jimbo.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => JuliuS_CaesaR with pubkey A2vw62cbKVqL3K2r6274tTnJvk19RZ3EwAMSujmfHasK
+[DEBUG] Derived reward_pubkey (ATA) => GN9sz5fs31d53m6KgGbLBp3gBwWc5jLS52R5TnUENdWA for player JuliuS_CaesaR
+[INFO] Airdropping 10000000 lamports to A2vw62cbKVqL3K2r6274tTnJvk19RZ3EwAMSujmfHasK
+Sent 10000000 lamports to A2vw62cbKVqL3K2r6274tTnJvk19RZ3EwAMSujmfHasK. Transaction Signature: SendTransactionResp(Signature(4Ceei1A4DHbFERGdkPKt33FEcQQnHFQopSU9ymt6wy2LVCKaZBBp6PVqbZKY41cK16KNHTnHaZTtVKoGRQZ7iMp4))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4Ceei1A4DHbFERGdkPKt33FEcQQnHFQopSU9ymt6wy2LVCKaZBBp6PVqbZKY41cK16KNHTnHaZTtVKoGRQZ7iMp4))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4Ceei1A4DHbFERGdkPKt33FEcQQnHFQopSU9ymt6wy2LVCKaZBBp6PVqbZKY41cK16KNHTnHaZTtVKoGRQZ7iMp4 for A2vw62cbKVqL3K2r6274tTnJvk19RZ3EwAMSujmfHasK
+[SUCCESS] Airdropped 10000000 lamports to A2vw62cbKVqL3K2r6274tTnJvk19RZ3EwAMSujmfHasK. Tx Sig: 4Ceei1A4DHbFERGdkPKt33FEcQQnHFQopSU9ymt6wy2LVCKaZBBp6PVqbZKY41cK16KNHTnHaZTtVKoGRQZ7iMp4
+[DEBUG] Player A2vw62cbKVqL3K2r6274tTnJvk19RZ3EwAMSujmfHasK balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/JuliuS_CaesaR.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => PlasmaPhantom with pubkey 6GZX564W6FaM9zAmzwmF4sxfjNc6bDSq5PjqC27cXhWb
+[DEBUG] Derived reward_pubkey (ATA) => 2UFg299Li1d4Wbe8nHWuRwQF9y6d8SGymLe4QPNYpFhN for player PlasmaPhantom
+[INFO] Airdropping 10000000 lamports to 6GZX564W6FaM9zAmzwmF4sxfjNc6bDSq5PjqC27cXhWb
+Sent 10000000 lamports to 6GZX564W6FaM9zAmzwmF4sxfjNc6bDSq5PjqC27cXhWb. Transaction Signature: SendTransactionResp(Signature(38Fhh4Ebdrnt8SsfMUNVn212q1gALaE3KNScwzJP3iJ1MMrt4d4CV9MRVGBJCBRDGv1UYAzfypwR53jTpWtee26F))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(38Fhh4Ebdrnt8SsfMUNVn212q1gALaE3KNScwzJP3iJ1MMrt4d4CV9MRVGBJCBRDGv1UYAzfypwR53jTpWtee26F))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 38Fhh4Ebdrnt8SsfMUNVn212q1gALaE3KNScwzJP3iJ1MMrt4d4CV9MRVGBJCBRDGv1UYAzfypwR53jTpWtee26F for 6GZX564W6FaM9zAmzwmF4sxfjNc6bDSq5PjqC27cXhWb
+[SUCCESS] Airdropped 10000000 lamports to 6GZX564W6FaM9zAmzwmF4sxfjNc6bDSq5PjqC27cXhWb. Tx Sig: 38Fhh4Ebdrnt8SsfMUNVn212q1gALaE3KNScwzJP3iJ1MMrt4d4CV9MRVGBJCBRDGv1UYAzfypwR53jTpWtee26F
+[DEBUG] Player 6GZX564W6FaM9zAmzwmF4sxfjNc6bDSq5PjqC27cXhWb balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/PlasmaPhantom.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => CheatsRGay with pubkey 92HP8DtaGK54WNSJXbRCFE1Ha51H8E5ax3wwDquhqR9f
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+[DEBUG] Derived reward_pubkey (ATA) => 3E5A7xNYYCo3QbXVKdnerGtEYU5VTqJUYSknqZPNwQ3U for player CheatsRGay
+[INFO] Airdropping 10000000 lamports to 92HP8DtaGK54WNSJXbRCFE1Ha51H8E5ax3wwDquhqR9f
+Sent 10000000 lamports to 92HP8DtaGK54WNSJXbRCFE1Ha51H8E5ax3wwDquhqR9f. Transaction Signature: SendTransactionResp(Signature(3pvpPr8msr4Py5uXB76xYSyK8putnSPCwVEL5rFovnT1eqNSRfYDqD3rseH6pcJyyHkDsTDufx1jEot1yYVp8xmE))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3pvpPr8msr4Py5uXB76xYSyK8putnSPCwVEL5rFovnT1eqNSRfYDqD3rseH6pcJyyHkDsTDufx1jEot1yYVp8xmE))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3pvpPr8msr4Py5uXB76xYSyK8putnSPCwVEL5rFovnT1eqNSRfYDqD3rseH6pcJyyHkDsTDufx1jEot1yYVp8xmE for 92HP8DtaGK54WNSJXbRCFE1Ha51H8E5ax3wwDquhqR9f
+[SUCCESS] Airdropped 10000000 lamports to 92HP8DtaGK54WNSJXbRCFE1Ha51H8E5ax3wwDquhqR9f. Tx Sig: 3pvpPr8msr4Py5uXB76xYSyK8putnSPCwVEL5rFovnT1eqNSRfYDqD3rseH6pcJyyHkDsTDufx1jEot1yYVp8xmE
+[DEBUG] Player 92HP8DtaGK54WNSJXbRCFE1Ha51H8E5ax3wwDquhqR9f balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/CheatsRGay.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => MrPhalanx with pubkey 6sMQ3DUUTsLsuBqYGYUKV15GbnV9aHyMxndQZAkctfko
+[DEBUG] Derived reward_pubkey (ATA) => GGofKni2mNRQfDB8D5Q6GgjZLDikmQJFbsWypqZUdNpi for player MrPhalanx
+[INFO] Airdropping 10000000 lamports to 6sMQ3DUUTsLsuBqYGYUKV15GbnV9aHyMxndQZAkctfko
+Sent 10000000 lamports to 6sMQ3DUUTsLsuBqYGYUKV15GbnV9aHyMxndQZAkctfko. Transaction Signature: SendTransactionResp(Signature(2wNwxXNYw3BcAY8nYWfLQJzxbXfpbPh5iLjhVDBvDJhpaqSMQT1kKAa2Yp1bkyamELdsiAutCLS973KfTGSYCjzq))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(2wNwxXNYw3BcAY8nYWfLQJzxbXfpbPh5iLjhVDBvDJhpaqSMQT1kKAa2Yp1bkyamELdsiAutCLS973KfTGSYCjzq))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 2wNwxXNYw3BcAY8nYWfLQJzxbXfpbPh5iLjhVDBvDJhpaqSMQT1kKAa2Yp1bkyamELdsiAutCLS973KfTGSYCjzq for 6sMQ3DUUTsLsuBqYGYUKV15GbnV9aHyMxndQZAkctfko
+[SUCCESS] Airdropped 10000000 lamports to 6sMQ3DUUTsLsuBqYGYUKV15GbnV9aHyMxndQZAkctfko. Tx Sig: 2wNwxXNYw3BcAY8nYWfLQJzxbXfpbPh5iLjhVDBvDJhpaqSMQT1kKAa2Yp1bkyamELdsiAutCLS973KfTGSYCjzq
+[DEBUG] Player 6sMQ3DUUTsLsuBqYGYUKV15GbnV9aHyMxndQZAkctfko balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/MrPhalanx.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => CarlJohnson with pubkey 47rh1aKEsu8Hf1nMVhMyv4Gt1EUFG6kaMJF7rCQR8vzm
+[DEBUG] Derived reward_pubkey (ATA) => ATKW1TtkrvpAoXH9XAmnPvJXGVtamnyPsvCBQcEzdeW8 for player CarlJohnson
+[INFO] Airdropping 10000000 lamports to 47rh1aKEsu8Hf1nMVhMyv4Gt1EUFG6kaMJF7rCQR8vzm
+Sent 10000000 lamports to 47rh1aKEsu8Hf1nMVhMyv4Gt1EUFG6kaMJF7rCQR8vzm. Transaction Signature: SendTransactionResp(Signature(5NZFBgTeY6jtQgMJardq35sYBQHgJuaKcMkXfZAtbTZW4i91QEJr6mhQegeAo8FW2i6muhuGQLRwS6qAYDVgRPWq))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(5NZFBgTeY6jtQgMJardq35sYBQHgJuaKcMkXfZAtbTZW4i91QEJr6mhQegeAo8FW2i6muhuGQLRwS6qAYDVgRPWq))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 5NZFBgTeY6jtQgMJardq35sYBQHgJuaKcMkXfZAtbTZW4i91QEJr6mhQegeAo8FW2i6muhuGQLRwS6qAYDVgRPWq for 47rh1aKEsu8Hf1nMVhMyv4Gt1EUFG6kaMJF7rCQR8vzm
+[SUCCESS] Airdropped 10000000 lamports to 47rh1aKEsu8Hf1nMVhMyv4Gt1EUFG6kaMJF7rCQR8vzm. Tx Sig: 5NZFBgTeY6jtQgMJardq35sYBQHgJuaKcMkXfZAtbTZW4i91QEJr6mhQegeAo8FW2i6muhuGQLRwS6qAYDVgRPWq
+[DEBUG] Player 47rh1aKEsu8Hf1nMVhMyv4Gt1EUFG6kaMJF7rCQR8vzm balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/CarlJohnson.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => Doug with pubkey 78ZwofFeYwLCBhWxxVVWYu6KJj4hAwL4YjYuWBCbHQos
+[DEBUG] Derived reward_pubkey (ATA) => 9vfpg6N3bUjggrPuZ1kLFhNwZYbHijTDyRB9MJxQnNXs for player Doug
+[INFO] Airdropping 10000000 lamports to 78ZwofFeYwLCBhWxxVVWYu6KJj4hAwL4YjYuWBCbHQos
+Sent 10000000 lamports to 78ZwofFeYwLCBhWxxVVWYu6KJj4hAwL4YjYuWBCbHQos. Transaction Signature: SendTransactionResp(Signature(4y9e2EPVErMBwNBrCnGBXn27Z7A9uYLNaq4dvTcDfGm7eQfx7wzpaToen4ywVX2XWA52VxYSoViQUSEb4SEQFpqB))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4y9e2EPVErMBwNBrCnGBXn27Z7A9uYLNaq4dvTcDfGm7eQfx7wzpaToen4ywVX2XWA52VxYSoViQUSEb4SEQFpqB))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4y9e2EPVErMBwNBrCnGBXn27Z7A9uYLNaq4dvTcDfGm7eQfx7wzpaToen4ywVX2XWA52VxYSoViQUSEb4SEQFpqB for 78ZwofFeYwLCBhWxxVVWYu6KJj4hAwL4YjYuWBCbHQos
+[SUCCESS] Airdropped 10000000 lamports to 78ZwofFeYwLCBhWxxVVWYu6KJj4hAwL4YjYuWBCbHQos. Tx Sig: 4y9e2EPVErMBwNBrCnGBXn27Z7A9uYLNaq4dvTcDfGm7eQfx7wzpaToen4ywVX2XWA52VxYSoViQUSEb4SEQFpqB
+[DEBUG] Player 78ZwofFeYwLCBhWxxVVWYu6KJj4hAwL4YjYuWBCbHQos balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/Doug.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => chinodechina with pubkey 76w3JXHwMrR74CpTxqgy35VkkrxGPfxUzb4ixcLT3xg3
+[DEBUG] Derived reward_pubkey (ATA) => AYNeE68BUtGbn2S9kW9krtnnSHM8dUpHquTkYtvK58t1 for player chinodechina
+[INFO] Airdropping 10000000 lamports to 76w3JXHwMrR74CpTxqgy35VkkrxGPfxUzb4ixcLT3xg3
+Sent 10000000 lamports to 76w3JXHwMrR74CpTxqgy35VkkrxGPfxUzb4ixcLT3xg3. Transaction Signature: SendTransactionResp(Signature(2sNUVimNj5NUksGBAwDrRehzCFp8HSwLgAQoWyfsMHoNXx5N7Su2cgtJtXWpHTs6Tkv2HtCx5PJiq4abVqjxwpZL))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(2sNUVimNj5NUksGBAwDrRehzCFp8HSwLgAQoWyfsMHoNXx5N7Su2cgtJtXWpHTs6Tkv2HtCx5PJiq4abVqjxwpZL))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 2sNUVimNj5NUksGBAwDrRehzCFp8HSwLgAQoWyfsMHoNXx5N7Su2cgtJtXWpHTs6Tkv2HtCx5PJiq4abVqjxwpZL for 76w3JXHwMrR74CpTxqgy35VkkrxGPfxUzb4ixcLT3xg3
+[SUCCESS] Airdropped 10000000 lamports to 76w3JXHwMrR74CpTxqgy35VkkrxGPfxUzb4ixcLT3xg3. Tx Sig: 2sNUVimNj5NUksGBAwDrRehzCFp8HSwLgAQoWyfsMHoNXx5N7Su2cgtJtXWpHTs6Tkv2HtCx5PJiq4abVqjxwpZL
+[DEBUG] Player 76w3JXHwMrR74CpTxqgy35VkkrxGPfxUzb4ixcLT3xg3 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/chinodechina.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => What with pubkey TtSkoxhpnoZKPWpBLDJi55QyysUEx19Tn7cUF7Gfc47
+[DEBUG] Derived reward_pubkey (ATA) => 7xbr3xXqJWPSGVZtMhHfktCVQmdvQHxp5gAHPkNbhP4U for player What
+[INFO] Airdropping 10000000 lamports to TtSkoxhpnoZKPWpBLDJi55QyysUEx19Tn7cUF7Gfc47
+Sent 10000000 lamports to TtSkoxhpnoZKPWpBLDJi55QyysUEx19Tn7cUF7Gfc47. Transaction Signature: SendTransactionResp(Signature(4bGN4DgPvkrDq8VnSv5vDbVgmdmufcR5A6eqVRKidVsXGoBaW2vzba2ne7jJYDkYuQhqjDn1pGvUPdZnRmMPutpz))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4bGN4DgPvkrDq8VnSv5vDbVgmdmufcR5A6eqVRKidVsXGoBaW2vzba2ne7jJYDkYuQhqjDn1pGvUPdZnRmMPutpz))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4bGN4DgPvkrDq8VnSv5vDbVgmdmufcR5A6eqVRKidVsXGoBaW2vzba2ne7jJYDkYuQhqjDn1pGvUPdZnRmMPutpz for TtSkoxhpnoZKPWpBLDJi55QyysUEx19Tn7cUF7Gfc47
+[SUCCESS] Airdropped 10000000 lamports to TtSkoxhpnoZKPWpBLDJi55QyysUEx19Tn7cUF7Gfc47. Tx Sig: 4bGN4DgPvkrDq8VnSv5vDbVgmdmufcR5A6eqVRKidVsXGoBaW2vzba2ne7jJYDkYuQhqjDn1pGvUPdZnRmMPutpz
+[DEBUG] Player TtSkoxhpnoZKPWpBLDJi55QyysUEx19Tn7cUF7Gfc47 balance: 10000000 lamports
+[ERROR] Unexpected error for player_keys/What.json: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+
+[INFO] Registering player => LEVEL1TFCGOD with pubkey 2ZT4trgA61qgKtA66hFfPs9rUYsKFUho6ZLhtb7vn1v4
+[DEBUG] Derived reward_pubkey (ATA) => 31LoUpcHZstXTNcShLSV21SjqoqAQnYMx9Y2zq6ikxoo for player LEVEL1TFCGOD
+[INFO] Airdropping 10000000 lamports to 2ZT4trgA61qgKtA66hFfPs9rUYsKFUho6ZLhtb7vn1v4
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 461, in register_player_with_semaphore
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/bulk_register_players.py", line 191, in register_player_pda
+    dapp_data = await program.account["DApp"].fetch(dapp_pda)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/account.py", line 104, in fetch
+    raise AccountDoesNotExistError(f"Account {address} does not exist")
+anchorpy.error.AccountDoesNotExistError: Account pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD does not exist

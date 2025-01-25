@@ -1,0 +1,1204 @@
+2025-01-24 18:39:48 - Batch execution of Solana Python scripts started.
+2025-01-24 18:39:48 - Executing 1_val_pay_vals_from_localwallet.py...
+Sent 1 SOL to ./val1-keypair.json. Transaction Signature: SendTransactionResp(Signature(4NVkPNMFh9gEq1xH2JddSbJG3dWUVdYMXfpT61BYADDhg7QUg77qLqFaPTUEDb7NFrtRJYAHpmx7BVbmi5AdkNcL))
+Sent 1 SOL to ./val2-keypair.json. Transaction Signature: SendTransactionResp(Signature(3bvEJpAeavPo6uAHffR2wCzD9KA8N8vxKmLR5P9jLkSBJwueXrLwiWBdhuXMjESZSDnSQkZinquoMjitnhFyVnjG))
+Sent 1 SOL to ./val3-keypair.json. Transaction Signature: SendTransactionResp(Signature(2n7qf4WafEvpRoFnaaKMPjwrWYik7XfVJc4F6DwLk2P4cL7wzJZvgEJ25hfdW6M3K2yJEWFHL5NUbePjXFYaF2N6))
+Sent 1 SOL to ./val4-keypair.json. Transaction Signature: SendTransactionResp(Signature(38CbXJHx5pZqRDs5cU7CP7pUuQavuHjyYnD1KRF9mzPCstKbUKVQw5zg6Gb7XTggARGSNkCWQr5ZZzkqQrVs6hKh))
+Sent 1 SOL to ./val5-keypair.json. Transaction Signature: SendTransactionResp(Signature(3ZkAhm3Wni6cXRfFyz1FotcnXqX7xQBp3QQGwvvpNiDvtzbHmfVseZ1i18dv1z1TqBg5hVi3inFNh8Vn4UDXsCTg))
+Sent 1 SOL to ./val6-keypair.json. Transaction Signature: SendTransactionResp(Signature(Yb5dRZg2KrmczE88Tdtt28KDRmtecTFEipm73TdKQh3JKrXok5bSqyRxCuaYL395p79udaHPhyqcLxKv34gJdzG))
+2025-01-24 18:39:50 - 1_val_pay_vals_from_localwallet.py executed successfully.
+2025-01-24 18:39:50 - Executing 2_scraper2.py...
+Querying master server for TFC servers...
+Request timed out
+Number of unique TFC servers found: 88
+Querying server: 162.156.40.57:27015
+Querying server: 172.83.159.2:27015
+Querying server: 5.78.115.59:27015
+Querying server: 54.188.146.29:27015
+Querying server: 97.94.129.234:34531
+Querying server: 54.153.40.112:27015
+Querying server: 98.210.109.153:27015
+Querying server: 192.169.85.163:27015
+Querying server: 192.169.85.101:27015
+Querying server: 66.33.9.184:27015
+Querying server: 204.57.27.76:27015
+Querying server: 76.195.132.49:25590
+Saved Stroider.json in player_keys/
+Saved BoBtheServercom27021.json in player_keys/
+Saved Highlander.json in player_keys/
+Saved DrEvil.json in player_keys/
+Saved Mallory.json in player_keys/
+Saved Cherrybomb.json in player_keys/
+Saved Woodhouse.json in player_keys/
+Saved Grizz.json in player_keys/
+Saved Sterling.json in player_keys/
+Saved Ray.json in player_keys/
+Saved MolotovCocktease.json in player_keys/
+Saved Pikachu.json in player_keys/
+Saved Duchess.json in player_keys/
+Saved Viper.json in player_keys/
+Saved choad.json in player_keys/
+Querying server: 162.251.97.85:27040
+Querying server: 108.61.119.170:27015
+Saved TFPugsWESTHLTV.json in player_keys/
+Saved SuperMario.json in player_keys/
+Saved TylertheTRailerQueen.json in player_keys/
+Saved Rere.json in player_keys/
+Saved BotTronics.json in player_keys/
+Saved Jeep.json in player_keys/
+Saved Dead_Cold.json in player_keys/
+Saved TheUndying.json in player_keys/
+Saved Devi0us.json in player_keys/
+Saved satman2499.json in player_keys/
+Saved oneredflag.json in player_keys/
+Saved smokeyhermit.json in player_keys/
+Saved mudbogger2.json in player_keys/
+Saved Tis.json in player_keys/
+Saved WornOutTire.json in player_keys/
+Saved eecjr0914.json in player_keys/
+Saved yashua.json in player_keys/
+Saved HoNduH.json in player_keys/
+Saved Beetlebomb.json in player_keys/
+Saved Steve.json in player_keys/
+Saved aaronsbarons.json in player_keys/
+Saved astrocreep2000.json in player_keys/
+Saved KenMll.json in player_keys/
+Saved nathanll382.json in player_keys/
+Saved Nitr0s0x.json in player_keys/
+Saved Mars19.json in player_keys/
+Saved Makaveli.json in player_keys/
+Saved Limpan.json in player_keys/
+Saved exige.json in player_keys/
+Saved Clay.json in player_keys/
+Saved Brit.json in player_keys/
+Querying server: 74.91.114.206:28888
+Saved CofCTV.json in player_keys/
+Querying server: 66.25.218.38:27015
+Saved MrWalnutsTinyNut.json in player_keys/
+Saved Goldyspotofgold.json in player_keys/
+Saved RedRebelsLargeCannon.json in player_keys/
+Saved PastyGangstasShive.json in player_keys/
+Saved HarleysFlagPirate.json in player_keys/
+Saved BooBooCowsSexyVoice.json in player_keys/
+Querying server: 68.232.160.177:27015
+Querying server: 45.32.203.198:27035
+Saved BurgerSlapper.json in player_keys/
+Saved EverySinglePowerRanger.json in player_keys/
+Saved Gemmy.json in player_keys/
+Saved Player.json in player_keys/
+Saved Chode_Chiggler.json in player_keys/
+Saved Merv.json in player_keys/
+Saved NapoleonDynamo.json in player_keys/
+Saved GandalfTheGray.json in player_keys/
+Querying server: 45.32.207.158:27015
+Saved PlayaHata.json in player_keys/
+Saved Ted.json in player_keys/
+Saved AOL.json in player_keys/
+Saved MoFugger.json in player_keys/
+Saved Ian.json in player_keys/
+Saved Curtis.json in player_keys/
+Saved Spanka.json in player_keys/
+Saved Steave.json in player_keys/
+Saved AntiHuman.json in player_keys/
+Saved BillGates.json in player_keys/
+Saved SPACEY.json in player_keys/
+Saved DrDeath.json in player_keys/
+Saved NXS.json in player_keys/
+Querying server: 208.115.255.4:27015
+Saved BoBtheServercom27020.json in player_keys/
+Saved DrVenture.json in player_keys/
+Saved OtherBarry.json in player_keys/
+Saved Barry.json in player_keys/
+Saved Dean.json in player_keys/
+Saved Kreiger.json in player_keys/
+Saved Pugsley.json in player_keys/
+Saved Hank.json in player_keys/
+Saved Trinity.json in player_keys/
+Saved Cheryl.json in player_keys/
+Saved Pam.json in player_keys/
+Querying server: 192.169.81.179:27015
+Saved Hey.json in player_keys/
+Saved Jack.json in player_keys/
+Saved Iam.json in player_keys/
+Saved No.json in player_keys/
+Querying server: 63.143.56.124:27015
+Querying server: 74.63.236.204:27015
+Querying server: 108.181.63.74:27019
+Querying server: 192.223.26.238:27001
+Querying server: 74.91.122.11:27015
+Querying server: 74.91.113.200:27015
+Saved Rafkin.json in player_keys/
+Saved Triolo.json in player_keys/
+Saved Harnna.json in player_keys/
+Saved Blackthorn.json in player_keys/
+Saved Marcy.json in player_keys/
+Saved Spectre.json in player_keys/
+Saved Maxwell.json in player_keys/
+Saved Delphynia.json in player_keys/
+Saved Tyball.json in player_keys/
+Saved TimeLord.json in player_keys/
+Querying server: 74.91.119.101:27015
+Saved Skuttlebot.json in player_keys/
+Querying server: 74.91.115.161:27015
+Saved Molly.json in player_keys/
+Saved Dex.json in player_keys/
+Saved ironman.json in player_keys/
+Saved Spock.json in player_keys/
+Saved Scotty.json in player_keys/
+Saved CyberCop.json in player_keys/
+Saved Kane.json in player_keys/
+Saved Kangaka.json in player_keys/
+Saved Angi3.json in player_keys/
+Saved RikiTikiTavi.json in player_keys/
+Querying server: 74.91.119.150:27015
+Saved bellyTART.json in player_keys/
+Saved OohGooBooguSwampWierdo.json in player_keys/
+Saved dub.json in player_keys/
+Saved --OsiriS.json in player_keys/
+Saved Molo.json in player_keys/
+Saved Noodles.json in player_keys/
+Saved redux.json in player_keys/
+Saved AGOODCHODEISAHEAVYCHODE.json in player_keys/
+Saved SetName_.json in player_keys/
+Saved weebz.json in player_keys/
+Saved NauticaMalone.json in player_keys/
+Saved Zalaran.json in player_keys/
+Saved machete.json in player_keys/
+Saved HeiHachi.json in player_keys/
+Saved BOBid.json in player_keys/
+Saved Iridium.json in player_keys/
+Saved Patreoncom1999TFC.json in player_keys/
+Querying server: 74.91.113.234:27015
+Querying server: 72.133.96.85:27018
+Querying server: 24.166.16.145:27022
+Querying server: 205.196.43.194:27050
+Saved CO.json in player_keys/
+Saved Chief.json in player_keys/
+Saved Colonel.json in player_keys/
+Saved Tanker.json in player_keys/
+Querying server: 92.119.129.204:27016
+Saved Austin.json in player_keys/
+Saved YoMama.json in player_keys/
+Saved ElLobstero.json in player_keys/
+Querying server: 142.44.148.157:53000
+Querying server: 149.56.29.125:27017
+Saved InhouseHLTV.json in player_keys/
+Querying server: 34.206.24.63:27020
+Saved FFL-TV.json in player_keys/
+Querying server: 172.233.224.83:27016
+Saved hellohltv.json in player_keys/
+Querying server: 44.202.103.140:27015
+Querying server: 129.158.218.251:27015
+Saved MrFloorPie.json in player_keys/
+Saved MrMani.json in player_keys/
+Saved MrPhalanx.json in player_keys/
+Saved MrBruno.json in player_keys/
+Saved MrGhey.json in player_keys/
+Saved MrOpossum.json in player_keys/
+Saved MrThunder.json in player_keys/
+Saved MrGiga.json in player_keys/
+Saved MrNimda.json in player_keys/
+Saved MrP4r4l4x.json in player_keys/
+Saved MrWhat.json in player_keys/
+Saved MrOrtega.json in player_keys/
+Saved MrSwede.json in player_keys/
+Saved MrTom.json in player_keys/
+Saved MrNuggs.json in player_keys/
+Saved Mr-X-.json in player_keys/
+Querying server: 108.51.100.99:27015
+Saved rainniiiiiieeeee.json in player_keys/
+Saved Botnamedkid.json in player_keys/
+Saved OsamaBeenLaggin.json in player_keys/
+Saved FartLover25.json in player_keys/
+Querying server: 69.251.134.183:27017
+Querying server: 50.116.59.192:27015
+Saved Playa.json in player_keys/
+Saved JesseJames.json in player_keys/
+Querying server: 23.148.232.35:27285
+Querying server: 104.207.129.123:27020
+Saved Bruno.json in player_keys/
+Saved Phalanx.json in player_keys/
+Saved AR.json in player_keys/
+Saved RiFFRaFF.json in player_keys/
+Saved Jehster.json in player_keys/
+Saved DePo.json in player_keys/
+Saved MighTy.json in player_keys/
+Saved SheDevil.json in player_keys/
+Saved Nimda.json in player_keys/
+Saved -X-.json in player_keys/
+Saved Avenger.json in player_keys/
+Saved PaRallax.json in player_keys/
+Saved eve.json in player_keys/
+Saved What.json in player_keys/
+Saved SF49ers.json in player_keys/
+Saved Merrick.json in player_keys/
+Querying server: 172.93.101.194:27015
+Saved TFPugsEAST2HLTV.json in player_keys/
+Querying server: 69.10.36.10:28015
+Querying server: 64.31.28.179:27015
+Querying server: 64.31.28.157:27025
+Querying server: 64.31.28.203:27015
+Saved TFPugsEASTNYCHLTV.json in player_keys/
+Saved lh.json in player_keys/
+Saved durdencouchgaming.json in player_keys/
+Saved grens.json in player_keys/
+Saved Danimal.json in player_keys/
+Saved LEVEL1TFCGOD.json in player_keys/
+Saved JasonDesu.json in player_keys/
+Saved SGBTD.json in player_keys/
+Saved Doug.json in player_keys/
+Saved twitchtvgamewatchparty.json in player_keys/
+Saved DP.json in player_keys/
+Saved b.json in player_keys/
+Saved jagz.json in player_keys/
+Querying server: 74.91.123.162:27005
+Querying server: 192.223.24.233:27015
+Saved rupp.json in player_keys/
+Saved Harley.json in player_keys/
+Saved ImmortanJoe.json in player_keys/
+Saved ChromeDome.json in player_keys/
+Saved bk.json in player_keys/
+Saved Pelushi.json in player_keys/
+Saved BooBooCow.json in player_keys/
+Saved player.json in player_keys/
+Saved LG-5150.json in player_keys/
+Saved GoatsinSuggestivePositions.json in player_keys/
+Saved Fite.json in player_keys/
+Saved Mashadar.json in player_keys/
+Saved elfpoo.json in player_keys/
+Saved jawofglass.json in player_keys/
+Saved Hellpawn.json in player_keys/
+Saved RedRebel.json in player_keys/
+Saved Darko.json in player_keys/
+Saved Fred.json in player_keys/
+Saved DeadShort.json in player_keys/
+Saved costellosrat.json in player_keys/
+Saved BtB.json in player_keys/
+Saved WeeD.json in player_keys/
+Saved Cook.json in player_keys/
+Saved GIL.json in player_keys/
+Saved tanyathehairycircusgirlLLC.json in player_keys/
+Saved blueskull.json in player_keys/
+Saved D2F-HLTV.json in player_keys/
+Querying server: 74.91.123.34:27015
+Saved Jim.json in player_keys/
+Saved Harold.json in player_keys/
+Saved Terry.json in player_keys/
+Saved Percy.json in player_keys/
+Saved Charles.json in player_keys/
+Saved Dexter.json in player_keys/
+Saved David.json in player_keys/
+Saved Samuel.json in player_keys/
+Saved Kevin.json in player_keys/
+Querying server: 74.91.116.214:27015
+Querying server: 69.125.161.59:27015
+Saved MaTTy.json in player_keys/
+Saved Gibbs.json in player_keys/
+Saved Smett.json in player_keys/
+Saved jhood.json in player_keys/
+Saved PV-XR.json in player_keys/
+Saved Dawn.json in player_keys/
+Saved Dragonair.json in player_keys/
+Saved wolfeet1337.json in player_keys/
+Saved bmonkey.json in player_keys/
+Saved C69420.json in player_keys/
+Querying server: 167.88.44.161:27015
+Saved TlNY.json in player_keys/
+Saved Reloaded-HLTV.json in player_keys/
+Saved Reloaded-Staff.json in player_keys/
+Saved AgentMulder.json in player_keys/
+Saved WololoMonk.json in player_keys/
+Saved AdrianShephard.json in player_keys/
+Saved CaptainPicard.json in player_keys/
+Saved RyoHazuki.json in player_keys/
+Saved TommyVercetti.json in player_keys/
+Saved InternetExplorer.json in player_keys/
+Saved LoWang.json in player_keys/
+Saved PeterGriffin.json in player_keys/
+Saved TheDude.json in player_keys/
+Saved Sonic.json in player_keys/
+Querying server: 38.40.74.41:27020
+Saved Cartman.json in player_keys/
+Saved Timmy.json in player_keys/
+Saved Rosco.json in player_keys/
+Saved MrMan.json in player_keys/
+Saved SmellULater.json in player_keys/
+Saved Muon.json in player_keys/
+Saved RainMan.json in player_keys/
+Saved Alfonzo.json in player_keys/
+Querying server: 45.77.162.42:27020
+Saved HenrytheNavigator.json in player_keys/
+Saved HenryIII.json in player_keys/
+Saved HeloisedArgenteuil.json in player_keys/
+Saved AlexiosIKomnenos.json in player_keys/
+Saved PhiliptheFair.json in player_keys/
+Saved ThomasBecket.json in player_keys/
+Saved EleanorofAquitaine.json in player_keys/
+Saved InnocentIII.json in player_keys/
+Saved EdwardIII.json in player_keys/
+Saved FrederickBarbarossa.json in player_keys/
+Saved PetertheHermit.json in player_keys/
+Saved BlancheofCastile.json in player_keys/
+Saved RichardtheLionheartI.json in player_keys/
+Saved MaryofBurgundy.json in player_keys/
+Saved ArthurHaselrig.json in player_keys/
+Querying server: 178.32.3.3:27013
+Querying server: 192.248.163.247:27015
+Querying server: 82.165.193.67:27015
+Querying server: 51.195.252.162:27020
+Saved Kenny.json in player_keys/
+Saved Kyle.json in player_keys/
+Saved Stan.json in player_keys/
+Saved Jimbo.json in player_keys/
+Saved Ned.json in player_keys/
+Saved Butters.json in player_keys/
+Saved Tweak.json in player_keys/
+Querying server: 145.239.6.180:27000
+Querying server: 145.239.6.111:27050
+Saved RoystonVaseyTV.json in player_keys/
+Querying server: 88.97.252.184:27015
+Saved EUHLTV.json in player_keys/
+Querying server: 188.165.244.220:27030
+Saved LiLPimP.json in player_keys/
+Saved TFCRBotnet.json in player_keys/
+Saved 133t_Ha0r.json in player_keys/
+Saved Gordon.json in player_keys/
+Saved FootJob.json in player_keys/
+Saved FuzzyBunny.json in player_keys/
+Querying server: 5.196.63.134:27015
+Querying server: 90.110.222.80:27016
+Saved WORLDSbestskillServertv.json in player_keys/
+Saved JuliuS_CaesaR.json in player_keys/
+Saved chinodechina.json in player_keys/
+Querying server: 194.163.156.183:27015
+Saved Rock.json in player_keys/
+Querying server: 217.160.162.135:27019
+Saved CheatsRGay.json in player_keys/
+Saved Dotcom.json in player_keys/
+Saved Grubber.json in player_keys/
+Saved DeadSurfer.json in player_keys/
+Querying server: 79.207.101.159:27017
+Saved TVS.json in player_keys/
+Saved M0rph1n3.json in player_keys/
+Saved John_McClane.json in player_keys/
+Saved SAS_Commando.json in player_keys/
+Saved Seven_of_Nine.json in player_keys/
+Saved Titan.json in player_keys/
+Saved Barry_Gibb.json in player_keys/
+Saved Mario.json in player_keys/
+Saved Victor_Meldrew.json in player_keys/
+Saved Frank_Drebin.json in player_keys/
+Saved HeadShot.json in player_keys/
+Querying server: 4.185.106.208:27015
+Saved Stimpy.json in player_keys/
+Saved Spaminator.json in player_keys/
+Querying server: 89.36.216.8:27017
+Saved Simbian-Mc-.json in player_keys/
+Saved HLTV-discordgggTxXDuGGTg.json in player_keys/
+Querying server: 116.202.113.50:27117
+Querying server: 94.130.132.169:27079
+Saved ElonMusk.json in player_keys/
+Saved Doge1.json in player_keys/
+Saved Doge5.json in player_keys/
+Saved Doge2.json in player_keys/
+Saved Doge6.json in player_keys/
+Saved Doge3.json in player_keys/
+Saved Doge7.json in player_keys/
+Saved Doge4.json in player_keys/
+Saved Doge8.json in player_keys/
+Querying server: 136.243.174.101:27216
+Saved BOT_Brit.json in player_keys/
+Saved BOT_Herb.json in player_keys/
+Saved BOT_BillGates.json in player_keys/
+Saved BOT_TheDevil.json in player_keys/
+Saved BOT_FragFury.json in player_keys/
+Saved BOT_TheDefender.json in player_keys/
+Saved BOT_AntiHuman.json in player_keys/
+Saved SpeedyScout.json in player_keys/
+Saved BOT_SniperStrike.json in player_keys/
+Saved ClutchMedic.json in player_keys/
+Saved BOT_Ted.json in player_keys/
+Saved BOT_HeavyHitter.json in player_keys/
+Saved BOT_SilentSaboteur.json in player_keys/
+Saved BOT_SmellULater.json in player_keys/
+Saved BOT_FootJob.json in player_keys/
+Saved BOT_MoJo.json in player_keys/
+Saved BOT_Curtis.json in player_keys/
+Saved NoScopeKing.json in player_keys/
+Saved RocketWhisperer.json in player_keys/
+Saved BOT_BlazingPyro.json in player_keys/
+Saved PlasmaPhantom.json in player_keys/
+Saved BOT_Stimpy.json in player_keys/
+Saved SpannerSpree.json in player_keys/
+Saved BOT_SniperElite.json in player_keys/
+Saved EngineerElite.json in player_keys/
+Saved BOT_StickyKing.json in player_keys/
+Saved BOT_USuck.json in player_keys/
+Saved BOT_DeathBySentry.json in player_keys/
+Saved FlameFury.json in player_keys/
+Querying server: 116.202.113.54:27022
+Saved BOT_MadMedic.json in player_keys/
+Saved DoubleDamage.json in player_keys/
+Saved Playersjerome.json in player_keys/
+Saved HotBoy.json in player_keys/
+Saved Exclusive_player.json in player_keys/
+Saved SmArT.json in player_keys/
+Saved lambe.json in player_keys/
+Saved Sakramento.json in player_keys/
+Saved Gamer_VampiR.json in player_keys/
+Saved Domino.json in player_keys/
+Saved KGBSALVADOR.json in player_keys/
+Saved ddos1k.json in player_keys/
+Saved monsteriux.json in player_keys/
+Saved satroN.json in player_keys/
+Failed to query server at 162.156.40.57:27015: timed out
+Querying server: 213.133.103.125:27285
+Querying server: 89.179.240.119:27065
+Failed to query server at 76.195.132.49:25590: timed out
+Querying server: 70.34.244.247:27915
+Querying server: 220.130.108.125:27012
+Querying server: 181.192.79.104:27024
+Querying server: 121.99.240.213:27018
+Querying server: 13.236.204.222:27016
+Querying server: 202.169.104.136:43216
+Querying server: 51.161.212.218:27020
+Querying server: 169.254.15.75:2512
+Saved LMFCrow.json in player_keys/
+Saved LMFSpeedFire.json in player_keys/
+Saved -GY-Godman.json in player_keys/
+Saved LMFEve.json in player_keys/
+Saved -GY-Mooneyes.json in player_keys/
+Saved LMFRaptor.json in player_keys/
+Saved -GY-CHAO.json in player_keys/
+Saved LMFLung.json in player_keys/
+Saved -GY-KnifeFat.json in player_keys/
+Saved -GY-flower.json in player_keys/
+Saved -GY-GoodGA.json in player_keys/
+Saved LMFHWC.json in player_keys/
+Saved LMFPiuleto.json in player_keys/
+Saved LMFspeed-fire_.json in player_keys/
+Saved -GY-Timo.json in player_keys/
+Saved LMFyangjj.json in player_keys/
+Saved -GY-COVI.json in player_keys/
+Saved LMF87CT.json in player_keys/
+Saved LMFDenny.json in player_keys/
+Saved LMFPenny.json in player_keys/
+Failed to query server at 149.56.29.125:27017: timed out
+Saved Glenis.json in player_keys/
+Saved Albert.json in player_keys/
+Saved Chickenlegs.json in player_keys/
+Saved geniousatwork.json in player_keys/
+Saved Dave.json in player_keys/
+Saved WinME.json in player_keys/
+Saved BigDaddy.json in player_keys/
+Saved Ernie.json in player_keys/
+Saved SunnyJim.json in player_keys/
+Saved tibu.json in player_keys/
+Failed to query server at 108.51.100.99:27015: timed out
+Failed to query server at 69.125.161.59:27015: timed out
+Failed to query server at 79.207.101.159:27017: timed out
+Failed to query server at 169.254.15.75:2512: timed out
+
+All player data has been saved individually in the player_keys/ folder.
+2025-01-24 18:40:23 - 2_scraper2.py executed successfully.
+2025-01-24 18:40:23 - Executing 3_test_fancoin.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 389, in main
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/3_test_fancoin.py", line 251, in register_player_pda
+    tx_sig = await program.rpc["register_player_pda"](
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 58, in rpc_fn
+    tx = tx_fn(
+         ^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/transaction.py", line 56, in tx_fn
+    ixns.append(ix_fn(*args, ctx=ctx))
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/instruction.py", line 64, in __call__
+    validate_accounts(self.idl_ix.accounts, ctx.accounts)
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/common.py", line 76, in validate_accounts
+    raise ValueError(f"Invalid arguments: {acc_name} not provided")
+ValueError: Invalid arguments: player_name_pda not provided
+Setting up provider and loading program...
+Program loaded successfully.
+Initializing DApp account...
+DApp PDA: pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD, Bump: 254
+DApp initialized successfully. Transaction Signature: 5B2GqgRjXi5iLQCJp2Wz4VC9MvJ8fwacn1b9aNLiFHDDFVkq1AimX5umptomruCXojcu4d4V9QWpB4ynCvgrZzHw
+
+Initializing Mint for DApp...
+InitializeMint => Transaction Signature: MTLU8LUXJEFmR8L3vYxF4KpmeNB436hLi8zZbvYHN8x5RU3mtJYKYKt54BqDNy83joFoqKf1wjA4fq2Andiiice
+The variable has been written to output.txt
+
+Initializing Game account...
+Game PDA: 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe, Bump: 255
+Game initialized successfully. Transaction Signature: 4sUpR3HLJ9hgUhNGC4E8NQi1GwxYyXoVwFmtCGbxcfvJKyCELoc7zH3K34vJKgrXH3bFj7iJdxMYSGsfVuret6Qq
+
+Registering a new Validator PDA (user-based seeds)...
+[DEBUG] Derived validator_pda = AeyppVe3FdjDpiF9HtBTiDdWXCfZ6qjyfGDNcTSL3zFF
+[DEBUG] Derived validator ATA: BSTskAHTDUNpecgCYDuNefJCKnJzbJx3KsvGabdkBv7i
+ValidatorPda registered => AeyppVe3FdjDpiF9HtBTiDdWXCfZ6qjyfGDNcTSL3zFF. Tx Sig: 2s9eyAVgEoxLkWDpG2AVXFxmGA1D2k7xBnYt8JWBpZmw6odqqC2HLKZTDCd6997ayeLmBHrCkUUR5qwu1xEhiiVW
+
+Punching In as Validator...
+Punched in successfully. Transaction Signature: 5EewyzfNLP5dWy42gE5mNLjFMdNaUf7rHFXoNREUSnd3Ds1MLA6bEeQapDKPneoupGCrU5J7P3i4Y6trftHuVZKN
+
+Registering a new Player PDA...
+[DEBUG] dapp.global_player_count = 0
+[DEBUG] Derived player_pda = HxEUP5whv4KdhM7xR7Zpd4iJ2tG4wxvPymii39ZUD9pT, Bump = 255
+[DEBUG] Derived user_ata = 2jpnzvAdF9bGcy6H4aQsbJG1LQDdWXT2YnWPYDTTmogq
+An unexpected error occurred.
+Invalid arguments: player_name_pda not provided
+Closed Solana RPC client.
+2025-01-24 18:40:28 - 3_test_fancoin.py executed successfully.
+2025-01-24 18:40:28 - Executing 4_test_fancoin_2.py...
+Traceback (most recent call last):
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 389, in main
+    await register_player_pda(
+  File "/home/devuan/Desktop/dev/Solana_Dev/fancoin/scripts/4_test_fancoin_2.py", line 251, in register_player_pda
+    tx_sig = await program.rpc["register_player_pda"](
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/rpc.py", line 58, in rpc_fn
+    tx = tx_fn(
+         ^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/transaction.py", line 56, in tx_fn
+    ixns.append(ix_fn(*args, ctx=ctx))
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/namespace/instruction.py", line 64, in __call__
+    validate_accounts(self.idl_ix.accounts, ctx.accounts)
+  File "/home/devuan/Desktop/dev/Solana_Dev/venv2/lib/python3.11/site-packages/anchorpy/program/common.py", line 76, in validate_accounts
+    raise ValueError(f"Invalid arguments: {acc_name} not provided")
+ValueError: Invalid arguments: player_name_pda not provided
+Setting up provider and loading program...
+Program loaded successfully.
+Initializing DApp account...
+DApp PDA: pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD, Bump: 254
+DApp account already exists. Skipping initialization.
+
+Initializing Mint for DApp...
+Mint + MintAuthority accounts already exist; skipping.
+The variable has been written to output.txt
+
+Initializing Game account...
+Game PDA: 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe, Bump: 255
+Game account already exists. Skipping initialization.
+
+Registering a new Validator PDA (user-based seeds)...
+[DEBUG] Derived validator_pda = 4HqsDmzs9re4abxJ2DrCsRvAFSsNZufe5bzQ95ayaSWn
+[DEBUG] Derived validator ATA: 3Wb87K7YDLVhxy5hBFmAersaK21na5a1dVs2yfsvJCEs
+ValidatorPda registered => 4HqsDmzs9re4abxJ2DrCsRvAFSsNZufe5bzQ95ayaSWn. Tx Sig: 4SWyohCQdsrNM3VfkThDbHkw8bEEgvvLScmhC3nmd4LHcgZNZacCkLz2DMNsYT8X2vzQQjNgD6L8R2ke1HwE5x1Q
+
+Punching In as Validator...
+Punched in successfully. Transaction Signature: 3pMEFoUEnQzos5R9izE4iDwzwCJBuaGVLcuAvu5NaEPA9QYP8hEep9pPHcytMnu89sYbfUJMuhHSLSXcyWoWHQVg
+
+Registering a new Player PDA...
+[DEBUG] dapp.global_player_count = 0
+[DEBUG] Derived player_pda = HxEUP5whv4KdhM7xR7Zpd4iJ2tG4wxvPymii39ZUD9pT, Bump = 255
+[DEBUG] Derived user_ata = 2jpnzvAdF9bGcy6H4aQsbJG1LQDdWXT2YnWPYDTTmogq
+An unexpected error occurred.
+Invalid arguments: player_name_pda not provided
+Closed Solana RPC client.
+2025-01-24 18:40:30 - 4_test_fancoin_2.py executed successfully.
+2025-01-24 18:40:30 - Executing punch_in.py...
+Program loaded successfully.
+Game PDA => 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe
+Validator PDA => AeyppVe3FdjDpiF9HtBTiDdWXCfZ6qjyfGDNcTSL3zFF
+
+Punching In as Validator...
+[SUCCESS] Punched in. Transaction Signature: 59tY3oMzmXa6MGaoPgkETqAxJSSiNSAh5C7ZsVHukb47RkTgM9TL2kx4f6L1s1PX8Kjza7j4sAGGnyuAg3ctByef
+Closed Solana RPC client.
+2025-01-24 18:40:31 - punch_in.py executed successfully.
+2025-01-24 18:40:31 - Executing punch_in2.py...
+Program loaded successfully.
+Game PDA => 3vEkrbp9HCRPs1YMWeb3mk3sRa3EZKv4gCjXNyuW6cNe
+Validator PDA => 4HqsDmzs9re4abxJ2DrCsRvAFSsNZufe5bzQ95ayaSWn
+
+Punching In as Validator...
+[SUCCESS] Punched in. Transaction Signature: 2QQ8V7wXEnagq7qohkDo2D7HLnh4p5aReK5MiMiZ6YXFJdACU3DxsNjcMht3XGXfgMJr57inAbbGKJLfDGn8Fvca
+Closed Solana RPC client.
+2025-01-24 18:40:32 - punch_in2.py executed successfully.
+2025-01-24 18:40:32 - Executing bulk_register_players.py...
+Payer wallet balance: 499999989696310600 lamports
+Program loaded successfully.
+[DEBUG] Using dapp_pda=pgR7gQmWjRC99twVwnB2v51iUPVne6gGVt6wQNv1NWD
+
+[INFO] Registering player => redux with pubkey 89LWHcx2J14Sq7omkmxitCHx3tpjJkwz1oAY8K3BWEJJ
+[DEBUG] Derived reward_pubkey (ATA) => 8oADJeGQq1WZ3fgUGyrZ2VoGqHUDzJQFCoZdVMMAfmnB for player redux
+[INFO] Airdropping 10000000 lamports to 89LWHcx2J14Sq7omkmxitCHx3tpjJkwz1oAY8K3BWEJJ
+Sent 10000000 lamports to 89LWHcx2J14Sq7omkmxitCHx3tpjJkwz1oAY8K3BWEJJ. Transaction Signature: SendTransactionResp(Signature(5YJ5UgLAjMQ7ev4jmmUvce6QXPTikPiKbthxHSuWMR9USNsiVLyx39yrH3YGyMtUry3CGgwbcFRfd8gagJKChQuS))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(5YJ5UgLAjMQ7ev4jmmUvce6QXPTikPiKbthxHSuWMR9USNsiVLyx39yrH3YGyMtUry3CGgwbcFRfd8gagJKChQuS))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 5YJ5UgLAjMQ7ev4jmmUvce6QXPTikPiKbthxHSuWMR9USNsiVLyx39yrH3YGyMtUry3CGgwbcFRfd8gagJKChQuS for 89LWHcx2J14Sq7omkmxitCHx3tpjJkwz1oAY8K3BWEJJ
+[SUCCESS] Airdropped 10000000 lamports to 89LWHcx2J14Sq7omkmxitCHx3tpjJkwz1oAY8K3BWEJJ. Tx Sig: 5YJ5UgLAjMQ7ev4jmmUvce6QXPTikPiKbthxHSuWMR9USNsiVLyx39yrH3YGyMtUry3CGgwbcFRfd8gagJKChQuS
+[DEBUG] Player 89LWHcx2J14Sq7omkmxitCHx3tpjJkwz1oAY8K3BWEJJ balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 0
+[DEBUG] Derived player_pda => HxEUP5whv4KdhM7xR7Zpd4iJ2tG4wxvPymii39ZUD9pT
+[DEBUG] user_ata => 8oADJeGQq1WZ3fgUGyrZ2VoGqHUDzJQFCoZdVMMAfmnB for player redux
+[DEBUG] Derived player_name_pda => 77ocS3S5pxCsoG7ZQz6D9NQcXqG437t3dDraqzPi8tpj
+Player 'redux' => PlayerPda registered. Tx Sig: 5mEaFyQEw6Yj68JYS95dLRd6rCBLyyQ7GbSK9TXz8eo5q4SrkJbAzuwC561pxXyP58iMYoYgPtCJ2xDxworxSLpy
+[DEBUG] Compute units => 1622/166681
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 8oADJeGQq1WZ3fgUGyrZ2VoGqHUDzJQFCoZdVMMAfmnB is correctly owned by the Token Program.
+[INFO] ATA 8oADJeGQq1WZ3fgUGyrZ2VoGqHUDzJQFCoZdVMMAfmnB authority field matches the player's wallet: 89LWHcx2J14Sq7omkmxitCHx3tpjJkwz1oAY8K3BWEJJ
+[INFO] Player 'redux' registration and ATA verification completed.
+
+[INFO] Registering player => LMFspeed-fire_ with pubkey 8FYuvPYnN9B15wANbMshVZWQuazgtdxhY9HcH2RdUuML
+[DEBUG] Derived reward_pubkey (ATA) => BQNc8Kuitmus24nuJEuLtAAWaDYnoziZgDy3mb3j6rx7 for player LMFspeed-fire_
+[INFO] Airdropping 10000000 lamports to 8FYuvPYnN9B15wANbMshVZWQuazgtdxhY9HcH2RdUuML
+Sent 10000000 lamports to 8FYuvPYnN9B15wANbMshVZWQuazgtdxhY9HcH2RdUuML. Transaction Signature: SendTransactionResp(Signature(WTMkrF6vZrUeLVrqGvznrxoG98wE9CksQpS2BSHxcmKSjEwKHAcKF3p5pYqx2J6AoCTNB6WvVM9PDU7hr8MvtSA))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(WTMkrF6vZrUeLVrqGvznrxoG98wE9CksQpS2BSHxcmKSjEwKHAcKF3p5pYqx2J6AoCTNB6WvVM9PDU7hr8MvtSA))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction WTMkrF6vZrUeLVrqGvznrxoG98wE9CksQpS2BSHxcmKSjEwKHAcKF3p5pYqx2J6AoCTNB6WvVM9PDU7hr8MvtSA for 8FYuvPYnN9B15wANbMshVZWQuazgtdxhY9HcH2RdUuML
+[SUCCESS] Airdropped 10000000 lamports to 8FYuvPYnN9B15wANbMshVZWQuazgtdxhY9HcH2RdUuML. Tx Sig: WTMkrF6vZrUeLVrqGvznrxoG98wE9CksQpS2BSHxcmKSjEwKHAcKF3p5pYqx2J6AoCTNB6WvVM9PDU7hr8MvtSA
+[DEBUG] Player 8FYuvPYnN9B15wANbMshVZWQuazgtdxhY9HcH2RdUuML balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 1
+[DEBUG] Derived player_pda => D4jJ7z4bC6MtJzwkWPAkkK7TF3StYk3MhgV2kp4eM2k7
+[DEBUG] user_ata => BQNc8Kuitmus24nuJEuLtAAWaDYnoziZgDy3mb3j6rx7 for player LMFspeed-fire_
+[DEBUG] Derived player_name_pda => 4eSVS4qhtt98phViFjaJFz7Ji24PZ5Cym3JSfSWu3uBV
+Player 'LMFspeed-fire_' => PlayerPda registered. Tx Sig: 2DcVNMr3qyVUd11F9HxAjSf8Gu1ArFcpWmQrbueqfJNSFK1qT4VxHUJnN3BGtBkbmMbVb6Uhu4tnWf1V3PFhUBta
+[DEBUG] Compute units => 1622/169439
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA BQNc8Kuitmus24nuJEuLtAAWaDYnoziZgDy3mb3j6rx7 is correctly owned by the Token Program.
+[INFO] ATA BQNc8Kuitmus24nuJEuLtAAWaDYnoziZgDy3mb3j6rx7 authority field matches the player's wallet: 8FYuvPYnN9B15wANbMshVZWQuazgtdxhY9HcH2RdUuML
+[INFO] Player 'LMFspeed-fire_' registration and ATA verification completed.
+
+[INFO] Registering player => Clay with pubkey 4jMpVPTFVpjybZH2JHFjEcG22dmA4d1g1hKbb516FbND
+[DEBUG] Derived reward_pubkey (ATA) => 6Wz6Bvt35ZsaVM4Cjn4Q7mK9UDaaHwD8TsMv7fhhQY4R for player Clay
+[INFO] Airdropping 10000000 lamports to 4jMpVPTFVpjybZH2JHFjEcG22dmA4d1g1hKbb516FbND
+Sent 10000000 lamports to 4jMpVPTFVpjybZH2JHFjEcG22dmA4d1g1hKbb516FbND. Transaction Signature: SendTransactionResp(Signature(59in2sAktG5ARBNACCL7r39pGbxMPujygJS9sTRMSXgwE4sgY5yqXWevZxawd4G8GzXPBu9tPCRyy6rgxUdgNHi1))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(59in2sAktG5ARBNACCL7r39pGbxMPujygJS9sTRMSXgwE4sgY5yqXWevZxawd4G8GzXPBu9tPCRyy6rgxUdgNHi1))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 59in2sAktG5ARBNACCL7r39pGbxMPujygJS9sTRMSXgwE4sgY5yqXWevZxawd4G8GzXPBu9tPCRyy6rgxUdgNHi1 for 4jMpVPTFVpjybZH2JHFjEcG22dmA4d1g1hKbb516FbND
+[SUCCESS] Airdropped 10000000 lamports to 4jMpVPTFVpjybZH2JHFjEcG22dmA4d1g1hKbb516FbND. Tx Sig: 59in2sAktG5ARBNACCL7r39pGbxMPujygJS9sTRMSXgwE4sgY5yqXWevZxawd4G8GzXPBu9tPCRyy6rgxUdgNHi1
+[DEBUG] Player 4jMpVPTFVpjybZH2JHFjEcG22dmA4d1g1hKbb516FbND balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 2
+[DEBUG] Derived player_pda => 5HoM3YVv8eRLTYdeDQ4MTfTkZFgNq7tob8rrJxFvwnU4
+[DEBUG] user_ata => 6Wz6Bvt35ZsaVM4Cjn4Q7mK9UDaaHwD8TsMv7fhhQY4R for player Clay
+[DEBUG] Derived player_name_pda => AnCXwSFFpBtRNtyGKo1KMbvLtb7wx7V7itAaErdHynz
+Player 'Clay' => PlayerPda registered. Tx Sig: 53vjwmQU1P9wxMNRdAKis5hzXwXevL4tmy6nVgAJGoZSgyVWptcxBrUSnLNWorSgYSsHonKe9RsrfPv9iSdLW3kJ
+[DEBUG] Compute units => 1622/160738
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 6Wz6Bvt35ZsaVM4Cjn4Q7mK9UDaaHwD8TsMv7fhhQY4R is correctly owned by the Token Program.
+[INFO] ATA 6Wz6Bvt35ZsaVM4Cjn4Q7mK9UDaaHwD8TsMv7fhhQY4R authority field matches the player's wallet: 4jMpVPTFVpjybZH2JHFjEcG22dmA4d1g1hKbb516FbND
+[INFO] Player 'Clay' registration and ATA verification completed.
+
+[INFO] Registering player => Molo with pubkey Ec8uBQgRS22c3gwKdUNxBouDxRbikpdmNnsWec5coDCy
+[DEBUG] Derived reward_pubkey (ATA) => BPTTKMA6RqfYg3JAv3SvtBy4TnwEeTWteDgsT1xREfMK for player Molo
+[INFO] Airdropping 10000000 lamports to Ec8uBQgRS22c3gwKdUNxBouDxRbikpdmNnsWec5coDCy
+Sent 10000000 lamports to Ec8uBQgRS22c3gwKdUNxBouDxRbikpdmNnsWec5coDCy. Transaction Signature: SendTransactionResp(Signature(5tmLAVoBGoJamQjXyLoNRcF8yUq8tph7ieRUhWSr1B9vft1PSHbvrhr78qGGrPxaiLjMGAjyJYDRRCmH5YQQAiBC))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(5tmLAVoBGoJamQjXyLoNRcF8yUq8tph7ieRUhWSr1B9vft1PSHbvrhr78qGGrPxaiLjMGAjyJYDRRCmH5YQQAiBC))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 5tmLAVoBGoJamQjXyLoNRcF8yUq8tph7ieRUhWSr1B9vft1PSHbvrhr78qGGrPxaiLjMGAjyJYDRRCmH5YQQAiBC for Ec8uBQgRS22c3gwKdUNxBouDxRbikpdmNnsWec5coDCy
+[SUCCESS] Airdropped 10000000 lamports to Ec8uBQgRS22c3gwKdUNxBouDxRbikpdmNnsWec5coDCy. Tx Sig: 5tmLAVoBGoJamQjXyLoNRcF8yUq8tph7ieRUhWSr1B9vft1PSHbvrhr78qGGrPxaiLjMGAjyJYDRRCmH5YQQAiBC
+[DEBUG] Player Ec8uBQgRS22c3gwKdUNxBouDxRbikpdmNnsWec5coDCy balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 3
+[DEBUG] Derived player_pda => AMaTAimPhkM6fnVhfrSYw5fG3GFfLMP6eLkZrA3nB2uN
+[DEBUG] user_ata => BPTTKMA6RqfYg3JAv3SvtBy4TnwEeTWteDgsT1xREfMK for player Molo
+[DEBUG] Derived player_name_pda => 2Ek5fHVdRHnZfBWmcFE1JEAqmmjRWrDeEN1MZC4TDWLv
+Player 'Molo' => PlayerPda registered. Tx Sig: 57smJBfLmeMc5oBgwEieBBpST79jzgt5Hnt59NtNssJM4Cf73GSZoBbUHteW8mD9eh63uyj3CFdpTzvYti38Jrh1
+[DEBUG] Compute units => 1622/160738
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA BPTTKMA6RqfYg3JAv3SvtBy4TnwEeTWteDgsT1xREfMK is correctly owned by the Token Program.
+[INFO] ATA BPTTKMA6RqfYg3JAv3SvtBy4TnwEeTWteDgsT1xREfMK authority field matches the player's wallet: Ec8uBQgRS22c3gwKdUNxBouDxRbikpdmNnsWec5coDCy
+[INFO] Player 'Molo' registration and ATA verification completed.
+
+[INFO] Registering player => Ted with pubkey Atj3QqkGfTYNPZgTi7JwU5cWcf5weJznh7VYGLoTDEAC
+[DEBUG] Derived reward_pubkey (ATA) => DegDfmfCSszUAqYH31ZSxRHdj6FvwUUUqdhw74b1nT2s for player Ted
+[INFO] Airdropping 10000000 lamports to Atj3QqkGfTYNPZgTi7JwU5cWcf5weJznh7VYGLoTDEAC
+Sent 10000000 lamports to Atj3QqkGfTYNPZgTi7JwU5cWcf5weJznh7VYGLoTDEAC. Transaction Signature: SendTransactionResp(Signature(4Gcdn5n9jwFBuDc5o1cKte18RzpQkDDvXcAeK3Lk8n2JLcJB43ead7ALYXL3b9PrR6idLyALQVALgyZH7dQQwDhE))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4Gcdn5n9jwFBuDc5o1cKte18RzpQkDDvXcAeK3Lk8n2JLcJB43ead7ALYXL3b9PrR6idLyALQVALgyZH7dQQwDhE))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4Gcdn5n9jwFBuDc5o1cKte18RzpQkDDvXcAeK3Lk8n2JLcJB43ead7ALYXL3b9PrR6idLyALQVALgyZH7dQQwDhE for Atj3QqkGfTYNPZgTi7JwU5cWcf5weJznh7VYGLoTDEAC
+[SUCCESS] Airdropped 10000000 lamports to Atj3QqkGfTYNPZgTi7JwU5cWcf5weJznh7VYGLoTDEAC. Tx Sig: 4Gcdn5n9jwFBuDc5o1cKte18RzpQkDDvXcAeK3Lk8n2JLcJB43ead7ALYXL3b9PrR6idLyALQVALgyZH7dQQwDhE
+[DEBUG] Player Atj3QqkGfTYNPZgTi7JwU5cWcf5weJznh7VYGLoTDEAC balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 4
+[DEBUG] Derived player_pda => 6o1zkVtjg1mKMFeRiQ1VWws3vKJhUru9mrz8ufKvWnfa
+[DEBUG] user_ata => DegDfmfCSszUAqYH31ZSxRHdj6FvwUUUqdhw74b1nT2s for player Ted
+[DEBUG] Derived player_name_pda => 7WbMc6k96u4en8ZaVkbSvF9Cq41fFgiFQonb6M57JRu1
+Player 'Ted' => PlayerPda registered. Tx Sig: 2RwdRSJAdfhAdL3Dzc6URdhcxY9irKcjYKYGiesFE6RFzvuQ2zf2JSgLDb6fa9VNwpVx2UhDg2BupYVtPAp5cXf
+[DEBUG] Compute units => 1622/166783
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA DegDfmfCSszUAqYH31ZSxRHdj6FvwUUUqdhw74b1nT2s is correctly owned by the Token Program.
+[INFO] ATA DegDfmfCSszUAqYH31ZSxRHdj6FvwUUUqdhw74b1nT2s authority field matches the player's wallet: Atj3QqkGfTYNPZgTi7JwU5cWcf5weJznh7VYGLoTDEAC
+[INFO] Player 'Ted' registration and ATA verification completed.
+
+[INFO] Registering player => CofCTV with pubkey ATEMK6KLwk38Nv9AqWJXoSukLJCo7zRhuVXMvkuVRfwG
+[DEBUG] Derived reward_pubkey (ATA) => A5tLu2x7yhDQA1pagr796uiC2Nmxh7qBVUrLk1fiJUEx for player CofCTV
+[INFO] Airdropping 10000000 lamports to ATEMK6KLwk38Nv9AqWJXoSukLJCo7zRhuVXMvkuVRfwG
+Sent 10000000 lamports to ATEMK6KLwk38Nv9AqWJXoSukLJCo7zRhuVXMvkuVRfwG. Transaction Signature: SendTransactionResp(Signature(2MpkWMdAeQMf8JGdaMJktiJm75TiEhinJCaTsdjzhdrUCCXDjh92UTovaER7wHmbNAk8ei4zvibV5SvN1fuwP16T))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(2MpkWMdAeQMf8JGdaMJktiJm75TiEhinJCaTsdjzhdrUCCXDjh92UTovaER7wHmbNAk8ei4zvibV5SvN1fuwP16T))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 2MpkWMdAeQMf8JGdaMJktiJm75TiEhinJCaTsdjzhdrUCCXDjh92UTovaER7wHmbNAk8ei4zvibV5SvN1fuwP16T for ATEMK6KLwk38Nv9AqWJXoSukLJCo7zRhuVXMvkuVRfwG
+[SUCCESS] Airdropped 10000000 lamports to ATEMK6KLwk38Nv9AqWJXoSukLJCo7zRhuVXMvkuVRfwG. Tx Sig: 2MpkWMdAeQMf8JGdaMJktiJm75TiEhinJCaTsdjzhdrUCCXDjh92UTovaER7wHmbNAk8ei4zvibV5SvN1fuwP16T
+[DEBUG] Player ATEMK6KLwk38Nv9AqWJXoSukLJCo7zRhuVXMvkuVRfwG balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 5
+[DEBUG] Derived player_pda => 5vmhzSYgNXS1H42GVpyEM7t6HNVSB24gke9A6VgTDrZ2
+[DEBUG] user_ata => A5tLu2x7yhDQA1pagr796uiC2Nmxh7qBVUrLk1fiJUEx for player CofCTV
+[DEBUG] Derived player_name_pda => 73GhCsaZqBiXW3uwe3Yu3cyeaU8iQNFjGdQeecMkeG42
+Player 'CofCTV' => PlayerPda registered. Tx Sig: 3ppBWPtGx5pFXpeQ2BLLWSQWUqTFDAW39ZsAnkVUqLXxd6eyZ8Q7MycixQ4ohqKTfcMB7mHqpSiqpLtG8CKnzgdh
+[DEBUG] Compute units => 1622/169624
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA A5tLu2x7yhDQA1pagr796uiC2Nmxh7qBVUrLk1fiJUEx is correctly owned by the Token Program.
+[INFO] ATA A5tLu2x7yhDQA1pagr796uiC2Nmxh7qBVUrLk1fiJUEx authority field matches the player's wallet: ATEMK6KLwk38Nv9AqWJXoSukLJCo7zRhuVXMvkuVRfwG
+[INFO] Player 'CofCTV' registration and ATA verification completed.
+
+[INFO] Registering player => BOT_Curtis with pubkey AbeqMTEmo15EWoozC1GVaCfEV1rQPa5Tdurc36xPp62v
+[DEBUG] Derived reward_pubkey (ATA) => 7vLzjvrthDyKoSCXqSdGg974iQVzEjbtj16HPgabEQ1c for player BOT_Curtis
+[INFO] Airdropping 10000000 lamports to AbeqMTEmo15EWoozC1GVaCfEV1rQPa5Tdurc36xPp62v
+Sent 10000000 lamports to AbeqMTEmo15EWoozC1GVaCfEV1rQPa5Tdurc36xPp62v. Transaction Signature: SendTransactionResp(Signature(125MuoCZRJ4PSbp28iG3brSxvYRygwQBiMVKXgtdzXJbhLJoStjYqrkY3EXGAhY2qzeWqcnX1paWAUBqVUnMLzzA))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(125MuoCZRJ4PSbp28iG3brSxvYRygwQBiMVKXgtdzXJbhLJoStjYqrkY3EXGAhY2qzeWqcnX1paWAUBqVUnMLzzA))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 125MuoCZRJ4PSbp28iG3brSxvYRygwQBiMVKXgtdzXJbhLJoStjYqrkY3EXGAhY2qzeWqcnX1paWAUBqVUnMLzzA for AbeqMTEmo15EWoozC1GVaCfEV1rQPa5Tdurc36xPp62v
+[SUCCESS] Airdropped 10000000 lamports to AbeqMTEmo15EWoozC1GVaCfEV1rQPa5Tdurc36xPp62v. Tx Sig: 125MuoCZRJ4PSbp28iG3brSxvYRygwQBiMVKXgtdzXJbhLJoStjYqrkY3EXGAhY2qzeWqcnX1paWAUBqVUnMLzzA
+[DEBUG] Player AbeqMTEmo15EWoozC1GVaCfEV1rQPa5Tdurc36xPp62v balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 6
+[DEBUG] Derived player_pda => EyFR5XFCuqZS4k8WyWmE73dHwNn2xuLv3qXjiZNrJH1z
+[DEBUG] user_ata => 7vLzjvrthDyKoSCXqSdGg974iQVzEjbtj16HPgabEQ1c for player BOT_Curtis
+[DEBUG] Derived player_name_pda => CFVPfUfjUbpXsyhrVuvQof2uNkkQYWuKMYiTVA7DfoDR
+Player 'BOT_Curtis' => PlayerPda registered. Tx Sig: 31hvfDhsQayZiAUxxEXGNKYVjxH7Tt1itawCsqzBQVUiYKKssRsYsb8MQsgb5Es2zJJo8tRkU3U9DqzrH6NxbVTU
+[DEBUG] Compute units => 1622/169627
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 7vLzjvrthDyKoSCXqSdGg974iQVzEjbtj16HPgabEQ1c is correctly owned by the Token Program.
+[INFO] ATA 7vLzjvrthDyKoSCXqSdGg974iQVzEjbtj16HPgabEQ1c authority field matches the player's wallet: AbeqMTEmo15EWoozC1GVaCfEV1rQPa5Tdurc36xPp62v
+[INFO] Player 'BOT_Curtis' registration and ATA verification completed.
+
+[INFO] Registering player => Gordon with pubkey CFG4n3Az15J9oCuBWXeMtXRDo4Rhm5JeWpbDRyzwUAqj
+[DEBUG] Derived reward_pubkey (ATA) => A28gPiQTCNhG17gj6xJBPpYAmhetQ1h64pbXWJSKBCAT for player Gordon
+[INFO] Airdropping 10000000 lamports to CFG4n3Az15J9oCuBWXeMtXRDo4Rhm5JeWpbDRyzwUAqj
+Sent 10000000 lamports to CFG4n3Az15J9oCuBWXeMtXRDo4Rhm5JeWpbDRyzwUAqj. Transaction Signature: SendTransactionResp(Signature(22rApKDgRgL4TSwAV9EdWtz2h16ARo995sXEFrzdcTxfZzQ4UxPiYc2Nk3o9G69uDQ6NjeNde1vwqWhPpfuwTGJV))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(22rApKDgRgL4TSwAV9EdWtz2h16ARo995sXEFrzdcTxfZzQ4UxPiYc2Nk3o9G69uDQ6NjeNde1vwqWhPpfuwTGJV))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 22rApKDgRgL4TSwAV9EdWtz2h16ARo995sXEFrzdcTxfZzQ4UxPiYc2Nk3o9G69uDQ6NjeNde1vwqWhPpfuwTGJV for CFG4n3Az15J9oCuBWXeMtXRDo4Rhm5JeWpbDRyzwUAqj
+[SUCCESS] Airdropped 10000000 lamports to CFG4n3Az15J9oCuBWXeMtXRDo4Rhm5JeWpbDRyzwUAqj. Tx Sig: 22rApKDgRgL4TSwAV9EdWtz2h16ARo995sXEFrzdcTxfZzQ4UxPiYc2Nk3o9G69uDQ6NjeNde1vwqWhPpfuwTGJV
+[DEBUG] Player CFG4n3Az15J9oCuBWXeMtXRDo4Rhm5JeWpbDRyzwUAqj balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 7
+[DEBUG] Derived player_pda => C7hPQ66PsT6KqNAesFYLFWNqGS5jSP9CSdn8z5XfprYf
+[DEBUG] user_ata => A28gPiQTCNhG17gj6xJBPpYAmhetQ1h64pbXWJSKBCAT for player Gordon
+[DEBUG] Derived player_name_pda => 49gNJcnSTUBCy3mGLhcDPkQQYWv1PkkWo8KYDNZ1uq5p
+Player 'Gordon' => PlayerPda registered. Tx Sig: 54FVkjoHhrBhoTpwyHUJ8WsgL4BXETgxG1Q9UxovrSD7VTGNeDPfssyPqQVYkuKTS1AJzPo1KQe7ka9X3WLaVY1c
+[DEBUG] Compute units => 1622/166624
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA A28gPiQTCNhG17gj6xJBPpYAmhetQ1h64pbXWJSKBCAT is correctly owned by the Token Program.
+[INFO] ATA A28gPiQTCNhG17gj6xJBPpYAmhetQ1h64pbXWJSKBCAT authority field matches the player's wallet: CFG4n3Az15J9oCuBWXeMtXRDo4Rhm5JeWpbDRyzwUAqj
+[INFO] Player 'Gordon' registration and ATA verification completed.
+
+[INFO] Registering player => astrocreep2000 with pubkey 8z2cs7ec76XpQ2tnHBDHKdZGNHk8AB3kNDJbnEE1dT9o
+[DEBUG] Derived reward_pubkey (ATA) => 5mitEJCge4n6VdPMitjVr25Aez2s9ohY8HgqisBhzDqY for player astrocreep2000
+[INFO] Airdropping 10000000 lamports to 8z2cs7ec76XpQ2tnHBDHKdZGNHk8AB3kNDJbnEE1dT9o
+Sent 10000000 lamports to 8z2cs7ec76XpQ2tnHBDHKdZGNHk8AB3kNDJbnEE1dT9o. Transaction Signature: SendTransactionResp(Signature(35VBJ6Tdzu1ZGrJvkTzV6BN32zbxKyxvpfuW2WjFLxgrfYBohF6s29mXTNd9TM3Gc5RTuVXf4pcZ8LEgJVvGnxp9))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(35VBJ6Tdzu1ZGrJvkTzV6BN32zbxKyxvpfuW2WjFLxgrfYBohF6s29mXTNd9TM3Gc5RTuVXf4pcZ8LEgJVvGnxp9))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 35VBJ6Tdzu1ZGrJvkTzV6BN32zbxKyxvpfuW2WjFLxgrfYBohF6s29mXTNd9TM3Gc5RTuVXf4pcZ8LEgJVvGnxp9 for 8z2cs7ec76XpQ2tnHBDHKdZGNHk8AB3kNDJbnEE1dT9o
+[SUCCESS] Airdropped 10000000 lamports to 8z2cs7ec76XpQ2tnHBDHKdZGNHk8AB3kNDJbnEE1dT9o. Tx Sig: 35VBJ6Tdzu1ZGrJvkTzV6BN32zbxKyxvpfuW2WjFLxgrfYBohF6s29mXTNd9TM3Gc5RTuVXf4pcZ8LEgJVvGnxp9
+[DEBUG] Player 8z2cs7ec76XpQ2tnHBDHKdZGNHk8AB3kNDJbnEE1dT9o balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 8
+[DEBUG] Derived player_pda => 39zZRVfmwD42c5k9otbxUJdfPnZs4LzmkE4w9qsB6MnG
+[DEBUG] user_ata => 5mitEJCge4n6VdPMitjVr25Aez2s9ohY8HgqisBhzDqY for player astrocreep2000
+[DEBUG] Derived player_name_pda => GZSvchENzZdSUksqdhbojvkg2X5KeHF5p1Mrnw1Ty2KL
+Player 'astrocreep2000' => PlayerPda registered. Tx Sig: 4Vjp4QG4V24auvHVdkZDczNC6uzUJJEMzJHDEHfmyrt1yxXEKVQ5RYehvxLoUi1z1Tnk8LTxFXaVD8UKLr2otSdZ
+[DEBUG] Compute units => 1622/163439
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 5mitEJCge4n6VdPMitjVr25Aez2s9ohY8HgqisBhzDqY is correctly owned by the Token Program.
+[INFO] ATA 5mitEJCge4n6VdPMitjVr25Aez2s9ohY8HgqisBhzDqY authority field matches the player's wallet: 8z2cs7ec76XpQ2tnHBDHKdZGNHk8AB3kNDJbnEE1dT9o
+[INFO] Player 'astrocreep2000' registration and ATA verification completed.
+
+[INFO] Registering player => Dex with pubkey 4tN5YtpfgGTNU2PZqM1J2rEQvnjhMThuJrf7LfU9VDjU
+[DEBUG] Derived reward_pubkey (ATA) => 8YeZBvfoXp6YtVcVM1AetSjzafZdTC2DYV1sqJQjiGE for player Dex
+[INFO] Airdropping 10000000 lamports to 4tN5YtpfgGTNU2PZqM1J2rEQvnjhMThuJrf7LfU9VDjU
+Sent 10000000 lamports to 4tN5YtpfgGTNU2PZqM1J2rEQvnjhMThuJrf7LfU9VDjU. Transaction Signature: SendTransactionResp(Signature(5DdPGFpApwCBFU4Zeb6CRNFKHdzZMQnrvD9w92stwCgsicZFRzMR584w8mM1bmALdaQHhPTAxgpe4aetfKFZGhpi))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(5DdPGFpApwCBFU4Zeb6CRNFKHdzZMQnrvD9w92stwCgsicZFRzMR584w8mM1bmALdaQHhPTAxgpe4aetfKFZGhpi))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 5DdPGFpApwCBFU4Zeb6CRNFKHdzZMQnrvD9w92stwCgsicZFRzMR584w8mM1bmALdaQHhPTAxgpe4aetfKFZGhpi for 4tN5YtpfgGTNU2PZqM1J2rEQvnjhMThuJrf7LfU9VDjU
+[SUCCESS] Airdropped 10000000 lamports to 4tN5YtpfgGTNU2PZqM1J2rEQvnjhMThuJrf7LfU9VDjU. Tx Sig: 5DdPGFpApwCBFU4Zeb6CRNFKHdzZMQnrvD9w92stwCgsicZFRzMR584w8mM1bmALdaQHhPTAxgpe4aetfKFZGhpi
+[DEBUG] Player 4tN5YtpfgGTNU2PZqM1J2rEQvnjhMThuJrf7LfU9VDjU balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 9
+[DEBUG] Derived player_pda => 2D6c57rWzfXEtpoEDE6u8yikNrR9n1pG85wHTnqTYLAa
+[DEBUG] user_ata => 8YeZBvfoXp6YtVcVM1AetSjzafZdTC2DYV1sqJQjiGE for player Dex
+[DEBUG] Derived player_name_pda => 6wqV1aZ5n56x6QUsvuN6cmLCpRHiAkcrpin2JHKkCeu6
+Player 'Dex' => PlayerPda registered. Tx Sig: 5CgtsSZW92QYaqeAuLsu6wreLDeKpsn7rmqDMkm54LJ6Erjru8ufLdbussHYna8ZtNxGJ2gF4qdUr4Q1fLi2ruxc
+[DEBUG] Compute units => 1622/166783
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 8YeZBvfoXp6YtVcVM1AetSjzafZdTC2DYV1sqJQjiGE is correctly owned by the Token Program.
+[INFO] ATA 8YeZBvfoXp6YtVcVM1AetSjzafZdTC2DYV1sqJQjiGE authority field matches the player's wallet: 4tN5YtpfgGTNU2PZqM1J2rEQvnjhMThuJrf7LfU9VDjU
+[INFO] Player 'Dex' registration and ATA verification completed.
+
+[INFO] Registering player => Rock with pubkey HTwVyfkQBtoDect3f6L3fDsAXfjMEuY9Rx9mYbSG71To
+[DEBUG] Derived reward_pubkey (ATA) => 9TfCxWMWcQMD1PtzRvNYXuySZTo41DcECpXxVUv3QwWL for player Rock
+[INFO] Airdropping 10000000 lamports to HTwVyfkQBtoDect3f6L3fDsAXfjMEuY9Rx9mYbSG71To
+Sent 10000000 lamports to HTwVyfkQBtoDect3f6L3fDsAXfjMEuY9Rx9mYbSG71To. Transaction Signature: SendTransactionResp(Signature(PScMGBLge5qJcx2bUHm1nrEu846GczChnH8YdBpVvjaZt7t8V7zrCmE4sCrhmWcNPhNQNLPNJ5iBd7tvmV8Nysa))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(PScMGBLge5qJcx2bUHm1nrEu846GczChnH8YdBpVvjaZt7t8V7zrCmE4sCrhmWcNPhNQNLPNJ5iBd7tvmV8Nysa))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction PScMGBLge5qJcx2bUHm1nrEu846GczChnH8YdBpVvjaZt7t8V7zrCmE4sCrhmWcNPhNQNLPNJ5iBd7tvmV8Nysa for HTwVyfkQBtoDect3f6L3fDsAXfjMEuY9Rx9mYbSG71To
+[SUCCESS] Airdropped 10000000 lamports to HTwVyfkQBtoDect3f6L3fDsAXfjMEuY9Rx9mYbSG71To. Tx Sig: PScMGBLge5qJcx2bUHm1nrEu846GczChnH8YdBpVvjaZt7t8V7zrCmE4sCrhmWcNPhNQNLPNJ5iBd7tvmV8Nysa
+[DEBUG] Player HTwVyfkQBtoDect3f6L3fDsAXfjMEuY9Rx9mYbSG71To balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 10
+[DEBUG] Derived player_pda => EpLqBqpB3h4zSjNnokUoiTJTHn4pwhZnD5VeABCLYGTN
+[DEBUG] user_ata => 9TfCxWMWcQMD1PtzRvNYXuySZTo41DcECpXxVUv3QwWL for player Rock
+[DEBUG] Derived player_name_pda => HBhJu8gLCdgLZ9bdLZTzWzVbKJxwc4RAyANyFtemmnC3
+Player 'Rock' => PlayerPda registered. Tx Sig: wgUrvsYrSw4wxDj7RrjAmToZeERx6y5QLnbf65VNZWLiJqX8gWcRzrLjpx1QfK5BoJQ4VGgA7UEhQLFKozVBwqU
+[DEBUG] Compute units => 1622/166738
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 9TfCxWMWcQMD1PtzRvNYXuySZTo41DcECpXxVUv3QwWL is correctly owned by the Token Program.
+[INFO] ATA 9TfCxWMWcQMD1PtzRvNYXuySZTo41DcECpXxVUv3QwWL authority field matches the player's wallet: HTwVyfkQBtoDect3f6L3fDsAXfjMEuY9Rx9mYbSG71To
+[INFO] Player 'Rock' registration and ATA verification completed.
+
+[INFO] Registering player => Noodles with pubkey Gyh8qLDzcy84U5KWBuoWeYY85ubR51mwBX6JZarWCfgb
+[DEBUG] Derived reward_pubkey (ATA) => CmGN8VBs5N2gCZaqgSCP6K1gZFeN9ryFoSgLc4z2KmD6 for player Noodles
+[INFO] Airdropping 10000000 lamports to Gyh8qLDzcy84U5KWBuoWeYY85ubR51mwBX6JZarWCfgb
+Sent 10000000 lamports to Gyh8qLDzcy84U5KWBuoWeYY85ubR51mwBX6JZarWCfgb. Transaction Signature: SendTransactionResp(Signature(3NV4tnPsm1jpHuwjxbcAiYjdKqrKxusjtN7RLtaXtXDzQUJvJaf95Pggnxt9msEUe2hsqMg3UVi1YdDbNvMDT6QG))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3NV4tnPsm1jpHuwjxbcAiYjdKqrKxusjtN7RLtaXtXDzQUJvJaf95Pggnxt9msEUe2hsqMg3UVi1YdDbNvMDT6QG))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3NV4tnPsm1jpHuwjxbcAiYjdKqrKxusjtN7RLtaXtXDzQUJvJaf95Pggnxt9msEUe2hsqMg3UVi1YdDbNvMDT6QG for Gyh8qLDzcy84U5KWBuoWeYY85ubR51mwBX6JZarWCfgb
+[SUCCESS] Airdropped 10000000 lamports to Gyh8qLDzcy84U5KWBuoWeYY85ubR51mwBX6JZarWCfgb. Tx Sig: 3NV4tnPsm1jpHuwjxbcAiYjdKqrKxusjtN7RLtaXtXDzQUJvJaf95Pggnxt9msEUe2hsqMg3UVi1YdDbNvMDT6QG
+[DEBUG] Player Gyh8qLDzcy84U5KWBuoWeYY85ubR51mwBX6JZarWCfgb balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 11
+[DEBUG] Derived player_pda => CFM2gUqD3HrYGEgZTJsXj3c36sQZDDYVHxYPKmrApSfi
+[DEBUG] user_ata => CmGN8VBs5N2gCZaqgSCP6K1gZFeN9ryFoSgLc4z2KmD6 for player Noodles
+[DEBUG] Derived player_name_pda => iXg8xjtTQoUGGXbGkQAJSLazEuPjKsnUahjHe8juKhp
+Player 'Noodles' => PlayerPda registered. Tx Sig: r3N4TUXoc6DuqXnzVo99HXa1x2PmALSrsLF8cHSfreLedMZVwe1zdidvPByc3iC9caYQTzbc8NmC1BdeZtLXSKv
+[DEBUG] Compute units => 1622/163567
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA CmGN8VBs5N2gCZaqgSCP6K1gZFeN9ryFoSgLc4z2KmD6 is correctly owned by the Token Program.
+[INFO] ATA CmGN8VBs5N2gCZaqgSCP6K1gZFeN9ryFoSgLc4z2KmD6 authority field matches the player's wallet: Gyh8qLDzcy84U5KWBuoWeYY85ubR51mwBX6JZarWCfgb
+[INFO] Player 'Noodles' registration and ATA verification completed.
+
+[INFO] Registering player => Curtis with pubkey FXr6DensShjB2mZoKhWZFePKEcxT3euR6UbVXTJXCUNp
+[DEBUG] Derived reward_pubkey (ATA) => 6cKhCqsLRfYZ3Lrt1k34pkLtZwK5PNjPbqRcXbFz1xgj for player Curtis
+[INFO] Airdropping 10000000 lamports to FXr6DensShjB2mZoKhWZFePKEcxT3euR6UbVXTJXCUNp
+Sent 10000000 lamports to FXr6DensShjB2mZoKhWZFePKEcxT3euR6UbVXTJXCUNp. Transaction Signature: SendTransactionResp(Signature(VecwUCmsdy8YLNs57GsXo8SeEVon5xuVhZCVfCLHaegHSEdzDrhQAWrWwrVqDeeJQkeEDhPA9rHWPH6s85QA1qC))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(VecwUCmsdy8YLNs57GsXo8SeEVon5xuVhZCVfCLHaegHSEdzDrhQAWrWwrVqDeeJQkeEDhPA9rHWPH6s85QA1qC))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction VecwUCmsdy8YLNs57GsXo8SeEVon5xuVhZCVfCLHaegHSEdzDrhQAWrWwrVqDeeJQkeEDhPA9rHWPH6s85QA1qC for FXr6DensShjB2mZoKhWZFePKEcxT3euR6UbVXTJXCUNp
+[SUCCESS] Airdropped 10000000 lamports to FXr6DensShjB2mZoKhWZFePKEcxT3euR6UbVXTJXCUNp. Tx Sig: VecwUCmsdy8YLNs57GsXo8SeEVon5xuVhZCVfCLHaegHSEdzDrhQAWrWwrVqDeeJQkeEDhPA9rHWPH6s85QA1qC
+[DEBUG] Player FXr6DensShjB2mZoKhWZFePKEcxT3euR6UbVXTJXCUNp balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 12
+[DEBUG] Derived player_pda => 9rpkjskqta5dikwuNUSC7VdpdS3CVMkZKfWgdtvA9syD
+[DEBUG] user_ata => 6cKhCqsLRfYZ3Lrt1k34pkLtZwK5PNjPbqRcXbFz1xgj for player Curtis
+[DEBUG] Derived player_name_pda => Dj7PPPGhJMuXnizPsQENDqxyyzHn3KigQiybCmZhf5YX
+Player 'Curtis' => PlayerPda registered. Tx Sig: 4F7jbjyGezsuimjCiX24d7JsVr9ZJiqiNSHwkqJGRzyiAM4qGuanWwgCXEM37a1j5bDc6grfyEFJ6PRWS1VFrwyr
+[DEBUG] Compute units => 1622/157624
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 6cKhCqsLRfYZ3Lrt1k34pkLtZwK5PNjPbqRcXbFz1xgj is correctly owned by the Token Program.
+[INFO] ATA 6cKhCqsLRfYZ3Lrt1k34pkLtZwK5PNjPbqRcXbFz1xgj authority field matches the player's wallet: FXr6DensShjB2mZoKhWZFePKEcxT3euR6UbVXTJXCUNp
+[INFO] Player 'Curtis' registration and ATA verification completed.
+
+[INFO] Registering player => Victor_Meldrew with pubkey 2n3Z5zi88mGzZSLekgv4rnNXVuFV1x94ipgjU3A43Kby
+[DEBUG] Derived reward_pubkey (ATA) => mt9HHvSSUPJp2RgDwz1Na76YNWF3zYvAoRTqy8jiV2L for player Victor_Meldrew
+[INFO] Airdropping 10000000 lamports to 2n3Z5zi88mGzZSLekgv4rnNXVuFV1x94ipgjU3A43Kby
+Sent 10000000 lamports to 2n3Z5zi88mGzZSLekgv4rnNXVuFV1x94ipgjU3A43Kby. Transaction Signature: SendTransactionResp(Signature(32DgMPqRWNLzAoZ49PjcHvBtcyzxnFWa2HZzoeaEdHcNqoPJvJtYTXNRdeCNjt8vxUzRBJgYpxRvL5G41FMRXuLy))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(32DgMPqRWNLzAoZ49PjcHvBtcyzxnFWa2HZzoeaEdHcNqoPJvJtYTXNRdeCNjt8vxUzRBJgYpxRvL5G41FMRXuLy))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 32DgMPqRWNLzAoZ49PjcHvBtcyzxnFWa2HZzoeaEdHcNqoPJvJtYTXNRdeCNjt8vxUzRBJgYpxRvL5G41FMRXuLy for 2n3Z5zi88mGzZSLekgv4rnNXVuFV1x94ipgjU3A43Kby
+[SUCCESS] Airdropped 10000000 lamports to 2n3Z5zi88mGzZSLekgv4rnNXVuFV1x94ipgjU3A43Kby. Tx Sig: 32DgMPqRWNLzAoZ49PjcHvBtcyzxnFWa2HZzoeaEdHcNqoPJvJtYTXNRdeCNjt8vxUzRBJgYpxRvL5G41FMRXuLy
+[DEBUG] Player 2n3Z5zi88mGzZSLekgv4rnNXVuFV1x94ipgjU3A43Kby balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 13
+[DEBUG] Derived player_pda => 5tXVq4F23kb1P6ETge8G5G5jJmV1KGk3f6KupiH6Xt7J
+[DEBUG] user_ata => mt9HHvSSUPJp2RgDwz1Na76YNWF3zYvAoRTqy8jiV2L for player Victor_Meldrew
+[DEBUG] Derived player_name_pda => 3c3aU8pLVbdXeYSRsQiw1yQy6CMc8vSrWzqmxJpH9u9Q
+Player 'Victor_Meldrew' => PlayerPda registered. Tx Sig: zENq1UWDciwCAFFDcTNH7TsDrMdiKiou4JsLysG6vRvVrRQMc891Y1V26Gs3DjLJRL9eUEdNyF93oR8hMZ8W4oy
+[DEBUG] Compute units => 1622/155939
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA mt9HHvSSUPJp2RgDwz1Na76YNWF3zYvAoRTqy8jiV2L is correctly owned by the Token Program.
+[INFO] ATA mt9HHvSSUPJp2RgDwz1Na76YNWF3zYvAoRTqy8jiV2L authority field matches the player's wallet: 2n3Z5zi88mGzZSLekgv4rnNXVuFV1x94ipgjU3A43Kby
+[INFO] Player 'Victor_Meldrew' registration and ATA verification completed.
+
+[INFO] Registering player => JesseJames with pubkey 3eoDLKgtc4iSi85Ndkh73SDMeojcx9TRPfW7uFmgjMAf
+[DEBUG] Derived reward_pubkey (ATA) => Brr5BzC2a8q11sC4Us9KjPWcPNMV1T8eTQkarteuX2C5 for player JesseJames
+[INFO] Airdropping 10000000 lamports to 3eoDLKgtc4iSi85Ndkh73SDMeojcx9TRPfW7uFmgjMAf
+Sent 10000000 lamports to 3eoDLKgtc4iSi85Ndkh73SDMeojcx9TRPfW7uFmgjMAf. Transaction Signature: SendTransactionResp(Signature(Fc9wf4Qmp9wPFnGDzSudPMEjVgtYTCAHH3UXH6hWoPfbjyE2DvP7invV2kw1z4ktxoJrRqQTsJQCyfdRXv92Pap))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(Fc9wf4Qmp9wPFnGDzSudPMEjVgtYTCAHH3UXH6hWoPfbjyE2DvP7invV2kw1z4ktxoJrRqQTsJQCyfdRXv92Pap))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction Fc9wf4Qmp9wPFnGDzSudPMEjVgtYTCAHH3UXH6hWoPfbjyE2DvP7invV2kw1z4ktxoJrRqQTsJQCyfdRXv92Pap for 3eoDLKgtc4iSi85Ndkh73SDMeojcx9TRPfW7uFmgjMAf
+[SUCCESS] Airdropped 10000000 lamports to 3eoDLKgtc4iSi85Ndkh73SDMeojcx9TRPfW7uFmgjMAf. Tx Sig: Fc9wf4Qmp9wPFnGDzSudPMEjVgtYTCAHH3UXH6hWoPfbjyE2DvP7invV2kw1z4ktxoJrRqQTsJQCyfdRXv92Pap
+[DEBUG] Player 3eoDLKgtc4iSi85Ndkh73SDMeojcx9TRPfW7uFmgjMAf balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 14
+[DEBUG] Derived player_pda => CnVzeVX84q2x2tUHUWAXQH5ZQt641V844vmDGRZS4J5p
+[DEBUG] user_ata => Brr5BzC2a8q11sC4Us9KjPWcPNMV1T8eTQkarteuX2C5 for player JesseJames
+[DEBUG] Derived player_name_pda => BKFxMXGoTZg29KwCYpLGEuari7qiAPYgghQ4dKGrGNVy
+Player 'JesseJames' => PlayerPda registered. Tx Sig: 3Xr3qcScLoXSHnL8DxX5HhRoYKV3vNjpuquXn7ToAMhVFYwJCvnrJHMgGYE5mxJgsUrsegzz9AyTFdbGGgHyFFmf
+[DEBUG] Compute units => 1622/163627
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA Brr5BzC2a8q11sC4Us9KjPWcPNMV1T8eTQkarteuX2C5 is correctly owned by the Token Program.
+[INFO] ATA Brr5BzC2a8q11sC4Us9KjPWcPNMV1T8eTQkarteuX2C5 authority field matches the player's wallet: 3eoDLKgtc4iSi85Ndkh73SDMeojcx9TRPfW7uFmgjMAf
+[INFO] Player 'JesseJames' registration and ATA verification completed.
+
+[INFO] Registering player => LMFPiuleto with pubkey CCKVbgE7U6TVMkB7c32qcENX34EZi5iXDHTq5P1yCdDb
+[DEBUG] Derived reward_pubkey (ATA) => BvvdxXmymv9UjzysAPGxhavHE4hQqmWXvTNP8NnJxDF8 for player LMFPiuleto
+[INFO] Airdropping 10000000 lamports to CCKVbgE7U6TVMkB7c32qcENX34EZi5iXDHTq5P1yCdDb
+Sent 10000000 lamports to CCKVbgE7U6TVMkB7c32qcENX34EZi5iXDHTq5P1yCdDb. Transaction Signature: SendTransactionResp(Signature(4QytzbJFzck6FhZiqwCEAXKE5D6MkhBfGeEHSkn5SeiZf6rvzZXuo7dKKmARagx7m4BDACH1QsnTZgvSsPgnKc3g))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4QytzbJFzck6FhZiqwCEAXKE5D6MkhBfGeEHSkn5SeiZf6rvzZXuo7dKKmARagx7m4BDACH1QsnTZgvSsPgnKc3g))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4QytzbJFzck6FhZiqwCEAXKE5D6MkhBfGeEHSkn5SeiZf6rvzZXuo7dKKmARagx7m4BDACH1QsnTZgvSsPgnKc3g for CCKVbgE7U6TVMkB7c32qcENX34EZi5iXDHTq5P1yCdDb
+[SUCCESS] Airdropped 10000000 lamports to CCKVbgE7U6TVMkB7c32qcENX34EZi5iXDHTq5P1yCdDb. Tx Sig: 4QytzbJFzck6FhZiqwCEAXKE5D6MkhBfGeEHSkn5SeiZf6rvzZXuo7dKKmARagx7m4BDACH1QsnTZgvSsPgnKc3g
+[DEBUG] Player CCKVbgE7U6TVMkB7c32qcENX34EZi5iXDHTq5P1yCdDb balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 15
+[DEBUG] Derived player_pda => 9rv3gNnp8yafWjT3WvwWavty7J7AR2d2hfFECSJf5nWt
+[DEBUG] user_ata => BvvdxXmymv9UjzysAPGxhavHE4hQqmWXvTNP8NnJxDF8 for player LMFPiuleto
+[DEBUG] Derived player_name_pda => D9TVLgKezi7ex4yAi9nP5a1rcNgE8jYfdgfU4PVMEvjo
+Player 'LMFPiuleto' => PlayerPda registered. Tx Sig: 2QcwzQzhAhrtwxdXTwZbDyfsGdUF6cAKnn1krK1irP49t6wwoQ4JgX4Rd7gqoaBPaMT98iAHRLTuEsWBp2zdVZj2
+[DEBUG] Compute units => 1622/153127
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA BvvdxXmymv9UjzysAPGxhavHE4hQqmWXvTNP8NnJxDF8 is correctly owned by the Token Program.
+[INFO] ATA BvvdxXmymv9UjzysAPGxhavHE4hQqmWXvTNP8NnJxDF8 authority field matches the player's wallet: CCKVbgE7U6TVMkB7c32qcENX34EZi5iXDHTq5P1yCdDb
+[INFO] Player 'LMFPiuleto' registration and ATA verification completed.
+
+[INFO] Registering player => Hellpawn with pubkey 3ASCBUXh35iLRDJHyS4oGXywPnNpUjgZgy6HHqa67U6G
+[DEBUG] Derived reward_pubkey (ATA) => DJ6fBBounHpcrSXT76Kkb6CXMxss3ovBfpUvBbNMYV48 for player Hellpawn
+[INFO] Airdropping 10000000 lamports to 3ASCBUXh35iLRDJHyS4oGXywPnNpUjgZgy6HHqa67U6G
+Sent 10000000 lamports to 3ASCBUXh35iLRDJHyS4oGXywPnNpUjgZgy6HHqa67U6G. Transaction Signature: SendTransactionResp(Signature(33cdP8XiuhZ52ynLnDQfWaSD8S8zSCGw5cxkskK2Vz1isQwfrkcSC8EqVVw3jdcELjKGeEgn6L8gTH5pbp1iupXx))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(33cdP8XiuhZ52ynLnDQfWaSD8S8zSCGw5cxkskK2Vz1isQwfrkcSC8EqVVw3jdcELjKGeEgn6L8gTH5pbp1iupXx))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 33cdP8XiuhZ52ynLnDQfWaSD8S8zSCGw5cxkskK2Vz1isQwfrkcSC8EqVVw3jdcELjKGeEgn6L8gTH5pbp1iupXx for 3ASCBUXh35iLRDJHyS4oGXywPnNpUjgZgy6HHqa67U6G
+[SUCCESS] Airdropped 10000000 lamports to 3ASCBUXh35iLRDJHyS4oGXywPnNpUjgZgy6HHqa67U6G. Tx Sig: 33cdP8XiuhZ52ynLnDQfWaSD8S8zSCGw5cxkskK2Vz1isQwfrkcSC8EqVVw3jdcELjKGeEgn6L8gTH5pbp1iupXx
+[DEBUG] Player 3ASCBUXh35iLRDJHyS4oGXywPnNpUjgZgy6HHqa67U6G balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 16
+[DEBUG] Derived player_pda => 5ykUi94rREZPDVdYXu8gALWPxqQQcwrvkwm15J5qeWfB
+[DEBUG] user_ata => DJ6fBBounHpcrSXT76Kkb6CXMxss3ovBfpUvBbNMYV48 for player Hellpawn
+[DEBUG] Derived player_name_pda => E2Y47JsLpWCzf53o22uRWUJCEdNPqcBHYAxQZiiRhQ3X
+Player 'Hellpawn' => PlayerPda registered. Tx Sig: 3kvjopfQqViNBgVoKZFGEiHz33UBGaxdSP9pAyZyo7tUpKJ3m4hvxxR9KL4M73VYxMQgDafMkZjy4GiopN6K8kDm
+[DEBUG] Compute units => 1622/159243
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA DJ6fBBounHpcrSXT76Kkb6CXMxss3ovBfpUvBbNMYV48 is correctly owned by the Token Program.
+[INFO] ATA DJ6fBBounHpcrSXT76Kkb6CXMxss3ovBfpUvBbNMYV48 authority field matches the player's wallet: 3ASCBUXh35iLRDJHyS4oGXywPnNpUjgZgy6HHqa67U6G
+[INFO] Player 'Hellpawn' registration and ATA verification completed.
+
+[INFO] Registering player => MrOpossum with pubkey 9h4B8UjDXdQ1oMJu5wo7UUT4o8j3qLhe3Snn8ozb8DNe
+[DEBUG] Derived reward_pubkey (ATA) => 4J4zLjt2d8gT2q2MLcqVQH3RcxK8tq4SJBH5tCwzzf2m for player MrOpossum
+[INFO] Airdropping 10000000 lamports to 9h4B8UjDXdQ1oMJu5wo7UUT4o8j3qLhe3Snn8ozb8DNe
+Sent 10000000 lamports to 9h4B8UjDXdQ1oMJu5wo7UUT4o8j3qLhe3Snn8ozb8DNe. Transaction Signature: SendTransactionResp(Signature(5X5xHmEj8PMzrDBtLEQTzfGAh3EuQsNfocZtmfoHS9Dw9QBSy9cYBjFRLkvKDgL3mq4zRafN1BVeVKhzxTR8Ys8V))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(5X5xHmEj8PMzrDBtLEQTzfGAh3EuQsNfocZtmfoHS9Dw9QBSy9cYBjFRLkvKDgL3mq4zRafN1BVeVKhzxTR8Ys8V))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 5X5xHmEj8PMzrDBtLEQTzfGAh3EuQsNfocZtmfoHS9Dw9QBSy9cYBjFRLkvKDgL3mq4zRafN1BVeVKhzxTR8Ys8V for 9h4B8UjDXdQ1oMJu5wo7UUT4o8j3qLhe3Snn8ozb8DNe
+[SUCCESS] Airdropped 10000000 lamports to 9h4B8UjDXdQ1oMJu5wo7UUT4o8j3qLhe3Snn8ozb8DNe. Tx Sig: 5X5xHmEj8PMzrDBtLEQTzfGAh3EuQsNfocZtmfoHS9Dw9QBSy9cYBjFRLkvKDgL3mq4zRafN1BVeVKhzxTR8Ys8V
+[DEBUG] Player 9h4B8UjDXdQ1oMJu5wo7UUT4o8j3qLhe3Snn8ozb8DNe balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 17
+[DEBUG] Derived player_pda => 9r23ZpWaBh212XuDjjrPgWYCumroo5hCzRyKJsYfKeRg
+[DEBUG] user_ata => 4J4zLjt2d8gT2q2MLcqVQH3RcxK8tq4SJBH5tCwzzf2m for player MrOpossum
+[DEBUG] Derived player_name_pda => 9W56hpPyQpUQ9PMdEY2gg1SpHdkoGXxg758CdVDEfBtm
+Player 'MrOpossum' => PlayerPda registered. Tx Sig: 5bHWbyx8QwaH1EeZcCCBkN7duheJbMBXVEDqcSYS5Xva66UJmvT5FD6JiZ6AwEQ8MU8WkMawQimTF76v8cJg8yfh
+[DEBUG] Compute units => 1622/165184
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 4J4zLjt2d8gT2q2MLcqVQH3RcxK8tq4SJBH5tCwzzf2m is correctly owned by the Token Program.
+[INFO] ATA 4J4zLjt2d8gT2q2MLcqVQH3RcxK8tq4SJBH5tCwzzf2m authority field matches the player's wallet: 9h4B8UjDXdQ1oMJu5wo7UUT4o8j3qLhe3Snn8ozb8DNe
+[INFO] Player 'MrOpossum' registration and ATA verification completed.
+
+[INFO] Registering player => Gibbs with pubkey HBhpg7UmUKHhegDR2iZ8FTUTzxm6LFpUYzbgDLArFYgn
+[DEBUG] Derived reward_pubkey (ATA) => DJZy5g3kEvzrweCsuiwM4YMjth3n5ogdnAQPDGzYZ6pp for player Gibbs
+[INFO] Airdropping 10000000 lamports to HBhpg7UmUKHhegDR2iZ8FTUTzxm6LFpUYzbgDLArFYgn
+Sent 10000000 lamports to HBhpg7UmUKHhegDR2iZ8FTUTzxm6LFpUYzbgDLArFYgn. Transaction Signature: SendTransactionResp(Signature(3vS62ZvxPppUaR1ZqyPMGSuPH78JLUbQR4pA3BgADToRdi4Kn6W1GMtb9GqsK4PdCVdHTikveiMvdioBaebTbDVB))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3vS62ZvxPppUaR1ZqyPMGSuPH78JLUbQR4pA3BgADToRdi4Kn6W1GMtb9GqsK4PdCVdHTikveiMvdioBaebTbDVB))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3vS62ZvxPppUaR1ZqyPMGSuPH78JLUbQR4pA3BgADToRdi4Kn6W1GMtb9GqsK4PdCVdHTikveiMvdioBaebTbDVB for HBhpg7UmUKHhegDR2iZ8FTUTzxm6LFpUYzbgDLArFYgn
+[SUCCESS] Airdropped 10000000 lamports to HBhpg7UmUKHhegDR2iZ8FTUTzxm6LFpUYzbgDLArFYgn. Tx Sig: 3vS62ZvxPppUaR1ZqyPMGSuPH78JLUbQR4pA3BgADToRdi4Kn6W1GMtb9GqsK4PdCVdHTikveiMvdioBaebTbDVB
+[DEBUG] Player HBhpg7UmUKHhegDR2iZ8FTUTzxm6LFpUYzbgDLArFYgn balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 18
+[DEBUG] Derived player_pda => 4S3mR5UUZJvmttivSVsYAbh2YUruddAAqU1kfNZmyhzC
+[DEBUG] user_ata => DJZy5g3kEvzrweCsuiwM4YMjth3n5ogdnAQPDGzYZ6pp for player Gibbs
+[DEBUG] Derived player_name_pda => DMX2qg62111yBjCYUiUrP4voa2iBPhBxvqnFku3596Z
+Player 'Gibbs' => PlayerPda registered. Tx Sig: 2iyHrnhqi1CbqYd1NNwFrMMdwdWvezRL9Dhn9Hje6eAPRmqBRUbVs6GDb3oUi9CzmzCakKTtEGwfSm9MwzRXMSQC
+[DEBUG] Compute units => 1622/169681
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA DJZy5g3kEvzrweCsuiwM4YMjth3n5ogdnAQPDGzYZ6pp is correctly owned by the Token Program.
+[INFO] ATA DJZy5g3kEvzrweCsuiwM4YMjth3n5ogdnAQPDGzYZ6pp authority field matches the player's wallet: HBhpg7UmUKHhegDR2iZ8FTUTzxm6LFpUYzbgDLArFYgn
+[INFO] Player 'Gibbs' registration and ATA verification completed.
+
+[INFO] Registering player => jhood with pubkey Cv6eESyQfNhxuyLDieq7ATqBcUmRaJXYsnpSxM7vD7PF
+[DEBUG] Derived reward_pubkey (ATA) => 86rVAvr7LMYcEeojUrhNuRVjgLVBD71JZAbDgtsVaW87 for player jhood
+[INFO] Airdropping 10000000 lamports to Cv6eESyQfNhxuyLDieq7ATqBcUmRaJXYsnpSxM7vD7PF
+Sent 10000000 lamports to Cv6eESyQfNhxuyLDieq7ATqBcUmRaJXYsnpSxM7vD7PF. Transaction Signature: SendTransactionResp(Signature(2uMjv8Jh75S2SwtrkMg7McUyjjXfh3pjENjjGcJCawxGzc1SJs8yv5qrUcWuUYq6okwsR6DqdwyJPWLuC7Yw4y56))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(2uMjv8Jh75S2SwtrkMg7McUyjjXfh3pjENjjGcJCawxGzc1SJs8yv5qrUcWuUYq6okwsR6DqdwyJPWLuC7Yw4y56))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 2uMjv8Jh75S2SwtrkMg7McUyjjXfh3pjENjjGcJCawxGzc1SJs8yv5qrUcWuUYq6okwsR6DqdwyJPWLuC7Yw4y56 for Cv6eESyQfNhxuyLDieq7ATqBcUmRaJXYsnpSxM7vD7PF
+[SUCCESS] Airdropped 10000000 lamports to Cv6eESyQfNhxuyLDieq7ATqBcUmRaJXYsnpSxM7vD7PF. Tx Sig: 2uMjv8Jh75S2SwtrkMg7McUyjjXfh3pjENjjGcJCawxGzc1SJs8yv5qrUcWuUYq6okwsR6DqdwyJPWLuC7Yw4y56
+[DEBUG] Player Cv6eESyQfNhxuyLDieq7ATqBcUmRaJXYsnpSxM7vD7PF balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 19
+[DEBUG] Derived player_pda => Br3MWe42vqZz4dxaqcu8iHhuz1hDaqj4VDfd7X7iGduH
+[DEBUG] user_ata => 86rVAvr7LMYcEeojUrhNuRVjgLVBD71JZAbDgtsVaW87 for player jhood
+[DEBUG] Derived player_name_pda => 4qc5sVaJip1g7W1wVXJSynMSQfhZd2DTpLcp2cYGpPwh
+Player 'jhood' => PlayerPda registered. Tx Sig: 55HS9azkK17VQbS7jiHDJijsU73ZtYjtsNhbkViqtunM9pwFTY5Rhbggyw3Xv599H3dWKnvqRwQ1BzwYZRJDFzsg
+[DEBUG] Compute units => 1622/160681
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 86rVAvr7LMYcEeojUrhNuRVjgLVBD71JZAbDgtsVaW87 is correctly owned by the Token Program.
+[INFO] ATA 86rVAvr7LMYcEeojUrhNuRVjgLVBD71JZAbDgtsVaW87 authority field matches the player's wallet: Cv6eESyQfNhxuyLDieq7ATqBcUmRaJXYsnpSxM7vD7PF
+[INFO] Player 'jhood' registration and ATA verification completed.
+
+[INFO] Registering player => EngineerElite with pubkey FH8dFUX5bD9fYjgVCvRMifHLuG1PtZapKQtPXxnYyqsa
+[DEBUG] Derived reward_pubkey (ATA) => GtGLotoPWJVreHk3rtu3SCxVgSb933qHhyWYodxz2fNs for player EngineerElite
+[INFO] Airdropping 10000000 lamports to FH8dFUX5bD9fYjgVCvRMifHLuG1PtZapKQtPXxnYyqsa
+Sent 10000000 lamports to FH8dFUX5bD9fYjgVCvRMifHLuG1PtZapKQtPXxnYyqsa. Transaction Signature: SendTransactionResp(Signature(2gT4AYk3BaLSyPyaGhDCXkN6iDPSQDyygReQQBcbtK8ccN5PaGNyD7iFqcjKqMogMBD1cS948MpEuw1i9ZRWuBpA))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(2gT4AYk3BaLSyPyaGhDCXkN6iDPSQDyygReQQBcbtK8ccN5PaGNyD7iFqcjKqMogMBD1cS948MpEuw1i9ZRWuBpA))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 2gT4AYk3BaLSyPyaGhDCXkN6iDPSQDyygReQQBcbtK8ccN5PaGNyD7iFqcjKqMogMBD1cS948MpEuw1i9ZRWuBpA for FH8dFUX5bD9fYjgVCvRMifHLuG1PtZapKQtPXxnYyqsa
+[SUCCESS] Airdropped 10000000 lamports to FH8dFUX5bD9fYjgVCvRMifHLuG1PtZapKQtPXxnYyqsa. Tx Sig: 2gT4AYk3BaLSyPyaGhDCXkN6iDPSQDyygReQQBcbtK8ccN5PaGNyD7iFqcjKqMogMBD1cS948MpEuw1i9ZRWuBpA
+[DEBUG] Player FH8dFUX5bD9fYjgVCvRMifHLuG1PtZapKQtPXxnYyqsa balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 20
+[DEBUG] Derived player_pda => Fzj9rotabnHSPp1b5TSXP4Rk6ir9NL5Ww26woQp5xZM1
+[DEBUG] user_ata => GtGLotoPWJVreHk3rtu3SCxVgSb933qHhyWYodxz2fNs for player EngineerElite
+[DEBUG] Derived player_name_pda => 13nbMXX6ncyYXH1X5wSkbqaU7KbqZ9W6gFTNu41TMs28
+Player 'EngineerElite' => PlayerPda registered. Tx Sig: 26ZQrRufGWrAjxuNjjEq7LyNDHQCGbVFWaWVtskemTACKco5TwWMck1h8vHXzidWCGRL9FKgqvHBpjSHwoCWd2zn
+[DEBUG] Compute units => 1622/164996
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA GtGLotoPWJVreHk3rtu3SCxVgSb933qHhyWYodxz2fNs is correctly owned by the Token Program.
+[INFO] ATA GtGLotoPWJVreHk3rtu3SCxVgSb933qHhyWYodxz2fNs authority field matches the player's wallet: FH8dFUX5bD9fYjgVCvRMifHLuG1PtZapKQtPXxnYyqsa
+[INFO] Player 'EngineerElite' registration and ATA verification completed.
+
+[INFO] Registering player => HLTV-discordgggTxXDuGGTg with pubkey DLdPW3Wuf2xvkcj9MYASkds9Sb7xeca3tYjm6kgaCeB
+[DEBUG] Derived reward_pubkey (ATA) => 8YpXi5tjMFXDoqSkXZzFTQR1pazwhE399ai8vnD6CnMy for player HLTV-discordgggTxXDuGGTg
+[INFO] Airdropping 10000000 lamports to DLdPW3Wuf2xvkcj9MYASkds9Sb7xeca3tYjm6kgaCeB
+Sent 10000000 lamports to DLdPW3Wuf2xvkcj9MYASkds9Sb7xeca3tYjm6kgaCeB. Transaction Signature: SendTransactionResp(Signature(4JG1p1CY7HUnT4xKabu5z3ysF5MEABnMnbHhtrbXi6JyJDbCKGSeCRa7vJCxcLTCABLdh1KBcXG4H1MJw8u9axLR))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4JG1p1CY7HUnT4xKabu5z3ysF5MEABnMnbHhtrbXi6JyJDbCKGSeCRa7vJCxcLTCABLdh1KBcXG4H1MJw8u9axLR))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4JG1p1CY7HUnT4xKabu5z3ysF5MEABnMnbHhtrbXi6JyJDbCKGSeCRa7vJCxcLTCABLdh1KBcXG4H1MJw8u9axLR for DLdPW3Wuf2xvkcj9MYASkds9Sb7xeca3tYjm6kgaCeB
+[SUCCESS] Airdropped 10000000 lamports to DLdPW3Wuf2xvkcj9MYASkds9Sb7xeca3tYjm6kgaCeB. Tx Sig: 4JG1p1CY7HUnT4xKabu5z3ysF5MEABnMnbHhtrbXi6JyJDbCKGSeCRa7vJCxcLTCABLdh1KBcXG4H1MJw8u9axLR
+[DEBUG] Player DLdPW3Wuf2xvkcj9MYASkds9Sb7xeca3tYjm6kgaCeB balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 21
+[DEBUG] Derived player_pda => 5pzPnhMnecaQBaSSfEMhEDvJrP8T21BcMDbKLKfJdHeY
+[DEBUG] user_ata => 8YpXi5tjMFXDoqSkXZzFTQR1pazwhE399ai8vnD6CnMy for player HLTV-discordgggTxXDuGGTg
+[DEBUG] Derived player_name_pda => 7Z3314apebt2dvY84uFX6aVdE1egXKtuUmS1gymeymJf
+Player 'HLTV-discordgggTxXDuGGTg' => PlayerPda registered. Tx Sig: 5MuppFvsNvtiPuBVMz3A9Nf4DiNktGwXmZLwNnrq2PvZU1H1UbWgDooxi2m7YgFtPriMHPrMxa5AiSLyKzq7bqL3
+[DEBUG] Compute units => 1622/169659
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 8YpXi5tjMFXDoqSkXZzFTQR1pazwhE399ai8vnD6CnMy is correctly owned by the Token Program.
+[INFO] ATA 8YpXi5tjMFXDoqSkXZzFTQR1pazwhE399ai8vnD6CnMy authority field matches the player's wallet: DLdPW3Wuf2xvkcj9MYASkds9Sb7xeca3tYjm6kgaCeB
+[INFO] Player 'HLTV-discordgggTxXDuGGTg' registration and ATA verification completed.
+
+[INFO] Registering player => Percy with pubkey A12Ew6WHf2te2UkNwGFehhHRNRF8gt6pCb6zX9cpVmMF
+[DEBUG] Derived reward_pubkey (ATA) => DRpukTANvvmDCUAoBM5gYJzPoCiqgY1N43RYHSgraeBr for player Percy
+[INFO] Airdropping 10000000 lamports to A12Ew6WHf2te2UkNwGFehhHRNRF8gt6pCb6zX9cpVmMF
+Sent 10000000 lamports to A12Ew6WHf2te2UkNwGFehhHRNRF8gt6pCb6zX9cpVmMF. Transaction Signature: SendTransactionResp(Signature(4mdRRACPNqp86QDGab4sNpBgMGRsqq5c4D2ey3D65XjuCmSzkQcxSiTR1dnPNf1iQ8xV1x9af3HXCpFaUPhxnbX2))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(4mdRRACPNqp86QDGab4sNpBgMGRsqq5c4D2ey3D65XjuCmSzkQcxSiTR1dnPNf1iQ8xV1x9af3HXCpFaUPhxnbX2))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 4mdRRACPNqp86QDGab4sNpBgMGRsqq5c4D2ey3D65XjuCmSzkQcxSiTR1dnPNf1iQ8xV1x9af3HXCpFaUPhxnbX2 for A12Ew6WHf2te2UkNwGFehhHRNRF8gt6pCb6zX9cpVmMF
+[SUCCESS] Airdropped 10000000 lamports to A12Ew6WHf2te2UkNwGFehhHRNRF8gt6pCb6zX9cpVmMF. Tx Sig: 4mdRRACPNqp86QDGab4sNpBgMGRsqq5c4D2ey3D65XjuCmSzkQcxSiTR1dnPNf1iQ8xV1x9af3HXCpFaUPhxnbX2
+[DEBUG] Player A12Ew6WHf2te2UkNwGFehhHRNRF8gt6pCb6zX9cpVmMF balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 22
+[DEBUG] Derived player_pda => FosJiHZMtUKApsTv5ugzXnTZDeABxG74ZdehnqUjDJwg
+[DEBUG] user_ata => DRpukTANvvmDCUAoBM5gYJzPoCiqgY1N43RYHSgraeBr for player Percy
+[DEBUG] Derived player_name_pda => 8nu1Y3YcYegsFVUNz3XTRYSaG6gMNQxChgPmb7Xf1Dd4
+Player 'Percy' => PlayerPda registered. Tx Sig: 4vgwzkZhbU4vtERSTR8qKgeRyyfGZmFMweiUYVQeZCf8WEe1udFhBeeJc98EBPXDrsNyaGhqPHaJPg1MFWJWWMgi
+[DEBUG] Compute units => 1622/168181
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA DRpukTANvvmDCUAoBM5gYJzPoCiqgY1N43RYHSgraeBr is correctly owned by the Token Program.
+[INFO] ATA DRpukTANvvmDCUAoBM5gYJzPoCiqgY1N43RYHSgraeBr authority field matches the player's wallet: A12Ew6WHf2te2UkNwGFehhHRNRF8gt6pCb6zX9cpVmMF
+[INFO] Player 'Percy' registration and ATA verification completed.
+
+[INFO] Registering player => EleanorofAquitaine with pubkey Bw8QvLrVZ7ppJYnir5we1pKpAhW4W2LFhxAdbjVnPHVy
+[DEBUG] Derived reward_pubkey (ATA) => 7nEcpsMzYJcbfr1joMnyi952MzTePfZdgYUngFmqKmag for player EleanorofAquitaine
+[INFO] Airdropping 10000000 lamports to Bw8QvLrVZ7ppJYnir5we1pKpAhW4W2LFhxAdbjVnPHVy
+Sent 10000000 lamports to Bw8QvLrVZ7ppJYnir5we1pKpAhW4W2LFhxAdbjVnPHVy. Transaction Signature: SendTransactionResp(Signature(3hoANtkx7dgUxzRz7VbzvjFH1gZCytUNC6rg64Pz2Ka6QJmjqjZHNgnpAHFYY9pcGFWJs8Q4JZVJwMfvRxN96PNA))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(3hoANtkx7dgUxzRz7VbzvjFH1gZCytUNC6rg64Pz2Ka6QJmjqjZHNgnpAHFYY9pcGFWJs8Q4JZVJwMfvRxN96PNA))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 3hoANtkx7dgUxzRz7VbzvjFH1gZCytUNC6rg64Pz2Ka6QJmjqjZHNgnpAHFYY9pcGFWJs8Q4JZVJwMfvRxN96PNA for Bw8QvLrVZ7ppJYnir5we1pKpAhW4W2LFhxAdbjVnPHVy
+[SUCCESS] Airdropped 10000000 lamports to Bw8QvLrVZ7ppJYnir5we1pKpAhW4W2LFhxAdbjVnPHVy. Tx Sig: 3hoANtkx7dgUxzRz7VbzvjFH1gZCytUNC6rg64Pz2Ka6QJmjqjZHNgnpAHFYY9pcGFWJs8Q4JZVJwMfvRxN96PNA
+[DEBUG] Player Bw8QvLrVZ7ppJYnir5we1pKpAhW4W2LFhxAdbjVnPHVy balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 23
+[DEBUG] Derived player_pda => 3s1mPi7vmtRa82oVtHbTpNFJCYhMCqKCmCZL9d4xweVo
+[DEBUG] user_ata => 7nEcpsMzYJcbfr1joMnyi952MzTePfZdgYUngFmqKmag for player EleanorofAquitaine
+[DEBUG] Derived player_name_pda => 8YKBrQrFGEedJ7ZSm7NHEffcVNtwaZvbmxACoyRGDrPi
+Player 'EleanorofAquitaine' => PlayerPda registered. Tx Sig: 4amS67QL49sPesZWvMHDNMnSpfUkAmKiPdt5gPu5uhdcNFrH5SzfxnyD3ZXYTndqjytavrZq2dpsxm4PHKeD2Xi4
+[DEBUG] Compute units => 1622/166582
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 7nEcpsMzYJcbfr1joMnyi952MzTePfZdgYUngFmqKmag is correctly owned by the Token Program.
+[INFO] ATA 7nEcpsMzYJcbfr1joMnyi952MzTePfZdgYUngFmqKmag authority field matches the player's wallet: Bw8QvLrVZ7ppJYnir5we1pKpAhW4W2LFhxAdbjVnPHVy
+[INFO] Player 'EleanorofAquitaine' registration and ATA verification completed.
+
+[INFO] Registering player => SGBTD with pubkey 6LCSFCgKstsaM63DqggufbTqRSMz5k8tHQfHkE795TbY
+[DEBUG] Derived reward_pubkey (ATA) => 7YqWT9c8M13nxHECstRC7ZPbBCujv5dxRsmJRVrJD8KX for player SGBTD
+[INFO] Airdropping 10000000 lamports to 6LCSFCgKstsaM63DqggufbTqRSMz5k8tHQfHkE795TbY
+Sent 10000000 lamports to 6LCSFCgKstsaM63DqggufbTqRSMz5k8tHQfHkE795TbY. Transaction Signature: SendTransactionResp(Signature(6yYuRQ7t4eJnt2GcboPaew9mezKKAafximNHDnkwj9q1YX3PiyPhHHXFYDZLYaQMZYZrSgij2Vd5onWUKpT67Zi))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(6yYuRQ7t4eJnt2GcboPaew9mezKKAafximNHDnkwj9q1YX3PiyPhHHXFYDZLYaQMZYZrSgij2Vd5onWUKpT67Zi))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 6yYuRQ7t4eJnt2GcboPaew9mezKKAafximNHDnkwj9q1YX3PiyPhHHXFYDZLYaQMZYZrSgij2Vd5onWUKpT67Zi for 6LCSFCgKstsaM63DqggufbTqRSMz5k8tHQfHkE795TbY
+[SUCCESS] Airdropped 10000000 lamports to 6LCSFCgKstsaM63DqggufbTqRSMz5k8tHQfHkE795TbY. Tx Sig: 6yYuRQ7t4eJnt2GcboPaew9mezKKAafximNHDnkwj9q1YX3PiyPhHHXFYDZLYaQMZYZrSgij2Vd5onWUKpT67Zi
+[DEBUG] Player 6LCSFCgKstsaM63DqggufbTqRSMz5k8tHQfHkE795TbY balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 24
+[DEBUG] Derived player_pda => A3jdGXn5QXbzF5nESpBvczNT1QtdotNN3ot1C3QWZuEa
+[DEBUG] user_ata => 7YqWT9c8M13nxHECstRC7ZPbBCujv5dxRsmJRVrJD8KX for player SGBTD
+[DEBUG] Derived player_name_pda => 3LF1bGDAnzedNBB8mFiDiqm1Gzj2cjsmv3w5JEaWAkEU
+Player 'SGBTD' => PlayerPda registered. Tx Sig: 62sEadEDJUmN6ysnwaienypTNPm3EfjKkyvxfeFjWyiwtHCvUJFPjCvq8YR5rEHEoHiyZhmU3YperFLFnrxgGS84
+[DEBUG] Compute units => 1622/165181
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 7YqWT9c8M13nxHECstRC7ZPbBCujv5dxRsmJRVrJD8KX is correctly owned by the Token Program.
+[INFO] ATA 7YqWT9c8M13nxHECstRC7ZPbBCujv5dxRsmJRVrJD8KX authority field matches the player's wallet: 6LCSFCgKstsaM63DqggufbTqRSMz5k8tHQfHkE795TbY
+[INFO] Player 'SGBTD' registration and ATA verification completed.
+
+[INFO] Registering player => Pam with pubkey BGmohMdez1LircHmAMdMdFJ1ntpFGXmzqVPEtmF1xjjm
+[DEBUG] Derived reward_pubkey (ATA) => 5xXXqnHXkLk5EC9usLv6Z6YRcGQSU1PiuEbcCDHyREKR for player Pam
+[INFO] Airdropping 10000000 lamports to BGmohMdez1LircHmAMdMdFJ1ntpFGXmzqVPEtmF1xjjm
+Sent 10000000 lamports to BGmohMdez1LircHmAMdMdFJ1ntpFGXmzqVPEtmF1xjjm. Transaction Signature: SendTransactionResp(Signature(5xzi4B8jS8is8a83CMKXvC2pXn2CK6VVCJ7e49DjL7HdLmeBdCJjesb28C4EvZCJotDiAdP41kU3vqTZWks4VRxX))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(5xzi4B8jS8is8a83CMKXvC2pXn2CK6VVCJ7e49DjL7HdLmeBdCJjesb28C4EvZCJotDiAdP41kU3vqTZWks4VRxX))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 5xzi4B8jS8is8a83CMKXvC2pXn2CK6VVCJ7e49DjL7HdLmeBdCJjesb28C4EvZCJotDiAdP41kU3vqTZWks4VRxX for BGmohMdez1LircHmAMdMdFJ1ntpFGXmzqVPEtmF1xjjm
+[SUCCESS] Airdropped 10000000 lamports to BGmohMdez1LircHmAMdMdFJ1ntpFGXmzqVPEtmF1xjjm. Tx Sig: 5xzi4B8jS8is8a83CMKXvC2pXn2CK6VVCJ7e49DjL7HdLmeBdCJjesb28C4EvZCJotDiAdP41kU3vqTZWks4VRxX
+[DEBUG] Player BGmohMdez1LircHmAMdMdFJ1ntpFGXmzqVPEtmF1xjjm balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 25
+[DEBUG] Derived player_pda => 87fypTke69pP9vwiEaQ6McGEWJWxNCsH49hUwBNdyzVM
+[DEBUG] user_ata => 5xXXqnHXkLk5EC9usLv6Z6YRcGQSU1PiuEbcCDHyREKR for player Pam
+[DEBUG] Derived player_name_pda => FygrhHopuLFebnuCjaC26KUvTx6ofiVQjAKDDPF6EUdd
+Player 'Pam' => PlayerPda registered. Tx Sig: 2BuG777M73bzBAUqRD467NkPi5ToRdZKBTqNtoZd8yhH7BPkxxRKNm9iJMLJP9q1kL9P46SrUNgSnBCk98PPUjPF
+[DEBUG] Compute units => 1622/159283
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA 5xXXqnHXkLk5EC9usLv6Z6YRcGQSU1PiuEbcCDHyREKR is correctly owned by the Token Program.
+[INFO] ATA 5xXXqnHXkLk5EC9usLv6Z6YRcGQSU1PiuEbcCDHyREKR authority field matches the player's wallet: BGmohMdez1LircHmAMdMdFJ1ntpFGXmzqVPEtmF1xjjm
+[INFO] Player 'Pam' registration and ATA verification completed.
+
+[INFO] Registering player => TFPugsEASTNYCHLTV with pubkey E4vnBZxRWgCiqybouGSxSAR6NGodRu6sekis8jgLyZzb
+[DEBUG] Derived reward_pubkey (ATA) => Gp9BRBzWbpc4bJieTpqs2cQAwjNzReZqSEsFrC9FURK6 for player TFPugsEASTNYCHLTV
+[INFO] Airdropping 10000000 lamports to E4vnBZxRWgCiqybouGSxSAR6NGodRu6sekis8jgLyZzb
+Sent 10000000 lamports to E4vnBZxRWgCiqybouGSxSAR6NGodRu6sekis8jgLyZzb. Transaction Signature: SendTransactionResp(Signature(1rJaaBT9nnMo4g7EH3tYvacTv9aj29QNun5EUaBBXDvZH2VZPp58AgtU4fYDvDWjc65FcwVKDWiZZbH22DSqET1))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(1rJaaBT9nnMo4g7EH3tYvacTv9aj29QNun5EUaBBXDvZH2VZPp58AgtU4fYDvDWjc65FcwVKDWiZZbH22DSqET1))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 1rJaaBT9nnMo4g7EH3tYvacTv9aj29QNun5EUaBBXDvZH2VZPp58AgtU4fYDvDWjc65FcwVKDWiZZbH22DSqET1 for E4vnBZxRWgCiqybouGSxSAR6NGodRu6sekis8jgLyZzb
+[SUCCESS] Airdropped 10000000 lamports to E4vnBZxRWgCiqybouGSxSAR6NGodRu6sekis8jgLyZzb. Tx Sig: 1rJaaBT9nnMo4g7EH3tYvacTv9aj29QNun5EUaBBXDvZH2VZPp58AgtU4fYDvDWjc65FcwVKDWiZZbH22DSqET1
+[DEBUG] Player E4vnBZxRWgCiqybouGSxSAR6NGodRu6sekis8jgLyZzb balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 26
+[DEBUG] Derived player_pda => 3yLUkDbHeZPaHNa7mac1EzrNHWnMQiejCduhDB12F9pd
+[DEBUG] user_ata => Gp9BRBzWbpc4bJieTpqs2cQAwjNzReZqSEsFrC9FURK6 for player TFPugsEASTNYCHLTV
+[DEBUG] Derived player_name_pda => 2aq9x2MtgowZeW8TPZe1xYUizUtKzML3R5GE2papszR6
+Player 'TFPugsEASTNYCHLTV' => PlayerPda registered. Tx Sig: 46ZZmSgs7zHx4Mm2t3xHHtUvqZiW6KBZ527M88GHiUaWxGWb7hZcSHzdLh1xNedC5qtCNyfgp8y1VuV7kQvzryGj
+[DEBUG] Compute units => 1622/165139
+[DEBUG] On-chain owner of ATA = TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+[INFO] ATA Gp9BRBzWbpc4bJieTpqs2cQAwjNzReZqSEsFrC9FURK6 is correctly owned by the Token Program.
+[INFO] ATA Gp9BRBzWbpc4bJieTpqs2cQAwjNzReZqSEsFrC9FURK6 authority field matches the player's wallet: E4vnBZxRWgCiqybouGSxSAR6NGodRu6sekis8jgLyZzb
+[INFO] Player 'TFPugsEASTNYCHLTV' registration and ATA verification completed.
+
+[INFO] Registering player => Alfonzo with pubkey 3SGWBPUZeuDQTwnQ6nedpP6LPqoRJjsbbqfbyY8AMLo1
+[DEBUG] Derived reward_pubkey (ATA) => Gqaoi3TJFaB8LeKRj8ySmuvvc7bNzoX82xqPbBFaH3Tm for player Alfonzo
+[INFO] Airdropping 10000000 lamports to 3SGWBPUZeuDQTwnQ6nedpP6LPqoRJjsbbqfbyY8AMLo1
+Sent 10000000 lamports to 3SGWBPUZeuDQTwnQ6nedpP6LPqoRJjsbbqfbyY8AMLo1. Transaction Signature: SendTransactionResp(Signature(2F29Y96C7WyKwbL3JaYAvMCpmak3XptMBQDgZt3DkXabWBhnWDSQgfxTkBwVXAo6XTF7gSr5FUs5z87PVoeLjWop))
+Type of resp: <class 'solders.rpc.responses.SendTransactionResp'>
+Contents of resp: SendTransactionResp(Signature(2F29Y96C7WyKwbL3JaYAvMCpmak3XptMBQDgZt3DkXabWBhnWDSQgfxTkBwVXAo6XTF7gSr5FUs5z87PVoeLjWop))
+[DEBUG] No compute units info found in logs.
+Confirmed airdrop transaction 2F29Y96C7WyKwbL3JaYAvMCpmak3XptMBQDgZt3DkXabWBhnWDSQgfxTkBwVXAo6XTF7gSr5FUs5z87PVoeLjWop for 3SGWBPUZeuDQTwnQ6nedpP6LPqoRJjsbbqfbyY8AMLo1
+[SUCCESS] Airdropped 10000000 lamports to 3SGWBPUZeuDQTwnQ6nedpP6LPqoRJjsbbqfbyY8AMLo1. Tx Sig: 2F29Y96C7WyKwbL3JaYAvMCpmak3XptMBQDgZt3DkXabWBhnWDSQgfxTkBwVXAo6XTF7gSr5FUs5z87PVoeLjWop
+[DEBUG] Player 3SGWBPUZeuDQTwnQ6nedpP6LPqoRJjsbbqfbyY8AMLo1 balance: 10000000 lamports
+[DEBUG] current_count from on-chain DApp = 27
+[DEBUG] Derived player_pda => H5fe7F7GdPmwbp68k3mHzfGrJMWGoQCcdwxvmsRrK1Qm
+[DEBUG] user_ata => Gqaoi3TJFaB8LeKRj8ySmuvvc7bNzoX82xqPbBFaH3Tm for player Alfonzo
+[DEBUG] Derived player_name_pda => HjXcPZwpn1VECiV9P4eTRsxCuQsCM9z8ktkjhNw7wHon
+Player 'Alfonzo' => PlayerPda registered. Tx Sig: 3bQu8cJJPheTRfSmtYXy8vabDgPDQJ3ErrRX53mYV8AKYs5g4sUmJdyWV48gocJvowp54w3A2j1rhwKt7GDBpTKF

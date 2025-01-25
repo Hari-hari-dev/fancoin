@@ -447,7 +447,7 @@ async def main():
                     sol_balance = lamports / 1e9
                     print(f"[INFO] Validator balance: {sol_balance} SOL")
                     print(f"[INFO] Waiting for ~5 minutes before next scan.")
-                    await asyncio.sleep(300)  # Wait for 5 minutes
+                    await asyncio.sleep(30)  # Wait for 5 minutes
 
                 else:
                     if matched_names:
@@ -464,7 +464,7 @@ async def main():
                     # ───────────────────────────────────────────────────────────
 
                     print(f"[INFO] Waiting 5 minutes before next scan.")
-                    await asyncio.sleep(300)
+                    await asyncio.sleep(30)
 
     except Exception as e:
         print(f"[ERROR] Unexpected error => {e}")
