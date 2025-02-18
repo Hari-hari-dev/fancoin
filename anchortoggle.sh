@@ -9,12 +9,13 @@
 
 # Paths to your specific avm anchor binaries:
 ANCHOR_028="/home/devuan/.avm/bin/anchor-0.28.0"
+ANCHOR_029="/home/devuan/.avm/bin/anchor-0.29.0-fc9fd6d24b9be84abb2f40e47ed3faf7b11864ae"
 ANCHOR_030="/home/devuan/.avm/bin/anchor-0.30.1-e6d7dafe12da661a36ad1b4f3b5970e8986e5321"
 CARGO_ANCHOR="/usr/local/bin/anchor"
 CARGO_ANCHOR_2="/home/devuan/.cargo/bin/anchor"
 
 if [ -z "$1" ]; then
-  echo "Usage: $0 [0.28 | 0.30]"
+  echo "Usage: $0 [0.28 | 0.29 | 0.30]"
   exit 1
 fi
 
@@ -25,10 +26,22 @@ case "$1" in
     rm -f "${CARGO_ANCHOR}"
     rm -f "${CARGO_ANCHOR_2}"
     # Create new symlink
+    ln -sf ${ANCHOR_028} "${CARGO_ANCHOR}"
+    ln -sf ${ANCHOR_028} "${CARGO_ANCHOR_2}"
+
+    echo "Symlinked ~/.cargo/bin/anchor to Anchor v0.28.0"
+    ;;
+
+
+  "0.29" | "0.29.0")
+    # Remove old link/file if it exists
+    rm -f "${CARGO_ANCHOR}"
+    rm -f "${CARGO_ANCHOR_2}"
+    # Create new symlink
     ln -sf ${ANCHOR_029} "${CARGO_ANCHOR}"
     ln -sf ${ANCHOR_029} "${CARGO_ANCHOR_2}"
 
-    echo "Symlinked ~/.cargo/bin/anchor to Anchor v0.28.0"
+    echo "Symlinked ~/.cargo/bin/anchor to Anchor v0.29.0"
     ;;
 
   "0.30" | "0.30.1")
@@ -42,7 +55,7 @@ case "$1" in
 
   *)
     echo "Unrecognized version: $1"
-    echo "Valid options are 0.28 or 0.30"
+    echo "Valid options are 0.29 or 0.30"
     exit 1
     ;;
 esac

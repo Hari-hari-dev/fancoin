@@ -375,86 +375,69 @@ async def main():
     args = parser.parse_args()
 
 
-    print("Setting up provider and loading program IDL...")
-    client = AsyncClient("http://localhost:8899", commitment=Confirmed)
-    wallet = Wallet.local()
+        print("Setting up provider and loading program IDL...")
+        client = AsyncClient("http://localhost:8899", commitment=Confirmed)
+        wallet = Wallet.local()
 
-    global provider, program, program_id, dapp_pda, game_pda
-    provider = Provider(client, wallet)
+        global provider, program, program_id, dapp_pda, game_pda
+        provider = Provider(client, wallet)
 
-    # 1) Load the IDL
-    idl_path = Path("../target/idl/fancoin.json")
-    if not idl_path.exists():
-        print(f"[ERROR] IDL file not found at {idl_path.resolve()}")
-        return
+        # 1) Load the IDL
+        idl_path = Path("../target/idl/fancoin.json")
+        if not idl_path.exists():
+            print(f"[ERROR] IDL file not found at {idl_path.resolve()}")
+            return
 
-    with idl_path.open() as f:
-        idl_json = f.read()
+        with idl_path.open() as f:
+            idl_json = f.read()
 
-    program_id = Pubkey.from_string("HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut")
-    idl = Idl.from_json(idl_json)
-    program = Program(idl, program_id, provider)
-    print("Program loaded successfully.")
+        program_id = Pubkey.from_string("HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut")
+        idl = Idl.from_json(idl_json)
+        program = Program(idl, program_id, provider)
+        print("Program loaded successfully.")
 
-    # 2) Derive PDAs
-    game_number = 1
-    (game_pda, bump_game) = Pubkey.find_program_address([b"game", game_number.to_bytes(4, "little")], program_id)
-    (dapp_pda, bump_dapp) = Pubkey.find_program_address([b"dapp"], program_id)
-    print(f"[DEBUG] using game_pda={game_pda}")
-    print(f"[DEBUG] using dapp_pda={dapp_pda}")
+        # 2) Derive PDAs
+        game_number = 1
+        (game_pda, bump_game) = Pubkey.find_program_address([b"game", game_number.to_bytes(4, "little")], program_id)
+        (dapp_pda, bump_dapp) = Pubkey.find_program_address([b"dapp"], program_id)
+        print(f"[DEBUG] using game_pda={game_pda}")
+        print(f"[DEBUG] using dapp_pda={dapp_pda}")
 
-    # 3) Debug-check DApp
-    await debug_check_dapp_pda()
+        # 3) Debug-check DApp
+        await debug_check_dapp_pda()
 
-    # Check if a transaction signature was provided
-    if args.tx:
-        # Display the transaction details
-        await display_transaction(args.tx)
-    else:
-        # Proceed with the existing main loop
-        print("[INFO] Querying TFC master server for a list of servers.")
-        region = 0xFF
-        app_id = 20
-        tfc_servers = list(query_master_server(region, app_id))
-        unique_ips = {}
-        for ip, port in tfc_servers:
-            if ip not in unique_ips:
-                unique_ips[ip] = (ip, port)
-        deduped = list(unique_ips.values())
-        print(f"[DEBUG] Found {len(deduped)} unique TFC servers.")
+        # Check if a transaction signature was provided
+        if args.tx:
+            # Display the transaction details
+            await display_transaction(args.tx)
+        else:
+            # Proceed with the existing main loop
+            print("[INFO] Querying TFC master server for a list of servers.")
+            region = 0xFF
+            app_id = 20
+            tfc_servers = list(query_master_server(region, app_id))
+            unique_ips = {}
+            for ip, port in tfc_servers:
+                if ip not in unique_ips:
+                    unique_ips[ip] = (ip, port)
+            deduped = list(unique_ips.values())
+            print(f"[DEBUG] Found {len(deduped)} unique TFC servers.")
 
-        while True:
-            aggregated_local_server_names = set()
+            while True:
+                aggregated_local_server_names = set()
 
-            # 5) Fetch all on-chain PlayerPda => build (name -> index, name -> pda, reward_address)
-            print("[INFO] Fetching on-chain name->(index, pda, reward_address).")
-            name_map = await fetch_player_pdas_map()
+                # 5) Fetch all on-chain PlayerPda => build (name -> index, name -> pda, reward_address)
+                print("[INFO] Fetching on-chain name->(index, pda, reward_address).")
+                name_map = await fetch_player_pdas_map()
 
-            # Loop to find users 4 times with 5-minute intervals
-            for iteration in range(1, 5):  # Iterations 1 through 4
-                print(f"\n[INFO] Starting iteration {iteration} of 4.")
-                matched_names = await find_users(deduped, aggregated_local_server_names, name_map)
+                # Loop to find users 4 times with 5-minute intervals
+                for iteration in range(1, 5):  # Iterations 1 through 4
+                    print(f"\n[INFO] Starting iteration {iteration} of 4.")
+                    matched_names = await find_users(deduped, aggregated_local_server_names, name_map)
 
-                if iteration < 4:
-                    if matched_names:
-                        print(f"[INFO] Matched players found. Checking validator balance before waiting.")
-
-                    # ───────────────────────────────────────────────────────────
-                    # Print validator’s balance (in SOL) before the 5-min sleep
-                    validator_kp = load_validator_keypair()
-                    validator_pubkey = validator_kp.pubkey()
-                    balance_resp = await provider.connection.get_balance(validator_pubkey)
-                    lamports = balance_resp.value
-                    sol_balance = lamports / 1e9
-                    print(f"[INFO] Validator balance: {sol_balance} SOL")
-                    # ───────────────────────────────────────────────────────────
-
-                    print(f"[INFO] Waiting for 5 minutes before next iteration.")
-                    await asyncio.sleep(300)  # Wait for 5 minutes (300 seconds)
-                else:
-                    if matched_names:
-                        await submit_minting_list_with_leftover(game_number, matched_names, name_map)
-                        print(f"[INFO] Minting period finished. Checking validator balance before next wait...")
+                    if iteration < 4:
+                        if matched_names:
+                            print(f"[INFO] Matched players found. Checking validator balance before waiting.")
 
                         # ───────────────────────────────────────────────────────────
                         # Print validator’s balance (in SOL) before the 5-min sleep
@@ -466,23 +449,40 @@ async def main():
                         print(f"[INFO] Validator balance: {sol_balance} SOL")
                         # ───────────────────────────────────────────────────────────
 
-                        print(f"[INFO] Waiting for 5 minutes before the next mint.")
+                        print(f"[INFO] Waiting for 5 minutes before next iteration.")
                         await asyncio.sleep(300)  # Wait for 5 minutes (300 seconds)
                     else:
-                        print("[WARN] No matched players found in the final iteration. No submission made.")
+                        if matched_names:
+                            await submit_minting_list_with_leftover(game_number, matched_names, name_map)
+                            print(f"[INFO] Minting period finished. Checking validator balance before next wait...")
 
-                        # ───────────────────────────────────────────────────────────
-                        # Print validator’s balance (in SOL) before the 5-min sleep
-                        validator_kp = load_validator_keypair()
-                        validator_pubkey = validator_kp.pubkey()
-                        balance_resp = await provider.connection.get_balance(validator_pubkey)
-                        lamports = balance_resp.value
-                        sol_balance = lamports / 1e9
-                        print(f"[INFO] Validator balance: {sol_balance} SOL")
-                        # ───────────────────────────────────────────────────────────
+                            # ───────────────────────────────────────────────────────────
+                            # Print validator’s balance (in SOL) before the 5-min sleep
+                            validator_kp = load_validator_keypair()
+                            validator_pubkey = validator_kp.pubkey()
+                            balance_resp = await provider.connection.get_balance(validator_pubkey)
+                            lamports = balance_resp.value
+                            sol_balance = lamports / 1e9
+                            print(f"[INFO] Validator balance: {sol_balance} SOL")
+                            # ───────────────────────────────────────────────────────────
 
-                        print(f"[INFO] Waiting for 5 minutes before the next scan.")
-                        await asyncio.sleep(300)  # Wait for 5 minutes
+                            print(f"[INFO] Waiting for 5 minutes before the next mint.")
+                            await asyncio.sleep(300)  # Wait for 5 minutes (300 seconds)
+                        else:
+                            print("[WARN] No matched players found in the final iteration. No submission made.")
 
-if __name__ == "__main__":
-    asyncio.run(main())
+                            # ───────────────────────────────────────────────────────────
+                            # Print validator’s balance (in SOL) before the 5-min sleep
+                            validator_kp = load_validator_keypair()
+                            validator_pubkey = validator_kp.pubkey()
+                            balance_resp = await provider.connection.get_balance(validator_pubkey)
+                            lamports = balance_resp.value
+                            sol_balance = lamports / 1e9
+                            print(f"[INFO] Validator balance: {sol_balance} SOL")
+                            # ───────────────────────────────────────────────────────────
+
+                            print(f"[INFO] Waiting for 5 minutes before the next scan.")
+                            await asyncio.sleep(300)  # Wait for 5 minutes
+
+    if __name__ == "__main__":
+        asyncio.run(main())

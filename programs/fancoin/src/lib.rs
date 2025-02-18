@@ -27,13 +27,25 @@ impl DApp {
 pub struct Game {
     pub game_number: u32,
     pub validator_count: u32,
+    pub active_validator_count: u32, // New field to track active validators
+    pub last_reset_hour: Option<u32>,  // Changed to Option<u32>
     pub status: u8,
     pub description: String,
     pub last_seed: Option<u64>,
     pub last_punch_in_time: Option<i64>,
+    pub mint_pubkey: Pubkey,
 }
 impl Game {
-    pub const LEN: usize = 8 + (4 + 4 + 1) + (4 + 64) + 9 + 9;
+    pub const LEN: usize = 8
+        + 4 // game_number
+        + 4 // validator_count
+        + 4 // active_validator_count
+        + 5 // last_reset_hour (Option<u32>)
+        + 1 // status
+        + 64 // description
+        + 8 // last_seed
+        + 8 // last_punch_in_time
+        + 32; // mint_pubkey
 }
 
 #[account]
@@ -91,6 +103,53 @@ pub struct MintAuthority {
 // --------------------------------------------------------------------
 // Accounts
 // --------------------------------------------------------------------
+#[derive(Accounts)]
+#[instruction(description: String)]
+pub struct InitializeGameAndMint<'info> {
+    #[account(
+        init,
+        payer = user,
+        space = Game::LEN,
+        // ♦ The new seed => [b"game", mint_for_game.key().as_ref()]
+        seeds = [b"game", mint_for_game.key().as_ref()],
+        bump
+    )]
+    pub game: Account<'info, Game>,
+
+    #[account(
+        init,
+        payer = user,
+        space = 8 + 1,
+        // ♦ Also seeds in the new style => [b"mint_authority", mint_for_game.key().as_ref()]
+        seeds = [b"mint_authority", mint_for_game.key().as_ref()],
+        bump
+    )]
+    pub mint_authority: Account<'info, MintAuthority>,
+
+    #[account(
+        init,
+        payer = user,
+        // some pattern => [b"my_spl_mint", user.key().as_ref(), description.as_bytes()]
+        seeds = [b"my_spl_mint", user.key().as_ref(), description.as_bytes()],
+        bump,
+        mint::decimals = 6,
+        mint::authority = mint_authority,
+        mint::freeze_authority = mint_authority
+    )]
+    pub mint_for_game: Account<'info, Mint>,
+
+    #[account(mut, seeds = [b"dapp"], bump)]
+    pub dapp: Account<'info, DApp>,
+
+    #[account(mut)]
+    pub user: Signer<'info>,
+
+    #[account(address = token::ID)]
+    pub token_program: Program<'info, Token>,
+    pub associated_token_program: Program<'info, AssociatedToken>,
+    pub system_program: Program<'info, System>,
+    pub rent: Sysvar<'info, Rent>,
+}
 
 #[derive(Accounts)]
 pub struct InitializeDapp<'info> {
@@ -109,6 +168,7 @@ pub struct InitializeDapp<'info> {
     pub system_program: Program<'info, System>,
 }
 
+
 #[derive(Accounts)]
 pub struct RelinquishOwnership<'info> {
     #[account(mut, seeds = [b"dapp"], bump)]
@@ -118,13 +178,14 @@ pub struct RelinquishOwnership<'info> {
 }
 
 #[derive(Accounts)]
-#[instruction(game_number: u32, description: String)]
+#[instruction(game_number: u32, mint_pubkey: Pubkey, description: String)]
 pub struct InitializeGame<'info> {
     #[account(
         init,
         payer = user,
         space = Game::LEN,
-        seeds = [b"game", &game_number.to_le_bytes()],
+        // ♦ Replaced &game_number.to_le_bytes() with mint_pubkey.as_ref()
+        seeds = [b"game", mint_pubkey.as_ref()],
         bump
     )]
     pub game: Account<'info, Game>,
@@ -138,36 +199,49 @@ pub struct InitializeGame<'info> {
 }
 
 #[derive(Accounts)]
-#[instruction(game_number: u32)]
+#[instruction(game_number: u32, mint_pubkey: Pubkey)]
 pub struct UpdateGameStatus<'info> {
-    #[account(mut, seeds = [b"game", &game_number.to_le_bytes()], bump)]
+    #[account(
+        mut,
+        seeds = [b"game", mint_pubkey.as_ref()],
+        bump
+    )]
     pub game: Account<'info, Game>,
-
     #[account(seeds = [b"dapp"], bump)]
     pub dapp: Account<'info, DApp>,
-
     #[account(mut)]
     pub signer: Signer<'info>,
 }
 
+
 #[derive(Accounts)]
-#[instruction(game_number: u32)]
+#[instruction(game_number: u32, mint_pubkey: Pubkey)]
 pub struct PunchIn<'info> {
-    #[account(mut, seeds = [b"game", &game_number.to_le_bytes()], bump)]
+    #[account(
+        mut,
+        seeds = [b"game", mint_pubkey.as_ref()],
+        bump
+    )]
     pub game: Account<'info, Game>,
+
+    // ♦ Replacing &game_number.to_le_bytes() in the Validator seed
+    #[account(
+        mut,
+        seeds = [b"validator", mint_pubkey.as_ref(), validator.key().as_ref()],
+        bump
+    )]
+    pub validator_pda: Account<'info, ValidatorPda>,
 
     #[account(mut)]
     pub validator: Signer<'info>,
-
     pub system_program: Program<'info, System>,
 }
-
 #[derive(Accounts)]
-#[instruction(game_number: u32)]
+#[instruction(game_number: u32, mint_pubkey: Pubkey)]
 pub struct RegisterValidatorPda<'info> {
     #[account(
         mut,
-        seeds = [b"game", &game_number.to_le_bytes()],
+        seeds = [b"game", mint_pubkey.as_ref()],
         bump
     )]
     pub game: Account<'info, Game>,
@@ -175,13 +249,14 @@ pub struct RegisterValidatorPda<'info> {
     #[account(mut, address = dapp.mint_pubkey)]
     pub fancy_mint: Account<'info, Mint>,
 
+    // ♦ Replacing the old seeds for validator with [b"validator", mint_pubkey.as_ref(), user.key().as_ref()]
     #[account(
         init,
         payer = user,
         space = ValidatorPda::LEN,
         seeds = [
             b"validator",
-            &game_number.to_le_bytes()[..],
+            mint_pubkey.as_ref(),
             user.key().as_ref()
         ],
         bump
@@ -279,21 +354,25 @@ pub struct GetValidatorListPdaPage<'info> {
 // *** SubmitMintingList ***
 // --------------------------------------------------------------------
 #[derive(Accounts)]
-#[instruction(game_number: u32)]
+#[instruction(game_number: u32, mint_pubkey: Pubkey)]
 pub struct SubmitMintingList<'info> {
-    #[account(mut, seeds = [b"game", &game_number.to_le_bytes()], bump)]
+    #[account(
+        mut,
+        seeds = [b"game", mint_pubkey.as_ref()],
+        bump
+    )]
     pub game: Account<'info, Game>,
 
     #[account(
         mut,
-        seeds = [b"validator", &game_number.to_le_bytes(), validator.key().as_ref()],
+        seeds = [b"validator", mint_pubkey.as_ref(), validator.key().as_ref()],
         bump
     )]
     pub validator_pda: Account<'info, ValidatorPda>,
 
     pub validator: Signer<'info>,
 
-    #[account(mut, address = dapp.mint_pubkey)]
+    #[account(mut, address = game.mint_pubkey)]
     pub fancy_mint: Account<'info, Mint>,
 
     #[account(seeds = [b"dapp"], bump)]
@@ -311,6 +390,7 @@ pub struct SubmitMintingList<'info> {
     pub associated_token_program: Program<'info, AssociatedToken>,
     pub system_program: Program<'info, System>,
 }
+
 
 #[derive(Accounts)]
 pub struct UpdatePlayerNameCooldown<'info> {
@@ -409,7 +489,42 @@ pub mod fancoin {
         msg!("DApp initialized => owner={}", dapp.owner);
         Ok(())
     }
-
+    pub fn initialize_game_and_mint(
+        ctx: Context<InitializeGameAndMint>,
+        description: String,
+    ) -> Result<()> {
+        // A) Fill in your Game data (the struct has game_number, etc. – you can set it to 0 or anything)
+        let game = &mut ctx.accounts.game;
+        game.game_number = 9999;  // or set = 0 if you want
+        game.description = description;
+        game.status = 0;
+        game.validator_count = 0;
+        game.active_validator_count = 0;
+        game.last_reset_hour = None;
+        game.last_seed = None;
+        game.last_punch_in_time = None;
+    
+        msg!(
+            "Created new Game => mintedMint={}, desc='{}'",
+            ctx.accounts.mint_for_game.key(),
+            game.description
+        );
+    
+        // B) Initialize the MintAuthority (just store the bump)
+        let bump = *ctx.bumps.get("mint_authority").unwrap();
+        ctx.accounts.mint_authority.bump = bump;
+        msg!("mint_authority bump={}", bump);
+    
+        // C) Optionally store the new mint in DApp
+        ctx.accounts.game.mint_pubkey = ctx.accounts.mint_for_game.key();
+        msg!(
+            "Created mint => pubkey={} => stored in game.mint_pubkey",
+            ctx.accounts.game.mint_pubkey
+        );
+    
+        Ok(())
+    }
+    
     pub fn initialize_game(
         ctx: Context<InitializeGame>,
         game_number: u32,
@@ -425,12 +540,14 @@ pub mod fancoin {
         game.description = description;
         game.status = 0;
         game.validator_count = 0;
+        game.active_validator_count = 0; // Initialize to zero
+        game.last_reset_hour = None;      // Initialize to None
         game.last_seed = None;
         game.last_punch_in_time = None;
         msg!("Game #{} initialized => {}", game_number, game.description);
         Ok(())
     }
-
+    //need fixing, dapp
     pub fn update_game_status(
         ctx: Context<UpdateGameStatus>,
         game_number: u32,
@@ -456,10 +573,75 @@ pub mod fancoin {
         let clock = Clock::get()?;
         let current_time = clock.unix_timestamp;
         let game = &mut ctx.accounts.game;
+    
+        // Basic checks
         require!(game.game_number == game_number, ErrorCode::GameNumberMismatch);
         require!(game.status != 2, ErrorCode::GameIsBlacklisted);
-
+    
+        // ----------------------------------------------------------
+        // (1) Identify hour + minute, do new-hour reset, enforce first-7-min rule
+        // ----------------------------------------------------------
+        let current_hour = (current_time / 3600) as u32;
+        let current_minute = ((current_time % 3600) / 60) as u32;
+    
+        // If a new hour started (compare to last_reset_hour), reset active_validator_count to 0
+        // and set game.last_reset_hour = Some(current_hour).
+        if let Some(last_reset_hour) = game.last_reset_hour {
+            if current_hour > last_reset_hour {
+                // We have rolled over into a new hour
+                game.active_validator_count = 0;
+                game.last_reset_hour = Some(current_hour);
+                msg!("New hour => reset active_validator_count to 0 for hour {}", current_hour);
+            }
+        } else {
+            // If last_reset_hour was never set, initialize it now
+            game.last_reset_hour = Some(current_hour);
+            msg!("Initializing last_reset_hour => {}", current_hour);
+        }
+    
+        // Prevent punch_in if past the first 7 minutes
+        // If you want to fail the transaction, do `require!`
+        require!(
+            current_minute <= 7,
+            ErrorCode::NotInPunchInPeriod
+        );
+        // Or, if you prefer a soft return:
+        // if current_minute > 7 {
+        //    msg!("Punch-in period over for hour {} => skipping", current_hour);
+        //    return Ok(());
+        // }
+    
+        // ----------------------------------------------------------
+        // (2) Mark the validator as active if they haven't punched in this hour
+        // ----------------------------------------------------------
         let validator_key = ctx.accounts.validator.key();
+        let val_pda = &mut ctx.accounts.validator_pda;
+        let last_activity = val_pda.last_activity;
+    
+        let validator_last_hour = if last_activity > 0 {
+            (last_activity / 3600) as u32
+        } else {
+            0
+        };
+        if validator_last_hour < current_hour {
+            // If the validator hasn't punched in this hour yet
+            if game.active_validator_count < game.validator_count {
+                game.active_validator_count += 1;
+                msg!(
+                    "Validator {} is active this hour {} => total active={}",
+                    validator_key,
+                    current_hour,
+                    game.active_validator_count
+                );
+            }
+        }
+    
+        // Update validator's last_activity
+        val_pda.last_activity = current_time;
+    
+        // ----------------------------------------------------------
+        // (3) Original seed + last_punch_in_time logic
+        // ----------------------------------------------------------
         let mut hasher = Keccak256::new();
         hasher.update(validator_key.to_bytes());
         hasher.update(clock.slot.to_le_bytes());
@@ -469,10 +651,17 @@ pub mod fancoin {
         );
         game.last_seed = Some(seed);
         game.last_punch_in_time = Some(current_time);
-        msg!("Punch in => seed={}, time={}", seed, current_time);
+    
+        msg!(
+            "Punch in => seed={}, time={}, hour={}, minute={}",
+            seed,
+            current_time,
+            current_hour,
+            current_minute
+        );
         Ok(())
     }
-
+    //need fixing, dapp
     /// Register a player with a unique name by initializing PlayerPda + PlayerNamePda
     pub fn register_player_pda(
         ctx: Context<RegisterPlayerPda>,
@@ -547,16 +736,49 @@ pub mod fancoin {
             ErrorCode::ValidatorNotRegistered
         );
     
+        // ---------------------------
+        // (A) Additional Checks
+        // ---------------------------
+        let clock = Clock::get()?;
+        let current_time = clock.unix_timestamp;
+        let current_hour = (current_time / 3600) as u32;
+        let current_minute = ((current_time % 3600) / 60) as u32;
+    
+        // 1) Prevent minting if *nobody* punched in this hour (e.g. last_punch_in_time not in the same hour)
+        let Some(last_punch) = game.last_punch_in_time else {
+            msg!("No one has punched in => cannot mint");
+            return Ok(());
+        };
+        let punched_hour = (last_punch / 3600) as u32;
+        if punched_hour != current_hour {
+            msg!("No one has punched in this hour => cannot mint");
+            return Ok(());
+        }
+    
+        // 2) Prevent this validator from minting if *he* hasn't punched in this hour
+        let val_pda = &mut ctx.accounts.validator_pda;
+        let validator_hour = (val_pda.last_activity / 3600) as u32;
+        if validator_hour != current_hour {
+            msg!("Validator hasn't used punch_in this hour => can't mint");
+            return Ok(());
+        }
+    
+        // 3) Block if first 7 minutes => we want to wait until minute 7 or 8
+        if current_minute < 7 {
+            msg!("Minting is blocked during the first 7 minutes of the hour.");
+            return Ok(());
+        }
+    
+        // -----------------------------------------------------------
+        // (B) Your original logic remains unchanged below
+        // -----------------------------------------------------------
         msg!("submit_minting_list => player_ids={:?}", player_ids);
-        let current_time = Clock::get()?.unix_timestamp;
         let total_vals = game.validator_count as usize;
+        let active_vals = game.active_validator_count as usize;
         let total_groups = (total_vals + 3) / 4;
         let failover_tolerance = calculate_failover_tolerance(total_vals) as u64;
     
-        // We'll always have the single validator's own PDA
-        let val_pda = &mut ctx.accounts.validator_pda;
-    
-        // For each pid, we do our usual leftover approach
+        // leftover approach
         let mut leftover_iter = ctx.remaining_accounts.iter();
         let mut minted_count = 0_usize;
     
@@ -598,7 +820,9 @@ pub mod fancoin {
             }
     
             // (B) If partial_validators < 2 => skip
-            if player_pda.partial_validators.len() < 2 {
+            if (active_vals > 1 && player_pda.partial_validators.len() < 2)
+                || (active_vals == 1 && player_pda.partial_validators.len() < 1)
+            {
                 msg!(
                     "Player {} => only {} partial => skip finalize",
                     player_pda.name,
@@ -671,7 +895,7 @@ pub mod fancoin {
             msg!("Minted {} => pid={}", minted_amount, pid);
     
             // (F) Mark *this* validator (the signer) as minted now
-            val_pda.last_minted = Some(current_time);
+            ctx.accounts.validator_pda.last_minted = Some(current_time);
     
             // Clear partial_validators, store changes in PlayerPda
             player_pda.partial_validators.clear();
@@ -684,6 +908,7 @@ pub mod fancoin {
         msg!("submit_minting_list => minted for {} players", minted_count);
         Ok(())
     }
+    
     
     pub fn approve_player_minting(
         ctx: Context<ApprovePlayerMinting>,
@@ -857,7 +1082,7 @@ pub struct ClaimValidatorReward<'info> {
 
     #[account(mut)]
     pub validator_ata: Account<'info, TokenAccount>,
-
+    //need fixing, dapp
     #[account(mut, address = dapp.mint_pubkey)]
     pub fancy_mint: Account<'info, Mint>,
 
