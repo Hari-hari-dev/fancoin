@@ -13,20 +13,20 @@ from solders.rpc.responses import SendTransactionResp  # Ensure this import is p
 from anchorpy import Program, Provider, Wallet, Idl, Context
 from solders.keypair import Keypair
 from solders.pubkey import Pubkey
-from solders.system_program import ID as SYS_PROGRAM_ID
+#from solana.rpc.api import Pubkey, Keypair
+#from solders.system_program import ID as SYS_PROGRAM_ID
 from solana.rpc.async_api import AsyncClient
 from solana.rpc.commitment import Confirmed
-from solana.rpc.types import Commitment
 from solana.rpc.core import RPCException
 from solders.system_program import transfer, TransferParams
 from solana.rpc.types import TxOpts  # Correct import for transaction options
 from solana.transaction import Transaction, Signature  # Import solana-py's Signature class
 from anchorpy.program.namespace.instruction import AccountMeta
-SPL_TOKEN_PROGRAM_ID = Pubkey.from_string("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA")
-ASSOCIATED_TOKEN_PROGRAM_ID = Pubkey.from_string("ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL")
 
+ASSOCIATED_TOKEN_PROGRAM_ID = Pubkey.from_string("ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL")
 SYSTEM_PROGRAM_ID = Pubkey.from_string("11111111111111111111111111111111")
-Confirmed = Commitment("confirmed")  # Ensure this matches your actual Commitment type
+SPL_TOKEN_PROGRAM_ID = Pubkey.from_string("TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb")
+RENT_SYSVAR_ID = Pubkey.from_string("SysvarRent111111111111111111111111111111111")
 
 ###############################################################################
 # Globals set after program setup
@@ -38,7 +38,18 @@ game_pda = None
 dapp_pda = None
 
 CHUNK_SIZE = 3  # how many players to mint per TX
+game_pda_str = Path("game_pda.txt").read_text().strip()
+mint_auth_pda_str = Path("mint_auth_pda.txt").read_text().strip()
+minted_mint_pda_str = Path("minted_mint_pda.txt").read_text().strip()
 
+
+game_pda = Pubkey.from_string(game_pda_str)
+mint_auth_pda = Pubkey.from_string(mint_auth_pda_str)
+minted_mint_pda = Pubkey.from_string(minted_mint_pda_str)
+
+# print("Loaded game_pda  =", game_pda)
+# print("Loaded mint_auth_pda  =", mint_auth_pda)
+# print("Loaded minted_mint_pda =", minted_mint_pda)
 ###############################################################################
 # 1) Load Validator Keypair
 ###############################################################################
@@ -50,49 +61,15 @@ def load_validator_keypair(filename="val1-keypair.json") -> Keypair:
         return Keypair.from_bytes(bytes(secret[0:64]))
     return load_keypair(filename)
 
-async def find_users(deduped, aggregated_local_server_names, name_map):
-    """
-    Encapsulates the logic to find users from the TFC servers and match them with on-chain data.
-    
-    Args:
-        deduped (list): List of deduplicated TFC servers (ip, port).
-        aggregated_local_server_names (set): Set to accumulate player names across iterations.
-        name_map (dict): Mapping of on-chain player data.
-    
-    Returns:
-        list: List of matched player names.
-    """
-    # Gather local server players
-    local_server_names = set()
-    for ip, port in deduped:
-        print(f"[DEBUG] Checking server {ip}:{port}")
-        try:
-            players = get_player_list_a2s(ip, port)
-            if players:
-                # decode_and_collect_players => name->True
-                result_dict = decode_and_collect_players(players)
-                local_server_names.update(result_dict.keys())
-        except Exception as e:
-            print(f"[ERROR] Failed to get players from {ip}:{port} - {e}")
-            continue
-
-    print(f"[INFO] Found {len(local_server_names)} distinct players from TFC servers.")
-    aggregated_local_server_names.update(local_server_names)
-
-    # Intersection: local server players vs. on-chain
-    matched_names = list(aggregated_local_server_names.intersection(set(name_map.keys())))
-    print(f"[INFO] matched_names => {matched_names}")
-    return matched_names
-
 ###############################################################################
 # 2) Debug-check DApp
 ###############################################################################
 async def debug_check_dapp_pda():
-    dapp_data = await program.account["DApp"].fetch(dapp_pda)
-    print("[DEBUG] DApp Account Data:")
-    print(f"         owner                = {dapp_data.owner}")
-    print(f"         global_player_count  = {dapp_data.global_player_count}")
-    print(f"         mint_pubkey         = {dapp_data.mint_pubkey}")
+    game_data = await program.account["Game"].fetch(game_pda)
+    print("[DEBUG] Game Account Data:")
+    #print(f"         owner                = {game_data.owner}")
+    print(f"         player_count  = {game_data.player_count}")
+    print(f"         mint_pubkey         = {game_data.mint_pubkey}")
 
 ###############################################################################
 # 3) On-chain fetch: build name -> { index, pda, reward_address }
@@ -115,18 +92,29 @@ async def fetch_player_pdas_map() -> dict:
     all_records = await program.account["PlayerPda"].all()
     print(f"[DEBUG] Found {len(all_records)} PlayerPda records on-chain.")
 
-    # Fetch DApp data to get total player count
-    dapp_data = await program.account["DApp"].fetch(dapp_pda)
-    total_count = dapp_data.global_player_count
+    # Fetch Game data to get total player count
+    game_data = await program.account["Game"].fetch(game_pda)
+    total_count = game_data.player_count
 
     # Derive PDA to index mapping
+    # pda_to_index = {}
+    # for i in range(total_count):
+    #     seed_index_bytes = i.to_bytes(4, "little")
+    #     (pda, _) = Pubkey.find_program_address([b"player_pda", seed_index_bytes], program.program_id)
+    #     pda_to_index[str(pda)] = i
+
+    # # Build the name map with reward_address
     pda_to_index = {}
     for i in range(total_count):
-        seed_index_bytes = i.to_bytes(4, "little")
-        (pda, _) = Pubkey.find_program_address([b"player_pda", seed_index_bytes], program.program_id)
+        seeds = [
+            b"player_pda",
+            bytes(game_pda),         # The same 'game' pubkey you used on-chain
+            i.to_bytes(4, "little"), # The same little-endian integer
+        ]
+        (pda, bump) = Pubkey.find_program_address(seeds, program.program_id)
         pda_to_index[str(pda)] = i
-
-    # Build the name map with reward_address
+            
+    
     name_map = {}
     for rec in all_records:
         pkey_str = str(rec.public_key)
@@ -143,75 +131,70 @@ async def fetch_player_pdas_map() -> dict:
             pass
 
     return name_map
-def find_associated_token_address(owner: Pubkey, mint: Pubkey) -> Pubkey:
+def derive_ata(owner: Pubkey, mint: Pubkey) -> Pubkey:
+    """Derive the associated token account (ATA) address for (owner,mint)."""
     seeds = [
         bytes(owner),
         bytes(SPL_TOKEN_PROGRAM_ID),
         bytes(mint),
     ]
-    ata, _ = Pubkey.find_program_address(seeds, ASSOCIATED_TOKEN_PROGRAM_ID)
+    (ata, _) = Pubkey.find_program_address(seeds, ASSOCIATED_TOKEN_PROGRAM_ID)
     return ata
-
 ###############################################################################
 # 4) submit_minting_list: advanced leftover approach
 ###############################################################################
-async def submit_minting_list_with_leftover(
-    game_number: int,
-    matched_names: list[str],
-    name_map: dict,
-):
+async def submit_minting_list_with_leftover(matched_names: list[str], name_map: dict):
     validator_kp = load_validator_keypair()
     validator_pubkey = validator_kp.pubkey()
 
-    # Derive the validator_pda
-    seeds_val = [b"validator", game_number.to_bytes(4, "little"), bytes(validator_pubkey)]
+    # 1) validator_pda
+    # seeds_val = [b"validator", game_number.to_bytes(4, "little"), bytes(validator_pubkey)]
+    # (validator_pda, bump_val) = Pubkey.find_program_address(seeds_val, program.program_id)
+
+    seeds_val = [
+        b"validator",
+        bytes(minted_mint_pda), 
+        bytes(validator_pubkey)
+    ]
     (validator_pda, bump_val) = Pubkey.find_program_address(seeds_val, program.program_id)
 
-    # Fetch DApp's mint_pubkey
-    dapp_data = await program.account["DApp"].fetch(dapp_pda)
-    fancy_mint_pk = dapp_data.mint_pubkey
+    # 2) fetch the dapp to get fancy_mint
+    game_data = await program.account["Game"].fetch(game_pda)
+    fancy_mint_pk = game_data.mint_pubkey
 
-    # Derive mint_authority
-    (mint_auth_pda, bump_mint_auth) = Pubkey.find_program_address([b"mint_authority"], program_id)
+    # 3) find the validator_ata
+    validator_ata = derive_ata(validator_pubkey, fancy_mint_pk)
 
-    # SysvarRent
-    rent_sysvar_pubkey = Pubkey.from_string("SysvarRent111111111111111111111111111111111")
-    validator_ata = find_associated_token_address(validator_pubkey, fancy_mint_pk)
-
-    # Initialize validator_pda if not already initialized
+    # 4) fetch or create the validator_pda by calling register_validator_pda if needed
     try:
         await program.account["ValidatorPda"].fetch(validator_pda)
         print(f"[DEBUG] validator_pda {validator_pda} already initialized.")
     except:
-        print(f"[INFO] validator_pda {validator_pda} not found. Initializing...")
-        # Derive the validator's ATA
+        print(f"[INFO] validator_pda {validator_pda} not found. Initializing (and creating ATA={validator_ata})...")
         ctx_init_val = Context(
             accounts={
-                "game": game_pda,
-                "fancy_mint": fancy_mint_pk,
-                "validator_pda": validator_pda,
-                "user": validator_pubkey,
-                "validator_ata": validator_ata,
-                "dapp": dapp_pda,
-                "token_program": SPL_TOKEN_PROGRAM_ID,
+                "game":            game_pda,
+                "fancy_mint":      fancy_mint_pk,
+                "validator_pda":   validator_pda,
+                "user":            validator_pubkey,
+                "validator_ata":   validator_ata,
+                #"dapp":            dapp_pda,
+                "token_program":   SPL_TOKEN_PROGRAM_ID,
                 "associated_token_program": ASSOCIATED_TOKEN_PROGRAM_ID,
-                "system_program": SYS_PROGRAM_ID,
-                "rent": rent_sysvar_pubkey,
+                "system_program":  SYSTEM_PROGRAM_ID,
+                "rent":            Pubkey.from_string("SysvarRent111111111111111111111111111111111"),
             },
             signers=[validator_kp],
         )
-        # Invoke the register_validator_pda instruction
         try:
             tx_sig_init_val = await program.rpc["register_validator_pda"](
-                game_number,
-                ctx=ctx_init_val
+                fancy_mint_pk,
+                ctx_init_val
             )
             print(f"[INFO] Registered validator_pda + ATA. Tx Sig: {tx_sig_init_val}")
         except RPCException as e:
             print(f"[ERROR] Failed to register validator_pda: {e}")
-            traceback.print_exc()
-            return  # Exit the function as further steps depend on this
-
+            return
     # Iterate over matched names in chunks
     for start_idx in range(0, len(matched_names), CHUNK_SIZE):
         chunk = matched_names[start_idx : start_idx + CHUNK_SIZE]
@@ -230,7 +213,6 @@ async def submit_minting_list_with_leftover(
             reward_address_pubkey = entry["reward_address"]
 
             # Append the actual PlayerPda and reward_address (ATA)
-
             leftover_accounts.append(
                 AccountMeta(pubkey=player_pda_pubkey, is_signer=False, is_writable=True)
             )
@@ -240,7 +222,7 @@ async def submit_minting_list_with_leftover(
             numeric_ids.append(pid)
 
         if not numeric_ids:
-            print(f"[DEBUG] This chunk is empty, skipping.")
+            print("[DEBUG] This chunk is empty, skipping.")
             continue
 
         print(f"[DEBUG] Submitting chunk => {numeric_ids}")
@@ -248,16 +230,19 @@ async def submit_minting_list_with_leftover(
         # Build AnchorPy Context
         ctx = Context(
             accounts={
-                "game": game_pda,
-                "validator_pda": validator_pda,
-                "validator": validator_pubkey,
-                "fancy_mint": fancy_mint_pk,
-                "dapp": dapp_pda,
+                "game":           game_pda,
+                "validator_pda":  validator_pda,
+                "validator":      validator_pubkey,
+                "fancy_mint":     fancy_mint_pk,
+                #"dapp":           dapp_pda,
                 "mint_authority": mint_auth_pda,
-                "token_program": SPL_TOKEN_PROGRAM_ID,
-                "rent": rent_sysvar_pubkey,
+                "token_program":  SPL_TOKEN_PROGRAM_ID,
+                # Add 'rent' if your instruction requires it:
+                "rent": RENT_SYSVAR_ID,
+                # If your on-chain code also references system_program, associated_token_program,
+                # you must pass them as well. Example:
                 "system_program": SYSTEM_PROGRAM_ID,
-                "associated_token_program": ASSOCIATED_TOKEN_PROGRAM_ID,
+                "associated_token_program": Pubkey.from_string("ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"),
             },
             signers=[validator_kp],
             remaining_accounts=leftover_accounts
@@ -266,8 +251,8 @@ async def submit_minting_list_with_leftover(
         # Call your on-chain `submit_minting_list` instruction
         try:
             tx_sig = await program.rpc["submit_minting_list"](
-                game_number,
                 numeric_ids,
+                fancy_mint_pk,
                 ctx=ctx
             )
             print(f"[INFO] submit_minting_list TX => {tx_sig}")
@@ -361,20 +346,14 @@ def decode_and_collect_players(players):
 # 6) The main function that merges everything
 ###############################################################################
 async def main():
-    print("Setting up provider and loading program IDL...")
-    client = AsyncClient("http://localhost:8899", commitment=Confirmed)
-    wallet = Wallet.local()
-
-    global provider, program, program_id, dapp_pda, game_pda
-    provider = Provider(client, wallet)
-
-    # ───────────────────────────────────────────────────────────
-    # Load Validator Keypair (for checking balance)
-    validator_kp = load_validator_keypair()
-    validator_pubkey = validator_kp.pubkey()
-    # ───────────────────────────────────────────────────────────
-
     try:
+        print("Setting up provider and loading program IDL...")
+        client = AsyncClient("http://localhost:8899", commitment=Confirmed)
+        wallet = Wallet.local()
+
+        global provider, program, program_id, dapp_pda, game_pda
+        provider = Provider(client, wallet)
+
         # 1) Load the IDL
         idl_path = Path("../target/idl/fancoin.json")
         if not idl_path.exists():
@@ -390,21 +369,17 @@ async def main():
         print("Program loaded successfully.")
 
         # 2) Derive PDAs
-        game_number = 1
-        (game_pda, bump_game) = Pubkey.find_program_address(
-            [b"game", game_number.to_bytes(4, "little")], program_id
-        )
-        (dapp_pda, bump_dapp) = Pubkey.find_program_address([b"dapp"], program_id)
-        print(f"[DEBUG] using game_pda={game_pda}")
-        print(f"[DEBUG] using dapp_pda={dapp_pda}")
+        #game_number = 1
+        #(game_pda, bump_game) = Pubkey.find_program_address([b"game", game_number.to_bytes(4, "little")], program_id)
+        #(dapp_pda, bump_dapp) = Pubkey.find_program_address([b"dapp"], program_id)
+        #print(f"[DEBUG] using game_pda={game_pda}")
+        #print(f"[DEBUG] using dapp_pda={dapp_pda}")
 
         # 3) Debug-check DApp
         await debug_check_dapp_pda()
-        balance_resp = await provider.connection.get_balance(validator_pubkey)
-        lamports = balance_resp.value
-        sol_balance = lamports / 1e9
-        print(f"[INFO] Validator balance: {sol_balance} SOL")
-        # 4) Query TFC master server for a list of servers
+
+        # 4) Suppose you do your TFC server logic => you get a local list of names
+        #    Replace this with actual server querying logic as needed
         print("[INFO] Querying TFC master server for a list of servers.")
         region = 0xFF
         app_id = 20
@@ -415,56 +390,35 @@ async def main():
                 unique_ips[ip] = (ip, port)
         deduped = list(unique_ips.values())
         print(f"[DEBUG] Found {len(deduped)} unique TFC servers.")
-        aggregated_local_server_names = set()
 
-        while True:
+        # Gather local server players
+        local_server_names = set()
+        for ip, port in deduped:
+            print(f"[DEBUG] Checking server {ip}:{port}")
+            try:
+                players = get_player_list_a2s(ip, port)
+                if players:
+                    # decode_and_collect_players => name->True
+                    result_dict = decode_and_collect_players(players)
+                    local_server_names.update(result_dict.keys())
+            except:
+                pass
 
-            # 5) Fetch all on-chain PlayerPda => build (name -> index, name -> pda, reward_address)
-            print("[INFO] Fetching on-chain name->(index, pda, reward_address).")
-            name_map = await fetch_player_pdas_map()
+        print(f"[INFO] Found {len(local_server_names)} distinct players from TFC servers.")
 
-            # Loop to find users 4 times with 5-minute intervals
-            for iteration in range(1, 5):  # Iterations 1 through 4
-                print(f"\n[INFO] Starting iteration {iteration} of 4.")
-                balance_resp = await provider.connection.get_balance(validator_pubkey)
-                lamports = balance_resp.value
-                sol_balance = lamports / 1e9
-                print(f"[INFO] Validator balance: {sol_balance} SOL")
-                matched_names = await find_users(deduped, aggregated_local_server_names, name_map)
-                aggregated_local_server_names = set()
+        # 5) Fetch all on-chain PlayerPda => build (name -> index, name -> pda, name -> reward_address)
+        print("[INFO] Fetching on-chain name->(index, pda, reward_address).")
+        name_map = await fetch_player_pdas_map()
 
-                # Example: If you only want to do a mint on the first iteration:
-                if matched_names and iteration == 1:
-                    await submit_minting_list_with_leftover(game_number, matched_names, name_map)
-                    print(f"[INFO] Minting period finished. Checking validator balance before next wait...")
+        # 6) Intersection: local server players vs. on-chain
+        matched_names = list(local_server_names.intersection(set(name_map.keys())))
+        print(f"[INFO] matched_names => {matched_names}")
+        if not matched_names:
+            print("[WARN] No matched players found. Exiting.")
+            return
 
-                    # ───────────────────────────────────────────────────────────
-                    # Print validator’s balance (in SOL) before the 5-min sleep
-
-                    # ───────────────────────────────────────────────────────────
-                    balance_resp = await provider.connection.get_balance(validator_pubkey)
-                    lamports = balance_resp.value
-                    sol_balance = lamports / 1e9
-                    print(f"[INFO] Validator balance: {sol_balance} SOL")
-                    print(f"[INFO] Waiting for ~5 minutes before next scan.")
-                    await asyncio.sleep(30)  # Wait for 5 minutes
-
-                else:
-                    if matched_names:
-                        print(f"[INFO] Matched players found. Checking validator balance before waiting.")
-                    else:
-                        print("[WARN] No matched players found.")
-
-                    # ───────────────────────────────────────────────────────────
-                    # Print validator’s balance (in SOL) before the 5-min sleep
-                    balance_resp = await provider.connection.get_balance(validator_pubkey)
-                    lamports = balance_resp.value
-                    sol_balance = lamports / 1e9
-                    print(f"[INFO] Validator balance: {sol_balance} SOL")
-                    # ───────────────────────────────────────────────────────────
-
-                    print(f"[INFO] Waiting 5 minutes before next scan.")
-                    await asyncio.sleep(30)
+        # 7) Submit them in multiple chunks
+        await submit_minting_list_with_leftover(matched_names, name_map)
 
     except Exception as e:
         print(f"[ERROR] Unexpected error => {e}")

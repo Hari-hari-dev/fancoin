@@ -12,19 +12,22 @@ name = "fancoin"
 default = []
 cpi = ["no-entrypoint"]
 no-entrypoint = []
-no-idl = []
+#no-idl = []
 no-log-ix-name = []
 #idl-build = ["anchor-lang/idl-build"]
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
 custom-heap = []                # Adding custom-heap
 custom-panic = []               # Adding custom-panic
 anchor-debug = []    
 
 [dependencies]
+#ahash="=0.8.7"
 #socket2 = "0.5.8"
 mio = "1.0.3"
-anchor-lang = { version = "0.28.0", features = ["init-if-needed"] }
+anchor-lang = { version = "0.29.0", features = ["init-if-needed"] }
 #anchor-lang = { git = "https://github.com/project-serum/anchor", tag = "v0.28.0" }
-anchor-spl = { version = "0.28.0" }
+anchor-spl = { version = "0.29.0" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 sha2 = "0.10"
@@ -32,3 +35,5 @@ sha3 = "0.10" # Added sha3 crate
 #rand = "0.8"
 #tokio = { version = "1", features = ["full"] }
 chrono = { version = "0.4", features = ["serde"] }
+spl-type-length-value = "=0.3.0"
+spl-token-2022 = "=3.0.5"

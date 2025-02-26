@@ -1,9 +1,24 @@
 use anchor_lang::prelude::*;
+use anchor_lang::prelude::InterfaceAccount;
 use anchor_lang::system_program;
 use anchor_spl::{
-    associated_token::AssociatedToken,
-    token::{self, Mint, MintTo, Token, TokenAccount},
+    token_2022::{self as token_2022, mint_to, ID as TOKEN_2022_PROGRAM_ID},
+    // The 2022 account interfaces:
+    //token_interface::{Mint, MintTo, Account as TokenAccount, Token2022 as Token},
 };
+//use anchor_spl::token_2022::TokenAccount;
+//use spl_token_2022::state::Account as TokenAccount2022;
+use anchor_spl::token_interface::{
+    //Account as TokenAccount2022,//GenericTokenAccount as TokenAccount,
+    Mint,
+    Token2022,       // The “program” type for your token_program field
+};
+use anchor_spl::token_interface::TokenAccount;
+
+
+use anchor_spl::token_2022::MintTo;
+//use anchor_spl::token_2022::Account;
+use anchor_spl::associated_token::AssociatedToken;
 use sha3::{Digest, Keccak256};
 use std::convert::TryInto;
 
@@ -33,7 +48,6 @@ pub struct Game {
     pub description: String,
     pub last_seed: Option<u64>,
     pub last_punch_in_time: Option<i64>,
-    pub mint_pubkey: Pubkey,
 }
 impl Game {
     pub const LEN: usize = 8
@@ -44,8 +58,7 @@ impl Game {
         + 1 // status
         + 64 // description
         + 8 // last_seed
-        + 8 // last_punch_in_time
-        + 32; // mint_pubkey
+        + 8; // last_punch_in_time
 }
 
 #[account]
@@ -89,10 +102,11 @@ pub struct ValidatorPda {
     pub last_activity: i64,
     // (NEW) Track the last time this validator minted tokens or was made ineligible
     pub last_minted: Option<i64>,
+    pub last_claimed: Option<i64>,
 }
 impl ValidatorPda {
     // 8 disc + 32 pubkey + 8 i64 + 9 (Option<i64>) = 57
-    pub const LEN: usize = 8 + 32 + 8 + 9;
+    pub const LEN: usize = 8 + 32 + 8 + 9 + 9;
 }
 
 #[account]
@@ -103,53 +117,6 @@ pub struct MintAuthority {
 // --------------------------------------------------------------------
 // Accounts
 // --------------------------------------------------------------------
-#[derive(Accounts)]
-#[instruction(description: String)]
-pub struct InitializeGameAndMint<'info> {
-    #[account(
-        init,
-        payer = user,
-        space = Game::LEN,
-        // ♦ The new seed => [b"game", mint_for_game.key().as_ref()]
-        seeds = [b"game", mint_for_game.key().as_ref()],
-        bump
-    )]
-    pub game: Account<'info, Game>,
-
-    #[account(
-        init,
-        payer = user,
-        space = 8 + 1,
-        // ♦ Also seeds in the new style => [b"mint_authority", mint_for_game.key().as_ref()]
-        seeds = [b"mint_authority", mint_for_game.key().as_ref()],
-        bump
-    )]
-    pub mint_authority: Account<'info, MintAuthority>,
-
-    #[account(
-        init,
-        payer = user,
-        // some pattern => [b"my_spl_mint", user.key().as_ref(), description.as_bytes()]
-        seeds = [b"my_spl_mint", user.key().as_ref(), description.as_bytes()],
-        bump,
-        mint::decimals = 6,
-        mint::authority = mint_authority,
-        mint::freeze_authority = mint_authority
-    )]
-    pub mint_for_game: Account<'info, Mint>,
-
-    #[account(mut, seeds = [b"dapp"], bump)]
-    pub dapp: Account<'info, DApp>,
-
-    #[account(mut)]
-    pub user: Signer<'info>,
-
-    #[account(address = token::ID)]
-    pub token_program: Program<'info, Token>,
-    pub associated_token_program: Program<'info, AssociatedToken>,
-    pub system_program: Program<'info, System>,
-    pub rent: Sysvar<'info, Rent>,
-}
 
 #[derive(Accounts)]
 pub struct InitializeDapp<'info> {
@@ -168,7 +135,6 @@ pub struct InitializeDapp<'info> {
     pub system_program: Program<'info, System>,
 }
 
-
 #[derive(Accounts)]
 pub struct RelinquishOwnership<'info> {
     #[account(mut, seeds = [b"dapp"], bump)]
@@ -178,14 +144,13 @@ pub struct RelinquishOwnership<'info> {
 }
 
 #[derive(Accounts)]
-#[instruction(game_number: u32, mint_pubkey: Pubkey, description: String)]
+#[instruction(game_number: u32, description: String)]
 pub struct InitializeGame<'info> {
     #[account(
         init,
         payer = user,
         space = Game::LEN,
-        // ♦ Replaced &game_number.to_le_bytes() with mint_pubkey.as_ref()
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"game", &game_number.to_le_bytes()],
         bump
     )]
     pub game: Account<'info, Game>,
@@ -199,64 +164,56 @@ pub struct InitializeGame<'info> {
 }
 
 #[derive(Accounts)]
-#[instruction(game_number: u32, mint_pubkey: Pubkey)]
+#[instruction(game_number: u32)]
 pub struct UpdateGameStatus<'info> {
-    #[account(
-        mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
-        bump
-    )]
+    #[account(mut, seeds = [b"game", &game_number.to_le_bytes()], bump)]
     pub game: Account<'info, Game>,
+
     #[account(seeds = [b"dapp"], bump)]
     pub dapp: Account<'info, DApp>,
+
     #[account(mut)]
     pub signer: Signer<'info>,
 }
 
-
 #[derive(Accounts)]
-#[instruction(game_number: u32, mint_pubkey: Pubkey)]
+#[instruction(game_number: u32)]
 pub struct PunchIn<'info> {
-    #[account(
-        mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
-        bump
-    )]
+    #[account(mut, seeds = [b"game", &game_number.to_le_bytes()], bump)]
     pub game: Account<'info, Game>,
 
-    // ♦ Replacing &game_number.to_le_bytes() in the Validator seed
     #[account(
         mut,
-        seeds = [b"validator", mint_pubkey.as_ref(), validator.key().as_ref()],
+        seeds = [b"validator", &game_number.to_le_bytes(), validator.key().as_ref()],
         bump
     )]
     pub validator_pda: Account<'info, ValidatorPda>,
 
     #[account(mut)]
     pub validator: Signer<'info>,
+
     pub system_program: Program<'info, System>,
 }
 #[derive(Accounts)]
-#[instruction(game_number: u32, mint_pubkey: Pubkey)]
+#[instruction(game_number: u32)]
 pub struct RegisterValidatorPda<'info> {
     #[account(
         mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"game", &game_number.to_le_bytes()],
         bump
     )]
     pub game: Account<'info, Game>,
 
     #[account(mut, address = dapp.mint_pubkey)]
-    pub fancy_mint: Account<'info, Mint>,
+    pub fancy_mint: InterfaceAccount<'info, Mint>,
 
-    // ♦ Replacing the old seeds for validator with [b"validator", mint_pubkey.as_ref(), user.key().as_ref()]
     #[account(
         init,
         payer = user,
         space = ValidatorPda::LEN,
         seeds = [
             b"validator",
-            mint_pubkey.as_ref(),
+            &game_number.to_le_bytes()[..],
             user.key().as_ref()
         ],
         bump
@@ -272,13 +229,46 @@ pub struct RegisterValidatorPda<'info> {
         associated_token::mint = fancy_mint,
         associated_token::authority = user
     )]
-    pub validator_ata: Account<'info, TokenAccount>,
+    pub validator_ata: InterfaceAccount<'info, TokenAccount>,
 
     #[account(seeds = [b"dapp"], bump)]
     pub dapp: Account<'info, DApp>,
 
-    #[account(address = token::ID)]
-    pub token_program: Program<'info, Token>,
+    #[account(address = TOKEN_2022_PROGRAM_ID)]  // Changed from `token::ID` to `spl_token_2022::ID`
+    pub token_program: Program<'info, Token2022>,
+    pub associated_token_program: Program<'info, AssociatedToken>,
+    pub system_program: Program<'info, System>,
+    pub rent: Sysvar<'info, Rent>,
+}
+#[derive(Accounts)]
+pub struct CreateUserAtaIfNeeded<'info> {
+    /// The user who wants an ATA
+    /// 
+    #[account(mut, seeds = [b"dapp"], bump)]
+    pub dapp: Account<'info, DApp>,
+    #[account(mut)]
+    pub user: Signer<'info>,
+
+    /// The mint for which we want an ATA
+    #[account(mut, constraint = fancy_mint.key() == dapp.mint_pubkey)]
+    pub fancy_mint: InterfaceAccount<'info, Mint>,
+
+    /// The Game (we only need this if you want to anchor an address check)
+    // #[account(seeds = [b"game", mint_pubkey.as_ref()], bump)]
+    // pub game: Account<'info, Game>,
+
+    /// The derived user’s ATA
+    #[account(
+        init_if_needed,
+        payer = user,
+        associated_token::mint = fancy_mint,
+        associated_token::authority = user
+    )]
+    pub user_ata: InterfaceAccount<'info, TokenAccount>,
+
+    // Programs
+    #[account(address = TOKEN_2022_PROGRAM_ID)]
+    pub token_program: Program<'info, Token2022>,
     pub associated_token_program: Program<'info, AssociatedToken>,
     pub system_program: Program<'info, System>,
     pub rent: Sysvar<'info, Rent>,
@@ -291,8 +281,8 @@ pub struct RegisterPlayerPda<'info> {
     #[account(mut, seeds = [b"dapp"], bump)]
     pub dapp: Account<'info, DApp>,
 
-    #[account(constraint = fancy_mint.key() == dapp.mint_pubkey)]
-    pub fancy_mint: Account<'info, Mint>,
+    #[account(mut, constraint = fancy_mint.key() == dapp.mint_pubkey)]
+    pub fancy_mint: InterfaceAccount<'info, Mint>,
 
     #[account(
         init_if_needed,
@@ -321,16 +311,16 @@ pub struct RegisterPlayerPda<'info> {
     #[account(mut)]
     pub user: Signer<'info>,
 
-    #[account(
-        init_if_needed,
-        payer = user,
-        associated_token::mint = fancy_mint,
-        associated_token::authority = user
-    )]
-    pub user_ata: Account<'info, TokenAccount>,
+    // #[account(
+    //     init_if_needed,
+    //     payer = user,
+    //     associated_token::mint = fancy_mint,
+    //     associated_token::authority = user
+    // )]
+    // pub user_ata: InterfaceAccount<'info, TokenAccount>,
 
-    #[account(address = token::ID)]
-    pub token_program: Program<'info, Token>,
+    #[account(address = TOKEN_2022_PROGRAM_ID)]  // Changed from `token::ID` to `spl_token_2022::ID`
+    pub token_program: Program<'info, Token2022>,
     pub associated_token_program: Program<'info, AssociatedToken>,
     pub system_program: Program<'info, System>,
     pub rent: Sysvar<'info, Rent>,
@@ -354,26 +344,22 @@ pub struct GetValidatorListPdaPage<'info> {
 // *** SubmitMintingList ***
 // --------------------------------------------------------------------
 #[derive(Accounts)]
-#[instruction(game_number: u32, mint_pubkey: Pubkey)]
+#[instruction(game_number: u32)]
 pub struct SubmitMintingList<'info> {
-    #[account(
-        mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
-        bump
-    )]
+    #[account(mut, seeds = [b"game", &game_number.to_le_bytes()], bump)]
     pub game: Account<'info, Game>,
 
     #[account(
         mut,
-        seeds = [b"validator", mint_pubkey.as_ref(), validator.key().as_ref()],
+        seeds = [b"validator", &game_number.to_le_bytes(), validator.key().as_ref()],
         bump
     )]
     pub validator_pda: Account<'info, ValidatorPda>,
 
     pub validator: Signer<'info>,
 
-    #[account(mut, address = game.mint_pubkey)]
-    pub fancy_mint: Account<'info, Mint>,
+    #[account(mut, address = dapp.mint_pubkey)]
+    pub fancy_mint: InterfaceAccount<'info, Mint>,
 
     #[account(seeds = [b"dapp"], bump)]
     pub dapp: Account<'info, DApp>,
@@ -384,13 +370,11 @@ pub struct SubmitMintingList<'info> {
     )]
     pub mint_authority: Account<'info, MintAuthority>,
 
-    #[account(address = token::ID)]
-    pub token_program: Program<'info, Token>,
-
+    #[account(address = TOKEN_2022_PROGRAM_ID)]  // Changed from `token::ID` to `spl_token_2022::ID`
+    pub token_program: Program<'info, Token2022>,
     pub associated_token_program: Program<'info, AssociatedToken>,
     pub system_program: Program<'info, System>,
 }
-
 
 #[derive(Accounts)]
 pub struct UpdatePlayerNameCooldown<'info> {
@@ -462,13 +446,13 @@ pub struct InitializeMint<'info> {
         mint::authority = mint_authority,
         mint::freeze_authority = mint_authority
     )]
-    pub mint_for_dapp: Account<'info, Mint>,
+    pub mint_for_dapp: InterfaceAccount<'info, Mint>,
 
     #[account(mut)]
     pub payer: Signer<'info>,
 
-    #[account(address = token::ID)]
-    pub token_program: Program<'info, Token>,
+    #[account(address = TOKEN_2022_PROGRAM_ID)]  // Changed from `token::ID` to `spl_token_2022::ID`
+    pub token_program: Program<'info, Token2022>,
 
     pub system_program: Program<'info, System>,
     pub rent: Sysvar<'info, Rent>,
@@ -489,42 +473,7 @@ pub mod fancoin {
         msg!("DApp initialized => owner={}", dapp.owner);
         Ok(())
     }
-    pub fn initialize_game_and_mint(
-        ctx: Context<InitializeGameAndMint>,
-        description: String,
-    ) -> Result<()> {
-        // A) Fill in your Game data (the struct has game_number, etc. – you can set it to 0 or anything)
-        let game = &mut ctx.accounts.game;
-        game.game_number = 9999;  // or set = 0 if you want
-        game.description = description;
-        game.status = 0;
-        game.validator_count = 0;
-        game.active_validator_count = 0;
-        game.last_reset_hour = None;
-        game.last_seed = None;
-        game.last_punch_in_time = None;
-    
-        msg!(
-            "Created new Game => mintedMint={}, desc='{}'",
-            ctx.accounts.mint_for_game.key(),
-            game.description
-        );
-    
-        // B) Initialize the MintAuthority (just store the bump)
-        let bump = *ctx.bumps.get("mint_authority").unwrap();
-        ctx.accounts.mint_authority.bump = bump;
-        msg!("mint_authority bump={}", bump);
-    
-        // C) Optionally store the new mint in DApp
-        ctx.accounts.game.mint_pubkey = ctx.accounts.mint_for_game.key();
-        msg!(
-            "Created mint => pubkey={} => stored in game.mint_pubkey",
-            ctx.accounts.game.mint_pubkey
-        );
-    
-        Ok(())
-    }
-    
+
     pub fn initialize_game(
         ctx: Context<InitializeGame>,
         game_number: u32,
@@ -547,7 +496,7 @@ pub mod fancoin {
         msg!("Game #{} initialized => {}", game_number, game.description);
         Ok(())
     }
-    //need fixing, dapp
+
     pub fn update_game_status(
         ctx: Context<UpdateGameStatus>,
         game_number: u32,
@@ -601,10 +550,10 @@ pub mod fancoin {
     
         // Prevent punch_in if past the first 7 minutes
         // If you want to fail the transaction, do `require!`
-        require!(
-            current_minute <= 7,
-            ErrorCode::NotInPunchInPeriod
-        );
+        // require!(
+        //     current_minute <= 7,
+        //     ErrorCode::NotInPunchInPeriod
+        // );
         // Or, if you prefer a soft return:
         // if current_minute > 7 {
         //    msg!("Punch-in period over for hour {} => skipping", current_hour);
@@ -661,15 +610,34 @@ pub mod fancoin {
         );
         Ok(())
     }
-    //need fixing, dapp
+    pub fn create_user_ata_if_needed(
+        _ctx: Context<CreateUserAtaIfNeeded>,
+    ) -> Result<()> {
+        // No actual logic needed here; the `init_if_needed` does everything
+        msg!("create_user_ata_if_needed => done");
+        Ok(())
+    }
     /// Register a player with a unique name by initializing PlayerPda + PlayerNamePda
-    pub fn register_player_pda(
-        ctx: Context<RegisterPlayerPda>,
+    pub fn register_player_pda<'info>(
+        ctx: Context<'_, '_, 'info, 'info, RegisterPlayerPda<'info>>,
         name: String,
     ) -> Result<()> {
         let dapp = &mut ctx.accounts.dapp;
         let player = &mut ctx.accounts.player_pda;
         let name_pda = &mut ctx.accounts.player_name_pda;
+        let leftover_accs = &ctx.remaining_accounts;
+        require!(
+            !leftover_accs.is_empty(),
+            ErrorCode::InsufficientLeftoverAccounts
+        );
+    
+        let user_ata_accinfo = &leftover_accs[0];
+
+        let user_ata_result =
+        InterfaceAccount::<TokenAccount>::try_from(user_ata_accinfo);
+
+        require!(user_ata_result.is_ok(), ErrorCode::InvalidAtaAccount);
+        let user_ata = user_ata_result.unwrap();
 
         // (A) Enforce max name length
         require!(name.len() <= PlayerNamePda::MAX_NAME_LEN, ErrorCode::InvalidNameLength);
@@ -677,11 +645,11 @@ pub mod fancoin {
         // (B) Fill in PlayerPda
         player.name = name.clone();
         player.authority = ctx.accounts.user.key();
-        player.reward_address = ctx.accounts.user_ata.key();
         player.last_name_change = None;
         player.last_reward_change = None;
         player.partial_validators = Vec::new();
         player.last_minted = None;
+        player.reward_address = user_ata.key();
 
         // (C) Initialize PlayerNamePda data
         name_pda.name = name;
@@ -710,6 +678,7 @@ pub mod fancoin {
         let val_pda = &mut ctx.accounts.validator_pda;
         val_pda.address = ctx.accounts.user.key();
         val_pda.last_activity = Clock::get()?.unix_timestamp;
+        val_pda.last_claimed = Some(Clock::get()?.unix_timestamp);
         val_pda.last_minted = None; // new
 
         game.validator_count += 1;
@@ -725,7 +694,7 @@ pub mod fancoin {
     /// The main multi-player mint function
     /// (We do *NOT* mint to validators here. Instead, we simply set val_pda.last_minted = now.)
     pub fn submit_minting_list<'info>(
-        ctx: Context<'_, '_, '_, 'info, SubmitMintingList<'info>>,
+        ctx: Context<'_, '_, 'info, 'info, SubmitMintingList<'info>>,
         game_number: u32,
         player_ids: Vec<u32>,
     ) -> Result<()> {
@@ -870,7 +839,7 @@ pub mod fancoin {
     
             // (E) Actually mint to player's ATA
             let minted_amount = diff_minutes.saturating_mul(2_833_333);
-            let is_ata_ok = Account::<TokenAccount>::try_from(&player_ata_accinfo).is_ok();
+            let is_ata_ok = InterfaceAccount::<TokenAccount>::try_from(&player_ata_accinfo).is_ok();
             if !is_ata_ok {
                 msg!("Leftover is NOT a valid TokenAccount => skip pid={}", pid);
                 player_pda.try_serialize(&mut &mut player_pda_accinfo.try_borrow_mut_data()?[..])?;
@@ -890,18 +859,19 @@ pub mod fancoin {
                 },
                 signer_seeds,
             );
-            token::mint_to(cpi_ctx, minted_amount)?;
-    
-            msg!("Minted {} => pid={}", minted_amount, pid);
-    
-            // (F) Mark *this* validator (the signer) as minted now
             ctx.accounts.validator_pda.last_minted = Some(current_time);
-    
-            // Clear partial_validators, store changes in PlayerPda
             player_pda.partial_validators.clear();
             player_pda.last_minted = Some(current_time);
             player_pda.try_serialize(&mut &mut player_pda_accinfo.try_borrow_mut_data()?[..])?;
     
+            token_2022::mint_to(cpi_ctx, minted_amount)?;
+    
+            msg!("Minted {} => pid={}", minted_amount, pid);
+    
+            // (F) Mark *this* validator (the signer) as minted now
+    
+            // Clear partial_validators, store changes in PlayerPda
+
             minted_count += 1;
         }
     
@@ -993,15 +963,13 @@ pub mod fancoin {
     pub fn initialize_mint(ctx: Context<InitializeMint>) -> Result<()> {
         let dapp = &mut ctx.accounts.dapp;
         dapp.mint_pubkey = ctx.accounts.mint_for_dapp.key();
-        let bump = *ctx.bumps.get("mint_authority").unwrap();
+        let bump = ctx.bumps.mint_authority;
         ctx.accounts.mint_authority.bump = bump;
         msg!("Mint created => pubkey={}", dapp.mint_pubkey);
         Ok(())
     }
-
-    /// (NEW) The function for validators to claim up to 1 hour of tokens at 0.02857/min
-    pub fn claim_validator_reward(
-        ctx: Context<ClaimValidatorReward>,
+    pub fn claim_validator_reward<'info>(
+        ctx: Context<'_, '_, 'info, 'info, ClaimValidatorReward<'info>>,
         game_number: u32,
     ) -> Result<()> {
         let val_pda = &mut ctx.accounts.validator_pda;
@@ -1009,59 +977,161 @@ pub mod fancoin {
             val_pda.address == ctx.accounts.validator.key(),
             ErrorCode::ValidatorNotRegistered
         );
-
-        let current_time = Clock::get()?.unix_timestamp;
-        let last_time = val_pda.last_minted.unwrap_or(0);
-
-        // 1) Compute how many minutes since last minted
-        let diff_seconds = current_time.saturating_sub(last_time);
-        let diff_minutes = diff_seconds.max(0) as u64 / 60;
-
-        // 2) Cap it at 60 => 1 hour max
+    
+        let leftover_accs = &ctx.remaining_accounts;
+        require!(
+            !leftover_accs.is_empty(),
+            ErrorCode::InsufficientLeftoverAccounts
+        );
+        let clock = Clock::get()?;
+    
+        // (A) Attempt to parse leftover[0] as the validator's ATA
+        let val_ata_accinfo = &leftover_accs[0];
+        let val_ata_result = InterfaceAccount::<TokenAccount>::try_from(val_ata_accinfo);
+        require!(val_ata_result.is_ok(), ErrorCode::InvalidAtaAccount);
+        let val_ata = val_ata_result.unwrap();
+    
+        // (B) Ensure last_minted is within 60 minutes from now
+        let current_time = clock.unix_timestamp;
+        let last_minted = val_pda.last_minted.unwrap_or(0);
+        let minted_diff = current_time.saturating_sub(last_minted);
+        // minted_diff in seconds, must be <= 3600 (60 min)
+        if minted_diff > 60 * 60 {
+            msg!(
+                "No reward => last_minted too long ago ({} minutes). Skipping.",
+                minted_diff / 60
+            );
+            return Ok(());
+        }
+    
+        // (C) Calculate how many minutes to reward based on last_claimed
+        let last_claimed = val_pda.last_claimed.unwrap_or(0);
+        let diff_seconds = current_time.saturating_sub(last_claimed);
+        let diff_minutes = diff_seconds as u64 / 60;
+        // Cap it at 60 => 1 hour max
         let minutes_capped = diff_minutes.min(60);
+    
         if minutes_capped == 0 {
-            msg!("No reward => last_minted was too recent");
+            msg!("No reward => last_claimed was too recent => skipping");
             return Ok(());
         }
+    
+        let tokens_per_minute_lamports: u64 = 28_570;
 
-        // 3) 0.02857 tokens per minute
-        let ratio = 0.02857_f64;
-        let reward_f64 = minutes_capped as f64 * ratio;
-        let reward_u64 = reward_f64 as u64; // truncated
-
-        if reward_u64 == 0 {
-            msg!("Truncated to 0 => no reward => skipping");
+        // minutes_capped = how many minutes since last_claimed, capped at 60
+        let minted_amount = tokens_per_minute_lamports.saturating_mul(minutes_capped);
+        if minted_amount == 0 {
+            msg!("No reward => skipping");
             return Ok(());
         }
-
-        // 4) Mint to validator ATA
+    
+        // (E) Mint to validator’s ATA
         let bump = ctx.accounts.mint_authority.bump;
         let seeds_auth: &[&[u8]] = &[b"mint_authority".as_ref(), &[bump]];
         let signer_seeds = &[&seeds_auth[..]];
-
+    
         let cpi_ctx = CpiContext::new_with_signer(
             ctx.accounts.token_program.to_account_info(),
             MintTo {
                 mint: ctx.accounts.fancy_mint.to_account_info(),
-                to: ctx.accounts.validator_ata.to_account_info(),
+                to: val_ata.to_account_info(),
                 authority: ctx.accounts.mint_authority.to_account_info(),
             },
             signer_seeds,
         );
-        token::mint_to(cpi_ctx, reward_u64)?;
-
-        // 5) Update last_minted => resets the timer
-        val_pda.last_minted = Some(current_time);
+    
+        // (F) Update `last_claimed` but *not* `last_minted`
+        val_pda.last_claimed = Some(current_time);
+        token_2022::mint_to(cpi_ctx, minted_amount)?;
 
         msg!(
-            "Claimed {} tokens => validator={} after {} minutes (capped at 60)",
-            reward_u64,
+            "Claimed {} tokens => validator={} after {} minutes (capped at 60). minted_diff={} min",
+            minted_amount,
             val_pda.address,
-            diff_minutes
+            diff_minutes,
+            minted_diff / 60
         );
-
+    
         Ok(())
     }
+    
+    // (NEW) The function for validators to claim up to 1 hour of tokens at 0.02857/min
+    // pub fn claim_validator_reward<'info>(
+    //     ctx: Context<'_, '_, 'info, 'info, ClaimValidatorReward<'info>>,
+    //     game_number: u32,
+    // ) -> Result<()> {
+    //     let val_pda = &mut ctx.accounts.validator_pda;
+    //     require!(
+    //         val_pda.address == ctx.accounts.validator.key(),
+    //         ErrorCode::ValidatorNotRegistered
+    //     );
+    //     let leftover_accs = &ctx.remaining_accounts;
+    //     require!(
+    //         !leftover_accs.is_empty(),
+    //         ErrorCode::InsufficientLeftoverAccounts
+    //     );
+    //     let clock = Clock::get()?;
+
+    //     let val_ata_accinfo = &leftover_accs[0];
+
+    //     let val_ata_result =
+    //     InterfaceAccount::<TokenAccount>::try_from(val_ata_accinfo);
+
+    //     require!(val_ata_result.is_ok(), ErrorCode::InvalidAtaAccount);
+    //     let val_ata = val_ata_result.unwrap();
+
+    //     let current_time = clock.unix_timestamp;
+    //     let last_time = val_pda.last_minted.unwrap_or(0);
+
+    //     // 1) Compute how many minutes since last minted
+    //     let diff_seconds = current_time.saturating_sub(last_time);
+    //     let diff_minutes = diff_seconds.max(0) as u64 / 60;
+
+    //     // 2) Cap it at 60 => 1 hour max
+    //     let minutes_capped = diff_minutes.min(60);
+    //     if minutes_capped == 0 {
+    //         msg!("No reward => last_minted was too recent");
+    //         return Ok(());
+    //     }
+
+    //     // 3) 0.02857 tokens per minute
+    //     let ratio = 0.02857_f64;
+    //     let reward_f64 = minutes_capped as f64 * ratio;
+    //     let reward_u64 = reward_f64 as u64; // truncated
+
+    //     if reward_u64 == 0 {
+    //         msg!("Truncated to 0 => no reward => skipping");
+    //         return Ok(());
+    //     }
+
+    //     // 4) Mint to validator ATA
+    //     let bump = ctx.accounts.mint_authority.bump;
+    //     let seeds_auth: &[&[u8]] = &[b"mint_authority".as_ref(), &[bump]];
+    //     let signer_seeds = &[&seeds_auth[..]];
+
+    //     let cpi_ctx = CpiContext::new_with_signer(
+    //         ctx.accounts.token_program.to_account_info(),
+    //         MintTo {
+    //             mint: ctx.accounts.fancy_mint.to_account_info(),
+    //             to: val_ata.to_account_info(),
+    //             authority: ctx.accounts.mint_authority.to_account_info(),
+    //         },
+    //         signer_seeds,
+    //     );
+    //     token_2022::mint_to(cpi_ctx, reward_u64)?;
+
+    //     // 5) Update last_minted => resets the timer
+    //     val_pda.last_minted = Some(current_time);
+
+    //     msg!(
+    //         "Claimed {} tokens => validator={} after {} minutes (capped at 60)",
+    //         reward_u64,
+    //         val_pda.address,
+    //         diff_minutes
+    //     );
+
+    //     Ok(())
+    // }
 }
 
 // --------------------------------------------------------------------
@@ -1080,11 +1150,11 @@ pub struct ClaimValidatorReward<'info> {
     #[account(mut)]
     pub validator: Signer<'info>,
 
-    #[account(mut)]
-    pub validator_ata: Account<'info, TokenAccount>,
-    //need fixing, dapp
+    // #[account(mut)]
+    // pub validator_ata: InterfaceAccount<'info, TokenAccount>,
+
     #[account(mut, address = dapp.mint_pubkey)]
-    pub fancy_mint: Account<'info, Mint>,
+    pub fancy_mint: InterfaceAccount<'info, Mint>,
 
     #[account(seeds = [b"dapp"], bump)]
     pub dapp: Account<'info, DApp>,
@@ -1095,8 +1165,8 @@ pub struct ClaimValidatorReward<'info> {
     )]
     pub mint_authority: Account<'info, MintAuthority>,
 
-    #[account(address = token::ID)]
-    pub token_program: Program<'info, Token>,
+    #[account(address = TOKEN_2022_PROGRAM_ID)]  // Changed from `token::ID` to `spl_token_2022::ID`
+    pub token_program: Program<'info, Token2022>,
 
     pub system_program: Program<'info, System>,
 }
@@ -1140,6 +1210,11 @@ pub enum ErrorCode {
     AccountAlreadyExists,
     #[msg("Invalid name length.")]
     InvalidNameLength,
+    #[msg("Insufficient leftover accounts.")]
+    InsufficientLeftoverAccounts,
+    #[msg("Invalid associated token account.")]
+    InvalidAtaAccount
+
 }
 
 /// We compute failover_tolerance as the # of digits in (validator_count+3)/4

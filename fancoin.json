@@ -1,0 +1,606 @@
+{
+  "version": "0.1.0",
+  "name": "fancoin",
+  "docs": [
+    "(NEW) For initialize_mint"
+  ],
+  "instructions": [
+    {
+      "name": "initializeGameAndMint",
+      "accounts": [
+        {
+          "name": "game",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mintAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mintForGame",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "description",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "punchIn",
+      "accounts": [
+        {
+          "name": "game",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "validatorPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "validator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "mintPubkey",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "registerPlayerPda",
+      "docs": [
+        "Register a player with a unique name by initializing PlayerPda + PlayerNamePda"
+      ],
+      "accounts": [
+        {
+          "name": "game",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "fancyMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "playerPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "playerNamePda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "userAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "mintPubkey",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "registerValidatorPda",
+      "accounts": [
+        {
+          "name": "game",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "fancyMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "validatorPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "validatorAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "mintPubkey",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "submitMintingList",
+      "docs": [
+        "The main multi-player mint function",
+        "(We do *NOT* mint to validators here. Instead, we simply set val_pda.last_minted = now.)"
+      ],
+      "accounts": [
+        {
+          "name": "game",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "validatorPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "validator",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "fancyMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mintAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "playerIds",
+          "type": {
+            "vec": "u32"
+          }
+        },
+        {
+          "name": "mintPubkey",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "approvePlayerMinting",
+      "accounts": [
+        {
+          "name": "game",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "validatorPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "validator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "playerPda",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "gameNumber",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "claimValidatorReward",
+      "docs": [
+        "(NEW) The function for validators to claim up to 1 hour of tokens at 0.02857/min"
+      ],
+      "accounts": [
+        {
+          "name": "game",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "validatorPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "validator",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "fancyMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mintAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "validatorAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "mintPubkey",
+          "type": "publicKey"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Game",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "playerCount",
+            "type": "u32"
+          },
+          {
+            "name": "validatorCount",
+            "type": "u32"
+          },
+          {
+            "name": "activeValidatorCount",
+            "type": "u32"
+          },
+          {
+            "name": "lastResetHour",
+            "type": {
+              "option": "u32"
+            }
+          },
+          {
+            "name": "status",
+            "type": "u8"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "lastSeed",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "lastPunchInTime",
+            "type": {
+              "option": "i64"
+            }
+          },
+          {
+            "name": "mintPubkey",
+            "type": "publicKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerPda",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "rewardAddress",
+            "type": "publicKey"
+          },
+          {
+            "name": "lastNameChange",
+            "type": {
+              "option": "i64"
+            }
+          },
+          {
+            "name": "lastRewardChange",
+            "type": {
+              "option": "i64"
+            }
+          },
+          {
+            "name": "partialValidators",
+            "type": {
+              "vec": "publicKey"
+            }
+          },
+          {
+            "name": "lastMinted",
+            "type": {
+              "option": "i64"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerNamePda",
+      "docs": [
+        "A small account to store a name->PlayerPda reference, ensuring uniqueness."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "name",
+            "docs": [
+              "The user-chosen name (up to 32 bytes)."
+            ],
+            "type": "string"
+          },
+          {
+            "name": "playerPda",
+            "docs": [
+              "The PDA that uses this name."
+            ],
+            "type": "publicKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ValidatorPda",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "address",
+            "type": "publicKey"
+          },
+          {
+            "name": "lastActivity",
+            "type": "i64"
+          },
+          {
+            "name": "lastMinted",
+            "type": {
+              "option": "i64"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MintAuthority",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Unauthorized",
+      "msg": "Unauthorized."
+    },
+    {
+      "code": 6001,
+      "name": "NotInPunchInPeriod",
+      "msg": "Not in punch-in period."
+    },
+    {
+      "code": 6002,
+      "name": "NotInMintPeriod",
+      "msg": "Not in mint period."
+    },
+    {
+      "code": 6003,
+      "name": "InsufficientStake",
+      "msg": "Insufficient stake."
+    },
+    {
+      "code": 6004,
+      "name": "PlayerNameExists",
+      "msg": "Player name already exists."
+    },
+    {
+      "code": 6005,
+      "name": "ValidatorNotRegistered",
+      "msg": "Validator not registered."
+    },
+    {
+      "code": 6006,
+      "name": "HashConversionError",
+      "msg": "Hash conversion error."
+    },
+    {
+      "code": 6007,
+      "name": "InvalidTimestamp",
+      "msg": "Invalid timestamp."
+    },
+    {
+      "code": 6008,
+      "name": "GameNumberMismatch",
+      "msg": "Game number mismatch."
+    },
+    {
+      "code": 6009,
+      "name": "GameIsBlacklisted",
+      "msg": "Game is blacklisted."
+    },
+    {
+      "code": 6010,
+      "name": "GameNotWhitelisted",
+      "msg": "Game not whitelisted."
+    },
+    {
+      "code": 6011,
+      "name": "NameChangeCooldown",
+      "msg": "Name cooldown active."
+    },
+    {
+      "code": 6012,
+      "name": "InvalidSeeds",
+      "msg": "Invalid seeds."
+    },
+    {
+      "code": 6013,
+      "name": "InvalidRange",
+      "msg": "Invalid range."
+    },
+    {
+      "code": 6014,
+      "name": "NoSeed",
+      "msg": "No seed generated."
+    },
+    {
+      "code": 6015,
+      "name": "AccountAlreadyExists",
+      "msg": "Account already exists."
+    },
+    {
+      "code": 6016,
+      "name": "InvalidNameLength",
+      "msg": "Invalid name length."
+    }
+  ],
+  "metadata": {
+    "address": "HP9ucKGU9Sad7EaWjrGULC2ZSyYD1ScxVPh15QmdRmut"
+  }
+}
