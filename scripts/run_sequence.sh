@@ -31,16 +31,14 @@ fi
 SCRIPTS=(
     "1_val_pay_vals_from_localwallet.py"
     "2_scraper2.py"
-    "3_test_fancoin.py"
-    "4_test_fancoin_2.py"
-    "punch_in.py"
-    "punch_in2.py"
-    "bulk_register_players.py"
-    "val_player_scrape_and_post_dbg.py"
-    #"4_test_fancoin_2.py"
-    #"5_bulk_register_players_with_airdrop2.py"
-    #"6_val_player_scrape_and_post_dbg.py"
-    #"7_val_player_scrape_and_post_dbg2.py"
+    "3_val1_init.py"
+    "4_val2_init.py"
+    "5_mass_signup.py"
+    "6_punch_in.py"
+    "7_punch_in2.py"
+    #"8_val1_player_scrape_and_post_mvp.py"
+    #"9_val2_player_scrape_and_post_mvp.py"
+    
 )
 
 # Iterate over each script and execute

@@ -37,3 +37,4 @@ sha3 = "0.10" # Added sha3 crate
 chrono = { version = "0.4", features = ["serde"] }
 spl-type-length-value = "=0.3.0"
 spl-token-2022 = "=3.0.5"
+solana-gateway = { version = "0.6.0", features = ["no-entrypoint"] }

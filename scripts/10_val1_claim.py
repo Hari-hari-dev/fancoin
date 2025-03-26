@@ -343,9 +343,9 @@ async def register_player_pda(
 async def claim_validator_reward(
     program: Program,
     client: AsyncClient,
-    dapp_pda: Pubkey,
+    #dapp_pda: Pubkey,
     game_pda: Pubkey,
-    game_number: int,
+    #game_number: int,
     validator_kp: Keypair,
     #validator_pda: Pubkey,
     fancy_mint: Pubkey,
@@ -369,7 +369,7 @@ async def claim_validator_reward(
         # The ATA also needs to be writable if we do a `mint_to` on it
         AccountMeta(pubkey=val_ata, is_signer=False, is_writable=True),
     ]
-    seeds_val = [b"validator", game_number.to_bytes(4, "little"), bytes(validator_kp.pubkey())]
+    seeds_val = [b"validator", bytes(fancy_mint), bytes(validator_kp.pubkey())]
     validator_pda, _ = Pubkey.find_program_address(seeds_val, program.program_id)
     print(f"[DEBUG] Derived validator_pda = {validator_pda}")
 
@@ -380,14 +380,14 @@ async def claim_validator_reward(
         token_pid = SPL_TOKEN_PROGRAM_ID
 
         tx_sig = await program.rpc["claim_validator_reward"](
-            game_number,
+            fancy_mint,
             ctx=Context(
                 accounts={
                     "game":           game_pda,
                     "validator_pda":  validator_pda,
                     "validator":      validator_kp.pubkey(),
                     "fancy_mint":     fancy_mint,
-                    "dapp":           dapp_pda,
+                    #"dapp":           dapp_pda,
                     "mint_authority": mint_auth_pda,
                     "token_program":  token_pid,
                     #"associated_token_program": ASSOCIATED_TOKEN_PROGRAM_ID,
@@ -437,18 +437,18 @@ async def main():
         print("Program loaded successfully.")
 
         # 1) Initialize the Dapp
-        dapp_pda = await initialize_dapp(program, client)
-        file_name = "output.txt"
+        #dapp_pda = await initialize_dapp(program, client)
+        #file_name = "output.txt"
         # 2) Initialize the Mint
-        (mint_auth_pda, mint_for_dapp_pda) = await initialize_mint(program, client, dapp_pda)
-        with open(file_name, "w") as file:
-            file.write(str(mint_for_dapp_pda))  # Convert the variable to a string if necessary
+        #(mint_auth_pda, mint_for_dapp_pda) = await initialize_mint(program, client, dapp_pda)
+        #with open(file_name, "w") as file:
+        #    file.write(str(mint_for_dapp_pda))  # Convert the variable to a string if necessary
 
-        print(f"The variable has been written to {file_name}")
+        #print(f"The variable has been written to {file_name}")
         # 3) Initialize a Game
-        game_number = 1
-        description = "Minimal Game Example"
-        game_pda = await initialize_game(program, client, game_number, description, dapp_pda)
+        #game_number = 1
+        #description = "Minimal Game Example"
+        #game_pda = await initialize_game(program, client, game_number, description, dapp_pda)
 
         # 4) Register a validator
 
@@ -463,7 +463,14 @@ async def main():
         #     fancy_mint=mint_for_dapp_pda,
         #     dapp_pda=dapp_pda
         # )
+        game_pda_str = Path("game_pda.txt").read_text().strip()
+        mint_auth_pda_str = Path("mint_auth_pda.txt").read_text().strip()
+        minted_mint_pda_str = Path("minted_mint_pda.txt").read_text().strip()
 
+
+        game_pda = Pubkey.from_string(game_pda_str)
+        mint_auth_pda = Pubkey.from_string(mint_auth_pda_str)
+        minted_mint_pda = Pubkey.from_string(minted_mint_pda_str)
         # # 5) Punch in as validator
         # await punch_in(program, game_pda, game_number, validator_kp, validator_pda)  # Pass validator_pda
 
@@ -497,12 +504,12 @@ async def main():
         #   We must pass dapp_pda as well
         await claim_validator_reward(
             program, client,
-            dapp_pda=dapp_pda,          # Pass in the known DApp
+            #dapp_pda=dapp_pda,          # Pass in the known DApp
             game_pda=game_pda,
-            game_number=game_number,
+            #game_number=game_number,
             validator_kp=validator_kp,
             #validator_pda=validator_pda,
-            fancy_mint=mint_for_dapp_pda,
+            fancy_mint=minted_mint_pda,
             mint_auth_pda=mint_auth_pda,
             #leftover_player_pda=alice_pda,
             #leftover_player_ata=alice_ata,

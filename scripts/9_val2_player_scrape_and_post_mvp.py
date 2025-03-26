@@ -34,10 +34,17 @@ Confirmed = Commitment("confirmed")  # Ensure this matches your actual Commitmen
 program = None
 provider = None
 program_id = None
-game_pda = None
 dapp_pda = None
 
 CHUNK_SIZE = 3  # how many players to mint per TX
+game_pda_str = Path("game_pda.txt").read_text().strip()
+mint_auth_pda_str = Path("mint_auth_pda.txt").read_text().strip()
+minted_mint_pda_str = Path("minted_mint_pda.txt").read_text().strip()
+
+
+game_pda = Pubkey.from_string(game_pda_str)
+mint_auth_pda = Pubkey.from_string(mint_auth_pda_str)
+minted_mint_pda = Pubkey.from_string(minted_mint_pda_str)
 
 ###############################################################################
 # 1) Load Validator Keypair
@@ -87,13 +94,13 @@ async def find_users(deduped, aggregated_local_server_names, name_map):
 ###############################################################################
 # 2) Debug-check DApp
 ###############################################################################
-async def debug_check_dapp_pda():
-    dapp_data = await program.account["DApp"].fetch(dapp_pda)
-    print("[DEBUG] DApp Account Data:")
-    print(f"         owner                = {dapp_data.owner}")
-    print(f"         global_player_count  = {dapp_data.global_player_count}")
-    print(f"         mint_pubkey         = {dapp_data.mint_pubkey}")
-
+# async def debug_check_dapp_pda():
+#     dapp_data = await program.account["DApp"].fetch(dapp_pda)
+#     print("[DEBUG] DApp Account Data:")
+#     print(f"         owner                = {dapp_data.owner}")
+#     print(f"         global_player_count  = {dapp_data.global_player_count}")
+#     print(f"         mint_pubkey         = {dapp_data.mint_pubkey}")
+# fix, flavor text, consider using
 ###############################################################################
 # 3) On-chain fetch: build name -> { index, pda, reward_address }
 ###############################################################################
@@ -116,14 +123,14 @@ async def fetch_player_pdas_map() -> dict:
     print(f"[DEBUG] Found {len(all_records)} PlayerPda records on-chain.")
 
     # Fetch DApp data to get total player count
-    dapp_data = await program.account["DApp"].fetch(dapp_pda)
-    total_count = dapp_data.global_player_count
+    game_data = await program.account["Game"].fetch(game_pda)
+    total_count = game_data.player_count
 
     # Derive PDA to index mapping
     pda_to_index = {}
     for i in range(total_count):
         seed_index_bytes = i.to_bytes(4, "little")
-        (pda, _) = Pubkey.find_program_address([b"player_pda", seed_index_bytes], program.program_id)
+        (pda, _) = Pubkey.find_program_address([b"player_pda", bytes(game_pda), seed_index_bytes], program.program_id)
         pda_to_index[str(pda)] = i
 
     # Build the name map with reward_address
@@ -156,7 +163,6 @@ def find_associated_token_address(owner: Pubkey, mint: Pubkey) -> Pubkey:
 # 4) submit_minting_list: advanced leftover approach
 ###############################################################################
 async def submit_minting_list_with_leftover(
-    game_number: int,
     matched_names: list[str],
     name_map: dict,
 ):
@@ -164,19 +170,19 @@ async def submit_minting_list_with_leftover(
     validator_pubkey = validator_kp.pubkey()
 
     # Derive the validator_pda
-    seeds_val = [b"validator", game_number.to_bytes(4, "little"), bytes(validator_pubkey)]
+    seeds_val = [b"validator", bytes(minted_mint_pda), bytes(validator_pubkey)]
     (validator_pda, bump_val) = Pubkey.find_program_address(seeds_val, program.program_id)
 
     # Fetch DApp's mint_pubkey
-    dapp_data = await program.account["DApp"].fetch(dapp_pda)
-    fancy_mint_pk = dapp_data.mint_pubkey
+    #dapp_data = await program.account["DApp"].fetch(dapp_pda)
+    #fancy_mint_pk = dapp_data.mint_pubkey
 
     # Derive mint_authority
-    (mint_auth_pda, bump_mint_auth) = Pubkey.find_program_address([b"mint_authority"], program_id)
+    #(mint_auth_pda, bump_mint_auth) = Pubkey.find_program_address([b"mint_authority"], program_id)
 
     # SysvarRent
     rent_sysvar_pubkey = Pubkey.from_string("SysvarRent111111111111111111111111111111111")
-    validator_ata = find_associated_token_address(validator_pubkey, fancy_mint_pk)
+    validator_ata = find_associated_token_address(validator_pubkey, minted_mint_pda)
 
     # Initialize validator_pda if not already initialized
     try:
@@ -188,11 +194,11 @@ async def submit_minting_list_with_leftover(
         ctx_init_val = Context(
             accounts={
                 "game": game_pda,
-                "fancy_mint": fancy_mint_pk,
+                "fancy_mint": minted_mint_pda,
                 "validator_pda": validator_pda,
                 "user": validator_pubkey,
                 "validator_ata": validator_ata,
-                "dapp": dapp_pda,
+                #"dapp": dapp_pda,
                 "token_program": SPL_TOKEN_PROGRAM_ID,
                 "associated_token_program": ASSOCIATED_TOKEN_PROGRAM_ID,
                 "system_program": SYS_PROGRAM_ID,
@@ -203,7 +209,7 @@ async def submit_minting_list_with_leftover(
         # Invoke the register_validator_pda instruction
         try:
             tx_sig_init_val = await program.rpc["register_validator_pda"](
-                game_number,
+                minted_mint_pda,
                 ctx=ctx_init_val
             )
             print(f"[INFO] Registered validator_pda + ATA. Tx Sig: {tx_sig_init_val}")
@@ -251,13 +257,14 @@ async def submit_minting_list_with_leftover(
                 "game": game_pda,
                 "validator_pda": validator_pda,
                 "validator": validator_pubkey,
-                "fancy_mint": fancy_mint_pk,
-                "dapp": dapp_pda,
+                "fancy_mint": minted_mint_pda,
+                #"dapp": dapp_pda,
                 "mint_authority": mint_auth_pda,
                 "token_program": SPL_TOKEN_PROGRAM_ID,
-                "rent": rent_sysvar_pubkey,
-                "system_program": SYSTEM_PROGRAM_ID,
+                #"rent": rent_sysvar_pubkey,
                 "associated_token_program": ASSOCIATED_TOKEN_PROGRAM_ID,
+                "system_program": SYSTEM_PROGRAM_ID,
+
             },
             signers=[validator_kp],
             remaining_accounts=leftover_accounts
@@ -266,7 +273,7 @@ async def submit_minting_list_with_leftover(
         # Call your on-chain `submit_minting_list` instruction
         try:
             tx_sig = await program.rpc["submit_minting_list"](
-                game_number,
+                minted_mint_pda,
                 numeric_ids,
                 ctx=ctx
             )
@@ -390,16 +397,16 @@ async def main():
         print("Program loaded successfully.")
 
         # 2) Derive PDAs
-        game_number = 1
-        (game_pda, bump_game) = Pubkey.find_program_address(
-            [b"game", game_number.to_bytes(4, "little")], program_id
-        )
-        (dapp_pda, bump_dapp) = Pubkey.find_program_address([b"dapp"], program_id)
+        #game_number = 1
+        #(game_pda, bump_game) = Pubkey.find_program_address(
+        #    [b"game", game_number.to_bytes(4, "little")], program_id
+        #)
+        #(dapp_pda, bump_dapp) = Pubkey.find_program_address([b"dapp"], program_id)
         print(f"[DEBUG] using game_pda={game_pda}")
-        print(f"[DEBUG] using dapp_pda={dapp_pda}")
+        #print(f"[DEBUG] using dapp_pda={dapp_pda}")
 
         # 3) Debug-check DApp
-        await debug_check_dapp_pda()
+        #await debug_check_dapp_pda()
         balance_resp = await provider.connection.get_balance(validator_pubkey)
         lamports = balance_resp.value
         sol_balance = lamports / 1e9
@@ -435,7 +442,7 @@ async def main():
 
                 # Example: If you only want to do a mint on the first iteration:
                 if matched_names and iteration == 1:
-                    await submit_minting_list_with_leftover(game_number, matched_names, name_map)
+                    await submit_minting_list_with_leftover(matched_names, name_map)
                     print(f"[INFO] Minting period finished. Checking validator balance before next wait...")
 
                     # ───────────────────────────────────────────────────────────

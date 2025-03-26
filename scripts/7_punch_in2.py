@@ -40,7 +40,7 @@ async def punch_in(
     print("\nPunching In as Validator...")
     try:
         tx = await program.rpc["punch_in"](
-            game_number,
+            minted_mint_pda,
             ctx=Context(
                 accounts={
                     "game": game_pda,
@@ -98,10 +98,10 @@ async def main():
         #     bytes(validator_kp.pubkey()),
         # ]
         # validator_pda, _ = Pubkey.find_program_address(validator_seeds, program_id)
-        GAME_NUMBER=1
+        #GAME_NUMBER=1
         validator_kp = load_keypair("./val2-keypair.json")  # Adjust path accordingly
         validator_pubkey = validator_kp.pubkey()
-        seeds_val = [b"validator", GAME_NUMBER.to_bytes(4, "little"), bytes(validator_kp.pubkey())]
+        seeds_val = [b"validator", bytes(minted_mint_pda), bytes(validator_kp.pubkey())]
         validator_pda, _ = Pubkey.find_program_address(seeds_val, program.program_id)
         print(f"[DEBUG] Derived validator_pda = {validator_pda}")
 

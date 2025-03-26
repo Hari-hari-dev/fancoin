@@ -24,13 +24,14 @@ async def main():
     client = AsyncClient("https://api.devnet.solana.com", commitment=Confirmed)
 
     # 4) Create an AnchorPy wallet + provider
-    wallet = Wallet(sender_keypair)
+   # wallet = Wallet(sender_keypair)
+    wallet = Wallet.local()
     provider = Provider(client, wallet)
 
     # 5) Destination & amount
-    destination_str = "5DWJghsJtVS3zSS18HwCKmvsgWXytsFFvYfBgtSnA652"
+    destination_str = "AWdz6cwVhmcgiPdvyU4QU4h6sKmQYYATSvJHxZn9EfZH"
     destination_pubkey = Pubkey.from_string(destination_str)
-    lamports_to_send = int(14.90 * 1_000_000_000)  # 0.01 SOL
+    lamports_to_send = int(1_000_000_000)  # 0.01 SOL
 
     # 6) Construct the transfer instruction
     ix = transfer(

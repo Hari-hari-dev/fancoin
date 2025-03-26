@@ -226,19 +226,18 @@ async def create_player_ata(
     # ------------------------------------------------------------
     user_pubkey = user_kp.pubkey()
     user_ata = find_associated_token_address(user_pubkey, mint_pubkey)
-    (dapp_pda, _) = Pubkey.find_program_address([b"dapp"], program_id)
-    print(f"[DEBUG] dapp_pda => {dapp_pda}")
-        # 1) Fetch typed DApp account object
-    # 1) Fetch Game to get the current `player_count`
-    dapp_data = await program.account["DApp"].fetch(dapp_pda)
-    current_count = dapp_data.global_player_count
-    print(f"[DEBUG] current_count from on-chain DApp = {current_count}")
+
+    # # 1) Fetch Game to get the current `player_count`
+    # game_data = await program.account["Game"].fetch(game_pda)
+    # current_count = game_data.player_count
+    # print(f"[DEBUG] current_count from on-chain Game = {current_count}")
     print(f"\nCreating ATA (if needed) for user={user_pubkey}, mint={mint_pubkey}")
     try:
         tx_sig = await program.rpc["create_user_ata_if_needed"](
+            mint_pubkey,
             ctx=Context(
                 accounts={
-                    "dapp": dapp_pda,
+                    #"dapp": dapp_pda,
                     "user": user_pubkey,
                     "fancy_mint": mint_pubkey,
                     "game": game_pda,
@@ -275,45 +274,48 @@ async def register_player_pda(
         print(f"[DEBUG] dapp_pda => {dapp_pda}")
         # 1) Fetch typed DApp account object
     # 1) Fetch Game to get the current `player_count`
-        dapp_data = await program.account["DApp"].fetch(dapp_pda)
-        current_count = dapp_data.global_player_count
-        print(f"[DEBUG] current_count from on-chain DApp = {current_count}")
+        # game_data = await program.account["Game"].fetch(game_pda)
+        # current_count = game_data.player_count
+        #print(f"[DEBUG] current_count from on-chain DApp = {current_count}")
+        game_data = await program.account["Game"].fetch(game_pda)
+        player_count = game_data.player_count
+        print(f"Current game.player_count = {player_count}")
 
-        # 2) Derive the new player_pda
-        dapp_global_count_bytes = current_count.to_bytes(4, "little")
-        (player_pda_pubkey, _) = Pubkey.find_program_address(
-            [b"player_pda", dapp_global_count_bytes],
+        # 2) Derive PDAs
+        (player_pda, _) = Pubkey.find_program_address(
+            [
+                b"player_pda",
+                bytes(game_pda),
+                player_count.to_bytes(4, "little")
+            ],
             program.program_id
         )
-        print(f"[DEBUG] Derived player_pda => {player_pda_pubkey}")
+        print(f"[DEBUG] Derived player_pda => {player_pda}")
+
+        (player_name_pda, _) = Pubkey.find_program_address(
+            [
+                b"player_name",
+                bytes(game_pda),
+                player_name.encode("utf-8")
+            ],
+            program.program_id
+        )
+        print(f"[DEBUG] Derived player_name_pda => {player_name_pda}")
 
         # 3) Derive the player's ATA manually
         player_pubkey = player_keypair.pubkey()
         user_ata_pubkey = derive_ata(player_pubkey, fancy_mint)
         print(f"[DEBUG] user_ata => {user_ata_pubkey} for player {player_name}")
-        (player_pda, _) = Pubkey.find_program_address(
-            [
-                b"player_pda",
-                current_count.to_bytes(4, "little")
-            ],
-            program.program_id
-        )
-        (player_name_pda, _) = Pubkey.find_program_address(
-            [
-                b"player_name",
-                player_name.encode("utf-8")
-            ],
-            program.program_id
-        )
         leftover_accounts = []
         leftover_accounts.append(AccountMeta(pubkey=user_ata_pubkey, is_signer=False, is_writable=True))
 
         # 4) Call register_player_pda, passing in all required accounts:
         tx_sig = await program.rpc["register_player_pda"](
+            fancy_mint,
             player_name,
             ctx=Context(
                 accounts={
-                    "dapp": dapp_pda,
+                    #"dapp": dapp_pda,
                     "fancy_mint": fancy_mint,
                     "game": game_pda,
                     "player_pda": player_pda,
