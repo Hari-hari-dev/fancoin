@@ -23,7 +23,7 @@ use anchor_spl::associated_token::AssociatedToken;
 use sha3::{Digest, Keccak256};
 use std::convert::TryInto;
 
-declare_id!("BGPqPR3Jineeu8GphwfX2P6LnLWx9ufJtgeobiaYqH5r");
+declare_id!("B2K4GmpB86BH5npaZrDsN5kt9TRv48ajeUBbc3tFd2V1");
 
 // --------------------------------------------------------------------
 // Accounts + Data
@@ -31,9 +31,9 @@ declare_id!("BGPqPR3Jineeu8GphwfX2P6LnLWx9ufJtgeobiaYqH5r");
 
 
 #[account]
-pub struct Game {
+pub struct Dapp {
     pub player_count: u32,
-    //pub game_number: u32,
+    //pub dapp_number: u32,
     pub validator_count: u32,
     pub active_validator_count: u32, // New field to track active validators
     pub last_reset_hour: Option<u32>,  // Changed to Option<u32>
@@ -58,28 +58,34 @@ pub struct Game {
     pub coin_issuance_rate_lock: bool,
     pub commission_percent_lock: bool,
     pub gatekeeper_network: Pubkey,
+    pub player_limit: u32,
+
 
 }
-impl Game {
-    pub const LEN: usize = 8
-        + 4 // player_count
-        + 4 // validator_count
-        + 4 // active_validator_count
-        + 5 // last_reset_hour (Option<u32>)
-        + (4 + 64) // description
-        + (4 + 64) // socials
-        + 9 // last_seed
-        + 9 // last_punch_in_time
-        + 32 // mint_pubkey
-        + 32                           // commission_ata
-        + 2                            // commission_percent (u16)
-        + 8                            // coin_issuance_rate (u64)
-        + 8                            // validator_claim_rate (u64)
-        + 1 
-        + 32
-        + 2
-        + 2
-        + 2;      // owner
+impl Dapp {
+    pub const LEN: usize = 340;
+        // + 4 // player_count
+        // + 4 // validator_count
+        // + 4 // active_validator_count
+        // + 5 // last_reset_hour (Option<u32>)
+        // + (4 + 64) // description
+        // + (4 + 64) // socials
+        // + 9 // last_seed
+        // + 9 // last_punch_in_time
+        // + 33 // mint_pubkey
+        // + 33                           // commission_ata
+        // + 3                            // commission_percent (u16)
+        // + 8                            // coin_issuance_rate (u64)
+        // + 8                            // validator_claim_rate (u64)
+        // + 2 
+        // + 33
+        // + 2
+        // + 2
+        // + 2
+        // + 33      // owner
+        // + 4 // <-- add 4 bytes for player_limit
+        // + 8;
+
   
 }
 
@@ -99,18 +105,18 @@ pub struct PlayerPda {
 }
 impl PlayerPda {
     pub const MAX_PARTIAL_VALS: usize = 4;
-    pub const LEN: usize = 8
-        + (4 + 32)
-        + 32
-        + 32
-        + 9
-        + 9
-        + 4 + (Self::MAX_PARTIAL_VALS * 32)
-        + 9
-        + 9
-        + 9
-        + 2
-        + 9;
+    pub const LEN: usize = 295;
+        // + (4 + 32)
+        // + 32
+        // + 32
+        // + 9
+        // + 9
+        // + 4 + (Self::MAX_PARTIAL_VALS * 32)
+        // + 9
+        // + 9
+        // + 9
+        // + 2
+        // + 9;
 }
 
 /// A small account to store a name->PlayerPda reference, ensuring uniqueness.
@@ -124,7 +130,7 @@ pub struct PlayerNamePda {
 }
 impl PlayerNamePda {
     pub const MAX_NAME_LEN: usize = 30;
-    pub const LEN: usize = 8 + (4 + Self::MAX_NAME_LEN + 8) + 32 + 2;  
+    pub const LEN: usize = 75; // + (4 + Self::MAX_NAME_LEN + 8) + 32 + 2;  
 }
 
 #[account]
@@ -138,7 +144,8 @@ pub struct ValidatorPda {
 }
 impl ValidatorPda {
     // 8 disc + 32 pubkey + 8 i64 + 9 (Option<i64>) = 57
-    pub const LEN: usize = 8 + 32 + 8 + 9 + 9;
+    pub const LEN: usize = 66;
+    //8 + 32 + 8 + 9 + 9;
 }
 
 
@@ -148,6 +155,10 @@ impl ValidatorPda {
 pub struct MintAuthority {
     pub bump: u8,
 }
+impl MintAuthority {
+    pub const LEN: usize = 9;
+}
+
 #[account]
 pub struct WalletPda {
     pub wallet: Pubkey,
@@ -175,71 +186,71 @@ pub struct RelinquishOwnership<'info> {
 pub struct PunchIn<'info> {
     #[account(
         mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"dapp", mint_pubkey.as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
-    // ♦ Replacing &game_number.to_le_bytes() in the Validator seed
+    // ♦ Replacing &dapp_number.to_le_bytes() in the Validator seed
     #[account(
         mut,
         seeds = [b"validator", mint_pubkey.as_ref(), validator.key().as_ref()],
         bump
     )]
     pub validator_pda: Account<'info, ValidatorPda>,
-    //pub gateway_token: UncheckedAccount<'info>,
+    pub gateway_token: UncheckedAccount<'info>,
     #[account(mut)]
     pub validator: Signer<'info>,
     pub system_program: Program<'info, System>,
 }
-#[derive(Accounts)]
-#[instruction(mint_pubkey: Pubkey)]
-pub struct RegisterValidatorPda<'info> {
-    #[account(
-        mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
-        bump
-    )]
-    pub game: Account<'info, Game>,
+// #[derive(Accounts)]
+// #[instruction(mint_pubkey: Pubkey)]
+// pub struct RegisterValidatorPda<'info> {
+//     #[account(
+//         mut,
+//         seeds = [b"dapp", mint_pubkey.as_ref()],
+//         bump
+//     )]
+//     pub dapp: Account<'info, Dapp>,
 
-    #[account(mut, constraint = fancy_mint.key() == game.mint_pubkey)]
-    pub fancy_mint: InterfaceAccount<'info, Mint>,
+//     #[account(mut, constraint = fancy_mint.key() == dapp.mint_pubkey)]
+//     pub fancy_mint: InterfaceAccount<'info, Mint>,
 
-    #[account(
-        init,
-        payer = user,
-        space = ValidatorPda::LEN,
-        seeds = [
-            b"validator",
-            mint_pubkey.as_ref(),
-            user.key().as_ref()
-        ],
-        bump
-    )]
-    pub validator_pda: Account<'info, ValidatorPda>,
+//     #[account(
+//         init,
+//         payer = user,
+//         space = ValidatorPda::LEN,
+//         seeds = [
+//             b"validator",
+//             mint_pubkey.as_ref(),
+//             user.key().as_ref()
+//         ],
+//         bump
+//     )]
+//     pub validator_pda: Account<'info, ValidatorPda>,
 
 
-    #[account(mut)]
-    pub user: Signer<'info>,
+//     #[account(mut)]
+//     pub user: Signer<'info>,
 
-    #[account(
-        init_if_needed,
-        payer = user,
-        associated_token::mint = fancy_mint,
-        associated_token::authority = user
-    )]
-    pub validator_ata: InterfaceAccount<'info, TokenAccount>,
-    pub gateway_token: UncheckedAccount<'info>,
+//     #[account(
+//         init_if_needed,
+//         payer = user,
+//         associated_token::mint = fancy_mint,
+//         associated_token::authority = user
+//     )]
+//     pub validator_ata: InterfaceAccount<'info, TokenAccount>,
+//     pub gateway_token: UncheckedAccount<'info>,
 
-    // #[account(seeds = [b"dapp"], bump)]
-    // pub dapp: Account<'info, DApp>,
+//     // #[account(seeds = [b"dapp"], bump)]
+//     // pub dapp: Account<'info, DApp>,
 
-    #[account(address = TOKEN_2022_PROGRAM_ID)]  // Changed from `token::ID` to `spl_token_2022::ID`
-    pub token_program: Program<'info, Token2022>,
-    pub associated_token_program: Program<'info, AssociatedToken>,
-    pub system_program: Program<'info, System>,
-    pub rent: Sysvar<'info, Rent>,
-}
+//     #[account(address = TOKEN_2022_PROGRAM_ID)]  // Changed from `token::ID` to `spl_token_2022::ID`
+//     pub token_program: Program<'info, Token2022>,
+//     pub associated_token_program: Program<'info, AssociatedToken>,
+//     pub system_program: Program<'info, System>,
+//     pub rent: Sysvar<'info, Rent>,
+// }
 #[derive(Accounts)]
 #[instruction(mint_pubkey: Pubkey)]
 pub struct CreateUserAtaIfNeeded<'info> {
@@ -251,12 +262,12 @@ pub struct CreateUserAtaIfNeeded<'info> {
     pub user: Signer<'info>,
 
     /// The mint for which we want an ATA
-    #[account(mut, constraint = fancy_mint.key() == game.mint_pubkey)]
+    #[account(mut, constraint = fancy_mint.key() == dapp.mint_pubkey)]
     pub fancy_mint: InterfaceAccount<'info, Mint>,
 
-    /// The Game (we only need this if you want to anchor an address check)
-    #[account(seeds = [b"game", mint_pubkey.as_ref()], bump)]
-    pub game: Account<'info, Game>,
+    /// The Dapp (we only need this if you want to anchor an address check)
+    #[account(seeds = [b"dapp", mint_pubkey.as_ref()], bump)]
+    pub dapp: Account<'info, Dapp>,
     pub gateway_token: UncheckedAccount<'info>,
     /// The derived user’s ATA
     #[account(
@@ -289,9 +300,9 @@ pub struct CreateUserAtaIfNeeded<'info> {
 pub struct UpdateCommissionInfo<'info> {
     #[account(
         mut,
-        has_one = owner @ErrorCode::Unauthorized, // must match the game.owner
+        has_one = owner @ErrorCode::Unauthorized, // must match the dapp.owner
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
     /// The current owner must sign
     #[account(mut)]
@@ -306,12 +317,12 @@ pub struct RegisterPlayerPda<'info> {
     // pub dapp: Account<'info, DApp>,
     #[account(
         mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"dapp", mint_pubkey.as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
     
-    #[account(mut, constraint = fancy_mint.key() == game.mint_pubkey)]
+    #[account(mut, constraint = fancy_mint.key() == dapp.mint_pubkey)]
     pub fancy_mint: InterfaceAccount<'info, Mint>,
 
     #[account(
@@ -320,8 +331,8 @@ pub struct RegisterPlayerPda<'info> {
         space = PlayerPda::LEN,
         seeds = [
             b"player_pda",
-            game.key().as_ref(),
-            &game.player_count.to_le_bytes()
+            dapp.key().as_ref(),
+            &dapp.player_count.to_le_bytes()
         ],
         bump
     )]
@@ -333,7 +344,7 @@ pub struct RegisterPlayerPda<'info> {
         space = PlayerNamePda::LEN,
         seeds = [
             b"player_name",
-            game.key().as_ref(),
+            dapp.key().as_ref(),
             name.as_bytes()
         ],
         bump
@@ -358,10 +369,10 @@ pub struct RegisterPlayerPda<'info> {
 pub struct SubmitMintingList<'info> {
     #[account(
         mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"dapp", mint_pubkey.as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
     #[account(
         mut,
@@ -372,7 +383,7 @@ pub struct SubmitMintingList<'info> {
 
     pub validator: Signer<'info>,
 
-    #[account(mut, constraint = fancy_mint.key() == game.mint_pubkey)]
+    #[account(mut, constraint = fancy_mint.key() == dapp.mint_pubkey)]
     pub fancy_mint: InterfaceAccount<'info, Mint>,
 
     // #[account(seeds = [b"dapp"], bump)]
@@ -409,7 +420,7 @@ pub struct UpdatePlayerNameCooldown<'info> {
         mut,
         seeds = [
             b"player_name",
-            game.key().as_ref(),
+            dapp.key().as_ref(),
             player_pda.name.as_bytes(),
         ],
         bump,
@@ -425,20 +436,20 @@ pub struct UpdatePlayerNameCooldown<'info> {
         space = PlayerNamePda::LEN,
         seeds = [
             b"player_name",
-            game.key().as_ref(),
+            dapp.key().as_ref(),
             new_name.as_bytes(),
         ],
         bump
     )]
     pub new_name_pda: Account<'info, PlayerNamePda>,
     pub gateway_token: UncheckedAccount<'info>,
-    /// If you want to verify the game 
+    /// If you want to verify the dapp 
     /// (not strictly necessary if you don’t do cross-checking).
     #[account(
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"dapp", mint_pubkey.as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
     #[account(address = system_program::ID)]
     pub system_program: Program<'info, System>,
@@ -459,7 +470,7 @@ pub struct TransferOwnership<'info> {
         mut,
         has_one = owner @ ErrorCode::Unauthorized
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
     #[account(mut)]
     pub owner: Signer<'info>,
@@ -474,21 +485,21 @@ pub struct TransferOwnership<'info> {
     curated_val: bool,
     initial_commission_tokens: u64,
 )]
-pub struct InitializeGameAndMint<'info> {
+pub struct InitializeDappAndMint<'info> {
 
     #[account(
         init,
         payer = user,
-        space = Game::LEN,
-        seeds = [b"game", mint_for_game.key().as_ref()],
+        space = Dapp::LEN,
+        seeds = [b"dapp", mint_for_dapp.key().as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
     #[account(
         init,
         payer = user,
-        space = 8 + 1, // Enough for MintAuthority
+        space = MintAuthority::LEN, // Enough for MintAuthority
         seeds = [b"mint_authority"],
         bump
     )]
@@ -502,9 +513,9 @@ pub struct InitializeGameAndMint<'info> {
         bump,
         mint::decimals = 6,
         mint::authority = mint_authority,
-        mint::freeze_authority = mint_authority
+        //mint::freeze_authority = mint_authority
     )]
-    pub mint_for_game: InterfaceAccount<'info, Mint>,
+    pub mint_for_dapp: InterfaceAccount<'info, Mint>,
 
     // The user paying for everything.
     #[account(mut)]
@@ -515,7 +526,7 @@ pub struct InitializeGameAndMint<'info> {
     #[account(
         init_if_needed,
         payer = user,
-        associated_token::mint = mint_for_game,
+        associated_token::mint = mint_for_dapp,
         associated_token::authority = user // or use some other "owner" if desired
     )]
     pub commission_ata: InterfaceAccount<'info, TokenAccount>,
@@ -532,16 +543,16 @@ pub struct InitializeGameAndMint<'info> {
 #[derive(Accounts)]
 #[instruction(mint_pubkey: Pubkey, validator_to_add: Pubkey)]
 pub struct RegisterValidatorCurated<'info> {
-    // (1) The Game account
+    // (1) The Dapp account
     #[account(
         mut,
         has_one = owner @ ErrorCode::Unauthorized,
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"dapp", mint_pubkey.as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
-    // (2) The game owner who pays for creating validator_pda + the ATA
+    // (2) The dapp owner who pays for creating validator_pda + the ATA
     #[account(mut)]
     pub owner: Signer<'info>,
 
@@ -559,10 +570,10 @@ pub struct RegisterValidatorCurated<'info> {
     )]
     pub validator_pda: Account<'info, ValidatorPda>,
 
-    // (4) Must match game.mint_pubkey
+    // (4) Must match dapp.mint_pubkey
     #[account(
         mut,
-        constraint = fancy_mint.key() == game.mint_pubkey
+        constraint = fancy_mint.key() == dapp.mint_pubkey
     )]
     pub fancy_mint: InterfaceAccount<'info, Mint>,
 
@@ -573,7 +584,7 @@ pub struct RegisterValidatorCurated<'info> {
     )]
     pub new_validator: SystemAccount<'info>,
     // or `UncheckedAccount<'info>` if you don’t require it be a SystemAccount
-    //pub gateway_token: UncheckedAccount<'info>,
+    // pub gateway_token: UncheckedAccount<'info>,
     // (6) The ATA belonging to `new_validator` 
     // Because we do init_if_needed, Anchor normally also needs "rent" + "system_program" + 
     // "associated_token_program" + "token_program" in the struct. We'll keep them, except "rent".
@@ -599,12 +610,12 @@ pub struct RegisterValidatorCurated<'info> {
 
 #[derive(Accounts)]
 pub struct LockField<'info> {
-    // The game must belong to the signer
+    // The dapp must belong to the signer
     #[account(
         mut,
         has_one = owner @ ErrorCode::Unauthorized
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
     pub owner: Signer<'info>,
 }
@@ -612,18 +623,18 @@ pub struct LockField<'info> {
 #[derive(Accounts)]
 #[instruction(mint_pubkey: Pubkey, name: String)]
 pub struct RequestClaim<'info> {
-    /// The Game => ensures we’re referencing the correct game (and mint).
+    /// The Dapp => ensures we’re referencing the correct dapp (and mint).
     #[account(
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"dapp", mint_pubkey.as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
-    /// The PlayerNamePda => ensures we’re referencing the correct name for the game.
+    /// The PlayerNamePda => ensures we’re referencing the correct name for the dapp.
     #[account(
         seeds = [
             b"player_name",
-            game.key().as_ref(),
+            dapp.key().as_ref(),
             name.as_bytes()
         ],
         bump,
@@ -652,12 +663,12 @@ pub struct RequestClaim<'info> {
 #[derive(Accounts)]
 #[instruction(mint_pubkey: Pubkey, name: String, new_time_seconds: u64)]
 pub struct ValidatePlayerPubgTimeSlim<'info> {
-    /// The Game => keep so we can read coin_issuance_rate etc. 
+    /// The Dapp => keep so we can read coin_issuance_rate etc. 
     #[account(
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"dapp", mint_pubkey.as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
     /// The validator who signs
     #[account(mut)]
@@ -674,10 +685,10 @@ pub struct ValidatePlayerPubgTimeSlim<'info> {
 pub struct RegisterPlayerPdaByValidator<'info> {
     #[account(
         mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"dapp", mint_pubkey.as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
     #[account(mut)]
     pub validator: Signer<'info>,
@@ -687,8 +698,8 @@ pub struct RegisterPlayerPdaByValidator<'info> {
         space = PlayerPda::LEN,
         seeds = [
             b"player_pda",
-            game.key().as_ref(),
-            game.player_count.to_le_bytes().as_ref() // or similar
+            dapp.key().as_ref(),
+            dapp.player_count.to_le_bytes().as_ref() // or similar
         ],
         bump
     )]
@@ -699,7 +710,7 @@ pub struct RegisterPlayerPdaByValidator<'info> {
         space = PlayerNamePda::LEN,
         seeds = [
             b"player_name",
-            game.key().as_ref(),
+            dapp.key().as_ref(),
             name.as_bytes()
         ],
         bump
@@ -708,7 +719,7 @@ pub struct RegisterPlayerPdaByValidator<'info> {
 
     #[account(
         mut, 
-        constraint = fancy_mint.key() == game.mint_pubkey
+        constraint = fancy_mint.key() == dapp.mint_pubkey
     )]
     pub fancy_mint: InterfaceAccount<'info, Mint>,
     pub gateway_token: UncheckedAccount<'info>,
@@ -726,8 +737,8 @@ pub struct RegisterPlayerPdaByValidator<'info> {
 #[program]
 pub mod fancoin {
     use super::*;
-    pub fn initialize_game_and_mint( //nogate
-        ctx: Context<InitializeGameAndMint>,
+    pub fn initialize_dapp_and_mint( //nogate
+        ctx: Context<InitializeDappAndMint>,
         description: String,
         socials: String,
         commission_percent: u16,
@@ -735,9 +746,11 @@ pub mod fancoin {
         validator_claim_rate: u64,
         curated_val: bool,
         initial_commission_tokens: u64,
-        //gatekeeper_network: Pubkey
+        gatekeeper_network: Pubkey,
+        player_limit: u32   // <--- new argument
+
     ) -> Result<()> {
-        let game = &mut ctx.accounts.game;
+        let dapp = &mut ctx.accounts.dapp;
     
         // (A) Check commission_percent <= 100
         require!(
@@ -746,14 +759,16 @@ pub mod fancoin {
         );
     
         // (B) Basic info
-        game.description = description;
-        game.socials = socials;
-        game.validator_count = 0;
-        game.active_validator_count = 0;
-        game.last_reset_hour = None;
-        game.last_seed = None;
-        game.last_punch_in_time = None;
-        game.player_count = 0;
+        dapp.description = description;
+        dapp.socials = socials;
+        dapp.validator_count = 0;
+        dapp.active_validator_count = 0;
+        dapp.last_reset_hour = None;
+        dapp.last_seed = None;
+        dapp.last_punch_in_time = None;
+        dapp.player_count = 0;
+        dapp.player_limit = player_limit;
+
         require!(
             coin_issuance_rate <= 60_000_000,
             ErrorCode::IssuanceRateTooLarge
@@ -766,18 +781,17 @@ pub mod fancoin {
         require!(commission_percent <= 100, ErrorCode::CommissionTooLarge);
     
         // (C) Commission / gating
-        game.commission_ata = ctx.accounts.commission_ata.key();  
-        game.commission_percent = commission_percent;
-        game.coin_issuance_rate = coin_issuance_rate;
-        game.validator_claim_rate = validator_claim_rate;
-        game.curated_val = curated_val;
-        game.gatekeeper_network = "uniqobk8oGh4XBLMqM68K8M2zNu3CdYX7q5go7whQiv"
-            .parse::<Pubkey>()
-            .expect("Invalid base58 pubkey string");        // (D) Store the minted pubkey
-        game.mint_pubkey = ctx.accounts.mint_for_game.key();
+        dapp.commission_ata = ctx.accounts.commission_ata.key();  
+        dapp.commission_percent = commission_percent;
+        dapp.coin_issuance_rate = coin_issuance_rate;
+        dapp.validator_claim_rate = validator_claim_rate;
+        dapp.curated_val = curated_val;
+        dapp.gatekeeper_network = gatekeeper_network;
+        // (D) Store the minted pubkey
+        dapp.mint_pubkey = ctx.accounts.mint_for_dapp.key();
     
         // (E) Set the new owner
-        game.owner = ctx.accounts.user.key();
+        dapp.owner = ctx.accounts.user.key();
     
         // (F) Bump for mint_authority
         let bump = ctx.bumps.mint_authority;
@@ -796,7 +810,7 @@ pub mod fancoin {
             let cpi_ctx = CpiContext::new_with_signer(
                 ctx.accounts.token_program.to_account_info(),
                 anchor_spl::token_2022::MintTo {
-                    mint: ctx.accounts.mint_for_game.to_account_info(),
+                    mint: ctx.accounts.mint_for_dapp.to_account_info(),
                     to: ctx.accounts.commission_ata.to_account_info(),
                     authority: ctx.accounts.mint_authority.to_account_info(),
                 },
@@ -807,12 +821,12 @@ pub mod fancoin {
     
         msg!(
             "Initialized => commission_ata={}, pct={}, issuance={}, val_rate={}, curated={}, owner={}",
-            game.commission_ata,
-            game.commission_percent,
-            game.coin_issuance_rate,
-            game.validator_claim_rate,
-            game.curated_val,
-            game.owner
+            dapp.commission_ata,
+            dapp.commission_percent,
+            dapp.coin_issuance_rate,
+            dapp.validator_claim_rate,
+            dapp.curated_val,
+            dapp.owner
         );
     
         Ok(())
@@ -821,9 +835,9 @@ pub mod fancoin {
         ctx: Context<TransferOwnership>,
         new_owner: Pubkey,
     ) -> Result<()> {
-        let game = &mut ctx.accounts.game;
+        let dapp = &mut ctx.accounts.dapp;
         // The has_one check ensures .owner matches the `owner` signer
-        game.owner = new_owner;
+        dapp.owner = new_owner;
     
         msg!(
             "Ownership transferred => new_owner={}",
@@ -837,11 +851,11 @@ pub mod fancoin {
         name: String,
         user_authority: Pubkey,
     ) -> Result<()> {
-        let game = &mut ctx.accounts.game;
+        let dapp = &mut ctx.accounts.dapp;
         let player_pda = &mut ctx.accounts.player_pda;
         let player_name_pda = &mut ctx.accounts.player_name_pda;
         let leftover = &ctx.remaining_accounts;
-
+        require!(dapp.curated_val, ErrorCode::DappIsNotCurated);
         require!(leftover.len() >= 1, ErrorCode::InsufficientLeftoverAccounts);
         let wallet_pda_accinfo = &leftover[0];
         let mut wallet_pda_data = Account::<WalletPda>::try_from(wallet_pda_accinfo)
@@ -867,8 +881,8 @@ pub mod fancoin {
         player_name_pda.player_pda = player_pda.key();
         player_name_pda.active = true;
     
-        // (C) Increment game.player_count
-        game.player_count += 1;
+        // (C) Increment dapp.player_count
+        dapp.player_count += 1;
     
         msg!(
             "Curated registration => name='{}', user_authority={}, new player_pda={}",
@@ -880,19 +894,19 @@ pub mod fancoin {
     }
     
     pub fn lock_field(ctx: Context<LockField>, field_name: String) -> Result<()> { //nogate
-        let game = &mut ctx.accounts.game;
+        let dapp = &mut ctx.accounts.dapp;
     
         match field_name.as_str() {
             "lock_claim" => {
-                game.claim_rate_lock = true;
+                dapp.claim_rate_lock = true;
                 msg!("Locked validator_claim_rate field.");
             },
             "lock_coin_rate" => {
-                game.coin_issuance_rate_lock = true;
+                dapp.coin_issuance_rate_lock = true;
                 msg!("Locked coin_issuance_rate field.");
             },
             "lock_commission_pct" => {
-                game.commission_percent_lock = true;
+                dapp.commission_percent_lock = true;
                 msg!("Locked commission_percent field.");
             },
             _ => {
@@ -910,38 +924,38 @@ pub mod fancoin {
         new_coin_issuance_rate: u64,
         new_validator_claim_rate: u64,
     ) -> Result<()> {
-        let game = &mut ctx.accounts.game;
+        let dapp = &mut ctx.accounts.dapp;
     
         // Always allow updating commission_ata, unless you also implement a lock for it:
-        game.commission_ata = new_commission_ata;
+        dapp.commission_ata = new_commission_ata;
     
-        if !game.commission_percent_lock {
+        if !dapp.commission_percent_lock {
             require!(new_commission_percent <= 100, ErrorCode::CommissionTooLarge);
-            game.commission_percent = new_commission_percent;
+            dapp.commission_percent = new_commission_percent;
         } else {
             msg!("Commission percent is locked; skipping update.");
         }
     
-        if !game.coin_issuance_rate_lock {
+        if !dapp.coin_issuance_rate_lock {
             require!(new_coin_issuance_rate <= 60_000_000, ErrorCode::IssuanceRateTooLarge);
-            game.coin_issuance_rate = new_coin_issuance_rate;
+            dapp.coin_issuance_rate = new_coin_issuance_rate;
         } else {
             msg!("Coin issuance rate is locked; skipping update.");
         }
     
-        if !game.claim_rate_lock {
+        if !dapp.claim_rate_lock {
             require!(new_validator_claim_rate <= 60_000_000, ErrorCode::ClaimRateTooLarge);
-            game.validator_claim_rate = new_validator_claim_rate;
+            dapp.validator_claim_rate = new_validator_claim_rate;
         } else {
             msg!("Validator claim rate is locked; skipping update.");
         }
     
         msg!(
             "Updated => commission_ata={}, pct={}, coin_rate={}, val_claim_rate={}",
-            game.commission_ata,
-            game.commission_percent,
-            game.coin_issuance_rate,
-            game.validator_claim_rate
+            dapp.commission_ata,
+            dapp.commission_percent,
+            dapp.coin_issuance_rate,
+            dapp.validator_claim_rate
         );
     
         Ok(())
@@ -954,7 +968,7 @@ pub mod fancoin {
         new_time_seconds: u64,
     ) -> Result<()> {
         // 1) Basic references
-        let game = &ctx.accounts.game;
+        let dapp = &ctx.accounts.dapp;
         let validator = &ctx.accounts.validator;
         let leftover = &ctx.remaining_accounts;
         require!(
@@ -984,7 +998,7 @@ pub mod fancoin {
         let (expected_name_pda, _bump) = Pubkey::find_program_address(
             &[
                 b"player_name",
-                game.key().as_ref(),
+                dapp.key().as_ref(),
                 name.as_bytes(),
             ],
             ctx.program_id,
@@ -1010,7 +1024,7 @@ pub mod fancoin {
         // (C) Parse + Verify fancy_mint
         // ------------------------------------------------------
         require!(
-            fancy_mint_accinfo.key() == game.mint_pubkey,
+            fancy_mint_accinfo.key() == dapp.mint_pubkey,
             ErrorCode::InvalidSeeds
         );
         let fancy_mint = InterfaceAccount::<Mint>::try_from(fancy_mint_accinfo)
@@ -1046,7 +1060,7 @@ pub mod fancoin {
         let (expected_val_pda, _val_bump) = Pubkey::find_program_address(
             &[
                 b"validator",
-                game.mint_pubkey.as_ref(),
+                dapp.mint_pubkey.as_ref(),
                 validator.key().as_ref(),
             ],
             ctx.program_id,
@@ -1075,7 +1089,7 @@ pub mod fancoin {
     
         // Convert final_diff to minted tokens:
         let diff_minutes = final_diff / 60;
-        let minted_amount = diff_minutes.saturating_mul(game.coin_issuance_rate);
+        let minted_amount = diff_minutes.saturating_mul(dapp.coin_issuance_rate);
     
         // If nothing to mint => skip
         if minted_amount == 0 {
@@ -1103,9 +1117,9 @@ pub mod fancoin {
         // ------------------------------------------------------
         // (G) Commission logic
         // ------------------------------------------------------
-        if game.commission_percent > 0 {
+        if dapp.commission_percent > 0 {
             let commission_amount = (minted_amount as u128)
-                .checked_mul(game.commission_percent as u128)
+                .checked_mul(dapp.commission_percent as u128)
                 .unwrap_or(0)
                 / 100;
             let commission_amount = commission_amount as u64;
@@ -1133,7 +1147,7 @@ pub mod fancoin {
                 } else {
                     msg!(
                         "Commission percent={} > 0, but leftover[6] not provided => skipping commission mint",
-                        game.commission_percent
+                        dapp.commission_percent
                     );
                 }
             }
@@ -1156,7 +1170,7 @@ pub mod fancoin {
             new_time_seconds,
             final_diff,
             minted_amount,
-            game.commission_percent
+            dapp.commission_percent
         );
         Ok(())
     }
@@ -1167,8 +1181,8 @@ pub mod fancoin {
         mint_pubkey: Pubkey,
         validator_to_add: Pubkey,
     ) -> Result<()> {
-        let game = &mut ctx.accounts.game;
-        require!(game.curated_val, ErrorCode::GameIsNotCurated);
+        let dapp = &mut ctx.accounts.dapp;
+        require!(dapp.curated_val, ErrorCode::DappIsNotCurated);
     
         // Fill in the new validator data
         let val_pda = &mut ctx.accounts.validator_pda;
@@ -1178,13 +1192,13 @@ pub mod fancoin {
         val_pda.last_claimed = None;
     
         // Increment validator_count
-        game.validator_count += 1;
+        dapp.validator_count += 1;
     
         msg!(
-            "Curated validator registration => new_validator={}, ATA={}, game={}",
+            "Curated validator registration => new_validator={}, ATA={}, dapp={}",
             validator_to_add,
             ctx.accounts.validator_ata.key(),
-            game.key()
+            dapp.key()
         );
         Ok(())
     }
@@ -1206,7 +1220,7 @@ pub mod fancoin {
         Gateway::verify_gateway_token_account_info(
             &gateway_token_info,
             &ctx.accounts.user.key(),
-            &ctx.accounts.game.gatekeeper_network,
+            &ctx.accounts.dapp.gatekeeper_network,
             None,
         )
         .map_err(|_e| {
@@ -1237,25 +1251,25 @@ pub mod fancoin {
     pub fn punch_in(ctx: Context<PunchIn>, mint_pubkey: Pubkey) -> Result<()> { //gate
         let clock = Clock::get()?;
         let current_time = clock.unix_timestamp;
-        let game = &ctx.accounts.game;
+        let dapp = &ctx.accounts.dapp;
         // let gateway_token_info = ctx.accounts.gateway_token.to_account_info();
 
-        // Gateway::verify_gateway_token_account_info(
-        //     &gateway_token_info,
-        //     &ctx.accounts.validator.key(),
-        //     &ctx.accounts.game.gatekeeper_network,
-        //     None,
-        // )
-        // .map_err(|_e| {
-        //     msg!("Gateway token account verification failed");
-        //     ProgramError::InvalidArgument
-        // })?;
-        // msg!("Gateway token verification passed");
+        // // Gateway::verify_gateway_token_account_info(
+        // //     &gateway_token_info,
+        // //     &ctx.accounts.validator.key(),
+        // //     &ctx.accounts.dapp.gatekeeper_network,
+        // //     None,
+        // // )
+        // // .map_err(|_e| {
+        // //     msg!("Gateway token account verification failed");
+        // //     ProgramError::InvalidArgument
+        // // })?;
+        // // msg!("Gateway token verification passed");
 
-        let game = &mut ctx.accounts.game;
+        let dapp = &mut ctx.accounts.dapp;
 
         // Basic checks
-        //require!(game.game_number == game_number, ErrorCode::GameNumberMismatch);
+        //require!(dapp.dapp_number == dapp_number, ErrorCode::DappNumberMismatch);
     
         // ----------------------------------------------------------
         // (1) Identify hour + minute, do new-hour reset, enforce first-7-min rule
@@ -1264,17 +1278,17 @@ pub mod fancoin {
         let current_minute = ((current_time % 3600) / 60) as u32;
     
         // If a new hour started (compare to last_reset_hour), reset active_validator_count to 0
-        // and set game.last_reset_hour = Some(current_hour).
-        if let Some(last_reset_hour) = game.last_reset_hour {
+        // and set dapp.last_reset_hour = Some(current_hour).
+        if let Some(last_reset_hour) = dapp.last_reset_hour {
             if current_hour > last_reset_hour {
                 // We have rolled over into a new hour
-                game.active_validator_count = 0;
-                game.last_reset_hour = Some(current_hour);
+                dapp.active_validator_count = 0;
+                dapp.last_reset_hour = Some(current_hour);
                 msg!("New hour => reset active_validator_count to 0 for hour {}", current_hour);
             }
         } else {
             // If last_reset_hour was never set, initialize it now
-            game.last_reset_hour = Some(current_hour);
+            dapp.last_reset_hour = Some(current_hour);
             msg!("Initializing last_reset_hour => {}", current_hour);
         }
     
@@ -1292,13 +1306,13 @@ pub mod fancoin {
         };
         if validator_last_hour < current_hour {
             // If the validator hasn't punched in this hour yet
-            if game.active_validator_count < game.validator_count {
-                game.active_validator_count += 1;
+            if dapp.active_validator_count < dapp.validator_count {
+                dapp.active_validator_count += 1;
                 msg!(
                     "Validator {} is active this hour {} => total active={}",
                     validator_key,
                     current_hour,
-                    game.active_validator_count
+                    dapp.active_validator_count
                 );
             }
         }
@@ -1316,8 +1330,8 @@ pub mod fancoin {
         let seed = u64::from_le_bytes(
             hash_res[0..8].try_into().map_err(|_| ErrorCode::HashConversionError)?
         );
-        game.last_seed = Some(seed);
-        game.last_punch_in_time = Some(current_time);
+        dapp.last_seed = Some(seed);
+        dapp.last_punch_in_time = Some(current_time);
     
         msg!(
             "Punch in => seed={}, time={}, hour={}, minute={}",
@@ -1337,7 +1351,7 @@ pub mod fancoin {
         Gateway::verify_gateway_token_account_info(
             &gateway_token_info,
             &ctx.accounts.user.key(),
-            &ctx.accounts.game.gatekeeper_network,
+            &ctx.accounts.dapp.gatekeeper_network,
             None,
         )
         .map_err(|_e| {
@@ -1375,7 +1389,7 @@ pub mod fancoin {
         Gateway::verify_gateway_token_account_info(
             &gateway_token_info,
             &ctx.accounts.user.key(),
-            &ctx.accounts.game.gatekeeper_network,
+            &ctx.accounts.dapp.gatekeeper_network,
             None,
         )
         .map_err(|_e| {
@@ -1435,10 +1449,17 @@ pub mod fancoin {
         mint_pubkey: Pubkey,
         name: String,
     ) -> Result<()> {
-        let game = &ctx.accounts.game;
+
+        let dapp = &ctx.accounts.dapp;
         let player = &mut ctx.accounts.player_pda;
         let name_pda = &mut ctx.accounts.player_name_pda;
         let leftover_accs = &ctx.remaining_accounts;
+        if dapp.player_limit != 0 {
+            require!(
+                dapp.player_count < dapp.player_limit,
+                ErrorCode::PlayerLimitReached
+            );
+        }
         require!(
             !leftover_accs.is_empty(),
             ErrorCode::InsufficientLeftoverAccounts
@@ -1447,7 +1468,7 @@ pub mod fancoin {
         Gateway::verify_gateway_token_account_info(
             &gateway_token_info,
             &ctx.accounts.user.key(),
-            &ctx.accounts.game.gatekeeper_network,
+            &ctx.accounts.dapp.gatekeeper_network,
             None,
         )
         .map_err(|_e| {
@@ -1455,7 +1476,8 @@ pub mod fancoin {
             ProgramError::InvalidArgument
         })?;
         msg!("Gateway token verification passed");
-        let game = &mut ctx.accounts.game;
+
+        let dapp = &mut ctx.accounts.dapp;
 
         let wallet_pda_accinfo = &leftover_accs[0];
         let wallet_pda_data = Account::<WalletPda>::try_from(wallet_pda_accinfo)
@@ -1493,7 +1515,7 @@ pub mod fancoin {
         name_pda.player_pda = player.key();
 
         // (D) Increment global_player_count
-        game.player_count += 1;
+        dapp.player_count += 1;
 
         msg!(
             "Registered player => name='{}', authority={}, ATA={}, name_pda={}",
@@ -1505,47 +1527,47 @@ pub mod fancoin {
         Ok(())
     }
 
-    pub fn register_validator_pda<'info>( //gate
-        ctx: Context<'_, '_, 'info, 'info, RegisterValidatorPda<'info>>,
-        mint_pubkey: Pubkey
-    ) -> Result<()> {
-        let game = &ctx.accounts.game;
-        //require!(game.game_number == game_number, ErrorCode::GameNumberMismatch);
-        require!(!game.curated_val, ErrorCode::GameIsCurated);
-        let leftover = &ctx.remaining_accounts;
-        require!(leftover.len() >= 1, ErrorCode::InsufficientLeftoverAccounts);
-        let wallet_pda_accinfo = &leftover[0];
-        let wallet_pda_data = Account::<WalletPda>::try_from(wallet_pda_accinfo)
-            .map_err(|_| ErrorCode::InvalidSeeds)?;
-        require!(wallet_pda_data.is_registered, ErrorCode::Unauthorized);
-        let gateway_token_info = ctx.accounts.gateway_token.to_account_info();
-        Gateway::verify_gateway_token_account_info(
-            &gateway_token_info,
-            &ctx.accounts.user.key(),
-            &ctx.accounts.game.gatekeeper_network,
-            None,
-        )
-        .map_err(|_e| {
-            msg!("Gateway token account verification failed");
-            ProgramError::InvalidArgument
-        })?;
-        msg!("Gateway token verification passed");
-        let game = &mut ctx.accounts.game;
+    // pub fn register_validator_pda<'info>( //gate
+    //     ctx: Context<'_, '_, 'info, 'info, RegisterValidatorPda<'info>>,
+    //     mint_pubkey: Pubkey
+    // ) -> Result<()> {
+    //     let dapp = &ctx.accounts.dapp;
+    //     //require!(dapp.dapp_number == dapp_number, ErrorCode::DappNumberMismatch);
+    //     require!(!dapp.curated_val, ErrorCode::DappIsCurated);
+    //     let leftover = &ctx.remaining_accounts;
+    //     require!(leftover.len() >= 1, ErrorCode::InsufficientLeftoverAccounts);
+    //     let wallet_pda_accinfo = &leftover[0];
+    //     let wallet_pda_data = Account::<WalletPda>::try_from(wallet_pda_accinfo)
+    //         .map_err(|_| ErrorCode::InvalidSeeds)?;
+    //     require!(wallet_pda_data.is_registered, ErrorCode::Unauthorized);
+    //     let gateway_token_info = ctx.accounts.gateway_token.to_account_info();
+    //     Gateway::verify_gateway_token_account_info(
+    //         &gateway_token_info,
+    //         &ctx.accounts.user.key(),
+    //         &ctx.accounts.dapp.gatekeeper_network,
+    //         None,
+    //     )
+    //     .map_err(|_e| {
+    //         msg!("Gateway token account verification failed");
+    //         ProgramError::InvalidArgument
+    //     })?;
+    //     msg!("Gateway token verification passed");
+    //     let dapp = &mut ctx.accounts.dapp;
 
-        let val_pda = &mut ctx.accounts.validator_pda;
-        val_pda.address = ctx.accounts.user.key();
-        val_pda.last_activity = Clock::get()?.unix_timestamp;
-        val_pda.last_minted = None; // new
+    //     let val_pda = &mut ctx.accounts.validator_pda;
+    //     val_pda.address = ctx.accounts.user.key();
+    //     val_pda.last_activity = Clock::get()?.unix_timestamp;
+    //     val_pda.last_minted = None; // new
 
-        game.validator_count += 1;
-        msg!(
-            "Registered validator => game={}, validator={}, ATA={}",
-            mint_pubkey,
-            val_pda.address,
-            ctx.accounts.validator_ata.key()
-        );
-        Ok(())
-    }
+    //     dapp.validator_count += 1;
+    //     msg!(
+    //         "Registered validator => dapp={}, validator={}, ATA={}",
+    //         mint_pubkey,
+    //         val_pda.address,
+    //         ctx.accounts.validator_ata.key()
+    //     );
+    //     Ok(())
+    // }
 
 
     /// The main multi-player mint function
@@ -1555,7 +1577,7 @@ pub mod fancoin {
         mint_pubkey: Pubkey,
         player_ids: Vec<u32>,
     ) -> Result<()> {
-        let game = &ctx.accounts.game;
+        let dapp = &ctx.accounts.dapp;
     
         // 1) Basic checks on validator PDA, etc. unchanged
         let (expected_pda, _bump) = Pubkey::find_program_address(
@@ -1570,12 +1592,12 @@ pub mod fancoin {
             ctx.accounts.validator_pda.key() == expected_pda,
             ErrorCode::ValidatorNotRegistered
         );
-        if !game.curated_val {
+        if !dapp.curated_val {
             let gateway_token_info = ctx.accounts.gateway_token.to_account_info();
             Gateway::verify_gateway_token_account_info(
                 &gateway_token_info,
                 &ctx.accounts.validator.key(),
-                &ctx.accounts.game.gatekeeper_network,
+                &ctx.accounts.dapp.gatekeeper_network,
                 None,
             )
             .map_err(|_e| {
@@ -1584,14 +1606,14 @@ pub mod fancoin {
             })?;
             msg!("Gateway token verification passed");
         } else {
-            msg!("Game is curated => skipping gateway token check");
+            msg!("Dapp is curated => skipping gateway token check");
         }
         let clock = Clock::get()?;
         let current_time = clock.unix_timestamp;
         let current_hour = (current_time / 3600) as u32;
         let current_minute = ((current_time % 3600) / 60) as u32;
     
-        let Some(last_punch) = game.last_punch_in_time else {
+        let Some(last_punch) = dapp.last_punch_in_time else {
             msg!("No one has punched in => cannot mint");
             return Ok(());
         };
@@ -1617,8 +1639,8 @@ pub mod fancoin {
         // --------------------------------------------------------
     
         msg!("submit_minting_list => player_ids={:?}", player_ids);
-        let total_vals = game.validator_count as usize;
-        let active_vals = game.active_validator_count as usize;
+        let total_vals = dapp.validator_count as usize;
+        let active_vals = dapp.active_validator_count as usize;
         let total_groups = (total_vals + 3) / 4;
         let failover_tolerance = calculate_failover_tolerance(total_vals) as u64;
     
@@ -1637,11 +1659,11 @@ pub mod fancoin {
             // For now, let's just continue with no commission minted.
         };
     
-        // 2b) Confirm it matches game.commission_ata 
-        //     (assuming your Game struct has 'commission_ata: Pubkey')
-        if commission_ata_accinfo.key() != game.commission_ata {
-            msg!("Commission ATA mismatch => leftover={} game={}",
-                commission_ata_accinfo.key(), game.commission_ata
+        // 2b) Confirm it matches dapp.commission_ata 
+        //     (assuming your Dapp struct has 'commission_ata: Pubkey')
+        if commission_ata_accinfo.key() != dapp.commission_ata {
+            msg!("Commission ATA mismatch => leftover={} dapp={}",
+                commission_ata_accinfo.key(), dapp.commission_ata
             );
             // You can error out here if mismatch should fail the entire call
             // or just skip commission. We'll error out for demonstration:
@@ -1659,7 +1681,7 @@ pub mod fancoin {
         let mut minted_count = 0_usize;
     
         for pid in player_ids {
-            let Some(seed) = game.last_seed else {
+            let Some(seed) = dapp.last_seed else {
                 msg!("No last_seed => cannot finalize => pid={}", pid);
                 continue;
             };
@@ -1747,8 +1769,8 @@ pub mod fancoin {
             }
     
             // (E) Actually mint to player's ATA
-            //     We now use game.coin_issuance_rate instead of a hard-coded value
-            let minted_amount = diff_minutes.saturating_mul(game.coin_issuance_rate);
+            //     We now use dapp.coin_issuance_rate instead of a hard-coded value
+            let minted_amount = diff_minutes.saturating_mul(dapp.coin_issuance_rate);
     
             let is_ata_ok = InterfaceAccount::<TokenAccount>::try_from(&player_ata_accinfo).is_ok();
             if !is_ata_ok {
@@ -1785,9 +1807,9 @@ pub mod fancoin {
             token_2022::mint_to(cpi_ctx_player, minted_amount)?;
     
             // (E2) Mint Commission if any
-            if game.commission_percent > 0 {
+            if dapp.commission_percent > 0 {
                 let commission_amount = (minted_amount as u128)
-                    .checked_mul(game.commission_percent as u128)
+                    .checked_mul(dapp.commission_percent as u128)
                     .unwrap_or(0)
                     / 100;
                 // Cast back to u64 safely
@@ -1842,7 +1864,7 @@ pub mod fancoin {
         Gateway::verify_gateway_token_account_info(
             &gateway_token_info,
             &ctx.accounts.validator.key(),
-            &ctx.accounts.game.gatekeeper_network,
+            &ctx.accounts.dapp.gatekeeper_network,
             None,
         )
         .map_err(|_e| {
@@ -1929,10 +1951,10 @@ pub mod fancoin {
 pub struct ClaimValidatorReward<'info> {
     #[account(
         mut,
-        seeds = [b"game", mint_pubkey.as_ref()],
+        seeds = [b"dapp", mint_pubkey.as_ref()],
         bump
     )]
-    pub game: Account<'info, Game>,
+    pub dapp: Account<'info, Dapp>,
 
     #[account(
         mut,
@@ -1942,7 +1964,7 @@ pub struct ClaimValidatorReward<'info> {
     pub validator_pda: Account<'info, ValidatorPda>,
     #[account(mut)]
     pub validator: Signer<'info>,
-    #[account(mut, constraint = fancy_mint.key() == game.mint_pubkey)]
+    #[account(mut, constraint = fancy_mint.key() == dapp.mint_pubkey)]
     pub fancy_mint: InterfaceAccount<'info, Mint>, 
     pub gateway_token: UncheckedAccount<'info>,
     #[account(
@@ -1978,12 +2000,12 @@ pub enum ErrorCode {
     HashConversionError,
     #[msg("Invalid timestamp.")]
     InvalidTimestamp,
-    #[msg("Game number mismatch.")]
-    GameNumberMismatch,
-    #[msg("Game is blacklisted.")]
-    GameIsBlacklisted,
-    #[msg("Game not whitelisted.")]
-    GameNotWhitelisted,
+    #[msg("Dapp number mismatch.")]
+    DappNumberMismatch,
+    #[msg("Dapp is blacklisted.")]
+    DappIsBlacklisted,
+    #[msg("Dapp not whitelisted.")]
+    DappNotWhitelisted,
     #[msg("Invalid seeds.")]
     InvalidSeeds,
     #[msg("Invalid range.")]
@@ -2008,10 +2030,10 @@ pub enum ErrorCode {
     InvalidCommissionAta,
     #[msg("Commission percent cannot exceed 100%")]
     CommissionTooLarge,
-    #[msg("Game is curated, so open registration is disallowed.")]
-    GameIsCurated,
-    #[msg("Game is not curated, so this instruction is disallowed.")]
-    GameIsNotCurated,
+    #[msg("Dapp is curated, so open registration is disallowed.")]
+    DappIsCurated,
+    #[msg("Dapp is not curated, so this instruction is disallowed.")]
+    DappIsNotCurated,
     #[msg("Invalid field name for lock/unlock.")]
     InvalidLockString,
     #[msg("Coin issuance rate cannot exceed 60_000_000.")]
@@ -2022,6 +2044,8 @@ pub enum ErrorCode {
     NoPendingClaim,
     #[msg("Claim is already paid.")]
     ClaimAlreadyPaid,
+    #[msg("Player limit reached.")]
+    PlayerLimitReached,
 
 }
 
@@ -2046,7 +2070,7 @@ fn calculate_group_id_mod(address: &Pubkey, seed: u64, total_groups: u64) -> Res
 }
 
 /// A simple placeholder for finalizing tokens. 
-fn mint_tokens_for_player(_game: &Account<Game>, player_name: &str, current_time: i64) -> Result<()> {
+fn mint_tokens_for_player(_dapp: &Account<Dapp>, player_name: &str, current_time: i64) -> Result<()> {
     let last_time = 0i64;
     let diff_seconds = current_time.saturating_sub(last_time);
     let diff_minutes = diff_seconds.max(0) as u64 / 60;
@@ -2069,7 +2093,7 @@ fn mint_tokens_for_player(_game: &Account<Game>, player_name: &str, current_time
 // in `submit_minting_list`:
 fn update_validator_mint_time(
     _validator_key: &Pubkey,
-    _game_number: u32,
+    _dapp_number: u32,
     _current_time: i64,
 ) -> Result<()> {
     // In reality you'd do leftover or map logic, then:

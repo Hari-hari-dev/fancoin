@@ -27,7 +27,7 @@ def find_associated_token_address(owner: Pubkey, mint: Pubkey) -> Pubkey:
     (ata, _) = Pubkey.find_program_address(seeds, ASSOCIATED_TOKEN_PROGRAM_ID)
     return ata
 
-async def initialize_game_and_mint(
+async def initialize_dapp_and_mint(
     program: Program,
     client: AsyncClient,
     description: str,
@@ -37,20 +37,23 @@ async def initialize_game_and_mint(
     validator_claim_rate: int,
     curated_val: int,
     initial_commission_tokens: int,
+    #gatekeeper_network: Pubkey,
+    #player_limit: int,
+
 ):
     """
-    Create a new Game + Mint in a single transaction using initialize_game_and_mint.
+    Create a new Dapp + Mint in a single transaction using initialize_dapp_and_mint.
     Returns:
-      (game_pda, mint_authority_pda, mint_for_game_pda,
+      (dapp_pda, mint_authority_pda, mint_for_dapp_pda,
        commission_percent, coin_issuance_rate,
        validator_claim_rate, curated_val, initial_commission_tokens)
     """
-    print("Initializing Game + Mint...")
+    print("Initializing Dapp + Mint...")
 
     user_pubkey = program.provider.wallet.public_key
 
     # (1) Derive new mint with seed [b"my_spl_mint", user]
-    (mint_for_game_pda, mint_bump) = Pubkey.find_program_address(
+    (mint_for_dapp_pda, mint_bump) = Pubkey.find_program_address(
         [b"my_spl_mint", bytes(user_pubkey)],
         program.program_id
     )
@@ -61,20 +64,20 @@ async def initialize_game_and_mint(
         program.program_id
     )
 
-    # (3) Derive Game => [b"game", mint_for_game_pda]
-    (game_pda, game_bump) = Pubkey.find_program_address(
-        [b"game", bytes(mint_for_game_pda)],
+    # (3) Derive Dapp => [b"dapp", mint_for_dapp_pda]
+    (dapp_pda, dapp_bump) = Pubkey.find_program_address(
+        [b"dapp", bytes(mint_for_dapp_pda)],
         program.program_id
     )
 
-    # Check if Game already exists (to avoid re-initializing)
-    acct_info = await client.get_account_info(game_pda, commitment=Confirmed)
+    # Check if Dapp already exists (to avoid re-initializing)
+    acct_info = await client.get_account_info(dapp_pda, commitment=Confirmed)
     if acct_info.value is not None:
-        print(f"Game PDA {game_pda} already initialized. Skipping.")
+        print(f"Dapp PDA {dapp_pda} already initialized. Skipping.")
         return (
-            game_pda,
+            dapp_pda,
             mint_authority_pda,
-            mint_for_game_pda,
+            mint_for_dapp_pda,
             commission_percent,
             coin_issuance_rate,
             validator_claim_rate,
@@ -82,10 +85,10 @@ async def initialize_game_and_mint(
             initial_commission_tokens,
         )
 
-    commission_ata = find_associated_token_address(user_pubkey, mint_for_game_pda)
+    commission_ata = find_associated_token_address(user_pubkey, mint_for_dapp_pda)
 
     try:
-        tx_sig = await program.rpc["initialize_game_and_mint"](
+        tx_sig = await program.rpc["initialize_dapp_and_mint"](
             description,
             socials,
             commission_percent,
@@ -93,11 +96,12 @@ async def initialize_game_and_mint(
             validator_claim_rate,
             curated_val,
             initial_commission_tokens,
+            #gatekeeper_network,
             ctx=Context(
                 accounts={
-                    "game": game_pda,
+                    "dapp": dapp_pda,
                     "mint_authority": mint_authority_pda,
-                    "mint_for_game": mint_for_game_pda,
+                    "mint_for_dapp": mint_for_dapp_pda,
                     "user": user_pubkey,
                     "commission_ata": commission_ata,
                     "token_program": SPL_TOKEN_PROGRAM_ID,
@@ -108,7 +112,7 @@ async def initialize_game_and_mint(
                 signers=[program.provider.wallet.payer],
             )
         )
-        print(f"Success! initialize_game_and_mint => Tx: {tx_sig}")
+        print(f"Success! initialize_dapp_and_mint => Tx: {tx_sig}")
 
         tx_resp = await client.get_transaction(tx_sig, commitment=Confirmed)
         if tx_resp.value and tx_resp.value.transaction.meta:
@@ -122,9 +126,9 @@ async def initialize_game_and_mint(
         raise
 
     return (
-        game_pda,
+        dapp_pda,
         mint_authority_pda,
-        mint_for_game_pda,
+        mint_for_dapp_pda,
         commission_percent,
         coin_issuance_rate,
         validator_claim_rate,
@@ -136,7 +140,7 @@ async def initialize_game_and_mint(
 async def register_validator_curated(
     program: Program,
     client: AsyncClient,
-    game_pda: Pubkey,
+    dapp_pda: Pubkey,
     mint_pubkey: Pubkey,
     owner_kp: Keypair,
     validator_pubkey: Pubkey,
@@ -164,7 +168,7 @@ async def register_validator_curated(
 
     # The rest
     accounts_dict = {
-        "game": game_pda,
+        "dapp": dapp_pda,
         "owner": owner_kp.pubkey(),
         "validator_pda": validator_pda,
         "fancy_mint": mint_pubkey,
@@ -192,7 +196,7 @@ async def register_validator_curated(
             for line in tx_resp.value.transaction.meta.log_messages:
                 print(line)
     except RPCException as e:
-        print("Error in register_validator_curated:", e)
+        print("Error in register_validator_gated:", e)
         traceback.print_exc()
         raise
 
@@ -202,7 +206,7 @@ async def register_validator_curated(
 async def register_validator_pda(
     program: Program,
     client: AsyncClient,
-    game_pda: Pubkey,
+    dapp_pda: Pubkey,
     mint_pubkey: Pubkey,
     validator_kp: Keypair,
 ):
@@ -234,7 +238,7 @@ async def register_validator_pda(
             mint_pubkey,
             ctx=Context(
                 accounts={
-                    "game": game_pda,
+                    "dapp": dapp_pda,
                     "fancy_mint": mint_pubkey,
                     "validator_pda": validator_pda,
                     "user": validator_kp.pubkey(),
@@ -267,10 +271,11 @@ async def register_validator_pda(
 async def punch_in(
     program: Program,
     client: AsyncClient,
-    game_pda: Pubkey,
+    dapp_pda: Pubkey,
     mint_pubkey: Pubkey,
     validator_kp: Keypair,
     validator_pda: Pubkey,
+    gateway_token: Pubkey,
 ):
     """Calls punch_in(mint_pubkey)."""
     print("\nPunching in...")
@@ -280,10 +285,11 @@ async def punch_in(
             mint_pubkey,
             ctx=Context(
                 accounts={
-                    "game": game_pda,
+                    "dapp": dapp_pda,
                     "validator_pda": validator_pda,
                     "validator": validator_kp.pubkey(),
                     "system_program": SYS_PROGRAM_ID,
+                    "gateway_token": gateway_token,
                 },
                 signers=[validator_kp],
             )
@@ -305,7 +311,7 @@ async def punch_in(
 async def create_player_ata(
     program: Program,
     client: AsyncClient,
-    game_pda: Pubkey,
+    dapp_pda: Pubkey,
     mint_pubkey: Pubkey,
     user_kp: Keypair,
 ):
@@ -328,7 +334,7 @@ async def create_player_ata(
                 accounts={
                     "user": user_pubkey,
                     "fancy_mint": mint_pubkey,
-                    "game": game_pda,
+                    "dapp": dapp_pda,
                     "user_ata": user_ata,
                     "wallet_pda": wallet_pda,  # <-- ADD THIS LINE
                     "token_program": SPL_TOKEN_PROGRAM_ID,
@@ -351,7 +357,7 @@ async def create_player_ata(
 async def register_player_pda(
     program: Program,
     client: AsyncClient,
-    game_pda: Pubkey,
+    dapp_pda: Pubkey,
     mint_pubkey: Pubkey,
     name: str
 ):
@@ -362,18 +368,18 @@ async def register_player_pda(
     """
     user_pubkey = program.provider.wallet.public_key
 
-    # 1) Fetch Game to get the current player_count
-    game_data = await program.account["Game"].fetch(game_pda)
-    player_count = game_data.player_count
-    print(f"Current game.player_count = {player_count}")
+    # 1) Fetch Dapp to get the current player_count
+    dapp_data = await program.account["Dapp"].fetch(dapp_pda)
+    player_count = dapp_data.player_count
+    print(f"Current dapp.player_count = {player_count}")
 
     # 2) Derive PDAs
     (player_pda, _) = Pubkey.find_program_address(
-        [b"player_pda", bytes(game_pda), player_count.to_bytes(4, "little")],
+        [b"player_pda", bytes(dapp_pda), player_count.to_bytes(4, "little")],
         program.program_id
     )
     (player_name_pda, _) = Pubkey.find_program_address(
-        [b"player_name", bytes(game_pda), name.encode("utf-8")],
+        [b"player_name", bytes(dapp_pda), name.encode("utf-8")],
         program.program_id
     )
 
@@ -396,7 +402,7 @@ async def register_player_pda(
             name,
             ctx=Context(
                 accounts={
-                    "game": game_pda,
+                    "dapp": dapp_pda,
                     "fancy_mint": mint_pubkey,
                     "player_pda": player_pda,
                     "player_name_pda": player_name_pda,
@@ -428,7 +434,7 @@ async def register_player_pda(
 async def submit_minting_list(
     program: Program,
     client: AsyncClient,
-    game_pda: Pubkey,
+    dapp_pda: Pubkey,
     mint_pubkey: Pubkey,
     validator_kp: Keypair,
     validator_pda: Pubkey,
@@ -461,7 +467,7 @@ async def submit_minting_list(
             player_ids,
             ctx=Context(
                 accounts={
-                    "game": game_pda,
+                    "dapp": dapp_pda,
                     "validator_pda": validator_pda,
                     "validator": validator_kp.pubkey(),
                     "fancy_mint": mint_pubkey,
@@ -487,7 +493,7 @@ async def submit_minting_list(
 
 
 async def main():
-    client = AsyncClient("http://localhost:8899", commitment=Confirmed)
+    client = AsyncClient("https://api.devnet.solana.com", commitment=Confirmed)
     wallet = Wallet.local()
     provider = Provider(client, wallet)
 
@@ -502,24 +508,24 @@ async def main():
     idl = Idl.from_json(idl_json)
 
     # Program ID
-    program_id = Pubkey.from_string("BGPqPR3Jineeu8GphwfX2P6LnLWx9ufJtgeobiaYqH5r")
+    program_id = Pubkey.from_string("B2K4GmpB86BH5npaZrDsN5kt9TRv48ajeUBbc3tFd2V1")
     program = Program(idl, program_id, provider)
 
     try:
         # 1) Setup arguments
-        description = "Test Game"
+        description = "Grens Dapp"
         socials = "www.website.com"
-        commission_percent = 36
+        commission_percent = 0
         coin_issuance_rate = 2_833_333
         validator_claim_rate = 28_570
         curated_val = 1  # set to 1 => Gated
-
+        player_limit = int(9000)
         # initial_commission_tokens = 21000000000000 * 2.83333
-        initial_commission_tokens = int(21000000000000 * 2.83333)
-
-        # 2) Create the Game + Mint in one go
+        initial_commission_tokens = int(210000000000 * 2.83333)
+        gatekeeper_network = Pubkey.from_string("uniqobk8oGh4XBLMqM68K8M2zNu3CdYX7q5go7whQiv")
+        # 2) Create the Dapp + Mint in one go
         (
-            game_pda,
+            dapp_pda,
             mint_auth_pda,
             minted_mint_pda,
             commission_percent,
@@ -527,7 +533,7 @@ async def main():
             validator_claim_rate,
             curated_val,
             initial_commission_tokens,
-        ) = await initialize_game_and_mint(
+        ) = await initialize_dapp_and_mint(
             program,
             client,
             description,
@@ -537,11 +543,13 @@ async def main():
             validator_claim_rate,
             curated_val,
             initial_commission_tokens,
+            #gatekeeper_network,
+            #player_limit,
         )
 
         # Write PDAs to disk
-        with open("game_pda.txt", "w") as f:
-            f.write(str(game_pda))
+        with open("dapp_pda.txt", "w") as f:
+            f.write(str(dapp_pda))
         with open("mint_auth_pda.txt", "w") as f:
             f.write(str(mint_auth_pda))
         with open("minted_mint_pda.txt", "w") as f:
@@ -555,74 +563,75 @@ async def main():
                 data = json.load(f)
             return Keypair.from_bytes(bytes(data[:64]))
 
-        owner_kp = load_keypair("id.json")  # the "owner" of the game
+        owner_kp = load_keypair("id.json")  # the "owner" of the dapp
         curated_val_kp = load_keypair("val1-keypair.json")  # new validator
 
         # GATED approach
         validator_pda = await register_validator_curated(
             program,
             client,
-            game_pda=game_pda,
+            dapp_pda=dapp_pda,
             mint_pubkey=minted_mint_pda,
             owner_kp=owner_kp,
             validator_pubkey=curated_val_kp.pubkey(),
         )
-        print("Gated validator =>", validator_pda)
-
+        print("Curated validator =>", validator_pda)
+        gateway_token=curated_val_kp.pubkey()
         # => Then you'd punch in with that new validator:
         await punch_in(
             program,
             client,
-            game_pda=game_pda,
+            dapp_pda=dapp_pda,
             mint_pubkey=minted_mint_pda,
             validator_kp=curated_val_kp,
             validator_pda=validator_pda,
+            gateway_token=gateway_token,
         )
 
         # (Optional) If you want to do open registration (which is normally disallowed if curated_val=1):
         # validator_pda = await register_validator_pda(
         #     program,
         #     client,
-        #     game_pda=game_pda,
+        #     dapp_pda=dapp_pda,
         #     mint_pubkey=minted_mint_pda,
         #     validator_kp=curated_val_kp,
         # )
 
         # 5) Create a user ATA
-        user_kp = load_keypair("id.json")  # same as game owner for demonstration
-        user_ata = await create_player_ata(
-            program,
-            client,
-            game_pda=game_pda,
-            mint_pubkey=minted_mint_pda,
-            user_kp=user_kp
-        )
+        # user_kp = load_keypair("id.json")  # same as dapp owner for demonstration
+        # user_ata = await create_player_ata(
+        #     program,
+        #     client,
+        #     dapp_pda=dapp_pda,
+        #     mint_pubkey=minted_mint_pda,
+        #     user_kp=user_kp
+        # )
 
-        # 6) Register a player
-        player_name = "Alice"
-        (alice_pda, alice_name_pda) = await register_player_pda(
-            program,
-            client,
-            game_pda=game_pda,
-            mint_pubkey=minted_mint_pda,
-            name=player_name
-        )
+        # # 6) Register a player
+        # player_name = "Alice"
+        # (alice_pda, alice_name_pda) = await register_player_pda(
+        #     program,
+        #     client,
+        #     dapp_pda=dapp_pda,
+        #     mint_pubkey=minted_mint_pda,
+        #     name=player_name
+        # )
 
-        _commission_ata = find_associated_token_address(owner_kp.pubkey(), minted_mint_pda)
+        # _commission_ata = find_associated_token_address(owner_kp.pubkey(), minted_mint_pda)
 
-        # 7) Submit a minting list with leftover accounts for 1 player
-        await submit_minting_list(
-            program,
-            client,
-            game_pda=game_pda,
-            mint_pubkey=minted_mint_pda,
-            validator_kp=curated_val_kp,
-            validator_pda=validator_pda,
-            mint_authority_pda=mint_auth_pda,
-            player_pda=alice_pda,
-            player_ata=user_ata,
-            commission_ata=_commission_ata
-        )
+        # # 7) Submit a minting list with leftover accounts for 1 player
+        # await submit_minting_list(
+        #     program,
+        #     client,
+        #     dapp_pda=dapp_pda,
+        #     mint_pubkey=minted_mint_pda,
+        #     validator_kp=curated_val_kp,
+        #     validator_pda=validator_pda,
+        #     mint_authority_pda=mint_auth_pda,
+        #     player_pda=alice_pda,
+        #     player_ata=user_ata,
+        #     commission_ata=_commission_ata
+        # )
 
         print("\nAll done.")
     except Exception as err:
